@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
@@ -13,5 +14,6 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
         /// </summary>
         public PlayerInput playerInput;
         public int points = 0;
+        public Color color;
     }
 }
