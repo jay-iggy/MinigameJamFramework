@@ -42,11 +42,11 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
         /// <param name="playerInput">The PlayerInput to connect to the newly created player.</param>
         /// <exception cref="Exception">Failed to add new player.</exception>
         public static void ConnectPlayer(PlayerInput playerInput) {
+            if (_disconnectedPlayers.Count > 0) {
+                ReconnectPlayer(_disconnectedPlayers[0], playerInput);
+                return;
+            }
             if (players.Count >= maxPlayers) {
-                if (_disconnectedPlayers.Count > 0) {
-                    ReconnectPlayer(_disconnectedPlayers[0], playerInput);
-                    return;
-                }
                 throw new Exception("Failed to add new player. Max players reached.");
             }
 
