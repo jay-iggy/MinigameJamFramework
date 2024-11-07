@@ -2,7 +2,7 @@
     "name": "PlayerActions",
     "maps": [
         {
-            "name": "Board",
+            "name": "Menu",
             "id": "fe91e59f-7602-4b94-99a7-576b6e4b5e18",
             "actions": [
                 {
@@ -114,7 +114,18 @@
                 {
                     "name": "",
                     "id": "221371cb-2ae1-4e62-9196-30c6f028f14b",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accept",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a05f4aa6-84ac-4b7c-be53-05bb4b0db703",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -125,7 +136,29 @@
                 {
                     "name": "",
                     "id": "d68c5f02-cd75-46b9-b602-9ef0f81ecc35",
-                    "path": "",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "96c7a6ac-75cb-4b81-a8fb-2683ba78a03e",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "19940b02-db99-4876-9825-f91b9d403c29",
+                    "path": "<Keyboard>/backspace",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

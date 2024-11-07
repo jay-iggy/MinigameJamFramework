@@ -40,11 +40,13 @@ public class MinigameManager : MonoBehaviour
     
     public void LoadMinigame(MinigameInfo minigame) {
         SceneManager.LoadScene(minigame.scene.SceneName);
+        PlayerManager.SetMinigameActionMap();
     }
     
     public void EndMinigame(ResultsRanking ranking) {
         AwardPoints(ranking);
         SceneManager.LoadScene(resultsScene.SceneName);
+        PlayerManager.SetMenuActionMap();
     }
 
     private void AwardPoints(ResultsRanking ranking) {

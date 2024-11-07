@@ -14,6 +14,7 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
         public static int maxPlayers = 4;
         public static UnityEvent<int> onPlayerConnected = new();
         public static UnityEvent<int> onPlayerDisconnected = new();
+        private static string _currentActionMap = "Menu";
 
         static PlayerManager() {
             // constructor exists to set players list to default value while also having it be get only
@@ -42,6 +43,8 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
         /// <param name="playerInput">The PlayerInput to connect to the newly created player.</param>
         /// <exception cref="Exception">Failed to add new player.</exception>
         public static void ConnectPlayer(PlayerInput playerInput) {
+            playerInput.SwitchCurrentActionMap(_currentActionMap);
+            
             if (_disconnectedPlayers.Count > 0) {
                 ReconnectPlayer(_disconnectedPlayers[0], playerInput);
                 return;
@@ -73,6 +76,20 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
             players[playerIndex].playerInput = playerInput;
             _disconnectedPlayers.Remove(playerIndex);
             onPlayerConnected.Invoke(playerIndex);
+        }
+
+        public static void SetMenuActionMap() {
+            _currentActionMap = "Menu";
+            foreach (Player player in players) {
+                player.playerInput.SwitchCurrentActionMap("Menu");
+            }
+        }
+
+        public static void SetMinigameActionMap() {
+            _currentActionMap = "Minigame";
+            foreach (Player player in players) {
+                player.playerInput.SwitchCurrentActionMap("Minigame");
+            }
         }
     }
 }
