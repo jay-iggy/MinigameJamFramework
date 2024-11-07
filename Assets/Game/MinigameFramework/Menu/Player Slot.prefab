@@ -190,7 +190,7 @@ MonoBehaviour:
   statusNotConnected: Press Any Button
   connectedColor: {r: 0, g: 1, b: 0, a: 1}
   notConnectedColor: {r: 1, g: 1, b: 1, a: 1}
-  raisedYPosition: 0
+  raisedYPosition: -27.09
   animationSpeed: 10
   rectTransform: {fileID: 1895285745635949654}
 --- !u!1 &7133255795359560496

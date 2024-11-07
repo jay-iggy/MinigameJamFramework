@@ -21,17 +21,16 @@ public class PlayerSlot : MonoBehaviour {
     }
     
     IEnumerator MoveToPosition(Vector2 targetPosition) {
-        Vector2 startPosition = rectTransform.anchoredPosition;
-        while (Vector2.Distance(startPosition, targetPosition) > 0.1f) {
+        while (Vector2.Distance(rectTransform.anchoredPosition, targetPosition) > 0.01f) {
             rectTransform.anchoredPosition = Vector2.Lerp(rectTransform.anchoredPosition, targetPosition, Time.deltaTime * animationSpeed);
             yield return null;
         }
         rectTransform.anchoredPosition = targetPosition;
     }
     
-    public void SetStatus(bool connected) {
-        statusText.text = connected ? statusConnected : statusNotConnected;
-        statusText.color = connected ? connectedColor : notConnectedColor;
-        StartCoroutine(MoveToPosition(connected ? _defaultPosition : new Vector2(_defaultPosition.x, raisedYPosition)));
+    public void SetStatus(bool isConnected) {
+        statusText.text = isConnected ? statusConnected : statusNotConnected;
+        statusText.color = isConnected ? connectedColor : notConnectedColor;
+        StartCoroutine(MoveToPosition(isConnected ? new Vector2(_defaultPosition.x, raisedYPosition): _defaultPosition));
     }
 }
