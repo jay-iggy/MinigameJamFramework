@@ -20,6 +20,10 @@ public class MenuScript : MonoBehaviour {
         PlayerManager.onPlayerDisconnected.RemoveListener(OnPlayerDisconnected);
     }
 
+    private void Start() {
+        PlayerManager.SetMenuActionMap();
+    }
+
     public void Update() {
         startButton.interactable = PlayerManager.AreAllPlayersConnected();
     }
