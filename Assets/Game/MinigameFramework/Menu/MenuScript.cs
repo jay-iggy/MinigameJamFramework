@@ -28,7 +28,7 @@ public class MenuScript : MonoBehaviour {
         startButton.interactable = PlayerManager.AreAllPlayersConnected();
     }
     
-    [SerializeField] List<PlayerSlot> playerSlots = new List<PlayerSlot>();
+    [SerializeField] List<PlayerSlotUI> playerSlots = new List<PlayerSlotUI>();
     
     public void OnPlayerConnected(int playerIndex) {
         playerSlots[playerIndex].SetStatus(true);

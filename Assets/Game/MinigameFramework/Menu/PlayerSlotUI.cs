@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class PlayerSlot : MonoBehaviour {
+public class PlayerSlotUI : MonoBehaviour {
     public TextMeshProUGUI statusText;
     [SerializeField] string statusConnected = "Connected";
     [SerializeField] string statusNotConnected = "Press Any Button";
@@ -15,7 +15,7 @@ public class PlayerSlot : MonoBehaviour {
     [SerializeField] private float animationSpeed = 10f;
     
     [SerializeField] RectTransform rectTransform;
-    Vector2 _defaultPosition;
+    private Vector2 _defaultPosition;
     private void Start() {
         _defaultPosition = rectTransform.anchoredPosition;
     }
@@ -31,6 +31,6 @@ public class PlayerSlot : MonoBehaviour {
     public void SetStatus(bool isConnected) {
         statusText.text = isConnected ? statusConnected : statusNotConnected;
         statusText.color = isConnected ? connectedColor : notConnectedColor;
-        StartCoroutine(MoveToPosition(isConnected ? new Vector2(_defaultPosition.x, raisedYPosition): _defaultPosition));
+        StartCoroutine(MoveToPosition(isConnected ? new Vector2(_defaultPosition.x, raisedYPosition) : _defaultPosition));
     }
 }
