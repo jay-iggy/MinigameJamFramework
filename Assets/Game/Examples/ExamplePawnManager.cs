@@ -31,7 +31,10 @@ namespace Game.Examples {
         
         private void BindPawns() {
             if (pawns.Count <= 0) return; // prevent errors when no pawns are set
-            if (pawns.Count != PlayerManager.GetConnectedPlayerInputs().Count) return; // prevent errors when the number of pawns doesn't match the number of player inputs
+            if (pawns.Count != PlayerManager.GetConnectedPlayerInputs().Count) {
+                string message = $"Number of pawns ({pawns.Count}) does not match number of connected players ({PlayerManager.GetConnectedPlayerInputs().Count})";
+                Debug.LogError(message);
+            }
             
             for (int i = 0; i < pawns.Count; i++) {
                 if (i < PlayerManager.players.Count) {
