@@ -69,6 +69,7 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
             int playerIndex = players.FindIndex(player => player.playerInput == playerInput);
             players[playerIndex].playerInput = null;
             _disconnectedPlayers.Add(playerIndex);
+            _disconnectedPlayers.Sort();
             onPlayerDisconnected.Invoke(playerIndex);
         }
 
