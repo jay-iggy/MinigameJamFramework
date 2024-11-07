@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
@@ -10,13 +11,26 @@ public class MenuScript : MonoBehaviour {
         MinigameManager.instance.LoadRandomMinigame();
     }
 
+    private void OnEnable() {
+        PlayerManager.onPlayerConnected.AddListener(OnPlayerConnected);
+        PlayerManager.onPlayerDisconnected.AddListener(OnPlayerDisconnected);
+    }
+    private void OnDisable() {
+        PlayerManager.onPlayerConnected.RemoveListener(OnPlayerConnected);
+        PlayerManager.onPlayerDisconnected.RemoveListener(OnPlayerDisconnected);
+    }
+
     public void Update() {
         startButton.interactable = PlayerManager.AreAllPlayersConnected();
     }
     
-    List<PlayerSlot> playerSlots = new List<PlayerSlot>();
+    [SerializeField] List<PlayerSlot> playerSlots = new List<PlayerSlot>();
     
-    public void SetPlayerSlotStatus(int playerIndex, bool connected) {
-        playerSlots[playerIndex].SetStatus(connected);
+    public void OnPlayerConnected(int playerIndex) {
+        playerSlots[playerIndex].SetStatus(true);
     }
+    public void OnPlayerDisconnected(int playerIndex) {
+        playerSlots[playerIndex].SetStatus(false);
+    }
+    
 }
