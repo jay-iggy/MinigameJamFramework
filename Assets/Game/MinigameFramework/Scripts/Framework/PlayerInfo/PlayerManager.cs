@@ -72,6 +72,7 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
         private static void ReconnectPlayer(int playerIndex, PlayerInput playerInput) {
             players[playerIndex].playerInput = playerInput;
             _disconnectedPlayers.Remove(playerIndex);
+            onPlayerConnected.Invoke(playerIndex);
         }
     }
 }
