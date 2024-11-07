@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Game.MinigameFramework.Scripts.Framework;
 using Game.MinigameFramework.Scripts.Framework.Input;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
@@ -13,7 +14,7 @@ namespace Game.Examples {
         // The list of pawns is also required to be set in the inspector and the number of pawns must match the number of connected players
         // So debugging with just one player might be a little more tedious
         
-        [SerializeField] private Pawn[] pawns;
+        [SerializeField] private List<Pawn> pawns;
         
         private void Start() {
             if (PlayerManager.AreAllPlayersConnected()) {  
@@ -22,22 +23,24 @@ namespace Game.Examples {
             else { 
                 // wait to bind pawns until all players are connected
                 PlayerJoinManager.onAllPlayersJoined.AddListener(BindPawns);
+                Time.timeScale = 0;
             }
             
             PlayerJoinManager.onPlayerLeft.AddListener(OnPlayerLeft);
         }
         
         private void BindPawns() {
-            if (pawns.Length <= 0) return; // prevent errors when no pawns are set
-            if (pawns.Length != PlayerManager.GetConnectedPlayerInputs().Count) return; // prevent errors when the number of pawns doesn't match the number of player inputs
+            if (pawns.Count <= 0) return; // prevent errors when no pawns are set
+            if (pawns.Count != PlayerManager.GetConnectedPlayerInputs().Count) return; // prevent errors when the number of pawns doesn't match the number of player inputs
             
-            for (int i = 0; i < pawns.Length; i++) {
+            for (int i = 0; i < pawns.Count; i++) {
                 if (i < PlayerManager.players.Count) {
                     PawnBindingManager.BindPlayerInputToPawn(i, pawns[i]);
                 }
             }
             
             PlayerJoinManager.onAllPlayersJoined.RemoveListener(BindPawns); // stop listening because pawns are now bound
+            Time.timeScale = 1;
         }
         
         private void OnDisable() {
@@ -47,6 +50,7 @@ namespace Game.Examples {
         private void OnPlayerLeft() {
             PawnBindingManager.UnBindAllPawns();
             PlayerJoinManager.onAllPlayersJoined.AddListener(BindPawns);
+            Time.timeScale = 0;
         }
     }
 }
