@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1653141026001697058
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4899370240323628588}
+  - component: {fileID: 1363180793577401187}
+  m_Layer: 0
+  m_Name: PlayerInput
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4899370240323628588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653141026001697058}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1363180793577401187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653141026001697058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: a6508bcd5c5aaab4f92e8322c9b5cf42, type: 3}
+  m_NotificationBehavior: 3
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: afb18466-ea7a-464b-a288-e0206a3de9d0
+    m_ActionName: Board/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b012fc52-1d4f-4b3d-b038-6c1f72ae0d11
+    m_ActionName: Board/Accept[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c597e18d-36b0-473a-870c-dbce63b8dd1b
+    m_ActionName: Board/Reject
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 939308b8-c128-48d0-9b4f-3715c5124ead
+    m_ActionName: Minigame/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9f9db0fc-4256-4e31-9e25-b3369e3fcf22
+    m_ActionName: Minigame/Action1
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 46eb88ee-15ed-4fcc-8ebf-ded4addb5707
+    m_ActionName: Minigame/Action2
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: eb566bb5-69a6-4066-a032-f591911e8241
+    m_ActionName: Minigame/Action3
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a59840fc-6670-4d98-9b2e-2bf4b0a105c7
+    m_ActionName: Minigame/Action4
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e1805fb0-93aa-4b3c-b7e2-a980879c4ddf
+    m_ActionName: Minigame/Action5
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0f95019e-cbf0-4194-a711-c715f6ca8901
+    m_ActionName: Minigame/Action6
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1ca6c75d-42e9-41d8-9d9f-cb1efc1384e7
+    m_ActionName: Minigame/Look[/XInputControllerWindows1/rightStick,/XInputControllerWindows2/rightStick,/XInputControllerWindows/rightStick,/Mouse/delta]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Minigame
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
