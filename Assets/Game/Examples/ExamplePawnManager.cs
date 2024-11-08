@@ -9,6 +9,7 @@ namespace Game.Examples {
     public class ExamplePawnManager : MonoBehaviour {
         // This script binds pawns to player inputs
         // This may not be ideal for all use cases, and you may want it to modify it to fit your game's needs or your development style
+        // You need to bind pawns to player inputs, but you don't necessarily have to use this script to do it
         
         // All pawns are bound at once and if a player leaves, all pawns are unbound and then rebound when the player rejoins
         // The list of pawns is also required to be set in the inspector and the number of pawns must match the number of connected players
