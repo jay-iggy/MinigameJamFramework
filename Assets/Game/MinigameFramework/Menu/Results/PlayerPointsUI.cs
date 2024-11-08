@@ -14,6 +14,8 @@ public class PlayerPointsUI : MonoBehaviour {
 
     private void Start() {
         _minY = bar.anchoredPosition.y;
+        if (index >= PlayerManager.players.Count) return; // debugging without proper player count
+        
         SetPlayerPoints(PlayerManager.players[index].points);
     }
 

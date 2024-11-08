@@ -44,6 +44,8 @@ public class ReadyInput : Object {
     }
     
     public void OnReady(InputAction.CallbackContext context) {
+        if(context.action.type != InputActionType.Button) return;
+        
         onReady.Invoke(playerIndex);
         PlayerManager.players[playerIndex].playerInput.onActionTriggered -= OnReady;
         // delete this object
