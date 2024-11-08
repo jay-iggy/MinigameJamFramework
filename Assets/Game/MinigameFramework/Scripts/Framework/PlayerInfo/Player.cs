@@ -15,5 +15,6 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
         public PlayerInput playerInput;
         public int points = 0;
         public Color color;
+        public bool isDummy = false;
     }
 }

@@ -28,7 +28,7 @@ namespace Game.MinigameFramework.Scripts.Framework.Input {
             DontDestroyOnLoad(gameObject);
             _playerInputManager = GetComponent<PlayerInputManager>();
             
-            PlayerManager.maxPlayers = _playerInputManager.maxPlayerCount;
+            PlayerManager.expectedPlayers = _playerInputManager.maxPlayerCount;
         }
 
         private void OnEnable() {

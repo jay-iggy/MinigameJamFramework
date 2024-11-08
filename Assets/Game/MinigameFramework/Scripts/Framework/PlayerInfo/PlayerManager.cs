@@ -13,6 +13,7 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
         public static List<Player> players { get; }
         private static List<int> _disconnectedPlayers = new();
         public static int maxPlayers = 4;
+        public static int expectedPlayers = 4;
         public static UnityEvent<int> onPlayerConnected = new();
         public static UnityEvent<int> onPlayerDisconnected = new();
         private static string _currentActionMap = "Menu";
@@ -24,7 +25,7 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
         
         /// <returns>True if the number of connected PlayerInputs is equal to the max number of players.</returns>
         public static bool AreAllPlayersConnected() {
-            return GetConnectedPlayerInputs().Count == maxPlayers; // this should be expected players/readying up rather than checking with max
+            return GetConnectedPlayerInputs().Count == expectedPlayers;
         }
 
         /// <returns>List of all connected PlayerInputs</returns>
