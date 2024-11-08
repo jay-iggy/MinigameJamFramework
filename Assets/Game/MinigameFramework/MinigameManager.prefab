@@ -52,8 +52,8 @@ MonoBehaviour:
     m_SceneName: Results
   pointsToWin: 20
   pointsForFirstPlace: 4
-  pointsForSecondPlace: 3
-  pointsForThirdPlace: 2
-  pointsForFourthPlace: 1
+  pointsForSecondPlace: 2
+  pointsForThirdPlace: 1
+  pointsForFourthPlace: 0
   minigames:
   - {fileID: 11400000, guid: 90f0e8fa43fc49e468ce8f3035ac1deb, type: 2}
