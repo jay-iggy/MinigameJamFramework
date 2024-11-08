@@ -5,6 +5,7 @@ using Game.MinigameFramework.Scripts.Framework.Input;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour {
@@ -41,7 +42,8 @@ public class MenuScript : MonoBehaviour {
     }
 
     private void OnAllPlayersConnected() {
-        EventSystem.current.SetSelectedGameObject(startButton.gameObject);
+        foreach(MultiplayerEventSystem eventSystem in FindObjectsOfType<MultiplayerEventSystem>()) {
+            eventSystem.SetSelectedGameObject(startButton.gameObject);
+        }
     }
-    
 }
