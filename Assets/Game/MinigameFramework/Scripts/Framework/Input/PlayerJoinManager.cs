@@ -14,9 +14,13 @@ namespace Game.MinigameFramework.Scripts.Framework.Input {
         public static UnityEvent onPlayerLeft = new();
         private PlayerInputManager _playerInputManager;
 
+        private PlayerJoinManager instance;
+        
         private void Awake() {
-            // If there is already a PlayerJoinManager in the scene, destroy this one
-            if (FindObjectOfType<PlayerJoinManager>() != null && FindObjectOfType<PlayerJoinManager>() != this) {
+            if (instance == null) {
+                instance = this;
+            }
+            else {
                 Destroy(gameObject);
             }
 

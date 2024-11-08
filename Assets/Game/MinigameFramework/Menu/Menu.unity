@@ -1200,8 +1200,8 @@ MonoBehaviour:
   m_ActionsAsset: {fileID: -944628639613478452, guid: a6508bcd5c5aaab4f92e8322c9b5cf42, type: 3}
   m_PointAction: {fileID: -5670160246645075632, guid: a6508bcd5c5aaab4f92e8322c9b5cf42, type: 3}
   m_MoveAction: {fileID: -5957599746136722827, guid: a6508bcd5c5aaab4f92e8322c9b5cf42, type: 3}
-  m_SubmitAction: {fileID: 0}
-  m_CancelAction: {fileID: 0}
+  m_SubmitAction: {fileID: -6254293028173063128, guid: a6508bcd5c5aaab4f92e8322c9b5cf42, type: 3}
+  m_CancelAction: {fileID: -1511597542136459902, guid: a6508bcd5c5aaab4f92e8322c9b5cf42, type: 3}
   m_LeftClickAction: {fileID: -6885930375551333559, guid: a6508bcd5c5aaab4f92e8322c9b5cf42, type: 3}
   m_MiddleClickAction: {fileID: 0}
   m_RightClickAction: {fileID: 0}
