@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65074faa8a836848ae4203c738fad3b, type: 3}
   m_Name: ExampleMinigame
   m_EditorClassIdentifier: 
-  minigameName: ExampleMinigame
+  minigameName: Fumper Falls
   minigameType: 0
   scene:
     m_SceneAsset: {fileID: 102900000, guid: 1c00c753017bcf6428fb0567ceee5962, type: 3}
     m_SceneName: ExampleScene
-  description: Sample Description
-  controls: 'Left Stick - Move
+  description: 'Knock the other players off of the shrinking iceberg.
 
-    Button A - Jump
-
-    Hold Button B - Sprint'
+    Be the
+    last player to survive.'
+  controls: Left Stick - Move
