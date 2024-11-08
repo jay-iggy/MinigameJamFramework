@@ -22,9 +22,11 @@ public class MinigameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
     
+    public SceneField nextMinigameScene;
     public SceneField resultsScene;
     
     [Header("Points")]
+    public int pointsToWin = 20;
     public int pointsForFirstPlace = 4;
     public int pointsForSecondPlace = 3;
     public int pointsForThirdPlace = 2;
@@ -33,9 +35,13 @@ public class MinigameManager : MonoBehaviour
     [Header("Minigames")]
     public List<MinigameInfo> minigames;
     
-    public void LoadRandomMinigame() {
+    /*public void LoadRandomMinigame() {
         int randomIndex = UnityEngine.Random.Range(0, minigames.Count);
         LoadMinigame(minigames[randomIndex]);
+    }*/
+    
+    public void GoToNextMinigameScene() {
+        SceneManager.LoadScene(nextMinigameScene.SceneName);
     }
     
     public void LoadMinigame(MinigameInfo minigame) {

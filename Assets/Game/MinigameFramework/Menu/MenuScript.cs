@@ -10,8 +10,8 @@ using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour {
     [SerializeField] Button startButton;
-    public void LoadRandomMinigame() {
-        MinigameManager.instance.LoadRandomMinigame();
+    public void NextMinigame() {
+        MinigameManager.instance.GoToNextMinigameScene();
     }
 
     private void OnEnable() {

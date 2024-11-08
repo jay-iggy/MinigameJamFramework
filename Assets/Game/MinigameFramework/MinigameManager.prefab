@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resultsScene:
-    m_SceneAsset: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
-    m_SceneName: Menu
+    m_SceneAsset: {fileID: 102900000, guid: 3e0c1ba0862727843949a8a80a7397be, type: 3}
+    m_SceneName: Results
+  pointsToWin: 20
   pointsForFirstPlace: 4
   pointsForSecondPlace: 3
   pointsForThirdPlace: 2

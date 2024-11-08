@@ -372,7 +372,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1970173427}
         m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
-        m_MethodName: LoadRandomMinigame
+        m_MethodName: NextMinigame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1815,6 +1815,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
+      propertyPath: nextMinigameScene.m_SceneName
+      value: NextMinigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
+      propertyPath: nextMinigameScene.m_SceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 476e9d228ef74874b939fb1ce7991cec, type: 3}
     - target: {fileID: 6125866497244834600, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: m_Name
       value: MinigameManager

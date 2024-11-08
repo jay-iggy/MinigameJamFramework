@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Examples/ExampleScene/ExampleScene.unity
     guid: 1c00c753017bcf6428fb0567ceee5962
+  - enabled: 1
+    path: Assets/Game/MinigameFramework/Menu/Results/Results.unity
+    guid: 3e0c1ba0862727843949a8a80a7397be
+  - enabled: 1
+    path: Assets/Game/MinigameFramework/Menu/NextMinigame/NextMinigame.unity
+    guid: 476e9d228ef74874b939fb1ce7991cec
   m_configObjects: {}
