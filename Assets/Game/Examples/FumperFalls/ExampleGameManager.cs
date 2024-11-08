@@ -38,7 +38,7 @@ public class ExampleGameManager : MonoBehaviour {
         
         Player player = PlayerManager.players[pawn.playerIndex];
         alivePlayers.Remove(player);
-        ranking.AddFromEnd(player.playerIndex);
+        ranking.AddFromEnd(player.playerIndex); // add player to lowest available rank
         
         if (alivePlayers.Count <= 1) {
             StopMinigame();
