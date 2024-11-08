@@ -34,10 +34,11 @@ public class ExampleGameManager : MonoBehaviour {
     private void KillPlayer(Pawn pawn) {
         print($"Player Index: {pawn.playerIndex}");
         if(pawn.playerIndex < 0) return;
+        
+        
         Player player = PlayerManager.players[pawn.playerIndex];
         alivePlayers.Remove(player);
         ranking.AddFromEnd(player);
-        pawn.GetComponent<Rigidbody>().isKinematic = true;
         
         if (alivePlayers.Count <= 1) {
             StopMinigame();
