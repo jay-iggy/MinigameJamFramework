@@ -10,7 +10,7 @@ public class MinigameUI : MonoBehaviour {
     public TextMeshProUGUI minigameControlsText;
     
     public void SetMinigame(MinigameInfo minigame) {
-        minigameNameText.text = minigame.name;
+        minigameNameText.text = minigame.minigameName;
         minigameDescriptionText.text = minigame.description;
         minigameControlsText.text = minigame.controls;
     }
