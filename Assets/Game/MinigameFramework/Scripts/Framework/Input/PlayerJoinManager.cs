@@ -14,7 +14,7 @@ namespace Game.MinigameFramework.Scripts.Framework.Input {
         public static UnityEvent onPlayerLeft = new();
         private PlayerInputManager _playerInputManager;
 
-        private PlayerJoinManager instance;
+        public PlayerJoinManager instance;
         
         private void Awake() {
             if (instance == null) {

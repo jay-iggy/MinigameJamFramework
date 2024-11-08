@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.MinigameFramework.Scripts.Framework.Input;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour {
@@ -22,6 +24,7 @@ public class MenuScript : MonoBehaviour {
 
     private void Start() {
         PlayerManager.SetMenuActionMap();
+        PlayerJoinManager.onAllPlayersJoined.AddListener(OnAllPlayersConnected);
     }
 
     public void Update() {
@@ -35,6 +38,10 @@ public class MenuScript : MonoBehaviour {
     }
     public void OnPlayerDisconnected(int playerIndex) {
         playerSlots[playerIndex].SetStatus(false);
+    }
+
+    private void OnAllPlayersConnected() {
+        EventSystem.current.SetSelectedGameObject(startButton.gameObject);
     }
     
 }
