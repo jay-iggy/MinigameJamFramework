@@ -356,15 +356,15 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: -0.13585752
-      outSlope: -0.13585752
+      inSlope: -0.045792684
+      outSlope: -0.045792684
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.6384872
-      value: 0.9132567
+      time: 0.1349454
+      value: 0.9938205
       inSlope: -0.10158192
       outSlope: -0.10158192
       tangentMode: 0
@@ -374,8 +374,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 0.5
-      inSlope: -1.1431316
-      outSlope: -1.1431316
+      inSlope: -0.5708547
+      outSlope: -0.5708547
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -931,6 +931,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1340217340899204802, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+      propertyPath: m_MaxPlayerCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1011,9 +1015,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pawns:
   - {fileID: 779269815}
-  - {fileID: 480543068}
-  - {fileID: 1466828603}
-  - {fileID: 423871328}
 --- !u!4 &736634831
 Transform:
   m_ObjectHideFlags: 0
