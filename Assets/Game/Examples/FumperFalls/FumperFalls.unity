@@ -953,7 +953,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1340217340899204802, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
       propertyPath: m_MaxPlayerCount
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1038,6 +1038,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pawns:
   - {fileID: 779269815}
+  - {fileID: 480543068}
+  - {fileID: 1466828603}
+  - {fileID: 423871328}
 --- !u!4 &736634831
 Transform:
   m_ObjectHideFlags: 0
