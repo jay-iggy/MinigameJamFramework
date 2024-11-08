@@ -12,7 +12,7 @@ public class ExampleGameManager : MonoBehaviour {
     
     private List<Player> alivePlayers = new();
     
-    MinigameManager.ResultsRanking ranking = new();
+    MinigameManager.Ranking ranking = new();
     
 
     private void Start() {
@@ -38,7 +38,7 @@ public class ExampleGameManager : MonoBehaviour {
         
         Player player = PlayerManager.players[pawn.playerIndex];
         alivePlayers.Remove(player);
-        ranking.AddFromEnd(player);
+        ranking.AddFromEnd(player.playerIndex);
         
         if (alivePlayers.Count <= 1) {
             StopMinigame();
@@ -49,7 +49,7 @@ public class ExampleGameManager : MonoBehaviour {
         timer += Time.deltaTime;
         if(timer >= duration) {
             foreach(Player player in alivePlayers) {
-                ranking.firstPlace.Add(player);
+                ranking.SetRank(player.playerIndex, 1);
             }
             StopMinigame();
         }
