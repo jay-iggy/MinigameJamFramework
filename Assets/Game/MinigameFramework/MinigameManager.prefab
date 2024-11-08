@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93c86ec8b387594994a82025e603615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextMinigameScene:
+    m_SceneAsset: {fileID: 102900000, guid: 476e9d228ef74874b939fb1ce7991cec, type: 3}
+    m_SceneName: NextMinigame
   resultsScene:
     m_SceneAsset: {fileID: 102900000, guid: 3e0c1ba0862727843949a8a80a7397be, type: 3}
     m_SceneName: Results

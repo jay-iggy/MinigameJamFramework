@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -29,6 +30,11 @@ namespace Game.MinigameFramework.Scripts.Framework.Input {
         public void HandleActionReleased(InputAction.CallbackContext context) {
             // If WasReleasedThisFrame and is not a Value action, execute OnActionReleased
             if (context.action.WasReleasedThisFrame() && context.action.type != InputActionType.Value) OnActionReleased(context);
+        }
+
+        private void OnDestroy() {
+            // Unbind from PlayerInput when destroyed
+            if (playerIndex != -1) PawnBindingManager.UnbindPlayerInputFromPawn(this);
         }
     }
 }

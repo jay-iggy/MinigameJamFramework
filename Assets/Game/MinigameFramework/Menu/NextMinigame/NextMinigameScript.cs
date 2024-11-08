@@ -13,7 +13,9 @@ public class NextMinigameScript : MonoBehaviour {
     [SerializeField] private AnimationCurve speedCurve;
     [SerializeField] private float baseSpeed = 0.2f;
     [SerializeField] private Color selectedColor = Color.green;
+    [SerializeField] float descriptionDelay = 2f;
     [SerializeField]float loadSceneDelay = 1f;
+    [SerializeField] MinigameUI minigameUI;
     
     public UnityEvent onMinigameSelected;
     
@@ -43,7 +45,13 @@ public class NextMinigameScript : MonoBehaviour {
         
         minigame = minigames[minigameIndex];
         minigameNameText.color = selectedColor;
+        StartCoroutine(AfterSlotsEnd());
+    }
+
+    IEnumerator AfterSlotsEnd() {
+        yield return new WaitForSeconds(descriptionDelay);
         onMinigameSelected.Invoke();
+        minigameUI.SetMinigame(minigame);
     }
     
     

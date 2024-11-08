@@ -17,3 +17,9 @@ MonoBehaviour:
   scene:
     m_SceneAsset: {fileID: 102900000, guid: 1c00c753017bcf6428fb0567ceee5962, type: 3}
     m_SceneName: ExampleScene
+  description: Sample Description
+  controls: 'Left Stick - Move
+
+    Button A - Jump
+
+    Hold Button B - Sprint'

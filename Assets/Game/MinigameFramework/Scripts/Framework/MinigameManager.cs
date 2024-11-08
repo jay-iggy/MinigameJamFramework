@@ -72,10 +72,40 @@ public class MinigameManager : MonoBehaviour
     private void AwardPoints(int playerIndex, int points) {
         PlayerManager.players[playerIndex].points += points;
     }
-    public struct ResultsRanking {
+    public class ResultsRanking {
         public List<Player> firstPlace;
         public List<Player> secondPlace;
         public List<Player> thirdPlace;
         public List<Player> fourthPlace;
+        
+        public ResultsRanking() {
+            firstPlace = new List<Player>();
+            secondPlace = new List<Player>();
+            thirdPlace = new List<Player>();
+            fourthPlace = new List<Player>();
+        }
+
+        public void AddFromEnd(Player player) {
+            if(fourthPlace.Count < 1) {
+                fourthPlace.Add(player);
+            } else if(thirdPlace.Count < 1) {
+                thirdPlace.Add(player);
+            } else if(secondPlace.Count < 1) {
+                secondPlace.Add(player);
+            } else if(firstPlace.Count < 1) {
+                firstPlace.Add(player);
+            }
+        }
+        public void AddFromFront(Player player) {
+            if(firstPlace.Count < 1) {
+                firstPlace.Add(player);
+            } else if(secondPlace.Count < 1) {
+                secondPlace.Add(player);
+            } else if(thirdPlace.Count < 1) {
+                thirdPlace.Add(player);
+            } else if(fourthPlace.Count < 1) {
+                fourthPlace.Add(player);
+            }
+        }
     }
 }
