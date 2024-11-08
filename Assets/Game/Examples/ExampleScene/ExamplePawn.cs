@@ -33,13 +33,13 @@ namespace Game.Examples {
 
         // Handle movement and physics
         private void Update() {
-            /*if (_isSprinting) speed = _initialSpeed * sprintMultiplier;
-            else speed = _initialSpeed;*/
+            if (_isSprinting) speed = _initialSpeed * sprintMultiplier;
+            else speed = _initialSpeed;
             
             // Gravity
             _rigidbody.velocity += gravity * Time.deltaTime * Vector3.up;
             // Movement
-            _rigidbody.angularVelocity += new Vector3(_moveInput.y * speed, 0, -_moveInput.x * speed);
+            _rigidbody.velocity = new Vector3(_moveInput.x * speed, _rigidbody.velocity.y, _moveInput.y * speed);
         }
 
         // Handle grounded state

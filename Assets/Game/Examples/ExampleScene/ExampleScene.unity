@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 423871325}
   - component: {fileID: 423871324}
   m_Layer: 0
-  m_Name: Pawn (ExamplePawn)
+  m_Name: Pawn (P4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -749,13 +749,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 423871323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4816f1d26786466f8558a16e48465ed9, type: 3}
+  m_Script: {fileID: 11500000, guid: 28788099efa38d24993c629788de5af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
   speed: 0.1
-  sprintMultiplier: 1.4
-  jumpForce: 20
   gravity: -50
 --- !u!4 &423871329
 Transform:
@@ -787,7 +785,7 @@ GameObject:
   - component: {fileID: 480543065}
   - component: {fileID: 480543064}
   m_Layer: 0
-  m_Name: Pawn (ExamplePawn) (1)
+  m_Name: Pawn (P2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -900,13 +898,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 480543063}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4816f1d26786466f8558a16e48465ed9, type: 3}
+  m_Script: {fileID: 11500000, guid: 28788099efa38d24993c629788de5af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
   speed: 0.1
-  sprintMultiplier: 1.4
-  jumpForce: 20
   gravity: -50
 --- !u!4 &480543069
 Transform:
@@ -1045,7 +1041,7 @@ GameObject:
   - component: {fileID: 779269819}
   - component: {fileID: 779269818}
   m_Layer: 0
-  m_Name: Pawn (ExamplePawn)
+  m_Name: Pawn (P1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1060,13 +1056,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 779269814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4816f1d26786466f8558a16e48465ed9, type: 3}
+  m_Script: {fileID: 11500000, guid: 28788099efa38d24993c629788de5af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
   speed: 0.1
-  sprintMultiplier: 1.4
-  jumpForce: 20
   gravity: -50
 --- !u!54 &779269816
 Rigidbody:
@@ -1224,7 +1218,7 @@ GameObject:
   - component: {fileID: 1247645091}
   - component: {fileID: 1247645093}
   m_Layer: 0
-  m_Name: BumperBallsManager
+  m_Name: FumperFallsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1475,7 +1469,7 @@ GameObject:
   - component: {fileID: 1466828600}
   - component: {fileID: 1466828599}
   m_Layer: 0
-  m_Name: Pawn (ExamplePawn) (2)
+  m_Name: Pawn (P3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1588,13 +1582,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1466828598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4816f1d26786466f8558a16e48465ed9, type: 3}
+  m_Script: {fileID: 11500000, guid: 28788099efa38d24993c629788de5af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
   speed: 0.1
-  sprintMultiplier: 1.4
-  jumpForce: 20
   gravity: -50
 --- !u!4 &1466828604
 Transform:
