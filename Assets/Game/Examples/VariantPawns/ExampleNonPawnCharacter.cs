@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 namespace Game.Examples {
     /// <summary>
     /// An example character controller that uses the PawnMiddleman rather than inheriting from Pawn.
+    /// Subscribe the HandleInput methods to events in the PawnMiddleman.
     /// </summary>
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(PawnMiddleman))]

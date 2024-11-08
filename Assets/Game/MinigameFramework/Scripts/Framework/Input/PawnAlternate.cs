@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 namespace Game.MinigameFramework.Scripts.Framework.Input {
     /// <summary>
     /// Alternate version of Pawn. Breaks down the OnActionPressed and OnActionReleased methods into separate methods for each action.
+    /// Create a new class that inherits from this class and override the methods you need.
     /// </summary>
     public abstract class PawnAlternate : Pawn {
         protected override void OnActionPressed(InputAction.CallbackContext context) {
