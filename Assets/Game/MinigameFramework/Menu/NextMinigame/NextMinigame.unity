@@ -1244,7 +1244,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   baseSpeed: 0.1
   selectedColor: {r: 0, g: 1, b: 0, a: 1}
-  descriptionDelay: 1
+  descriptionDelay: 2
   loadSceneDelay: 1
   minigameUI: {fileID: 1472867688}
   onMinigameSelected:

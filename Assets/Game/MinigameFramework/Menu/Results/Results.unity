@@ -1257,7 +1257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a299d262d0117f140831d65ae53e82dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 5
+  delay: 8
   nextMinigameScene:
     m_SceneAsset: {fileID: 102900000, guid: 476e9d228ef74874b939fb1ce7991cec, type: 3}
     m_SceneName: NextMinigame
