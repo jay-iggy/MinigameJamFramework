@@ -17,6 +17,7 @@ namespace Game.Examples {
         [SerializeField] private List<Pawn> pawns;
         
         private void Start() {
+            PlayerManager.SetMinigameActionMap();
             if (PlayerManager.AreAllPlayersConnected()) {  
                 BindPawns();
             }

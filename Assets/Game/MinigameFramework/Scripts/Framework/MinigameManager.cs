@@ -51,8 +51,8 @@ public class MinigameManager : MonoBehaviour
     
     public void EndMinigame(ResultsRanking ranking) {
         AwardPoints(ranking);
-        SceneManager.LoadScene(resultsScene.SceneName);
         PlayerManager.SetMenuActionMap();
+        SceneManager.LoadScene(resultsScene.SceneName);
     }
 
     private void AwardPoints(ResultsRanking ranking) {
