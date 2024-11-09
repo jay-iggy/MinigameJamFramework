@@ -17,7 +17,9 @@ public class ExampleGameManager : MonoBehaviour {
 
     private void Start() {
         alivePlayers.AddRange(PlayerManager.players);
-        
+
+        StartCoroutine(GameTimer());
+
         //if not starting in editor (or if all players are bound ahead of time)
         // stop time + player input
         // 3 2 1 countdown
@@ -35,7 +37,6 @@ public class ExampleGameManager : MonoBehaviour {
         print($"Player Index: {pawn.playerIndex}");
         if(pawn.playerIndex < 0) return;
         
-        
         Player player = PlayerManager.players[pawn.playerIndex];
         alivePlayers.Remove(player);
         ranking.AddFromEnd(player.playerIndex); // add player to lowest available rank
@@ -45,21 +46,24 @@ public class ExampleGameManager : MonoBehaviour {
         }
     }
 
-    private void Update() {
-        timer += Time.deltaTime;
-        if(timer >= duration) {
-            foreach(Player player in alivePlayers) {
-                ranking.SetRank(player.playerIndex, 1);
-            }
-            StopMinigame();
+    IEnumerator GameTimer() {
+        while (timer < duration) {
+            timer += Time.deltaTime;
+            yield return null;
         }
+        StopMinigame();
     }
+
+    
 
     private void StopMinigame() {
         StartCoroutine(EndMinigame());
     }
     IEnumerator EndMinigame() {
         // "FINISH" ui
+        foreach(Player player in alivePlayers) {
+            ranking.SetRank(player.playerIndex, 1);
+        }
         yield return new WaitForSeconds(2);
         MinigameManager.instance.EndMinigame(ranking);
     }
