@@ -64,13 +64,13 @@ public class MinigameManager : MonoBehaviour
     }
     private int GetPointsForRank(int rank) {
         switch(rank) {
-            case 0:
-                return pointsForFirstPlace;
             case 1:
-                return pointsForSecondPlace;
+                return pointsForFirstPlace;
             case 2:
-                return pointsForThirdPlace;
+                return pointsForSecondPlace;
             case 3:
+                return pointsForThirdPlace;
+            case 4:
                 return pointsForFourthPlace;
             default:
                 return 0;
