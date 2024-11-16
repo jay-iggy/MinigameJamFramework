@@ -6,6 +6,7 @@ using Game.MinigameFramework.Scripts.Framework.Minigames;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class MinigameManager : MonoBehaviour
 {
@@ -21,8 +22,12 @@ public class MinigameManager : MonoBehaviour
         transform.parent = null;
         DontDestroyOnLoad(gameObject);
     }
-    
-    public SceneField nextMinigameScene;
+
+    private void Start() {
+        PopulateMinigameList();
+    }
+
+    public SceneField minigameSelectScene;
     public SceneField resultsScene;
     
     [Header("Points")]
@@ -31,17 +36,32 @@ public class MinigameManager : MonoBehaviour
     public int pointsForSecondPlace = 3;
     public int pointsForThirdPlace = 2;
     public int pointsForFourthPlace = 1;
-    
+
     [Header("Minigames")]
-    public List<MinigameInfo> minigames;
-    
+    public List<MinigamePack> minigamePacks = new ();
+    public List<MinigameInfo> minigames { get; private set; }
+
     /*public void LoadRandomMinigame() {
         int randomIndex = UnityEngine.Random.Range(0, minigames.Count);
         LoadMinigame(minigames[randomIndex]);
     }*/
     
-    public void GoToNextMinigameScene() {
-        SceneManager.LoadScene(nextMinigameScene.SceneName);
+    public void PopulateMinigameList() {
+        minigames = new List<MinigameInfo>();
+        foreach(MinigamePack pack in minigamePacks) {
+            minigames.AddRange(pack.minigames);
+        }
+    }
+
+    public void RemoveMinigameFromQueue(MinigameInfo minigameInfo) {
+        minigames.Remove(minigameInfo);
+        if(minigames.Count == 0) {
+            PopulateMinigameList();
+        }
+    }
+    
+    public void GoToMinigameSelectScene() {
+        SceneManager.LoadScene(minigameSelectScene.SceneName);
     }
     
     public void LoadMinigame(MinigameInfo minigame) {

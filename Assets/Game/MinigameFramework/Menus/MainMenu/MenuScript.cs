@@ -10,8 +10,10 @@ using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour {
     [SerializeField] Button startButton;
+    [SerializeField] bool enforcePlayerCount = true;
+    
     public void NextMinigame() {
-        MinigameManager.instance.GoToNextMinigameScene();
+        MinigameManager.instance.GoToMinigameSelectScene();
     }
 
     private void OnEnable() {
@@ -26,10 +28,24 @@ public class MenuScript : MonoBehaviour {
     private void Start() {
         PlayerManager.SetMenuActionMap();
         PlayerJoinManager.onAllPlayersJoined.AddListener(OnAllPlayersConnected);
+        
+        foreach(Player player in PlayerManager.players) {
+            if(player.playerInput!=null) {
+                OnPlayerConnected(player.playerIndex);
+            }
+        }
+
+        if (PlayerManager.AreAllPlayersConnected()) {
+            OnAllPlayersConnected();
+        }
     }
 
     public void Update() {
-        startButton.interactable = PlayerManager.AreAllPlayersConnected();
+        if(enforcePlayerCount) {
+            startButton.interactable = PlayerManager.AreAllPlayersConnected();
+        } else {
+            startButton.interactable = true;
+        }
     }
     
     [SerializeField] List<PlayerSlotUI> playerSlots = new List<PlayerSlotUI>();

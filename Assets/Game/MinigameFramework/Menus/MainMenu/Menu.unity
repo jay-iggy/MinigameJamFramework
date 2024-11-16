@@ -1437,6 +1437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startButton: {fileID: 478529488}
+  enforcePlayerCount: 1
   playerSlots:
   - {fileID: 4232343933487896055}
   - {fileID: 2072822331}

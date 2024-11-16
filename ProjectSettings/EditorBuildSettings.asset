@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Game/MinigameFramework/Menu/Menu.unity
+    path: Assets/Game/MinigameFramework/Menus/MainMenu/Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Game/Examples/FumperFalls/FumperFalls.unity
     guid: 1c00c753017bcf6428fb0567ceee5962
   - enabled: 1
-    path: Assets/Game/MinigameFramework/Menu/Results/Results.unity
+    path: Assets/Game/MinigameFramework/Menus/Results/Results.unity
     guid: 3e0c1ba0862727843949a8a80a7397be
   - enabled: 1
-    path: Assets/Game/MinigameFramework/Menu/NextMinigame/NextMinigame.unity
+    path: Assets/Game/MinigameFramework/Menus/MinigameSelect/MinigameSelect.unity
     guid: 476e9d228ef74874b939fb1ce7991cec
   m_configObjects: {}

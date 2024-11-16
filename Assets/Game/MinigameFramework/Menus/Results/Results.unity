@@ -1258,9 +1258,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 5
-  nextMinigameScene:
+  minigameSelectScene:
     m_SceneAsset: {fileID: 102900000, guid: 476e9d228ef74874b939fb1ce7991cec, type: 3}
-    m_SceneName: NextMinigame
+    m_SceneName: MinigameSelect
+  victoryScene:
+    m_SceneAsset: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
+    m_SceneName: Menu
 --- !u!4 &1540447179
 Transform:
   m_ObjectHideFlags: 0

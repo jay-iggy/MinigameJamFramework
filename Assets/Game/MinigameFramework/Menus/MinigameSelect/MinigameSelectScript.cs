@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class NextMinigameScript : MonoBehaviour {
+public class MinigameSelectScript : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI minigameNameText;
     [SerializeField]private int iterations = 20;
     [SerializeField] private AnimationCurve speedCurve;
@@ -38,7 +38,7 @@ public class NextMinigameScript : MonoBehaviour {
         else {
             for(int i = 0; i<iterations; i++) {
                 minigameIndex = UnityEngine.Random.Range(0, minigames.Count);
-                minigameNameText.text = minigames[minigameIndex].name;
+                minigameNameText.text = minigames[minigameIndex].minigameName;
                 yield return new WaitForSeconds(baseSpeed * speedCurve.Evaluate(i/iterations));
             }
         }
@@ -62,5 +62,6 @@ public class NextMinigameScript : MonoBehaviour {
     IEnumerator LoadMinigame() {
         yield return new WaitForSeconds(loadSceneDelay);
         MinigameManager.instance.LoadMinigame(minigame);
+        MinigameManager.instance.RemoveMinigameFromQueue(minigame);
     }
 }
