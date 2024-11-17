@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SnowDayPack
   m_EditorClassIdentifier: 
   packName: Snow Day!
-  icon: {fileID: 0}
+  icon: {fileID: 709120987, guid: ab95fc2ee1724c841a26b994050e36f9, type: 3}
   description: 'The pack that started it all.
 
     Created for the B Term 2024 Minigame
