@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/MinigameFramework/Menus/MinigameSelect/MinigameSelect.unity
     guid: 476e9d228ef74874b939fb1ce7991cec
+  - enabled: 1
+    path: Assets/Game/MinigamePacks/B24 Snow Day/BundledUp/CrowdMinigame.unity
+    guid: 7e6182b6a55fee346833cab45c416a31
   m_configObjects: {}

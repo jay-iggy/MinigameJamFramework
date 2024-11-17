@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65074faa8a836848ae4203c738fad3b, type: 3}
+  m_Name: CrowdMinigame
+  m_EditorClassIdentifier: 
+  minigameName: Bundled Up
+  thumbnail: {fileID: 0}
+  scene:
+    m_SceneAsset: {fileID: 102900000, guid: 7e6182b6a55fee346833cab45c416a31, type: 3}
+    m_SceneName: CrowdMinigame
+  description: 'Be first to find who you are in a crowd and hide while trying to
+    find others.
+
+    Control a random pedestrian for a few seconds then select your
+    character before anyone else finds theirs, bonus points for finding someone else.'
+  controls: '--Search Phase--
+
+    Left Stick - Move Pedestrain
+
+
+    --Select Phase--
+
+    Left
+    Stick - Move Mouse
+
+    A Button - Select'
+  credits: 'James Prendergast - artist, composer, designer, & primary programmer
+
+    Benjamin
+    Levy - task organization & minor fixes'
+  attributions: 'Art - Aseprite
+
+    Music - Bosca Ceoil
+
+    Sound Effects - https://sfxr.me/,
+    youtube.com/watch?v=lgcbPgl1rRU, youtube.com/watch?v=76L5O0XaG_U'
