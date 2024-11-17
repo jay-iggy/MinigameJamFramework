@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/MinigamePacks/B24 Snow Day/BundledUp/CrowdMinigame.unity
     guid: 7e6182b6a55fee346833cab45c416a31
+  - enabled: 1
+    path: Assets/Game/MinigamePacks/B24 Snow Day/Icebreaker/Icebreaker.unity
+    guid: cdc3fe1b13e924248ae280a902e08035
   m_configObjects: {}
