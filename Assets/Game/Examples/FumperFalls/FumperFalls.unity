@@ -225,7 +225,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 272970566}
-  - component: {fileID: 272970567}
   - component: {fileID: 272970569}
   - component: {fileID: 272970565}
   - component: {fileID: 272970564}
@@ -302,20 +301,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &272970567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 272970562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d7cde303442d8d43804a9e055ebe544, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tags:
-  - Ground
 --- !u!64 &272970568
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -356,26 +341,44 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: -0.045792684
-      outSlope: -0.045792684
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.1349454
-      value: 0.9938205
-      inSlope: -0.10158192
-      outSlope: -0.10158192
+      inSlope: -0.3955988
+      outSlope: -0.3955988
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.42814
-      outWeight: 0.5547813
+      inWeight: 0
+      outWeight: 0.32936642
     - serializedVersion: 3
-      time: 1
-      value: 0.5
-      inSlope: -0.5708547
-      outSlope: -0.5708547
+      time: 0.08963939
+      value: 0.9790159
+      inSlope: -0.43428662
+      outSlope: -0.43428662
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.6382909
+    - serializedVersion: 3
+      time: 0.85235804
+      value: 0.37244365
+      inSlope: -0.8907268
+      outSlope: -0.8907268
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8893699
+      value: 0.27986833
+      inSlope: -0.87234354
+      outSlope: -0.87234354
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9894409
+      value: 0.2557068
+      inSlope: -0.24144402
+      outSlope: -0.24144402
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
