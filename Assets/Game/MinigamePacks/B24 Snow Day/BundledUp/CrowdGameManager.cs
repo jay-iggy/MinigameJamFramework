@@ -21,7 +21,7 @@ public class CrowdGameManager : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI roundDisplay;
     [SerializeField] private TextMeshProUGUI phaseTimerText;
-    private int round = 0;
+    private int round = 1;
 
     public UnityEvent sceneChanged;
 
