@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/MinigamePacks/B24 Snow Day/SnowFightGame/SnowFight.unity
     guid: d9991922a229b594886283ae79b74be2
+  - enabled: 1
+    path: Assets/Game/MinigamePacks/B24 Snow Day/SnowFort/SnowFort.unity
+    guid: fedfb322f2c90e44d88554e09d96bdbb
   m_configObjects: {}
