@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65074faa8a836848ae4203c738fad3b, type: 3}
+  m_Name: Snowfort
+  m_EditorClassIdentifier: 
+  minigameName: Snow Fort
+  minigameType: 1
+  scene:
+    m_SceneAsset: {fileID: 102900000, guid: fedfb322f2c90e44d88554e09d96bdbb, type: 3}
+    m_SceneName: SnowFort
+  description: Build your snow fort and destroy the opponent's core. All players
+    start with an invincible cannon, snow blocks, and a window (which blocks opponent
+    fire but not yours). Build the fort, then use your cannons to get 3 hits on your
+    opponent's core. Cannons can be reloaded with snow blocks.
+  controls: 'Left Stick: Move Cursor
+
+    South Button: Place object or use cannon
+
+    West
+    Button: (Hold) End phase early
+
+    North & East Buttons: Scroll between objects
+    and cannons'

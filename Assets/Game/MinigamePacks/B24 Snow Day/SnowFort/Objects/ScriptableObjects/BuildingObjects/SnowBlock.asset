@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e8aa57ceaf525b49b1bbaaf00630a2c, type: 3}
+  m_Name: SnowBlock
+  m_EditorClassIdentifier: 
+  preview: {fileID: 4126765469941036634, guid: 3de91d92f7be2de48958b6082955d993, type: 3}
+  gameobject: {fileID: 3151340543493644576, guid: 31052628ecbb00f45884ff12cd1074bf, type: 3}
+  size: {x: 1, y: 1}
