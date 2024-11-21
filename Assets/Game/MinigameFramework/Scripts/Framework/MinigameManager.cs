@@ -40,6 +40,7 @@ public class MinigameManager : MonoBehaviour
     [Header("Minigames")]
     public List<MinigamePack> minigamePacks = new ();
     public List<MinigameInfo> minigames { get; private set; }
+    public MinigameInfo debugMinigame;
 
     /*public void LoadRandomMinigame() {
         int randomIndex = UnityEngine.Random.Range(0, minigames.Count);
@@ -48,8 +49,13 @@ public class MinigameManager : MonoBehaviour
     
     public void PopulateMinigameList() {
         minigames = new List<MinigameInfo>();
-        foreach(MinigamePack pack in minigamePacks) {
-            minigames.AddRange(pack.minigames);
+        if (debugMinigame != null) {
+            minigames.Add(debugMinigame);
+        }
+        else {
+            foreach(MinigamePack pack in minigamePacks) {
+                minigames.AddRange(pack.minigames);
+            }
         }
     }
 
