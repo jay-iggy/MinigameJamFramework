@@ -17,6 +17,7 @@ public class ResultsSceneDelay : MonoBehaviour {
             foreach (Player player in PlayerManager.players) {
                 player.points = 0;
             }
+            MinigameManager.instance.PopulateMinigameList();
             SceneManager.LoadScene(victoryScene.SceneName);
         }
         else {
