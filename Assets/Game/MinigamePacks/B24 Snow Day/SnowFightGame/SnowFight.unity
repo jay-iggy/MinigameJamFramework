@@ -1566,7 +1566,7 @@ MonoBehaviour:
   firePoint: {fileID: 2125384170}
   snowballPrefab: {fileID: 3715115986047352522, guid: 7d82628fd652d1f498acd8b2707306d2, type: 3}
   health: 100
-  lives: 3
+  lives: 1
   playerText: {fileID: 522085561}
   isAlive: 1
 --- !u!54 &347835584
@@ -3158,7 +3158,7 @@ MonoBehaviour:
   firePoint: {fileID: 525019522}
   snowballPrefab: {fileID: 3715115986047352522, guid: 7d82628fd652d1f498acd8b2707306d2, type: 3}
   health: 100
-  lives: 3
+  lives: 1
   playerText: {fileID: 795844387}
   isAlive: 1
 --- !u!65 &622459526
@@ -12882,7 +12882,7 @@ MonoBehaviour:
   firePoint: {fileID: 1437889458}
   snowballPrefab: {fileID: 3715115986047352522, guid: 7d82628fd652d1f498acd8b2707306d2, type: 3}
   health: 100
-  lives: 3
+  lives: 1
   playerText: {fileID: 1552948110}
   isAlive: 1
 --- !u!65 &1878862317
@@ -13630,7 +13630,7 @@ MonoBehaviour:
   firePoint: {fileID: 1604758023}
   snowballPrefab: {fileID: 3715115986047352522, guid: 7d82628fd652d1f498acd8b2707306d2, type: 3}
   health: 100
-  lives: 3
+  lives: 1
   playerText: {fileID: 2031772612}
   isAlive: 1
 --- !u!65 &2002854490
