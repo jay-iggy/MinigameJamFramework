@@ -519,7 +519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
-  speed: 0.1
+  speed: 0.5
   gravity: -50
   distanceToSnow: 0.25
   snowSizeCurve:
@@ -576,17 +576,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0.1
-      inSlope: -0.09
-      outSlope: -0.09
+      inSlope: -0.058985595
+      outSlope: -0.058985595
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 0.01
-      inSlope: -0.09
-      outSlope: -0.09
+      time: 0.99899894
+      value: 0.041073456
+      inSlope: -0.058985595
+      outSlope: -0.058985595
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -742,7 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
-  speed: 0.1
+  speed: 0.5
   gravity: -50
   distanceToSnow: 0.25
   snowSizeCurve:
@@ -799,17 +799,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0.1
-      inSlope: -0.09
-      outSlope: -0.09
+      inSlope: -0.058985595
+      outSlope: -0.058985595
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 0.01
-      inSlope: -0.09
-      outSlope: -0.09
+      time: 0.99899894
+      value: 0.041073456
+      inSlope: -0.058985595
+      outSlope: -0.058985595
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -973,7 +973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
-  speed: 0.1
+  speed: 0.5
   gravity: -50
   distanceToSnow: 0.25
   snowSizeCurve:
@@ -1030,17 +1030,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0.1
-      inSlope: -0.09
-      outSlope: -0.09
+      inSlope: -0.058985595
+      outSlope: -0.058985595
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 0.01
-      inSlope: -0.09
-      outSlope: -0.09
+      time: 0.99899894
+      value: 0.041073456
+      inSlope: -0.058985595
+      outSlope: -0.058985595
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -1547,7 +1547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
-  speed: 0.1
+  speed: 0.5
   gravity: -50
   distanceToSnow: 0.25
   snowSizeCurve:
@@ -1604,17 +1604,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0.1
-      inSlope: -0.09
-      outSlope: -0.09
+      inSlope: -0.058985595
+      outSlope: -0.058985595
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 0.01
-      inSlope: -0.09
-      outSlope: -0.09
+      time: 0.99899894
+      value: 0.041073456
+      inSlope: -0.058985595
+      outSlope: -0.058985595
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
