@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
 
-namespace BundledUp {
+namespace SnowDay.BundledUp {
     public class CrowdPlayerPawn : Pawn, IComparable<CrowdPlayerPawn> {
         public int playerPawnIndex;
         [SerializeField] private Color playerColor;

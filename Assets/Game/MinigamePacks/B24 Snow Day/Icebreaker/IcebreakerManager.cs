@@ -6,7 +6,7 @@ using Game.MinigameFramework.Scripts.Framework.Input;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
 
-namespace Icebreaker {
+namespace SnowDay.Icebreaker {
     public class IcebreakerManager : MonoBehaviour {
         public CameraController cameraController;
         public GameObject splashEffect;

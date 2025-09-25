@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Icebreaker {
+namespace SnowDay.Icebreaker {
     public class HummerController : MonoBehaviour {
         public BoxCollider hitbox;
         public GameObject highlight;

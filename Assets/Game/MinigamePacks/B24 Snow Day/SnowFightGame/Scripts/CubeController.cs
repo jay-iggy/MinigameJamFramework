@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SnowFight {
+namespace SnowDay.SnowFight {
     public class CubeController : MonoBehaviour {
         // Movement speed
         public float moveSpeed = 15f;

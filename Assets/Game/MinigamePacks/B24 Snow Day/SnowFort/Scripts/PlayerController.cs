@@ -1,11 +1,11 @@
 using Game.MinigameFramework.Scripts.Framework.Input;
-using Snowfort;
+using SnowDay.Snowfort;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Snowfort
+namespace SnowDay.Snowfort
 {
     public class PlayerController : Pawn
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace Snowfort
+namespace SnowDay.Snowfort
 {
     public class RestockPreviewController : MonoBehaviour, PreviewController
     {

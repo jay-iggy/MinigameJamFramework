@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Snowfort
+namespace SnowDay.Snowfort
 {
     public class PlacementCursorTester : Pawn
     {

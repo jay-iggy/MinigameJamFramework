@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SnowFight {
+namespace SnowDay.SnowFight {
     public class CameraController : MonoBehaviour {
         public float sensitivityX = 1f; // Sensitivity for horizontal (yaw) rotation
         public float sensitivityY = 1f; // Sensitivity for vertical (pitch) rotation

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Icebreaker {
+namespace SnowDay.Icebreaker {
     public class IcecubeController : MonoBehaviour {
         public Material[] materials = new Material[3];
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Snowfort
+namespace SnowDay.Snowfort
 {
     public class Distributor : MonoBehaviour
     {

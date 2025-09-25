@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SnowFight {
+namespace SnowDay.SnowFight {
     public class Billboard : MonoBehaviour {
         public Camera mainCamera;
 

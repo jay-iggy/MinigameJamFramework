@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Snowfort
+namespace SnowDay.Snowfort
 {
     public class GameManager : MonoBehaviour
     {        

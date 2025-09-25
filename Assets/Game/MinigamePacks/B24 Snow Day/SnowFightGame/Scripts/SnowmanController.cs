@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace SnowFight {
+namespace SnowDay.SnowFight {
     public class SnowmanController : Pawn {
         // Player Movement
         [SerializeField] private float moveSpeed = 15f;

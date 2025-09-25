@@ -4,7 +4,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
 using UnityEngine;
 
-namespace Snowfort
+namespace SnowDay.Snowfort
 {
     public class Cannon : MonoBehaviour, Controllable, BuildingOverride
     {

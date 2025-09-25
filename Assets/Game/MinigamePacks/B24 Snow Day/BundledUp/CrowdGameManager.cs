@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using TMPro;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 
-namespace BundledUp {
+namespace SnowDay.BundledUp {
     public class CrowdGameManager : MonoBehaviour {
         public static CrowdGameManager inst;
 

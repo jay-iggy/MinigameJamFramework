@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BundledUp {
+namespace SnowDay.BundledUp {
     public class AudioManager : MonoBehaviour {
         public static AudioManager inst;
 
