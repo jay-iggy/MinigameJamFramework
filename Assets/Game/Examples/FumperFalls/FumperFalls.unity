@@ -1634,6 +1634,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1752718746 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8764341697841427267, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+  m_PrefabInstance: {fileID: 2028605713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1752718750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752718746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a536f54d49ce84886c6139425b185b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comment: "This GameObject is in this scene for debugging to allow for players to\r\n   
+    join when the game is directly started from this screen. This will be deleted\r\n   
+    at runtime during an actual build.\r\n\r\n    The Menu scene has the actual PlayerJoinManager."
 --- !u!1 &1776427061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,30 +1774,8 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8764341697841427267, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2028605715}
+      addedObject: {fileID: 1752718750}
   m_SourcePrefab: {fileID: 100100000, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
---- !u!1 &2028605714 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8764341697841427267, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
-  m_PrefabInstance: {fileID: 2028605713}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2028605715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2028605714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47a536f54d49ce84886c6139425b185b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  comment: 'This GameObject is in this scene for debugging to allow for players to
-    join when the game is directly started from this screen. This will be deleted
-    at runtime during an actual build.
-
-    The Menu scene has the actual PlayerJoinManager.'
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
