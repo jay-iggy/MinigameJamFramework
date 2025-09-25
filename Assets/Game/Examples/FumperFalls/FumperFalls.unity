@@ -225,7 +225,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 272970566}
-  - component: {fileID: 272970567}
   - component: {fileID: 272970569}
   - component: {fileID: 272970565}
   - component: {fileID: 272970564}
@@ -302,20 +301,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &272970567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 272970562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d7cde303442d8d43804a9e055ebe544, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tags:
-  - Ground
 --- !u!64 &272970568
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -356,26 +341,44 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: -0.045792684
-      outSlope: -0.045792684
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.1349454
-      value: 0.9938205
-      inSlope: -0.10158192
-      outSlope: -0.10158192
+      inSlope: -0.3955988
+      outSlope: -0.3955988
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.42814
-      outWeight: 0.5547813
+      inWeight: 0
+      outWeight: 0.32936642
     - serializedVersion: 3
-      time: 1
-      value: 0.5
-      inSlope: -0.5708547
-      outSlope: -0.5708547
+      time: 0.08963939
+      value: 0.9790159
+      inSlope: -0.43428662
+      outSlope: -0.43428662
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.6382909
+    - serializedVersion: 3
+      time: 0.85235804
+      value: 0.37244365
+      inSlope: -0.8907268
+      outSlope: -0.8907268
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8893699
+      value: 0.27986833
+      inSlope: -0.87234354
+      outSlope: -0.87234354
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9894409
+      value: 0.2557068
+      inSlope: -0.24144402
+      outSlope: -0.24144402
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -516,8 +519,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
-  speed: 0.1
+  speed: 0.5
   gravity: -50
+  distanceToSnow: 0.25
+  snowSizeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.5
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 2.5
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snowMassCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0.15
+      outSlope: 0.15
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.25
+      inSlope: 0.15
+      outSlope: 0.15
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snowSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: -0.058985595
+      outSlope: -0.058985595
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.99899894
+      value: 0.041073456
+      inSlope: -0.058985595
+      outSlope: -0.058985595
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &423871329
 Transform:
   m_ObjectHideFlags: 0
@@ -527,8 +603,8 @@ Transform:
   m_GameObject: {fileID: 423871323}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.02, y: 0.95, z: -1.54}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 2.02, y: 0.65, z: -1.54}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -665,8 +741,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
-  speed: 0.1
+  speed: 0.5
   gravity: -50
+  distanceToSnow: 0.25
+  snowSizeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.5
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 2.5
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snowMassCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0.15
+      outSlope: 0.15
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.25
+      inSlope: 0.15
+      outSlope: 0.15
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snowSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: -0.058985595
+      outSlope: -0.058985595
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.99899894
+      value: 0.041073456
+      inSlope: -0.058985595
+      outSlope: -0.058985595
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &480543069
 Transform:
   m_ObjectHideFlags: 0
@@ -676,37 +825,13 @@ Transform:
   m_GameObject: {fileID: 480543063}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.94, y: 0.95, z: 1.4599999}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 1.94, y: 0.65, z: 1.4599999}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &677464696 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8764341697841427267, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
-  m_PrefabInstance: {fileID: 713718654}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &677464700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677464696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47a536f54d49ce84886c6139425b185b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  comment: 'This GameObject is in this scene for debugging to allow for players to
-    join when the game is directly started from this screen. This will be deleted
-    at runtime during an actual build.
-
-    The Menu scene has the actual PlayerJoinManager.
-
-'
---- !u!1001 &713718654
+--- !u!1001 &612797845
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -714,62 +839,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1340217340899204802, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
-      propertyPath: m_MaxPlayerCount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8764341697841427267, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+    - target: {fileID: 6125866497244834600, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: m_Name
-      value: PlayerJoinManager
+      value: MinigameManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8764341697841427267, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 677464700}
-  m_SourcePrefab: {fileID: 100100000, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
 --- !u!1 &736634829
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,8 +971,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
-  speed: 0.1
+  speed: 0.5
   gravity: -50
+  distanceToSnow: 0.25
+  snowSizeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.5
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 2.5
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snowMassCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0.15
+      outSlope: 0.15
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.25
+      inSlope: 0.15
+      outSlope: 0.15
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snowSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: -0.058985595
+      outSlope: -0.058985595
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.99899894
+      value: 0.041073456
+      inSlope: -0.058985595
+      outSlope: -0.058985595
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!54 &779269816
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -962,8 +1153,8 @@ Transform:
   m_GameObject: {fileID: 779269814}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1, y: 0.95, z: 1.4599999}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: -2.1, y: 0.65, z: 1.4599999}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1098,63 +1289,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 73.53195, y: 1, z: 60.47546}
   m_Center: {x: -15.242775, y: 0, z: 4.408777}
---- !u!1001 &1392574687
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3331250623984779387, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6125866497244834600, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: m_Name
-      value: MinigameManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
 --- !u!1 &1447818452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,8 +1544,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
-  speed: 0.1
+  speed: 0.5
   gravity: -50
+  distanceToSnow: 0.25
+  snowSizeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.5
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 2.5
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snowMassCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0.15
+      outSlope: 0.15
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.25
+      inSlope: 0.15
+      outSlope: 0.15
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snowSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: -0.058985595
+      outSlope: -0.058985595
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.99899894
+      value: 0.041073456
+      inSlope: -0.058985595
+      outSlope: -0.058985595
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1466828604
 Transform:
   m_ObjectHideFlags: 0
@@ -1421,8 +1628,8 @@ Transform:
   m_GameObject: {fileID: 1466828598}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1, y: 0.95, z: -1.57}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: -2.1, y: 0.65, z: -1.57}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1489,12 +1696,94 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2028605713
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095362626626749567, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8764341697841427267, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+      propertyPath: m_Name
+      value: PlayerJoinManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8764341697841427267, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2028605715}
+  m_SourcePrefab: {fileID: 100100000, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+--- !u!1 &2028605714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8764341697841427267, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
+  m_PrefabInstance: {fileID: 2028605713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2028605715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028605714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a536f54d49ce84886c6139425b185b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comment: 'This GameObject is in this scene for debugging to allow for players to
+    join when the game is directly started from this screen. This will be deleted
+    at runtime during an actual build.
+
+    The Menu scene has the actual PlayerJoinManager.'
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 713718654}
-  - {fileID: 1392574687}
+  - {fileID: 612797845}
+  - {fileID: 2028605713}
   - {fileID: 947640854}
   - {fileID: 736634831}
   - {fileID: 951078559}
