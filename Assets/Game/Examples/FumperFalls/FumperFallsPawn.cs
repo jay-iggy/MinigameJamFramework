@@ -14,6 +14,7 @@ namespace Examples.FumperFalls {
         [SerializeField] private AnimationCurve snowSizeCurve;
         [SerializeField] private AnimationCurve snowMassCurve;
         [SerializeField] private AnimationCurve snowSpeedCurve;
+        public float distanceTraveled = 0;
 
         private Vector2 _moveInput = Vector2.zero;
 
@@ -23,22 +24,29 @@ namespace Examples.FumperFalls {
         private void Reset() {
             GetComponent<Rigidbody>().useGravity = false;
         }
-
         private void Awake() {
             _rigidbody = GetComponent<Rigidbody>();
         }
         
+        // Handle input
+        protected override void OnActionPressed(InputAction.CallbackContext context) {
+            // Move
+            if (context.action.name == "Move") _moveInput = context.ReadValue<Vector2>();
+        }
         
-        public float distanceTraveled = 0;
         private void Update() {
             // Gravity
             _rigidbody.velocity += gravity * Time.deltaTime * Vector3.up;
             // Movement
             _rigidbody.angularVelocity += new Vector3(_moveInput.y * speed, 0, -_moveInput.x * speed);
             
-            // if the player's velocity in the same direction of their move input, increase distance traveled
+            UpdateSnowAccumulation();
+        }
+        
+        
+        private void UpdateSnowAccumulation() {
             float dot = Vector3.Dot(_rigidbody.velocity, _moveInput);
-            if(dot > 0) {
+            if(dot > 0) { // if the player's velocity in the same direction of their move input
                 distanceTraveled += Vector3.Dot(_rigidbody.velocity, _moveInput) * Time.deltaTime;
                 if(distanceTraveled > 0.1f) {
                     IncreaseSnow(distanceTraveled * distanceToSnow);
@@ -46,13 +54,6 @@ namespace Examples.FumperFalls {
                 }
             }
         }
-
-        // Handle input
-        protected override void OnActionPressed(InputAction.CallbackContext context) {
-            // Move
-            if (context.action.name == "Move") _moveInput = context.ReadValue<Vector2>();
-        }
-        
         private void IncreaseSnow(float snow) {
             SetSnowTotal(snowTotal + snow);
         }
