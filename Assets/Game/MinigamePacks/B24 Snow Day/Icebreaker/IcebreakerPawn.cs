@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Icebreaker {
+namespace SnowDay.Icebreaker {
     [RequireComponent(typeof(Rigidbody))]
     public class IcebreakerPawn : Pawn {
         [SerializeField] private float speed = 8f;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SnowFight {
+namespace SnowDay.SnowFight {
     public class ButtonPressLogger : MonoBehaviour {
 
         public Transform firepoint;

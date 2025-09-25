@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Snowfort
+namespace SnowDay.Snowfort
 {
     [CreateAssetMenu(menuName = "BuildingObject", fileName = "Building Object")]
     public class BuildingObject : ScriptableObject

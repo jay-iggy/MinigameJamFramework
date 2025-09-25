@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BundledUp {
+namespace SnowDay.BundledUp {
     public class ValidationBehavior : MonoBehaviour {
         [SerializeField] private Sprite correctSprite, wrongSprite, stolenSprite;
         [SerializeField] private Sprite[] rankingSprites;

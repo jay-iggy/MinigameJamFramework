@@ -4,7 +4,7 @@ using Game.MinigameFramework.Scripts.Framework.Input;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
 
-namespace SnowFight {
+namespace SnowDay.SnowFight {
     public class SnowFightManager : MonoBehaviour {
         private List<Player> alivePlayers = new();
         MinigameManager.Ranking ranking = new();

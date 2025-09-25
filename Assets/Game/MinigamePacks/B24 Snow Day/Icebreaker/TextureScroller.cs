@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Icebreaker {
+namespace SnowDay.Icebreaker {
     public class TextureScroller : MonoBehaviour {
         private Material mat;
         public float Speed;

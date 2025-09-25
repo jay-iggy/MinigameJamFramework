@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Icebreaker {
+namespace SnowDay.Icebreaker {
     public class CameraController : MonoBehaviour {
         public GameObject[] players = new GameObject[4];
         private bool follow = false;

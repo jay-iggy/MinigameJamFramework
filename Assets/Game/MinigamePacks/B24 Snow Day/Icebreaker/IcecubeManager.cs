@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Icebreaker {
+namespace SnowDay.Icebreaker {
     public class IcecubeManager : MonoBehaviour {
         public GameObject template;
         public new Camera camera;

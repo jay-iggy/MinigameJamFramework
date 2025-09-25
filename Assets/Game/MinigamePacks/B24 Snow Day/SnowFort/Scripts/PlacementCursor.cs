@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Snowfort
+namespace SnowDay.Snowfort
 {
     public class PlacementCursor : MonoBehaviour
     {

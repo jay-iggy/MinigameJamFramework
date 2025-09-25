@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SnowFight {
+namespace SnowDay.SnowFight {
     public class Snowball : MonoBehaviour {
         private Rigidbody rb;
         [SerializeField] private float speedX = 10f;
