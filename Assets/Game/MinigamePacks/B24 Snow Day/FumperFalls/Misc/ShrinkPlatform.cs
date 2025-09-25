@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Examples {
+namespace Examples.FumperFalls {
     public class ShrinkPlatform : MonoBehaviour {
         [SerializeField] AnimationCurve shrinkCurve;
-        [SerializeField] ExampleGameManager gameManager;
+        [SerializeField] FumperFallsGameManager gameManager;
 
         private Vector3 _defaultScale;
 

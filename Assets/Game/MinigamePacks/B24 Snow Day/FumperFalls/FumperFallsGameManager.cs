@@ -6,8 +6,8 @@ using Game.MinigameFramework.Scripts.Framework.Input;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
 
-namespace Game.Examples {
-    public class ExampleGameManager : MonoBehaviour {
+namespace Examples.FumperFalls {
+    public class FumperFallsGameManager : MonoBehaviour {
         public float duration = 30;
         public float timer = 0;
 
