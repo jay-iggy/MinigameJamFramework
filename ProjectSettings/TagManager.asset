@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PostProcessing
   - Water
   - UI
   - Player1
@@ -16,6 +16,11 @@ TagManager:
   - Player3
   - Player4
   - GroundLayer
+  - Structure
+  - TeamA
+  - TeamB
+  - 
+  - Projectile
   - 
   - 
   - 
@@ -30,13 +35,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Background
+  - PlacementCheck
   m_SortingLayers:
   - name: Default
     uniqueID: 0

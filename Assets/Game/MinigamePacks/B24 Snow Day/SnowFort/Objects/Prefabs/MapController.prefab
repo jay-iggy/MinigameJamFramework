@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4165664237114997750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7256008167230022436}
+  - component: {fileID: 3266724134811116573}
+  m_Layer: 0
+  m_Name: MapController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7256008167230022436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4165664237114997750}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.57939357, y: -0.39501685, z: -0.8925514}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3266724134811116573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4165664237114997750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cda6556204efc469fbe7d3bccf7dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distributionTime: 3
+  firstBuildTime: 60
+  buildTime: 40
+  countdownTime: 3
+  fightTime: 60
+  boundsLtl: {x: -3, y: 1}
+  boundsLbr: {x: -1, y: -1}
+  boundsRtl: {x: 1, y: 1}
+  boundsRbr: {x: 3, y: -1}
+  placementCheckMask:
+    serializedVersion: 2
+    m_Bits: 2147483648
+  stock:
+  - obj: {fileID: 11400000, guid: 7361f4856ef493e4da5a9b37c61bd45f, type: 2}
+    count: 1
+  - obj: {fileID: 11400000, guid: 57e63572c249647489be47fcffe87a06, type: 2}
+    count: 5
+  restock:
+  - obj: {fileID: 11400000, guid: 57e63572c249647489be47fcffe87a06, type: 2}
+    count: 3
+  bonus:
+  - obj: {fileID: 11400000, guid: 57e63572c249647489be47fcffe87a06, type: 2}
+    count: 3
+  - obj: {fileID: 11400000, guid: 595020e96ded8304793c46f3f89b08f4, type: 2}
+    count: 1
