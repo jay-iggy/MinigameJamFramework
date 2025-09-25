@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Game.Examples {
+namespace Examples.FumperFalls {
     [RequireComponent(typeof(Rigidbody))]
     public class FumperFallsPawn : Pawn {
         [SerializeField] private float speed = 8f;
