@@ -15,6 +15,10 @@ namespace Game.Examples {
         // The list of pawns is also required to be set in the inspector and the number of pawns must match the number of connected players
         // So debugging with just one player might be a little more tedious
         
+        // This script pauses the game when not all players are connected and only binds pawns when all players are connected
+        // This script is less flexible when debugging
+        // PawnManager.cs is recommended for a more lightweight and practical implementation
+        
         [SerializeField] private List<Pawn> pawns;
         
         private void Start() {
