@@ -69,12 +69,12 @@ public class PackageSelectionScript : MonoBehaviour
     }
     
     public void OnPackHovered(MinigamePack pack) {
-        description.text = pack.name + "\n\t" + pack.description;
+        description.text = pack.packName + "\n\t" + pack.description;
         DisplayMinigames(pack);
     }
     
     public void OnMinigameHovered(MinigameInfo minigame) {
-        description.text = minigame.name + "\n\t" + minigame.description + "\n\n" + minigame.credits;
+        description.text = minigame.minigameName + "\n\t" + minigame.description + "\n\n" + minigame.credits;
     }
     
     public void PackToggled(MinigamePack pack) {
