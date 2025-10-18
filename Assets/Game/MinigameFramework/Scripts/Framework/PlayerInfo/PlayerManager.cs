@@ -13,7 +13,7 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
         public static List<Player> players { get; }
         private static List<int> _disconnectedPlayers = new();
         public static int maxPlayers = 4;
-        public static int expectedPlayers = 4;
+        public static int expectedPlayers = 4; // Set by MinigameManager
         public static UnityEvent<int> onPlayerConnected = new();
         public static UnityEvent<int> onPlayerDisconnected = new();
         private static string _currentActionMap = "Menu";
@@ -23,9 +23,9 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
             players = new List<Player>();
         }
         
-        /// <returns>True if the number of connected PlayerInputs is equal to the max number of players.</returns>
+        /// <returns>True if the number of connected PlayerInputs is >= to minimum players needed.</returns>
         public static bool AreAllPlayersConnected() {
-            return GetConnectedPlayerInputs().Count == expectedPlayers;
+            return GetConnectedPlayerInputs().Count >= expectedPlayers;
         }
 
         /// <returns>List of all connected PlayerInputs</returns>

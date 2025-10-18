@@ -17,6 +17,7 @@ MonoBehaviour:
   scene:
     m_SceneAsset: {fileID: 102900000, guid: 1c00c753017bcf6428fb0567ceee5962, type: 3}
     m_SceneName: FumperFalls
+  minimumPlayers: 1
   description: 'Knock the other players off of the shrinking iceberg.
 
     Roll around
