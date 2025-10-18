@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using Game.MinigameFramework.Scripts.Framework.Minigames;
 
-public class HoverIcon : MonoBehaviour, IPointerEnterHandler
+public class HoverIcon : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler
 {
     // keeps a reference to PackageSelectionScript
     private PackageSelectionScript pss;
@@ -14,8 +14,6 @@ public class HoverIcon : MonoBehaviour, IPointerEnterHandler
     private MinigameInfo minigameData;
 
     public void OnPointerEnter(PointerEventData eventData) {
-        Debug.Log(packData == null);
-        Debug.Log(minigameData == null);
         if (packData != null) pss.OnPackHovered(packData);
         if (minigameData != null) pss.OnMinigameHovered(minigameData);
     }
@@ -30,5 +28,10 @@ public class HoverIcon : MonoBehaviour, IPointerEnterHandler
         minigameData = md;
         packData = null;
         pss = pssSet;
+    }
+    
+    public void OnPointerDown(PointerEventData eventData) {
+        if (packData != null) pss.PackToggled(packData);
+        // could be extended to toggling specific minigames, but would require some MinigameManager reworks
     }
 }

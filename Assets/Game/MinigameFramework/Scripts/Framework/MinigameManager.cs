@@ -25,7 +25,7 @@ public class MinigameManager : MonoBehaviour
 
     private void Start() {
         DetermineFewestPlayers();
-        PopulateMinigameList();
+        // game list is populated when game started or when runs out
     }
 
     public SceneField minigameSelectScene;
@@ -51,7 +51,7 @@ public class MinigameManager : MonoBehaviour
     // Sets expectedPlayers in PlayerManager
     // Called on start and when minigamePacks is updated
     public void DetermineFewestPlayers() {
-        int min = PlayerManager.maxPlayers;
+        int min = PlayerManager.maxPlayers + 1; // could never occur
 
         // account for if debugMinigame assigned
         if (debugMinigame != null) {
@@ -77,7 +77,7 @@ public class MinigameManager : MonoBehaviour
         else {
             foreach(MinigamePack pack in minigamePacks) {
                 foreach(MinigameInfo minigame in pack.minigames) {
-                    if (minigame.minimumPlayers <= PlayerManager.GetConnectedPlayerInputs().Count) {
+                    if (minigame.minimumPlayers <= PlayerManager.GetNumPlayers()) {
                         minigames.Add(minigame);
                     }
                 }
@@ -99,6 +99,16 @@ public class MinigameManager : MonoBehaviour
     public void LoadMinigame(MinigameInfo minigame) {
         SceneManager.LoadScene(minigame.scene.SceneName);
         PlayerManager.SetMinigameActionMap();
+    }
+    
+    public bool PackIsOn(MinigamePack pack) {
+        return minigamePacks.Contains(pack);
+    }
+    
+    public void TogglePack(MinigamePack pack) {
+        if (!PackIsOn(pack)) minigamePacks.Add(pack);
+        else minigamePacks.Remove(pack);
+        DetermineFewestPlayers();
     }
     
     

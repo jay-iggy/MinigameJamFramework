@@ -20,6 +20,7 @@ public class MenuScript : MonoBehaviour {
     // [SerializeField] bool enforcePlayerCount = true;
     
     public void NextMinigame() {
+        MinigameManager.instance.PopulateMinigameList(); // populate list right before the rounds start
         MinigameManager.instance.GoToMinigameSelectScene();
     }
     
@@ -56,6 +57,9 @@ public class MenuScript : MonoBehaviour {
         float gap = 12.5f;
         foreach (Sprite spr in MinigameManager.instance.GetPackageSprites()) {
             RectTransform icon = Instantiate(packageIconPrefab, packageIcons).GetComponent<RectTransform>();
+
+            Image img = icon.GetComponent<Image>();
+            img.sprite = spr;
 
             icon.anchoredPosition = new Vector2(icon.anchoredPosition.x, next);
             next += icon.rect.height + gap;

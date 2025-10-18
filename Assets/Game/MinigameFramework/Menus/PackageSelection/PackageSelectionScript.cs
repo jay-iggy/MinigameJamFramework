@@ -23,12 +23,23 @@ public class PackageSelectionScript : MonoBehaviour
     }
 
     private void Start() {
+        DisplayPacks();
+    }
+    
+    private void DisplayPacks() {
+        // clear pack icons
+        foreach (Transform child in packageIcons.transform) {
+            Destroy(child.gameObject);
+        }
         // display all packs
         float next = 0f;
         foreach (MinigamePack pack in allPacks) {
             HoverIcon hi = Instantiate(hoverableIcon, packageIcons).GetComponent<HoverIcon>();
             hi.SetData(this, pack);
-            hi.GetComponent<Image>().sprite = pack.icon;
+
+            Image img = hi.GetComponent<Image>();
+            img.sprite = pack.icon;
+            if (!MinigameManager.instance.PackIsOn(pack)) img.color = new Color(.5f, .5f, .5f, 1.0f);
 
             RectTransform rt = hi.GetComponent<RectTransform>();
             rt.anchoredPosition = new Vector2(next, 0);
@@ -47,7 +58,9 @@ public class PackageSelectionScript : MonoBehaviour
         foreach (MinigameInfo game in pack.minigames) {
             HoverIcon hi = Instantiate(hoverableIcon, minigameIcons).GetComponent<HoverIcon>();
             hi.SetData(this, game);
-            hi.GetComponent<Image>().sprite = game.thumbnail;
+
+            Image img = hi.GetComponent<Image>();
+            img.sprite = game.thumbnail;
 
             RectTransform rt = hi.GetComponent<RectTransform>();
             rt.anchoredPosition = new Vector2(next, 0);
@@ -56,12 +69,16 @@ public class PackageSelectionScript : MonoBehaviour
     }
     
     public void OnPackHovered(MinigamePack pack) {
-        Debug.Log(pack.description);
-        description.text = pack.description;
+        description.text = pack.name + "\n\t" + pack.description;
         DisplayMinigames(pack);
     }
     
     public void OnMinigameHovered(MinigameInfo minigame) {
-        description.text = minigame.description;
+        description.text = minigame.name + "\n\t" + minigame.description + "\n\n" + minigame.credits;
+    }
+    
+    public void PackToggled(MinigamePack pack) {
+        MinigameManager.instance.TogglePack(pack);
+        DisplayPacks(); // refresh packs to have no grey or not grey
     }
 }

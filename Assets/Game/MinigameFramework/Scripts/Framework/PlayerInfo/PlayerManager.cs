@@ -14,6 +14,7 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
         private static List<int> _disconnectedPlayers = new();
         public static int maxPlayers = 4;
         public static int expectedPlayers = 4; // Set by MinigameManager
+        private static int numPlayers = 0;
         public static UnityEvent<int> onPlayerConnected = new();
         public static UnityEvent<int> onPlayerDisconnected = new();
         private static string _currentActionMap = "Menu";
@@ -61,6 +62,7 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
             newPlayer.playerInput = playerInput;
             players.Add(newPlayer);
             onPlayerConnected.Invoke(newPlayer.playerIndex);
+            numPlayers++;
         }
 
         /// <summary>
@@ -73,6 +75,7 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
             _disconnectedPlayers.Add(playerIndex);
             _disconnectedPlayers.Sort();
             onPlayerDisconnected.Invoke(playerIndex);
+            numPlayers--;
         }
 
         private static void ReconnectPlayer(int playerIndex, PlayerInput playerInput) {
@@ -93,6 +96,10 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
             foreach (Player player in players) {
                 player.playerInput.SwitchCurrentActionMap("Minigame");
             }
+        }
+        
+        public static int GetNumPlayers() {
+            return numPlayers;
         }
     }
 }
