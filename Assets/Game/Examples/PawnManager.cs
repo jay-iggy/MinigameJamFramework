@@ -6,6 +6,9 @@ using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
 
 namespace Game.Examples {
+    /// <summary>
+    /// A more lightweight and practical implementation compared to ExamplePawnManager.
+    /// </summary>
     public class PawnManager : MonoBehaviour {
         // This script binds pawns to player inputs
         
