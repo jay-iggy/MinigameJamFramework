@@ -28,16 +28,6 @@ public class MinigameManager : MonoBehaviour
         PawnBindingManager.onPauseButtonPressed.AddListener(OnPauseButton);
     }
 
-    private void OnPauseButton() {
-        if(FindAnyObjectByType<PauseMenuButtons>() != null) {
-            // Already paused
-            return;
-        }
-        Time.timeScale = 0;
-        Instantiate(pauseMenuPrefab);
-        PlayerManager.SetMenuActionMap();
-    }
-
     public SceneField minigameSelectScene;
     public SceneField resultsScene;
     public SceneField mainMenuScene;
@@ -168,6 +158,15 @@ public class MinigameManager : MonoBehaviour
 
     public void GoToMainMenuScene() {
         SceneManager.LoadScene(mainMenuScene.SceneName);
+        PlayerManager.SetMenuActionMap();
+    }
+    private void OnPauseButton() {
+        if(FindAnyObjectByType<PauseMenuButtons>() != null) {
+            // Already paused
+            return;
+        }
+        Time.timeScale = 0;
+        Instantiate(pauseMenuPrefab);
         PlayerManager.SetMenuActionMap();
     }
 }
