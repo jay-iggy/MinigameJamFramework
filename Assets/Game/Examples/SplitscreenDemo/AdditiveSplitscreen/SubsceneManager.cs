@@ -11,11 +11,9 @@ public class SubsceneManager : MonoBehaviour {
     [SerializeField] SceneField parentScene; 
     [SerializeField] Pawn pawn;
     [SerializeField] Camera cam;
+    public int playerIndex = -1;
     
-
-    private int subsceneLayer=0;
-    
-    private void Start() {
+    private void OnEnable() {
         // Load parent scene if game is starting from subscene directly
         if (MinigameManager.instance == null) {
             SceneManager.LoadScene(parentScene.SceneName);
@@ -23,7 +21,6 @@ public class SubsceneManager : MonoBehaviour {
         }
         
         SetSubscenePosition();
-        SetSubsceneLayer();
         SetupSubsceneCamera();
         BindPawn();
     }
@@ -37,22 +34,14 @@ public class SubsceneManager : MonoBehaviour {
 
     private void BindPawn() {
         PawnBindingManager.BindPlayerInputToPawn(SplitscreenManager.instance.loadedPlayers, pawn);
-        pawn.GetComponent<MeshRenderer>().material = SplitscreenManager.instance.materials[SplitscreenManager.instance.loadedPlayers];
+        pawn.GetComponentInChildren<MeshRenderer>().material = SplitscreenManager.instance.materials[SplitscreenManager.instance.loadedPlayers];
+        playerIndex = SplitscreenManager.instance.loadedPlayers;
         SplitscreenManager.instance.loadedPlayers++;
     }
 
     private void SetupSubsceneCamera() {
         Vector4 camPosition = SplitscreenManager.instance.cameraPositions[SplitscreenManager.instance.loadedPlayers];
         cam.rect = new Rect(camPosition.x, camPosition.y, camPosition.z, camPosition.w);
-        cam.cullingMask = 1 << (subsceneLayer);
     }
     
-    private void SetSubsceneLayer() {
-        subsceneLayer = 6+SplitscreenManager.instance.loadedPlayers;
-        
-        // set the layer of all objects in the subscene to the subsceneLayer
-        foreach (Transform child in transform) {
-            child.gameObject.layer = subsceneLayer;
-        }
-    }
 }
