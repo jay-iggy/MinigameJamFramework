@@ -404,7 +404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1247645091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,6 +518,26 @@ MonoBehaviour:
   scene:
     m_SceneAsset: {fileID: 102900000, guid: f72492b59f4335e4e8911dee6949011c, type: 3}
     m_SceneName: DemoSubscene
+  loadedPlayers: 0
+  materials:
+  - {fileID: 2100000, guid: bf3477a0adee794419e4ba32e4b76f2e, type: 2}
+  - {fileID: 2100000, guid: 33f3b17ccf2ea4c40ab9e4ecf5d6672f, type: 2}
+  - {fileID: 2100000, guid: 418297e9efd20b14a8234b3de87681eb, type: 2}
+  - {fileID: 2100000, guid: f3bceb9c9d5a07943b5c0a3ca564832c, type: 2}
+  playerLayers:
+  - serializedVersion: 2
+    m_Bits: 64
+  - serializedVersion: 2
+    m_Bits: 128
+  - serializedVersion: 2
+    m_Bits: 256
+  - serializedVersion: 2
+    m_Bits: 512
+  cameraPositions:
+  - {x: 0, y: 0.5}
+  - {x: 0.5, y: 0.5}
+  - {x: 0, y: 0}
+  - {x: 0.5, y: 0}
 --- !u!4 &1609695534
 Transform:
   m_ObjectHideFlags: 0

@@ -1,17 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using Game.MinigameFramework.Scripts;
+using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SplitscreenManager : MonoBehaviour {
     [SerializeField] private SceneField scene;
     
-    private void Start() {
-        LoadAdditiveScene(scene.SceneName);
+    public static SplitscreenManager instance;
+    
+    public int loadedPlayers = 0;
+    
+    public List<Material> materials = new();
+
+    public Vector2[] cameraPositions =
+    {new Vector2(0, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, 0), new Vector2(0.5f, 0)};
+    
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+        } else {
+            Destroy(gameObject);
+        }
     }
     
-    
+    private void Start() {
+        PlayerManager.SetMinigameActionMap();
+        for(int i = 0; i< PlayerManager.players.Count; i++) {
+            LoadAdditiveScene(scene.SceneName);
+        }
+        
+        PlayerManager.onPlayerConnected.AddListener(OnPlayerConnected);
+    }
+
+    private void OnPlayerConnected(int playerIndex) {
+        if (playerIndex <= loadedPlayers) {
+            LoadAdditiveScene(scene.SceneName);
+        }
+    }
+
+
     public void LoadAdditiveScene(string sceneName) {
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
     }
