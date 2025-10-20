@@ -16,11 +16,11 @@ public class SubsceneManager : MonoBehaviour {
     private int subsceneLayer=0;
     
     private void Start() {
+        // Load parent scene if game is starting from subscene directly
         if (MinigameManager.instance == null) {
             SceneManager.LoadScene(parentScene.SceneName);
             return;
         }
-        
         
         SetSubscenePosition();
         SetSubsceneLayer();
