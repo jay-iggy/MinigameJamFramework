@@ -457,10 +457,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 418297e9efd20b14a8234b3de87681eb, type: 2}
   - {fileID: 2100000, guid: f3bceb9c9d5a07943b5c0a3ca564832c, type: 2}
   cameraPositions:
-  - {x: 0, y: 0.5}
-  - {x: 0.5, y: 0.5}
-  - {x: 0, y: 0}
-  - {x: 0.5, y: 0}
+  - {x: 0, y: 0.5, z: 0.5, w: 0.5}
+  - {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  - {x: 0, y: 0, z: 0.5, w: 0.5}
+  - {x: 0.5, y: 0, z: 0.5, w: 0.5}
 --- !u!4 &1609695534
 Transform:
   m_ObjectHideFlags: 0

@@ -42,8 +42,8 @@ public class SubsceneManager : MonoBehaviour {
     }
 
     private void SetupSubsceneCamera() {
-        Vector2 camPosition = SplitscreenManager.instance.cameraPositions[SplitscreenManager.instance.loadedPlayers];
-        cam.rect = new Rect(camPosition.x, camPosition.y, 0.5f, 0.5f);
+        Vector4 camPosition = SplitscreenManager.instance.cameraPositions[SplitscreenManager.instance.loadedPlayers];
+        cam.rect = new Rect(camPosition.x, camPosition.y, camPosition.z, camPosition.w);
         cam.cullingMask = 1 << (subsceneLayer);
     }
     

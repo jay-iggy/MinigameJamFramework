@@ -14,8 +14,8 @@ public class SplitscreenManager : MonoBehaviour {
     
     public List<Material> materials = new();
 
-    public Vector2[] cameraPositions =
-    {new Vector2(0, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, 0), new Vector2(0.5f, 0)};
+    public Vector4[] cameraPositions =
+    {new Vector4(0, 0.5f,0.5f,0.5f), new Vector4(0.5f, 0.5f,0.5f,0.5f), new Vector4(0, 0,0.5f,0.5f), new Vector4(0.5f, 0,0.5f,0.5f)};
     
     private void Awake() {
         if (instance == null) {
