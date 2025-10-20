@@ -225,7 +225,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 272970566}
-  - component: {fileID: 272970569}
   - component: {fileID: 272970565}
   - component: {fileID: 272970564}
   - component: {fileID: 272970568}
@@ -323,70 +322,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &272970569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 272970562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58367bb72945a3040a750b31f70ef1f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shrinkCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: -0.3955988
-      outSlope: -0.3955988
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.32936642
-    - serializedVersion: 3
-      time: 0.08963939
-      value: 0.9790159
-      inSlope: -0.43428662
-      outSlope: -0.43428662
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.6382909
-    - serializedVersion: 3
-      time: 0.85235804
-      value: 0.37244365
-      inSlope: -0.8907268
-      outSlope: -0.8907268
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.8893699
-      value: 0.27986833
-      inSlope: -0.87234354
-      outSlope: -0.87234354
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.9894409
-      value: 0.2557068
-      inSlope: -0.24144402
-      outSlope: -0.24144402
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  gameManager: {fileID: 1247645091}
 --- !u!1 &779269814
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +656,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1247645092}
-  - component: {fileID: 1247645091}
   - component: {fileID: 1247645093}
   m_Layer: 0
   m_Name: FumperFallsManager
@@ -730,20 +664,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1247645091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1247645090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dc0c71b21bf6b1479026a6682f62f84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 20
-  timer: 0
 --- !u!4 &1247645092
 Transform:
   m_ObjectHideFlags: 0
