@@ -12,13 +12,17 @@ public class SubsceneManager : MonoBehaviour {
     private int subsceneLayer=0;
     
     private void Start() {
+        SetSubscenePosition();
         SetSubsceneLayer();
         SetupSubsceneCamera();
         BindPawn();
-        // set the layer of all objects in the subscene to the subsceneLayer
-        foreach (Transform child in transform) {
-            child.gameObject.layer = subsceneLayer;
-        }
+    }
+
+
+    private void SetSubscenePosition() {
+        Vector3 subscenePosition = transform.position;
+        subscenePosition.x += 100 * SplitscreenManager.instance.loadedPlayers;
+        transform.position = subscenePosition;
     }
 
     private void BindPawn() {
@@ -35,5 +39,10 @@ public class SubsceneManager : MonoBehaviour {
     
     private void SetSubsceneLayer() {
         subsceneLayer = 6+SplitscreenManager.instance.loadedPlayers;
+        
+        // set the layer of all objects in the subscene to the subsceneLayer
+        foreach (Transform child in transform) {
+            child.gameObject.layer = subsceneLayer;
+        }
     }
 }
