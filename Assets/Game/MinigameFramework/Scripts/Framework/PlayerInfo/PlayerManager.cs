@@ -94,5 +94,15 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
                 player.playerInput.SwitchCurrentActionMap("Minigame");
             }
         }
+
+        /// <summary>
+        /// Sets the selected UI object for all players' EventSystems.
+        /// </summary>
+        /// <param name="gameObject"></param>
+        public static void SetSelectedGameObject(GameObject gameObject) {
+            foreach (Player player in players) {
+                player.SetSelectedGameObject(gameObject);
+            }
+        }
     }
 }
