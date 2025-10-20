@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 779269819}
   - component: {fileID: 779269818}
   m_Layer: 0
-  m_Name: Pawn (P1)
+  m_Name: Pawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1030,6 +1030,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c332d4b8329041a41bffb6659968daa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentScene:
+    m_SceneAsset: {fileID: 102900000, guid: 48e7c089fc4ce514ebf73f8d894f8e18, type: 3}
+    m_SceneName: AdditiveSplitscreen
   pawn: {fileID: 779269815}
   cam: {fileID: 1447818454}
 --- !u!4 &2077165827

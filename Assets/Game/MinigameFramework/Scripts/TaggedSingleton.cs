@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,12 @@ public class TaggedSingleton : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
         } else {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnDestroy() {
+        if (instances.ContainsKey(tagIdentifier) && instances[tagIdentifier] == this) {
+            instances.Remove(tagIdentifier);
         }
     }
 }

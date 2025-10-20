@@ -1,17 +1,27 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.MinigameFramework.Scripts;
 using Game.MinigameFramework.Scripts.Framework;
 using Game.MinigameFramework.Scripts.Framework.Input;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SubsceneManager : MonoBehaviour {
+    [SerializeField] SceneField parentScene; 
     [SerializeField] Pawn pawn;
     [SerializeField] Camera cam;
+    
 
     private int subsceneLayer=0;
     
     private void Start() {
+        if (MinigameManager.instance == null) {
+            SceneManager.LoadScene(parentScene.SceneName);
+            return;
+        }
+        
+        
         SetSubscenePosition();
         SetSubsceneLayer();
         SetupSubsceneCamera();
