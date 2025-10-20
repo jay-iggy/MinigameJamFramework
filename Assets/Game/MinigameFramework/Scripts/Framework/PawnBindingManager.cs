@@ -4,6 +4,7 @@ using System.Linq;
 using Game.MinigameFramework.Scripts.Framework.Input;
 using Game.MinigameFramework.Scripts.Framework.Minigames;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace Game.MinigameFramework.Scripts.Framework {
@@ -12,6 +13,7 @@ namespace Game.MinigameFramework.Scripts.Framework {
         /// List of pawns that are currently bound to PlayerInputs. When unbinding pawns, iterate through this list and call UnbindPlayerInputFromPawn on each pawn.
         /// </summary>
         private static List<Pawn> _boundPawns = new();
+        public static UnityEvent onPauseButtonPressed = new();
         
 
         #region Bind and Unbind PlayerInputs to Pawns
@@ -30,6 +32,8 @@ namespace Game.MinigameFramework.Scripts.Framework {
 
             playerInput.currentActionMap.actionTriggered += pawn.HandleActionPressed;
             playerInput.currentActionMap.actionTriggered += pawn.HandleActionReleased;
+            
+            playerInput.currentActionMap.actionTriggered += HandlePauseButton;
             
             // Add to list of bound pawns so that it can later be unbound
             pawn.playerIndex = playerIndex;
@@ -53,6 +57,7 @@ namespace Game.MinigameFramework.Scripts.Framework {
             if (playerInput != null) {
                 playerInput.currentActionMap.actionTriggered -= pawn.HandleActionPressed;
                 playerInput.currentActionMap.actionTriggered -= pawn.HandleActionReleased;
+                playerInput.currentActionMap.actionTriggered -= HandlePauseButton;
             }
 
             // Remove pawn from list of bound pawns and remove its playerIndex
@@ -66,5 +71,13 @@ namespace Game.MinigameFramework.Scripts.Framework {
             }
         }
         #endregion
+        
+        private static void HandlePauseButton(InputAction.CallbackContext context) {
+            if (context.action.WasPerformedThisFrame()) {
+                if(context.action.name == "Menu") {
+                    onPauseButtonPressed.Invoke();
+                }
+            }
+        }
     }
 }
