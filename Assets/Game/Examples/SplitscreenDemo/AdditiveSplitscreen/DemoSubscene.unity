@@ -1260,7 +1260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 204865956}
   drillHeight: 0.2
-  distancePerSegment: 0.25
+  distancePerSegment: 0.5
   subsceneManager: {fileID: 2077165826}
   lineColor:
   - {r: 0.3075471, g: 0.40879077, b: 1, a: 1}
