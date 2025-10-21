@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 1609695534}
   - component: {fileID: 1609695533}
   m_Layer: 0
-  m_Name: LoadSubscenes
+  m_Name: SplitscreenManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -17,6 +17,7 @@ MonoBehaviour:
   scene:
     m_SceneAsset: {fileID: 102900000, guid: 48e7c089fc4ce514ebf73f8d894f8e18, type: 3}
     m_SceneName: SubsceneSplitscreen
+  minimumPlayers: 1
   description: 
   controls: Left Stick - Draw
   credits: Created by Jay Ignatowski
