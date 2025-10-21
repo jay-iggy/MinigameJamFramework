@@ -8,18 +8,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SubsceneManager : MonoBehaviour {
-    [SerializeField] SceneField parentScene; 
     [SerializeField] Pawn pawn;
     [SerializeField] Camera cam;
     public int playerIndex = -1;
     
     private void OnEnable() {
-        // Load parent scene if game is starting from subscene directly
-        if (MinigameManager.instance == null) {
-            SceneManager.LoadScene(parentScene.SceneName);
-            return;
-        }
-        
         SetSubscenePosition();
         SetupSubsceneCamera();
         BindPawn();

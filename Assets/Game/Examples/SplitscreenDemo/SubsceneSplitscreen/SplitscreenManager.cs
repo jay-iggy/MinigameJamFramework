@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SplitscreenManager : MonoBehaviour {
-    [SerializeField] private SceneField scene;
+    [SerializeField] private GameObject subscenePrefab;
     
     public static SplitscreenManager instance;
     
@@ -28,7 +28,7 @@ public class SplitscreenManager : MonoBehaviour {
     private void Start() {
         PlayerManager.SetMinigameActionMap();
         for(int i = 0; i< PlayerManager.players.Count; i++) {
-            LoadAdditiveScene(scene.SceneName);
+            Instantiate(subscenePrefab);
         }
         
         PlayerManager.onPlayerConnected.AddListener(OnPlayerConnected);
@@ -36,7 +36,7 @@ public class SplitscreenManager : MonoBehaviour {
 
     private void OnPlayerConnected(int playerIndex) {
         if (playerIndex <= loadedPlayers) {
-            LoadAdditiveScene(scene.SceneName);
+            Instantiate(subscenePrefab);
         }
     }
 
