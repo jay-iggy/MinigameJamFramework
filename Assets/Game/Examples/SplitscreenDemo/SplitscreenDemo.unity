@@ -1303,7 +1303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pawns:
-  - {fileID: 0}
+  - {fileID: 779269815}
   - {fileID: 480543068}
   - {fileID: 1466828603}
   - {fileID: 423871328}
