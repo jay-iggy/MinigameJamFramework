@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Snowfort
   m_EditorClassIdentifier: 
   minigameName: Snow Fort
-  minigameType: 1
+  thumbnail: {fileID: 21300000, guid: 0d17b17af1d1c3f4a9f38990880e05ae, type: 3}
   scene:
     m_SceneAsset: {fileID: 102900000, guid: fedfb322f2c90e44d88554e09d96bdbb, type: 3}
     m_SceneName: SnowFort
+  minimumPlayers: 1
   description: Build your snow fort and destroy the opponent's core. All players
     start with an invincible cannon, snow blocks, and a window (which blocks opponent
     fire but not yours). Build the fort, then use your cannons to get 3 hits on your
@@ -30,3 +31,5 @@ MonoBehaviour:
 
     North & East Buttons: Scroll between objects
     and cannons'
+  credits: 
+  attributions: 

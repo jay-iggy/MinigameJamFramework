@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Icebreaker
   m_EditorClassIdentifier: 
   minigameName: Icebreaker
-  minigameType: 0
+  thumbnail: {fileID: 21300000, guid: 5f77a3351c967b345852fd9cc93ce051, type: 3}
   scene:
     m_SceneAsset: {fileID: 102900000, guid: cdc3fe1b13e924248ae280a902e08035, type: 3}
     m_SceneName: Icebreaker
+  minimumPlayers: 1
   description: 'Collapse the ice and knock the other players into the pond.
 
     Be
@@ -24,3 +25,5 @@ MonoBehaviour:
   controls: 'Left Stick - Move
 
     A - Use Hammer'
+  credits: 
+  attributions: 
