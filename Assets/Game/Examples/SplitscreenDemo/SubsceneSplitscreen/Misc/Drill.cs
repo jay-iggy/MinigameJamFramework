@@ -8,7 +8,7 @@ namespace Examples.Splitscreen.TrumbusTrace {
 
         [SerializeField] float drillHeight = 0f;
         [SerializeField] float distancePerSegment = 0.5f;
-        private Vector3 lastPosition;
+        private Vector3 _lastPosition;
 
         [SerializeField] SubsceneManager subsceneManager;
 
@@ -22,9 +22,9 @@ namespace Examples.Splitscreen.TrumbusTrace {
         }
 
         void Update() {
-            if (Vector3.Distance(lastPosition, transform.position) >= distancePerSegment) {
+            if (Vector3.Distance(_lastPosition, transform.position) >= distancePerSegment) {
                 AddNewPoint(new Vector2(transform.position.x, transform.position.z));
-                lastPosition = transform.position;
+                _lastPosition = transform.position;
             }
         }
 
