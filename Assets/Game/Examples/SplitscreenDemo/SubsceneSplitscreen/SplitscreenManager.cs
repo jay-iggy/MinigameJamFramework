@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.MinigameFramework.Scripts;
@@ -10,12 +11,11 @@ public class SplitscreenManager : MonoBehaviour {
     
     public static SplitscreenManager instance;
     
-    public int loadedPlayers = 0;
+    [HideInInspector] public int loadedPlayers = 0;
     
     public List<Material> materials = new();
-
-    public Vector4[] cameraPositions =
-    {new Vector4(0, 0.5f,0.5f,0.5f), new Vector4(0.5f, 0.5f,0.5f,0.5f), new Vector4(0, 0,0.5f,0.5f), new Vector4(0.5f, 0,0.5f,0.5f)};
+    
+    public CameraRect[] cameraRect = {new CameraRect(0,0.5f), new CameraRect(0.5f,0.5f), new CameraRect(0,0), new CameraRect(0.5f,0)};
     
     private void Awake() {
         if (instance == null) {
@@ -44,5 +44,21 @@ public class SplitscreenManager : MonoBehaviour {
     public void LoadAdditiveScene(string sceneName) {
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
     }
-    
+
+
+    [Serializable]
+    public class CameraRect {
+        public float x,y,width=0.5f,height=0.5f;
+        public CameraRect(float x, float y, float width, float height) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+        }
+
+        public CameraRect(float x, float y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
 }
