@@ -84,8 +84,6 @@ public class MenuScript : MonoBehaviour {
     }
 
     private void OnAllPlayersConnected() {
-        foreach(MultiplayerEventSystem eventSystem in FindObjectsOfType<MultiplayerEventSystem>()) {
-            eventSystem.SetSelectedGameObject(startButton.gameObject);
-        }
+        PlayerManager.SetSelectedGameObject(startButton.gameObject);
     }
 }

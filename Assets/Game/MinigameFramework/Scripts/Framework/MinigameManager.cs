@@ -2,11 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.MinigameFramework.Scripts;
+using Game.MinigameFramework.Scripts.Framework;
 using Game.MinigameFramework.Scripts.Framework.Minigames;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class MinigameManager : MonoBehaviour
 {
@@ -24,12 +24,15 @@ public class MinigameManager : MonoBehaviour
     }
 
     private void Start() {
+        PawnBindingManager.onPauseButtonPressed.AddListener(OnPauseButton);
         DetermineFewestPlayers();
         // game list is populated when game started or when runs out
     }
 
     public SceneField minigameSelectScene;
     public SceneField resultsScene;
+    public SceneField mainMenuScene;
+    public PauseMenuButtons pauseMenuPrefab;
     
     [Header("Points")]
     public int pointsToWin = 20;
@@ -187,6 +190,20 @@ public class MinigameManager : MonoBehaviour
         public void SetRank(int playerIndex, int rank) {
             playerRanks[playerIndex] = rank;
         }
+    }
+
+    public void GoToMainMenuScene() {
+        SceneManager.LoadScene(mainMenuScene.SceneName);
+        PlayerManager.SetMenuActionMap();
+    }
+    private void OnPauseButton() {
+        if(FindAnyObjectByType<PauseMenuButtons>() != null) {
+            // Already paused
+            return;
+        }
+        Time.timeScale = 0;
+        Instantiate(pauseMenuPrefab);
+        PlayerManager.SetMenuActionMap();
     }
     
     public List<Sprite> GetPackageSprites() {

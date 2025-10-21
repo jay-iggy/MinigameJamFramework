@@ -50,6 +50,10 @@ MonoBehaviour:
   resultsScene:
     m_SceneAsset: {fileID: 102900000, guid: 3e0c1ba0862727843949a8a80a7397be, type: 3}
     m_SceneName: Results
+  mainMenuScene:
+    m_SceneAsset: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
+    m_SceneName: Menu
+  pauseMenuPrefab: {fileID: 3504353041096618389, guid: bee38f01a930bff45a56f5cb0d9b88ec, type: 3}
   pointsToWin: 20
   pointsForFirstPlace: 4
   pointsForSecondPlace: 2
