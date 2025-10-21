@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65074faa8a836848ae4203c738fad3b, type: 3}
   m_Name: TrumbusTrace
   m_EditorClassIdentifier: 
-  minigameName: TrumbusTrace
+  minigameName: Trumbus Trace
   thumbnail: {fileID: 0}
   scene:
     m_SceneAsset: {fileID: 102900000, guid: 48e7c089fc4ce514ebf73f8d894f8e18, type: 3}
