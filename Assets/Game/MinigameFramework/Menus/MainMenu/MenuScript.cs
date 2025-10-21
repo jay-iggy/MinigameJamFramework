@@ -1,19 +1,31 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.MinigameFramework.Scripts;
 using Game.MinigameFramework.Scripts.Framework.Input;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour {
     [SerializeField] Button startButton;
-    [SerializeField] bool enforcePlayerCount = true;
+    [SerializeField] RectTransform packageIcons;
+    public GameObject packageIconPrefab;
+    public SceneField packSelectScene;
+
+    // Enforce Player Count replaced by context from MinigamePacks listed under MinigameManager
+    // [SerializeField] bool enforcePlayerCount = true;
     
     public void NextMinigame() {
+        MinigameManager.instance.PopulateMinigameList(); // populate list right before the rounds start
         MinigameManager.instance.GoToMinigameSelectScene();
+    }
+    
+    public void ChangePacks() {
+        SceneManager.LoadScene(packSelectScene.SceneName);
     }
 
     private void OnEnable() {
@@ -35,26 +47,40 @@ public class MenuScript : MonoBehaviour {
             }
         }
 
-        if (PlayerManager.AreAllPlayersConnected()) {
+        if (PlayerManager.AreAllPlayersConnected())
+        {
             OnAllPlayersConnected();
+        }
+
+        // display selected icons
+        float next = 0f;
+        float gap = 12.5f;
+        foreach (Sprite spr in MinigameManager.instance.GetPackageSprites()) {
+            RectTransform icon = Instantiate(packageIconPrefab, packageIcons).GetComponent<RectTransform>();
+
+            Image img = icon.GetComponent<Image>();
+            img.sprite = spr;
+
+            icon.anchoredPosition = new Vector2(icon.anchoredPosition.x, next);
+            next += icon.rect.height + gap;
         }
     }
 
-    public void Update() {
-        if(enforcePlayerCount) {
-            startButton.interactable = PlayerManager.AreAllPlayersConnected();
-        } else {
-            startButton.interactable = true;
-        }
+
+    // unlocks button as needed, called when player connects or disconnects
+    public void CheckUnlockButton() {
+        startButton.interactable = PlayerManager.AreAllPlayersConnected();
     }
     
     [SerializeField] List<PlayerSlotUI> playerSlots = new List<PlayerSlotUI>();
     
     public void OnPlayerConnected(int playerIndex) {
         playerSlots[playerIndex].SetStatus(true);
+        CheckUnlockButton();
     }
     public void OnPlayerDisconnected(int playerIndex) {
         playerSlots[playerIndex].SetStatus(false);
+        CheckUnlockButton();
     }
 
     private void OnAllPlayersConnected() {
