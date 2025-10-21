@@ -106,7 +106,8 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
             foreach (Player player in players) {
                 player.SetSelectedGameObject(gameObject);
             }
-        
+        }
+
         public static int GetNumPlayers() {
             return numPlayers;
         }
