@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.UI;
 
 namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
     /// <summary>
@@ -16,5 +18,16 @@ namespace Game.MinigameFramework.Scripts.Framework.PlayerInfo {
         public int points = 0;
         public Color color;
         public bool isDummy = false;
+        
+        /// <summary>
+        /// Sets the selected UI object for this player's EventSystem.
+        /// </summary>
+        /// <param name="gameObject"></param>
+        public void SetSelectedGameObject(GameObject gameObject) {
+            if (playerInput == null) return;
+            EventSystem eventSystem = playerInput.GetComponent<EventSystem>();
+            if (eventSystem == null) return;
+            eventSystem.SetSelectedGameObject(gameObject);
+        }
     }
 }

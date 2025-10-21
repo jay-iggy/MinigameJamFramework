@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: SnowFight
   m_EditorClassIdentifier: 
   minigameName: Snow Fight
-  minigameType: 0
+  thumbnail: {fileID: 21300000, guid: 392cfdc3ff8595d4b9fee572b65dc10e, type: 3}
   scene:
     m_SceneAsset: {fileID: 102900000, guid: d9991922a229b594886283ae79b74be2, type: 3}
     m_SceneName: SnowFight
+  minimumPlayers: 1
   description: 'Throw snowballs to eliminate each other
 
     Be the last player to
@@ -28,3 +29,5 @@ MonoBehaviour:
     RT or RB - Throw Snowballs
 
 '
+  credits: 
+  attributions: 

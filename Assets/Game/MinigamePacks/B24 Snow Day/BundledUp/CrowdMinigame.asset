@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: CrowdMinigame
   m_EditorClassIdentifier: 
   minigameName: Bundled Up
-  thumbnail: {fileID: 0}
+  thumbnail: {fileID: 21300000, guid: cd75be56dc52be14f820bd1033bfd9d6, type: 3}
   scene:
     m_SceneAsset: {fileID: 102900000, guid: 7e6182b6a55fee346833cab45c416a31, type: 3}
     m_SceneName: CrowdMinigame
+  minimumPlayers: 1
   description: 'Be first to find who you are in a crowd and hide while trying to
     find others.
 
