@@ -2,11 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.MinigameFramework.Scripts;
+using Game.MinigameFramework.Scripts.Framework;
 using Game.MinigameFramework.Scripts.Framework.Minigames;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class MinigameManager : MonoBehaviour
 {
@@ -24,11 +24,15 @@ public class MinigameManager : MonoBehaviour
     }
 
     private void Start() {
-        PopulateMinigameList();
+        PawnBindingManager.onPauseButtonPressed.AddListener(OnPauseButton);
+        DetermineFewestPlayers();
+        // game list is populated when game started or when runs out
     }
 
     public SceneField minigameSelectScene;
     public SceneField resultsScene;
+    public SceneField mainMenuScene;
+    public PauseMenuButtons pauseMenuPrefab;
     
     [Header("Points")]
     public int pointsToWin = 20;
@@ -46,15 +50,40 @@ public class MinigameManager : MonoBehaviour
         int randomIndex = UnityEngine.Random.Range(0, minigames.Count);
         LoadMinigame(minigames[randomIndex]);
     }*/
+
+    // Sets expectedPlayers in PlayerManager
+    // Called on start and when minigamePacks is updated
+    public void DetermineFewestPlayers() {
+        int min = PlayerManager.maxPlayers + 1; // could never occur
+
+        // account for if debugMinigame assigned
+        if (debugMinigame != null) {
+            min = Mathf.Min(min, debugMinigame.minimumPlayers);
+        } else {
+            // otherwise, set min to the least restrictive value
+            foreach(MinigamePack pack in minigamePacks) {
+                foreach(MinigameInfo minigame in pack.minigames) {
+                    min = Mathf.Min(min, minigame.minimumPlayers);
+                }
+            }
+        }
+
+        PlayerManager.expectedPlayers = min;
+    }
     
     public void PopulateMinigameList() {
         minigames = new List<MinigameInfo>();
+
         if (debugMinigame != null) {
             minigames.Add(debugMinigame);
         }
         else {
             foreach(MinigamePack pack in minigamePacks) {
-                minigames.AddRange(pack.minigames);
+                foreach(MinigameInfo minigame in pack.minigames) {
+                    if (minigame.minimumPlayers <= PlayerManager.GetNumPlayers()) {
+                        minigames.Add(minigame);
+                    }
+                }
             }
         }
     }
@@ -73,6 +102,16 @@ public class MinigameManager : MonoBehaviour
     public void LoadMinigame(MinigameInfo minigame) {
         SceneManager.LoadScene(minigame.scene.SceneName);
         PlayerManager.SetMinigameActionMap();
+    }
+    
+    public bool PackIsOn(MinigamePack pack) {
+        return minigamePacks.Contains(pack);
+    }
+    
+    public void TogglePack(MinigamePack pack) {
+        if (!PackIsOn(pack)) minigamePacks.Add(pack);
+        else minigamePacks.Remove(pack);
+        DetermineFewestPlayers();
     }
     
     
@@ -151,6 +190,34 @@ public class MinigameManager : MonoBehaviour
         public void SetRank(int playerIndex, int rank) {
             playerRanks[playerIndex] = rank;
         }
+    }
+
+    public void GoToMainMenuScene() {
+        SceneManager.LoadScene(mainMenuScene.SceneName);
+        PlayerManager.SetMenuActionMap();
+    }
+    private void OnPauseButton() {
+        if(FindAnyObjectByType<PauseMenuButtons>() != null) {
+            // Already paused
+            return;
+        }
+        Time.timeScale = 0;
+        Instantiate(pauseMenuPrefab);
+        PlayerManager.SetMenuActionMap();
+    }
+    
+    public List<Sprite> GetPackageSprites() {
+        // if debugMinigame, just return its sprite
+        // otherwise return the pack thumbnails for each selected pack
+        List<Sprite> sprites = new List<Sprite>();
+        if (debugMinigame != null) {
+            sprites.Add(debugMinigame.thumbnail);
+        } else {
+            foreach(MinigamePack pack in minigamePacks) {
+                sprites.Add(pack.icon);
+            }
+        }
+        return sprites;
     }
     
 }

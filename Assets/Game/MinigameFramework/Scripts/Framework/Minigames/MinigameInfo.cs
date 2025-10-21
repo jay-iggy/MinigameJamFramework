@@ -7,6 +7,7 @@ namespace Game.MinigameFramework.Scripts.Framework.Minigames {
         public Sprite thumbnail;
         [Tooltip("If you change the name of the scene in the project, you must update this field to refresh internal values.")]
         [SerializeField] public SceneField scene;
+        [Tooltip("Fewest players needed to be connected for game to not crash/softlock"), Range(1,4)] public int minimumPlayers;
         [TextArea] public string description;
         [TextArea] public string controls;
         [Header("Credits")]
