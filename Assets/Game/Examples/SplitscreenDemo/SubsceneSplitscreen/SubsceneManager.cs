@@ -9,35 +9,35 @@ using UnityEngine.SceneManagement;
 
 namespace Examples.Splitscreen {
     public class SubsceneManager : MonoBehaviour {
-        [SerializeField] Pawn pawn;
+        public Pawn pawn;
         [SerializeField] Camera cam;
         public int playerIndex = -1;
+        
+        private SplitscreenManager _superManager;
 
-        private void OnEnable() {
+        private void Awake() {
+            _superManager = SplitscreenManager.instance;
+            playerIndex = _superManager.loadedSubscenes.Count;
+            _superManager.loadedSubscenes.Add(this);
             SetSubscenePosition();
             SetupSubsceneCamera();
             BindPawn();
         }
 
-
+        /// <summary>
+        ///  Sets the position of the subscene to avoid overlapping with other subscenes.
+        /// </summary>
         private void SetSubscenePosition() {
             Vector3 subscenePosition = transform.position;
-            subscenePosition.x += 100 * SplitscreenManager.instance.loadedPlayers;
+            subscenePosition.x += 100 * playerIndex;
             transform.position = subscenePosition;
         }
-
-        private void BindPawn() {
-            PawnBindingManager.BindPlayerInputToPawn(SplitscreenManager.instance.loadedPlayers, pawn);
-            pawn.GetComponentInChildren<MeshRenderer>().material =
-                SplitscreenManager.instance.materials[SplitscreenManager.instance.loadedPlayers];
-            playerIndex = SplitscreenManager.instance.loadedPlayers;
-            SplitscreenManager.instance.loadedPlayers++;
-        }
-
         private void SetupSubsceneCamera() {
-            SplitscreenManager.CameraRect camRect =
-                SplitscreenManager.instance.cameraRect[SplitscreenManager.instance.loadedPlayers];
-            cam.rect = new Rect(camRect.x, camRect.y, camRect.width, camRect.height);
+            cam.rect = _superManager.cameraRect[playerIndex];
+        }
+        private void BindPawn() {
+            PawnBindingManager.BindPlayerInputToPawn(playerIndex, pawn);
+            pawn.GetComponentInChildren<MeshRenderer>().material = SplitscreenManager.instance.materials[playerIndex];
         }
 
     }

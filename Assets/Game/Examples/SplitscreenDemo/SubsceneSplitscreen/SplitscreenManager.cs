@@ -1,24 +1,24 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Game.MinigameFramework.Scripts;
+using Game.MinigameFramework.Scripts.Framework;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace Examples.Splitscreen {
     public class SplitscreenManager : MonoBehaviour {
-        [SerializeField] private GameObject subscenePrefab;
-
-        public static SplitscreenManager instance;
-
-        [HideInInspector] public int loadedPlayers = 0;
+        [SerializeField] private SubsceneManager subscenePrefab;
+        [HideInInspector] public List<SubsceneManager> loadedSubscenes;
 
         public List<Material> materials = new();
 
-        public CameraRect[] cameraRect =
-        { new CameraRect(0, 0.5f), new CameraRect(0.5f, 0.5f), new CameraRect(0, 0), new CameraRect(0.5f, 0) };
-
+        // Define splitscreen camera viewports
+        public Rect[] cameraRect =
+        { new Rect(0, 0.5f,0.5f,0.5f), new Rect(0.5f, 0.5f,0.5f,0.5f), new Rect(0, 0,0.5f,0.5f), new Rect(0.5f, 0,0.5f,0.5f) };
+        
+        // Singleton instance allows subscenes to access this manager
+        public static SplitscreenManager instance;
         private void Awake() {
             if (instance == null) {
                 instance = this;
@@ -30,39 +30,23 @@ namespace Examples.Splitscreen {
 
         private void Start() {
             PlayerManager.SetMinigameActionMap();
+            
+            // Instantiate subscenes for already connected players
             for (int i = 0; i < PlayerManager.players.Count; i++) {
                 Instantiate(subscenePrefab);
             }
-
+            // Listen for new player connections
             PlayerManager.onPlayerConnected.AddListener(OnPlayerConnected);
         }
 
         private void OnPlayerConnected(int playerIndex) {
-            if (playerIndex <= loadedPlayers) {
+            // Create new subscene for newly connected player
+            if (playerIndex == loadedSubscenes.Count) {
                 Instantiate(subscenePrefab);
             }
-        }
-
-
-        public void LoadAdditiveScene(string sceneName) {
-            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
-        }
-
-
-        [Serializable]
-        public class CameraRect {
-            public float x, y, width = 0.5f, height = 0.5f;
-
-            public CameraRect(float x, float y, float width, float height) {
-                this.x = x;
-                this.y = y;
-                this.width = width;
-                this.height = height;
-            }
-
-            public CameraRect(float x, float y) {
-                this.x = x;
-                this.y = y;
+            // Reconnect player to existing subscene
+            else if (playerIndex < loadedSubscenes.Count && loadedSubscenes[playerIndex] != null) {
+                PawnBindingManager.BindPlayerInputToPawn(playerIndex, loadedSubscenes[playerIndex].pawn);
             }
         }
     }
