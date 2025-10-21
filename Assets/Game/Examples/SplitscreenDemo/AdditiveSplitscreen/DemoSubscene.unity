@@ -740,7 +740,7 @@ Transform:
   m_GameObject: {fileID: 779269814}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 1.61, z: 2.53}
+  m_LocalPosition: {x: -0.18, y: 1.61, z: 2.82}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -826,7 +826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 204865956}
   drillHeight: 0.2
-  distancePerSegment: 0.5
+  distancePerSegment: 0.25
   subsceneManager: {fileID: 2077165826}
   lineColor:
   - {r: 0.3075471, g: 0.40879077, b: 1, a: 1}
@@ -843,6 +843,7 @@ GameObject:
   m_Component:
   - component: {fileID: 871102181}
   - component: {fileID: 871102180}
+  - component: {fileID: 871102182}
   m_Layer: 0
   m_Name: Stencil
   m_TagString: Untagged
@@ -910,13 +911,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871102179}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0.42}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.000000010293461, y: 0, z: -0.42}
   m_LocalScale: {x: 2.3648138, y: 2.3648138, z: 2.3648138}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2077165827}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &871102182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871102179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e99b08ed2b18824ea74a8e6243b5ec9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleRotations:
+  - -15
+  - 22
+  - 194
+  - -15
+  - -60
+  - 25
+  - -236.9
+  - 0
 --- !u!1 &951078558
 GameObject:
   m_ObjectHideFlags: 0
