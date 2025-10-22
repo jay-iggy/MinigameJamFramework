@@ -141,6 +141,11 @@ public class MinigameManager : MonoBehaviour
                 return 0;
         }
     }
+    public void ResetPoints() {
+        foreach(Player player in PlayerManager.players) {
+            player.points = 0;
+        }
+    }
     
     public class Ranking {
         public List<int> playerRanks = new(4); // index in list is playerIndex, value is rank
@@ -191,6 +196,8 @@ public class MinigameManager : MonoBehaviour
             playerRanks[playerIndex] = rank;
         }
     }
+    
+    
 
     public void GoToMainMenuScene() {
         SceneManager.LoadScene(mainMenuScene.SceneName);

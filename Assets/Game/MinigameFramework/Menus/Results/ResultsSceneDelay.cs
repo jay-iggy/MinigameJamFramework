@@ -14,9 +14,7 @@ public class ResultsSceneDelay : MonoBehaviour {
     IEnumerator Start() {
         yield return new WaitForSeconds(delay);
         if (HasPlayerWon()) {
-            foreach (Player player in PlayerManager.players) {
-                player.points = 0;
-            }
+            MinigameManager.instance.ResetPoints();
             MinigameManager.instance.PopulateMinigameList();
             SceneManager.LoadScene(victoryScene.SceneName);
         }

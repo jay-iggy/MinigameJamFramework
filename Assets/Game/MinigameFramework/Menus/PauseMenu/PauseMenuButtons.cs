@@ -28,5 +28,6 @@ public class PauseMenuButtons : MonoBehaviour {
         Time.timeScale = 1;
         Destroy(gameObject);
         MinigameManager.instance.GoToMainMenuScene();
+        MinigameManager.instance.ResetPoints();
     }
 }
