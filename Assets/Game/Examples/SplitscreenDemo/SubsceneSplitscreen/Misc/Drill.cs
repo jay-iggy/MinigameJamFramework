@@ -19,6 +19,7 @@ namespace Examples.Splitscreen.TrumbusTrace {
             Color color = lineColor[subsceneManager.playerIndex];
             lineRenderer.startColor = color;
             lineRenderer.endColor = color;
+            _lastPosition = transform.position;
         }
 
         void Update() {
