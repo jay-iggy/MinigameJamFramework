@@ -63,6 +63,8 @@ public class TrumbusTraceManager : MonoBehaviour {
         yield return new WaitForSeconds(1.5f);
         _endText.SetActive(false);
         
+        _timerBackground.gameObject.SetActive(false);
+        
         // end of minigame logic would go here
     }
     
