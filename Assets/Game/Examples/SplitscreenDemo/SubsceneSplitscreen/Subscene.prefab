@@ -2043,8 +2043,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: -1
   speed: 2
-  sprintMultiplier: 1.4
-  jumpForce: 20
+  sprintMultiplier: 1
+  jumpForce: 0
   gravity: -50
 --- !u!114 &8614920901020622949
 MonoBehaviour:
