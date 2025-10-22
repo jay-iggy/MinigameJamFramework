@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.MinigameFramework.Scripts.Framework.Input;
@@ -9,6 +10,16 @@ using UnityEngine.UI;
 
 public class TrumbusTraceManager : MonoBehaviour {
     
+    public static TrumbusTraceManager instance;
+
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+        } else {
+            Destroy(gameObject);
+        }
+    }
+
     [SerializeField] GameObject _startText;
     [SerializeField] GameObject _endText;
     [SerializeField] TextMeshProUGUI _timerText;
@@ -59,13 +70,15 @@ public class TrumbusTraceManager : MonoBehaviour {
         foreach (PlayerInput playerInput in PlayerManager.GetConnectedPlayerInputs()) {
             playerInput.currentActionMap.Disable();
         }
+        _timerBackground.gameObject.SetActive(false);
         _endText.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         _endText.SetActive(false);
         
-        _timerBackground.gameObject.SetActive(false);
         
-        // end of minigame logic would go here
+        // end of minigame logic here
+        
+        
     }
     
     private void HandlePlayerJoined(int playerIndex) {
