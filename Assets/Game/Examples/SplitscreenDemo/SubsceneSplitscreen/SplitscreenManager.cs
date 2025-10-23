@@ -11,8 +11,6 @@ namespace Examples.Splitscreen {
         [SerializeField] private SubsceneManager subscenePrefab;
         [HideInInspector] public List<SubsceneManager> loadedSubscenes;
 
-        public List<Material> materials = new();
-
         // Define splitscreen camera viewports
         public Rect[] cameraRect =
         { new Rect(0, 0.5f,0.5f,0.5f), new Rect(0.5f, 0.5f,0.5f,0.5f), new Rect(0, 0,0.5f,0.5f), new Rect(0.5f, 0,0.5f,0.5f) };

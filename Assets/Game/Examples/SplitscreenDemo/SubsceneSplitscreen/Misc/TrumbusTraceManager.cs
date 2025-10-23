@@ -37,13 +37,16 @@ public class TrumbusTraceManager : MonoBehaviour {
     }
     
     IEnumerator StartRoutine() {
+        // Disable player inputs during start countdown
         foreach (PlayerInput playerInput in PlayerManager.GetConnectedPlayerInputs()) {
             playerInput.currentActionMap.Disable();
         }
+        // Start countdown
         yield return new WaitForSeconds(0.5f);
         _startText.SetActive(true);
         yield return new WaitForSeconds(1f);
         _startText.SetActive(false);
+        // Enable player inputs and start timer
         _hasStarted = true;
         foreach (PlayerInput playerInput in PlayerManager.GetConnectedPlayerInputs()) {
             playerInput.currentActionMap.Enable();
@@ -54,39 +57,48 @@ public class TrumbusTraceManager : MonoBehaviour {
     IEnumerator TimerRoutine() {
         float timeLeft = _duration;
         while (timeLeft > 0) {
+            // Update timer text
             _timerText.text = Mathf.CeilToInt(timeLeft).ToString();
             yield return new WaitForSeconds(1f);
             timeLeft -= 1f;
-            
+            // Change timer background color right before time runs out
             if (timeLeft <= _warningTime && _timerBackground.color != _timerWarningColor) {
                 _timerBackground.color = _timerWarningColor;
             }
         }
         _timerText.text = "0";
-        
         StartCoroutine(EndRoutine());
     }
 
     IEnumerator EndRoutine() {
+        // Disable player inputs
         foreach (PlayerInput playerInput in PlayerManager.GetConnectedPlayerInputs()) {
             playerInput.currentActionMap.Disable();
         }
+        // Show end text
         _timerBackground.gameObject.SetActive(false);
         _endText.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         _endText.SetActive(false);
-
+        // Calculate player scores
+        List<float> scores = new();
         foreach (TraceSubscene subscene in subscenes) {
             float score = subscene.CalculateAndDisplayScore();
-            Debug.Log($"Player {subscene.playerIndex + 1} Score: {score}");
+            scores.Add(score);
+            subscene.StartCoroutine(subscene.AnimateScoreText(score));
         }
+        // Determine rankings
+        MinigameManager.Ranking ranking = new();
+        
+        yield return new WaitForSeconds(6f);
+        MinigameManager.instance.EndMinigame(ranking);
     }
     
     private void HandlePlayerJoined(int playerIndex) {
+        // Disable input for newly joined players if the minigame hasn't started
         if (!_hasStarted) {
             PlayerInput playerInput = PlayerManager.players[playerIndex].playerInput;
             playerInput.currentActionMap.Disable();
         }
     }
-    
 }

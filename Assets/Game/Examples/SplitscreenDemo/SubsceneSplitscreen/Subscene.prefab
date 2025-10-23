@@ -1885,6 +1885,17 @@ MonoBehaviour:
   subsceneManager: {fileID: 4640466907586981073}
   scoreText: {fileID: 869938551791676550}
   stencil: {fileID: 4517801915781781941}
+  playerColorRenderer: {fileID: 5501719138788299122}
+  materials:
+  - {fileID: 2100000, guid: bf3477a0adee794419e4ba32e4b76f2e, type: 2}
+  - {fileID: 2100000, guid: 33f3b17ccf2ea4c40ab9e4ecf5d6672f, type: 2}
+  - {fileID: 2100000, guid: 418297e9efd20b14a8234b3de87681eb, type: 2}
+  - {fileID: 2100000, guid: f3bceb9c9d5a07943b5c0a3ca564832c, type: 2}
+  textColors:
+  - {r: 0.5411765, g: 0.73333335, b: 1, a: 1}
+  - {r: 1, g: 0.5411765, b: 0.5529412, a: 1}
+  - {r: 0.6117647, g: 1, b: 0.5411765, a: 1}
+  - {r: 1, g: 0.76862746, b: 0.4392157, a: 1}
 --- !u!1 &6060873974581156653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2541,7 +2552,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.8, y: -19.18}
+  m_AnchoredPosition: {x: 8.83, y: -19.18}
   m_SizeDelta: {x: 0, y: 143.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4156473286036807898
@@ -2582,7 +2593,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294949770
-  m_fontColor: {r: 0.5415094, g: 0.7329203, b: 1, a: 1}
+  m_fontColor: {r: 0.5411765, g: 0.73333335, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

@@ -37,7 +37,6 @@ namespace Examples.Splitscreen {
         }
         private void BindPawn() {
             PawnBindingManager.BindPlayerInputToPawn(playerIndex, pawn);
-            pawn.GetComponentInChildren<MeshRenderer>().material = SplitscreenManager.instance.materials[playerIndex];
         }
 
     }
