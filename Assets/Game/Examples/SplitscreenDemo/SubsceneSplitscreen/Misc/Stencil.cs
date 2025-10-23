@@ -15,20 +15,6 @@ public class Stencil : MonoBehaviour {
         }
     }
     
-    private Vector3 GetClosestPoint(Vector3 position) {
-        Vector3 closestPoint = _points[0];
-        float closestDistance = Vector3.Distance(position, closestPoint);
-        foreach (Vector3 point in _points) {
-            float distance = Vector3.Distance(position, point);
-            if (distance < closestDistance) {
-                closestDistance = distance;
-                closestPoint = point;
-            }
-        }
-        return closestPoint;
-    }
-
-
     private void EvaluatePoint(Vector3 key, Vector3 newPoint) {
         if (_pointDistances.ContainsKey(key)) {
             float existingDistance = _pointDistances[key];
@@ -48,18 +34,6 @@ public class Stencil : MonoBehaviour {
         foreach (Transform child in pointsParent) {
             EvaluatePoint(child.position, position);
         }
-        /*Vector3 closestPoint = GetClosestPoint(position);
-        if (_pointDistances.ContainsKey(closestPoint)) {
-            float existingDistance = _pointDistances[closestPoint];
-            
-            float newDistance = Vector3.Distance(position, closestPoint);
-            if (newDistance < existingDistance) {
-                _pointDistances[closestPoint] = newDistance;
-            }
-        } else {
-            float distance = Vector3.Distance(position, closestPoint);
-            _pointDistances.Add(closestPoint, distance);
-        }*/
     }
 
     public float CalculateScore() {
@@ -70,8 +44,6 @@ public class Stencil : MonoBehaviour {
                 score++;
             }
         }
-        
-        
 
         print($"Score calculated: {score} / {_points.Count}, {_pointDistances.Count}");
         return score / _points.Count;
