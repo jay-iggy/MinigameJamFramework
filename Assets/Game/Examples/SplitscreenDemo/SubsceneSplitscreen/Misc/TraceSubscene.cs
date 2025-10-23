@@ -26,12 +26,12 @@ public class TraceSubscene : MonoBehaviour {
     }
 
     public float CalculateAndDisplayScore() {
-        float score = stencil.CalculateScore();
+        float score = stencil.CalculateScore() * 100;
         StartCoroutine(AnimateScoreText(score));
-        return score * 100f;
+        return score;
     }
 
-    public IEnumerator AnimateScoreText(float score) {
+    private IEnumerator AnimateScoreText(float score) {
         score = Mathf.RoundToInt(score);
         scoreText.color = textColors[playerIndex];
         int n = 0;
