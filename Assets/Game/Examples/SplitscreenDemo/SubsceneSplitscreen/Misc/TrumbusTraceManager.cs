@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Examples.Splitscreen;
 using Game.MinigameFramework.Scripts.Framework.Input;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using TMPro;
@@ -77,6 +78,10 @@ public class TrumbusTraceManager : MonoBehaviour {
         
         
         // end of minigame logic here
+        foreach(Stencil stencil in FindObjectsOfType<Stencil>()) {
+            float score = stencil.CalculateScore();
+            Debug.Log($"Player {stencil.GetComponentInParent<SubsceneManager>().playerIndex + 1} Score: {score}");
+        }
         
         
     }

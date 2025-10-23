@@ -9,6 +9,6 @@ public class StencilRotation : MonoBehaviour {
     void Start() {
         int randomIndex = Random.Range(0, possibleRotations.Count);
         float chosenRotation = possibleRotations[randomIndex];
-        transform.eulerAngles = new Vector3(90, 0,chosenRotation);
+        transform.eulerAngles = new Vector3(0, chosenRotation,0);
     }
 }
