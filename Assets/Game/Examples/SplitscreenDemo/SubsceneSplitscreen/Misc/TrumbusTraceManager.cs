@@ -9,9 +9,7 @@ using UnityEngine.UI;
 
 namespace Examples.TrumbusTrace {
     public class TrumbusTraceManager : MonoBehaviour {
-
         public static TrumbusTraceManager instance;
-
         private void Awake() {
             if (instance == null) {
                 instance = this;
@@ -42,7 +40,6 @@ namespace Examples.TrumbusTrace {
             foreach (PlayerInput playerInput in PlayerManager.GetConnectedPlayerInputs()) {
                 playerInput.currentActionMap.Disable();
             }
-
             // Countdown
             yield return new WaitForSeconds(0.5f);
             _startText.SetActive(true);
@@ -53,7 +50,6 @@ namespace Examples.TrumbusTrace {
             foreach (PlayerInput playerInput in PlayerManager.GetConnectedPlayerInputs()) {
                 playerInput.currentActionMap.Enable();
             }
-
             StartCoroutine(TimerRoutine());
         }
 
@@ -69,7 +65,6 @@ namespace Examples.TrumbusTrace {
                     _timerBackground.color = _timerWarningColor;
                 }
             }
-
             _timerText.text = "0";
             StartCoroutine(EndRoutine());
         }
@@ -79,7 +74,6 @@ namespace Examples.TrumbusTrace {
             foreach (PlayerInput playerInput in PlayerManager.GetConnectedPlayerInputs()) {
                 playerInput.currentActionMap.Disable();
             }
-
             // Show end text
             _timerBackground.gameObject.SetActive(false);
             _endText.SetActive(true);
@@ -91,10 +85,9 @@ namespace Examples.TrumbusTrace {
                 float score = subscene.CalculateAndDisplayScore();
                 scores.Add(score);
             }
-
             // Determine rankings
             MinigameManager.Ranking ranking = new();
-
+            // Wait to end minigame so players can see their scores
             yield return new WaitForSeconds(6f);
             MinigameManager.instance.EndMinigame(ranking);
         }
