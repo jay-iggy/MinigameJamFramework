@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Stencil : MonoBehaviour {
@@ -8,11 +9,16 @@ public class Stencil : MonoBehaviour {
     // Key: point position, Value: closest registered distance
     private Dictionary<Vector3, float> _pointDistances = new();
     [SerializeField] float scoreDistanceThreshold = 0.5f;
+    [SerializeField] List<float> possibleRotations = new List<float>();
     
     private void Awake() {
         foreach (Transform child in pointsParent) {
             _points.Add(child.transform.position);
         }
+    }
+    
+    void Start() {
+        SetRotation();
     }
     
     private void EvaluatePoint(Vector3 key, Vector3 newPoint) {
@@ -47,6 +53,12 @@ public class Stencil : MonoBehaviour {
 
         print($"Score calculated: {score} / {_points.Count}, {_pointDistances.Count}");
         return score / _points.Count;
+    }
+
+    private void SetRotation() {
+        int randomIndex = Random.Range(0, possibleRotations.Count);
+        float chosenRotation = possibleRotations[randomIndex];
+        transform.eulerAngles = new Vector3(0, chosenRotation,0);
     }
     
 }
