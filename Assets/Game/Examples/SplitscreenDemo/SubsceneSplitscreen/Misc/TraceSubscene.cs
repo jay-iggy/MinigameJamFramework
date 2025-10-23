@@ -27,6 +27,7 @@ public class TraceSubscene : MonoBehaviour {
 
     public float CalculateAndDisplayScore() {
         float score = stencil.CalculateScore();
+        StartCoroutine(AnimateScoreText(score));
         return score * 100f;
     }
 

@@ -85,7 +85,6 @@ public class TrumbusTraceManager : MonoBehaviour {
         foreach (TraceSubscene subscene in subscenes) {
             float score = subscene.CalculateAndDisplayScore();
             scores.Add(score);
-            subscene.StartCoroutine(subscene.AnimateScoreText(score));
         }
         // Determine rankings
         MinigameManager.Ranking ranking = new();
