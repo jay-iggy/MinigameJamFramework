@@ -37,11 +37,11 @@ public class TrumbusTraceManager : MonoBehaviour {
     }
     
     IEnumerator StartRoutine() {
-        // Disable player inputs during start countdown
+        // Disable player inputs during countdown
         foreach (PlayerInput playerInput in PlayerManager.GetConnectedPlayerInputs()) {
             playerInput.currentActionMap.Disable();
         }
-        // Start countdown
+        // Countdown
         yield return new WaitForSeconds(0.5f);
         _startText.SetActive(true);
         yield return new WaitForSeconds(1f);
