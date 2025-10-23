@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Examples.Splitscreen;
 using UnityEngine;
 
-namespace Examples.Splitscreen.TrumbusTrace {
+namespace Examples.TrumbusTrace {
     public class Drill : MonoBehaviour {
         [SerializeField] LineRenderer lineRenderer;
 
