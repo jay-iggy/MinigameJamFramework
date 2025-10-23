@@ -635,7 +635,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &407448534023272484
 MonoBehaviour:
@@ -1285,7 +1285,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 9b8f407aaa8643e4b9b5a94912720756, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6156863}
   m_FlipX: 0
@@ -1847,8 +1847,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7745232612451017544}
+  - component: {fileID: 4372401219034737532}
   m_Layer: 0
-  m_Name: MiniMini Manager
+  m_Name: Trace Subscene Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1869,6 +1870,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2101323024812110861}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4372401219034737532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6053335181824815292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a24af29ca9f04f4f8d7372d9122451f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subsceneManager: {fileID: 4640466907586981073}
+  scoreText: {fileID: 869938551791676550}
+  stencil: {fileID: 4517801915781781941}
 --- !u!1 &6060873974581156653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2243,7 +2259,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
@@ -2918,7 +2934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cff18a49f9b8c04f8d787a6df664591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsParent: {fileID: 3510295258595446373}
+  keyPointsParent: {fileID: 3510295258595446373}
   scoreDistanceThreshold: 0.2
   possibleRotations:
   - -15

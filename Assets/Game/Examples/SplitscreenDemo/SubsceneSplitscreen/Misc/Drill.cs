@@ -34,7 +34,7 @@ namespace Examples.Splitscreen.TrumbusTrace {
             int currentPointCount = lineRenderer.positionCount;
             lineRenderer.positionCount = currentPointCount + 1;
             lineRenderer.SetPosition(currentPointCount, new Vector3(newPoint.x, drillHeight, newPoint.y));
-            stencil.RegisterPoint(new Vector3(newPoint.x, 0f, newPoint.y));
+            stencil.RegisterDrawnPoint(new Vector3(newPoint.x, 0f, newPoint.y));
         }
     }
 }

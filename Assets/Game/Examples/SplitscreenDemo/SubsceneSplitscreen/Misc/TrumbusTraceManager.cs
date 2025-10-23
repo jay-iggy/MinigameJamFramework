@@ -12,7 +12,6 @@ using UnityEngine.UI;
 public class TrumbusTraceManager : MonoBehaviour {
     
     public static TrumbusTraceManager instance;
-
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -20,7 +19,8 @@ public class TrumbusTraceManager : MonoBehaviour {
             Destroy(gameObject);
         }
     }
-
+    
+    public List<TraceSubscene> subscenes = new();
     [SerializeField] GameObject _startText;
     [SerializeField] GameObject _endText;
     [SerializeField] TextMeshProUGUI _timerText;
@@ -75,15 +75,11 @@ public class TrumbusTraceManager : MonoBehaviour {
         _endText.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         _endText.SetActive(false);
-        
-        
-        // end of minigame logic here
-        foreach(Stencil stencil in FindObjectsOfType<Stencil>()) {
-            float score = stencil.CalculateScore();
-            Debug.Log($"Player {stencil.GetComponentInParent<SubsceneManager>().playerIndex + 1} Score: {score}");
+
+        foreach (TraceSubscene subscene in subscenes) {
+            float score = subscene.CalculateAndDisplayScore();
+            Debug.Log($"Player {subscene.playerIndex + 1} Score: {score}");
         }
-        
-        
     }
     
     private void HandlePlayerJoined(int playerIndex) {
