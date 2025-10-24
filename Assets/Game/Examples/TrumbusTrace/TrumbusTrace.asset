@@ -18,7 +18,11 @@ MonoBehaviour:
     m_SceneAsset: {fileID: 102900000, guid: 48e7c089fc4ce514ebf73f8d894f8e18, type: 3}
     m_SceneName: TrumbusTrace
   minimumPlayers: 1
-  description: 
+  description: Draw Trumbus as accurately as you can. Avoid drawing a Dark Trumbus
+    and being cursed by unspeakable bad luck.
   controls: Left Stick - Draw
   credits: Created by Jay Ignatowski
-  attributions: 
+  attributions: 'Trumbus created by Kate Olguin.
+
+    Notebook and crayon textures
+    designed by Freepik.'
