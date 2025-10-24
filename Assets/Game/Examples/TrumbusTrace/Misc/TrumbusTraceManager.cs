@@ -82,7 +82,7 @@ namespace Examples.TrumbusTrace {
             // Calculate player scores
             List<float> scores = new();
             foreach (TraceSubmanager subscene in subscenes) {
-                float score = subscene.CalculateAndDisplayScore();
+                scores.Add(subscene.CalculateAndDisplayScore());
             }
             // Determine rankings
             MinigameManager.Ranking ranking = new();
