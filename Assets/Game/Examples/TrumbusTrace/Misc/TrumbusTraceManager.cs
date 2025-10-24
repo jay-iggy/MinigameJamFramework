@@ -19,7 +19,7 @@ namespace Examples.TrumbusTrace {
             }
         }
 
-        public List<TraceSubscene> subscenes = new();
+        public List<TraceSubmanager> subscenes = new();
         [SerializeField] GameObject _startText;
         [SerializeField] GameObject _endText;
         [SerializeField] TextMeshProUGUI _timerText;
@@ -81,7 +81,7 @@ namespace Examples.TrumbusTrace {
             _endText.SetActive(false);
             // Calculate player scores
             List<float> scores = new();
-            foreach (TraceSubscene subscene in subscenes) {
+            foreach (TraceSubmanager subscene in subscenes) {
                 float score = subscene.CalculateAndDisplayScore();
                 scores.Add(score);
             }

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: TrumbusTrace
   m_EditorClassIdentifier: 
   minigameName: Trumbus Trace
-  thumbnail: {fileID: 0}
+  thumbnail: {fileID: 21300000, guid: 69b70952166524c429b304bad485f6b1, type: 3}
   scene:
     m_SceneAsset: {fileID: 102900000, guid: 48e7c089fc4ce514ebf73f8d894f8e18, type: 3}
-    m_SceneName: SubsceneSplitscreen
+    m_SceneName: TrumbusTrace
   minimumPlayers: 1
   description: 
   controls: Left Stick - Draw

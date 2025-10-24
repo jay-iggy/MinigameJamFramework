@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine;
 
 namespace Examples.TrumbusTrace {
-    public class TraceSubscene : MonoBehaviour {
+    public class TraceSubmanager : MonoBehaviour {
         [SerializeField] SubsceneManager subsceneManager;
         public int playerIndex { get; private set; }
         [SerializeField] TextMeshProUGUI scoreText;
