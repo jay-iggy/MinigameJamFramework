@@ -87,6 +87,14 @@ namespace Examples.TrumbusTrace {
             }
             // Determine rankings
             MinigameManager.Ranking ranking = new();
+            List<int> playerIndices = new();
+            for (int i = 0; i < scores.Count; i++) {
+                playerIndices.Add(i);
+            }
+            playerIndices.Sort((a, b) => scores[b].CompareTo(scores[a]));
+            for (int rank = 0; rank < playerIndices.Count; rank++) {
+                ranking.SetRank(playerIndices[rank], rank+1);
+            }
             // Wait to end minigame so players can see their scores
             yield return new WaitForSeconds(6f);
             MinigameManager.instance.EndMinigame(ranking);
