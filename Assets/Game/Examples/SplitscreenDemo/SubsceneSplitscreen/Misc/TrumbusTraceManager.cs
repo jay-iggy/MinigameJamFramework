@@ -91,7 +91,7 @@ namespace Examples.TrumbusTrace {
             for (int i = 0; i < scores.Count; i++) {
                 playerIndices.Add(i);
             }
-            playerIndices.Sort((a, b) => scores[b].CompareTo(scores[a]));
+            playerIndices.Sort((a, b) => scores[b].CompareTo(scores[a])); // sort indices by highest score
             for (int rank = 0; rank < playerIndices.Count; rank++) {
                 ranking.SetRank(playerIndices[rank], rank+1);
             }
