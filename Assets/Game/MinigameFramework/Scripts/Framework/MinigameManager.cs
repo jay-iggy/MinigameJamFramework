@@ -24,9 +24,9 @@ public class MinigameManager : MonoBehaviour
     }
 
     private void Start() {
-        PawnBindingManager.onPauseButtonPressed.AddListener(OnPauseButton);
         DetermineFewestPlayers();
-        // game list is populated when game started or when runs out
+        PopulateMinigameList();
+        PawnBindingManager.onPauseButtonPressed.AddListener(OnPauseButton);
     }
 
     public SceneField minigameSelectScene;
