@@ -17,3 +17,4 @@ MonoBehaviour:
   description: A small pack containing demo games.
   minigames:
   - {fileID: 11400000, guid: 90f0e8fa43fc49e468ce8f3035ac1deb, type: 2}
+  - {fileID: 11400000, guid: a0251556ef1879f4e988d660b9e26594, type: 2}
