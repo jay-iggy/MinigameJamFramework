@@ -19,7 +19,7 @@ namespace Examples.TrumbusTrace {
             }
         }
 
-        public List<TraceSubmanager> subscenes = new();
+        [HideInInspector]public List<TraceSubmanager> subscenes = new();
         [SerializeField] GameObject _startText;
         [SerializeField] GameObject _endText;
         [SerializeField] TextMeshProUGUI _timerText;
@@ -83,7 +83,6 @@ namespace Examples.TrumbusTrace {
             List<float> scores = new();
             foreach (TraceSubmanager subscene in subscenes) {
                 float score = subscene.CalculateAndDisplayScore();
-                scores.Add(score);
             }
             // Determine rankings
             MinigameManager.Ranking ranking = new();
@@ -93,6 +92,14 @@ namespace Examples.TrumbusTrace {
             }
             playerIndices.Sort((a, b) => scores[b].CompareTo(scores[a])); // sort indices by highest score
             for (int rank = 0; rank < playerIndices.Count; rank++) {
+                // Check for ties
+                if (rank - 1 > 0) {
+                    if(Math.Abs(scores[playerIndices[rank]] - scores[playerIndices[rank - 1]]) < 0.01f) {
+                        // Same score as previous player, assign same rank
+                        ranking.SetRank(playerIndices[rank], rank);
+                        continue;
+                    }
+                }
                 ranking.SetRank(playerIndices[rank], rank+1);
             }
             // Wait to end minigame so players can see their scores

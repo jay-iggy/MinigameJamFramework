@@ -57,7 +57,7 @@ namespace Examples.TrumbusTrace {
                 }
             }
 
-            return score / _keyPoints.Count;
+            return Mathf.RoundToInt((score / _keyPoints.Count)*100);
         }
     }
 }
