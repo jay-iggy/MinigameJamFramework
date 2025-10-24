@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/MinigamePacks/B24 Snow Day/SnowFort/SnowFort.unity
     guid: fedfb322f2c90e44d88554e09d96bdbb
+  - enabled: 1
+    path: Assets/Game/Examples/TrumbusTrace/TrumbusTrace.unity
+    guid: 48e7c089fc4ce514ebf73f8d894f8e18
   m_configObjects: {}
