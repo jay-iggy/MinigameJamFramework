@@ -26,13 +26,12 @@ namespace Examples.TrumbusTrace {
         }
 
         public float CalculateAndDisplayScore() {
-            float score = stencil.CalculateScore() * 100;
+            float score = stencil.CalculateScore();
             StartCoroutine(AnimateScoreText(score));
             return score;
         }
 
         private IEnumerator AnimateScoreText(float score) {
-            score = Mathf.RoundToInt(score);
             scoreText.color = textColors[playerIndex];
             int n = 0;
             while (n < score) {
