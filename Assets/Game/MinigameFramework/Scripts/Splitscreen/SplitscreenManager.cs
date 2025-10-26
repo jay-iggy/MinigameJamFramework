@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.MinigameFramework.Scripts.Framework;
+using Game.MinigameFramework.Scripts.Framework.Input;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Examples.Splitscreen {
+    /// <summary>
+    /// Manages splitscreen subscenes for each player to have a separate instance of the game world.
+    /// </summary>
     public class SplitscreenManager : MonoBehaviour {
         [SerializeField] private SubsceneManager subscenePrefab;
         [HideInInspector] public List<SubsceneManager> loadedSubscenes;
@@ -14,6 +17,8 @@ namespace Examples.Splitscreen {
         // Define splitscreen camera viewports
         public Rect[] cameraRect =
         { new Rect(0, 0.5f,0.5f,0.5f), new Rect(0.5f, 0.5f,0.5f,0.5f), new Rect(0, 0,0.5f,0.5f), new Rect(0.5f, 0,0.5f,0.5f) };
+        // Offset to position subscenes apart in the world
+        public Vector3 subsceneOffset = new Vector3(100, 0, 0);
         
         // Singleton instance allows subscenes to access this manager
         public static SplitscreenManager instance;
@@ -44,7 +49,8 @@ namespace Examples.Splitscreen {
             }
             // Reconnect player to existing subscene
             else if (playerIndex < loadedSubscenes.Count && loadedSubscenes[playerIndex] != null) {
-                PawnBindingManager.BindPlayerInputToPawn(playerIndex, loadedSubscenes[playerIndex].pawn);
+                Pawn pawn = loadedSubscenes[playerIndex].GetComponentInChildren<Pawn>();
+                PawnBindingManager.BindPlayerInputToPawn(playerIndex, pawn);
             }
         }
     }
