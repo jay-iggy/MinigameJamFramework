@@ -226,6 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2101323024812110861}
   - component: {fileID: 4640466907586981073}
+  - component: {fileID: 8688827574064425585}
   m_Layer: 0
   m_Name: Subscene
   m_TagString: Untagged
@@ -268,7 +269,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 549679116722195895}
-  playerIndex: -1
+--- !u!114 &8688827574064425585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432152660710907280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a536f54d49ce84886c6139425b185b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comment: Don't change this script or object.
 --- !u!1 &4361733096390087518
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7745232612451017544}
   - component: {fileID: 760185547594705884}
+  - component: {fileID: 4844272741717978956}
   m_Layer: 0
   m_Name: Submanager
   m_TagString: Untagged
@@ -344,13 +358,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be83595ac4f27034d8e90add540445e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subsceneManager: {fileID: 4640466907586981073}
   playerMeshRenderer: {fileID: 6769409805584497153}
   materials:
   - {fileID: 2100000, guid: bf3477a0adee794419e4ba32e4b76f2e, type: 2}
   - {fileID: 2100000, guid: 33f3b17ccf2ea4c40ab9e4ecf5d6672f, type: 2}
   - {fileID: 2100000, guid: 418297e9efd20b14a8234b3de87681eb, type: 2}
   - {fileID: 2100000, guid: f3bceb9c9d5a07943b5c0a3ca564832c, type: 2}
+--- !u!114 &4844272741717978956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6053335181824815292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a536f54d49ce84886c6139425b185b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comment: Change this script to manage the minigame state for this subscene and
+    communicate with the main StarterGameManager.
 --- !u!1 &6373875302614670035
 GameObject:
   m_ObjectHideFlags: 0
