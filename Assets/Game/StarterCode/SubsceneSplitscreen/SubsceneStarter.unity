@@ -499,6 +499,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1609695534}
   - component: {fileID: 1609695533}
+  - component: {fileID: 1609695535}
   m_Layer: 0
   m_Name: SplitscreenManager
   m_TagString: Untagged
@@ -556,6 +557,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1609695535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609695532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a536f54d49ce84886c6139425b185b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comment: 'This script sets up four individual splitscreen subscenes, one for each
+    player.
+
+    To change the shape of the cameras, you can edit the width/height
+    and position of the elements in Camera Rect.
+
+    To change the number of subscenes
+    or the number of players per subscene, you can create a custom variation of this
+    script. Do not edit this script itself.'
 --- !u!1 &1752718746 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8764341697841427267, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
