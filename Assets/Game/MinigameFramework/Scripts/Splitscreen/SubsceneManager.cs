@@ -28,7 +28,7 @@ namespace Examples.Splitscreen {
         /// </summary>
         private void SetSubscenePosition() {
             Vector3 subscenePosition = transform.position;
-            subscenePosition.x += 100 * playerIndex;
+            subscenePosition += _superManager.subsceneOffset * playerIndex;
             transform.position = subscenePosition;
         }
         private void SetupSubsceneCamera() {

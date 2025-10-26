@@ -17,6 +17,8 @@ namespace Examples.Splitscreen {
         // Define splitscreen camera viewports
         public Rect[] cameraRect =
         { new Rect(0, 0.5f,0.5f,0.5f), new Rect(0.5f, 0.5f,0.5f,0.5f), new Rect(0, 0,0.5f,0.5f), new Rect(0.5f, 0,0.5f,0.5f) };
+        // Offset to position subscenes apart in the world
+        public Vector3 subsceneOffset = new Vector3(100, 0, 0);
         
         // Singleton instance allows subscenes to access this manager
         public static SplitscreenManager instance;
