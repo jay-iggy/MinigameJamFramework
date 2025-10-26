@@ -21,9 +21,6 @@ EditorBuildSettings:
     path: Assets/Game/MinigameFramework/Menus/MinigameSelect/MinigameSelect.unity
     guid: 476e9d228ef74874b939fb1ce7991cec
   - enabled: 1
-    path: Assets/Game/Examples/SplitscreenDemo/AdditiveSplitscreen/DemoSubscene.unity
-    guid: f72492b59f4335e4e8911dee6949011c
-  - enabled: 1
     path: Assets/Game/Examples/TrumbusTrace/TrumbusTrace.unity
     guid: 48e7c089fc4ce514ebf73f8d894f8e18
   m_configObjects: {}

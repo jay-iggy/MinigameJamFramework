@@ -1,17 +1,16 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using Game.MinigameFramework.Scripts;
 using Game.MinigameFramework.Scripts.Framework;
 using Game.MinigameFramework.Scripts.Framework.Input;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Examples.Splitscreen {
+    /// <summary>
+    /// Manages camera setup and pawn binding for a single subscene created by SplitscreenManager.
+    /// </summary>
     public class SubsceneManager : MonoBehaviour {
-        public Pawn pawn;
         [SerializeField] Camera cam;
-        public int playerIndex = -1;
+        public int playerIndex { get; private set; }
         
         private SplitscreenManager _superManager;
 
@@ -36,8 +35,8 @@ namespace Examples.Splitscreen {
             cam.rect = _superManager.cameraRect[playerIndex];
         }
         private void BindPawn() {
+            Pawn pawn = GetComponentInChildren<Pawn>();
             PawnBindingManager.BindPlayerInputToPawn(playerIndex, pawn);
         }
-
     }
 }

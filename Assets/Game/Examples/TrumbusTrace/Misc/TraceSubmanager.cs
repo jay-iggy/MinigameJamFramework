@@ -7,7 +7,6 @@ using UnityEngine;
 
 namespace Examples.TrumbusTrace {
     public class TraceSubmanager : MonoBehaviour {
-        [SerializeField] SubsceneManager subsceneManager;
         public int playerIndex { get; private set; }
         [SerializeField] TextMeshProUGUI scoreText;
         [SerializeField] private Stencil stencil;
@@ -17,8 +16,8 @@ namespace Examples.TrumbusTrace {
         [SerializeField] private Color[] textColors;
 
         private void Awake() {
+            playerIndex = TrumbusTraceManager.instance.subscenes.Count;
             TrumbusTraceManager.instance.subscenes.Add(this);
-            playerIndex = subsceneManager.playerIndex;
         }
 
         private void Start() {

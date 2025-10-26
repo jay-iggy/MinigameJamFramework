@@ -81,27 +81,16 @@ namespace Examples.TrumbusTrace {
             _endText.SetActive(false);
             // Calculate player scores
             List<float> scores = new();
-            foreach (TraceSubmanager subscene in subscenes) {
-                scores.Add(subscene.CalculateAndDisplayScore());
-            }
-            // Determine rankings
-            MinigameManager.Ranking ranking = new();
             List<int> playerIndices = new();
-            for (int i = 0; i < scores.Count; i++) {
+            for(int i = 0; i < subscenes.Count; i++) {
+                scores.Add(subscenes[i].CalculateAndDisplayScore());
                 playerIndices.Add(i);
             }
-            playerIndices.Sort((a, b) => scores[b].CompareTo(scores[a])); // sort indices by highest score
-            for (int rank = 0; rank < playerIndices.Count; rank++) {
-                // Check for ties
-                if (rank - 1 > 0) {
-                    if(Math.Abs(scores[playerIndices[rank]] - scores[playerIndices[rank - 1]]) < 0.01f) {
-                        // Same score as previous player, assign same rank
-                        ranking.SetRank(playerIndices[rank], rank);
-                        continue;
-                    }
-                }
-                ranking.SetRank(playerIndices[rank], rank+1);
-            }
+            // Sort indices by highest score
+            playerIndices.Sort((a, b) => scores[b].CompareTo(scores[a])); 
+            // Determine rankings (ties not handled in this example)
+            MinigameManager.Ranking ranking = new();
+            ranking.SetRank(playerIndices.ToArray());
             // Wait to end minigame so players can see their scores
             yield return new WaitForSeconds(6f);
             MinigameManager.instance.EndMinigame(ranking);
