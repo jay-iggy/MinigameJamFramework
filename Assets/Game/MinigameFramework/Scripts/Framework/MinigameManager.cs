@@ -24,9 +24,9 @@ public class MinigameManager : MonoBehaviour
     }
 
     private void Start() {
-        PawnBindingManager.onPauseButtonPressed.AddListener(OnPauseButton);
         DetermineFewestPlayers();
-        // game list is populated when game started or when runs out
+        PopulateMinigameList();
+        PawnBindingManager.onPauseButtonPressed.AddListener(OnPauseButton);
     }
 
     public SceneField minigameSelectScene;
@@ -194,6 +194,18 @@ public class MinigameManager : MonoBehaviour
         }
         public void SetRank(int playerIndex, int rank) {
             playerRanks[playerIndex] = rank;
+        }
+        public void SetRank(int[] playerIndices) {
+            if(playerIndices.Length > 4) {
+                throw new ArgumentException("playerIndices length cannot be greater than 4");
+            }
+            for(int i = 0; i < 4; i++) {
+                if(i >= playerIndices.Length) {
+                    break;
+                }
+                if(playerIndices[i] < 0) continue; // skip invalid player indices
+                playerRanks[playerIndices[i]] = i+1;
+            }
         }
     }
     
