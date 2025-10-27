@@ -9,7 +9,7 @@ namespace Starter.Basic {
         Vector2 _moveInput = Vector2.zero;
         
         void Update() {
-            // Implement movement
+            // TODO: Implement movement
         }
 
         protected override void OnActionPressed(InputAction.CallbackContext context) {
