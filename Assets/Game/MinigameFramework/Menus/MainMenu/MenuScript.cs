@@ -47,8 +47,7 @@ public class MenuScript : MonoBehaviour {
             }
         }
 
-        if (PlayerManager.AreAllPlayersConnected())
-        {
+        if (PlayerManager.AreAllPlayersConnected()) {
             OnAllPlayersConnected();
         }
 
@@ -70,6 +69,9 @@ public class MenuScript : MonoBehaviour {
     // unlocks button as needed, called when player connects or disconnects
     public void CheckUnlockButton() {
         startButton.interactable = PlayerManager.AreAllPlayersConnected();
+        if (startButton.interactable) {
+            PlayerManager.SetSelectedGameObject(startButton.gameObject);
+        }
     }
     
     [SerializeField] List<PlayerSlotUI> playerSlots = new List<PlayerSlotUI>();
