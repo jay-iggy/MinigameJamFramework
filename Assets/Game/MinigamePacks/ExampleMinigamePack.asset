@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830bb8b1630a4dadb04b65743070fad2, type: 3}
   m_Name: ExampleMinigamePack
   m_EditorClassIdentifier: 
-  packName: Example Minigame Pack
+  packName: Demo Pack
   icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   description: A small pack containing demo games.
   minigames:

@@ -13,6 +13,9 @@ public class PackageSelectionScript : MonoBehaviour
     [SerializeField] Transform packageIcons;
     [SerializeField] Transform minigameIcons;
     [SerializeField] TMP_Text description;
+    [SerializeField] private TextMeshProUGUI enableStatusText;
+    [SerializeField] private Color enabledColor;
+    [SerializeField] private Color disabledColor;
 
     public GameObject hoverableIcon;
     public SceneField mainMenuScene;
@@ -38,6 +41,7 @@ public class PackageSelectionScript : MonoBehaviour
     private void SetInitialSelection(int index = 0) {
         PlayerManager.SetSelectedGameObject(packageIcons.GetChild(0).gameObject);
         PlayerManager.onPlayerConnected.RemoveListener(SetInitialSelection);
+        RefreshStatusText(MinigameManager.instance.minigamePacks[0]);
     }
 
     private void DisplayPacks() {
@@ -85,16 +89,25 @@ public class PackageSelectionScript : MonoBehaviour
     }
     
     public void OnPackHovered(MinigamePack pack) {
-        description.text = pack.packName + "\n\t" + pack.description;
+        description.text = $"<size=150%><b>{pack.packName.ToUpper()}</b></size>\n\n{pack.description}";
         DisplayMinigames(pack);
+        RefreshStatusText(pack);
     }
     
     public void OnMinigameHovered(MinigameInfo minigame) {
-        description.text = minigame.minigameName + "\n\t" + minigame.description + "\n\n" + minigame.credits;
+        description.text = $"<size=150%><b>{minigame.minigameName.ToUpper()}</b></size>\n\n{minigame.description}\n\n{minigame.credits}";
+        enableStatusText.text = "";
     }
     
     public void TogglePack(MinigamePack pack) {
         MinigameManager.instance.TogglePack(pack);
         RefreshPackColors(); // refresh packs to have no grey or not grey
+        RefreshStatusText(pack);
+    }
+
+    private void RefreshStatusText(MinigamePack pack) {
+        bool status = MinigameManager.instance.PackIsOn(pack);
+        enableStatusText.text = status ? "Enabled" : "Disabled";
+        enableStatusText.color = status ? enabledColor : disabledColor;
     }
 }
