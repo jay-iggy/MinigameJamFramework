@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 3
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 468108557}
     m_SelectOnDown: {fileID: 0}
@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 3
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 478529488}
     m_SelectOnDown: {fileID: 0}
@@ -1875,6 +1875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startButton: {fileID: 478529488}
+  packSelectButton: {fileID: 468108557}
   packageIcons: {fileID: 977163290}
   packageIconPrefab: {fileID: 1824898176135965928, guid: 168568f39ebeb9c4599b71ee10446729, type: 3}
   packSelectScene:

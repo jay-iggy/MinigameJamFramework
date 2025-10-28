@@ -7,6 +7,7 @@ namespace Starter.Splitscreen {
         private MinigameManager.Ranking _ranking = new();
 
         public void EndMinigame() {
+            // TODO: Determine player rankings
             MinigameManager.instance.EndMinigame(_ranking);
         }
     }
