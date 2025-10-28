@@ -7,6 +7,10 @@ using UnityEngine.InputSystem;
 namespace Starter.Basic {
     public class StarterPawn : Pawn {
         Vector2 _moveInput = Vector2.zero;
+        
+        void Update() {
+            // TODO: Implement movement
+        }
 
         protected override void OnActionPressed(InputAction.CallbackContext context) {
             if (context.action.name == PawnAction.Move) {

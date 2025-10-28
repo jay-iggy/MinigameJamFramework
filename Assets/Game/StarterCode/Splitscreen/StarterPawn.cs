@@ -7,14 +7,14 @@ using UnityEngine.InputSystem;
 namespace Starter.Splitscreen {
     public class StarterPawn : Pawn {
         Vector2 _moveInput = Vector2.zero;
-        Vector2 _lookInput = Vector2.zero;
+        
+        void Update() {
+            // TODO: Implement movement
+        }
 
         protected override void OnActionPressed(InputAction.CallbackContext context) {
             if (context.action.name == PawnAction.Move) {
                 _moveInput = context.ReadValue<Vector2>();
-            }
-            if (context.action.name == PawnAction.Look) {
-                _lookInput = context.ReadValue<Vector2>();
             }
 
             if (context.action.name == PawnAction.ButtonA) {

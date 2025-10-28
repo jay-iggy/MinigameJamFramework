@@ -9,28 +9,28 @@ namespace Game.MinigameFramework.Scripts.Framework.Input {
     public abstract class PawnAlternate : Pawn {
         protected override void OnActionPressed(InputAction.CallbackContext context) {
             switch (context.action.name) {
-                case "Move":
+                case PawnAction.Move:
                     OnMovement(context);
                     break;
-                case "Look":
+                case PawnAction.Look:
                     OnLook(context);
                     break;
-                case "ButtonA":
+                case PawnAction.ButtonA:
                     OnButtonA();
                     break;
-                case "ButtonB":
+                case PawnAction.ButtonB:
                     OnButtonB();
                     break;
-                case "ButtonX":
+                case PawnAction.ButtonX:
                     OnActionX();
                     break;
-                case "ButtonY":
+                case PawnAction.ButtonY:
                     OnActionY();
                     break;
-                case "ButtonL":
+                case PawnAction.ButtonL:
                     OnActionL();
                     break;
-                case "ButtonR":
+                case PawnAction.ButtonR:
                     OnActionR();
                     break;
             }
@@ -38,22 +38,22 @@ namespace Game.MinigameFramework.Scripts.Framework.Input {
 
         protected override void OnActionReleased(InputAction.CallbackContext context) {
             switch (context.action.name) {
-                case "ButtonA":
+                case PawnAction.ButtonA:
                     OnActionAReleased();
                     break;
-                case "ButtonB":
+                case PawnAction.ButtonB:
                     OnButtonBReleased();
                     break;
-                case "ButtonX":
+                case PawnAction.ButtonX:
                     OnActionXReleased();
                     break;
-                case "ButtonY":
+                case PawnAction.ButtonY:
                     OnActionYReleased();
                     break;
-                case "ButtonL":
+                case PawnAction.ButtonL:
                     OnActionLReleased();
                     break;
-                case "ButtonR":
+                case PawnAction.ButtonR:
                     OnActionRReleased();
                     break;
             }

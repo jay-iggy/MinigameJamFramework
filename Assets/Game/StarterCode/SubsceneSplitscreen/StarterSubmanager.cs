@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Examples.Splitscreen;
-using TMPro;
 using UnityEngine;
 
 namespace Starter.SubsceneSplitscreen {
