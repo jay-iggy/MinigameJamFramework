@@ -5,13 +5,12 @@ using Game.MinigameFramework.Scripts;
 using Game.MinigameFramework.Scripts.Framework.Input;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem.UI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour {
     [SerializeField] Button startButton;
+    [SerializeField] private Button packSelectButton;
     [SerializeField] RectTransform packageIcons;
     public GameObject packageIconPrefab;
     public SceneField packSelectScene;
@@ -71,6 +70,9 @@ public class MenuScript : MonoBehaviour {
         startButton.interactable = PlayerManager.AreAllPlayersConnected();
         if (startButton.interactable) {
             PlayerManager.SetSelectedGameObject(startButton.gameObject);
+        }
+        else {
+            PlayerManager.SetSelectedGameObject(packSelectButton.gameObject);
         }
     }
     
