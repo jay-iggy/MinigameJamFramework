@@ -1612,7 +1612,6 @@ MonoBehaviour:
     m_SceneName: Menu
   allPacks:
   - {fileID: 11400000, guid: f737c5b122d006249858b69790eb7e6c, type: 2}
-  - {fileID: 11400000, guid: 9c19129210aa330499bcfc682fd92126, type: 2}
 --- !u!1 &2062874655
 GameObject:
   m_ObjectHideFlags: 0
