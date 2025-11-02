@@ -294,8 +294,8 @@ MonoBehaviour:
   heldDuration: 1
   radialImage: {fileID: 6075053042824851944}
   promptButtonRenderer: {fileID: 8323144807806228455}
-  keyboardSprite: {fileID: -496394457, guid: bc988b2786d05674f89315302b7ff82e, type: 3}
-  buttonSprite: {fileID: 2046008361, guid: bc988b2786d05674f89315302b7ff82e, type: 3}
+  keyboardSprite: {fileID: -1466276660, guid: 4a819ecd9cf1f324b9b6895e13d9c4bf, type: 3}
+  buttonSprite: {fileID: -285169947, guid: 4a819ecd9cf1f324b9b6895e13d9c4bf, type: 3}
 --- !u!224 &8612540404599003799 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1895285745635949654, guid: 73a5f5ffe06b6b9419a0989031b87858, type: 3}

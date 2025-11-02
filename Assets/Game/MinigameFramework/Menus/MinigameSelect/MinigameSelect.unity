@@ -775,19 +775,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<sprite name="KEY_W"><sprite name="KEY_A"><sprite name="KEY_S"><sprite
-    name="KEY_D">/<sprite name="XBOX_LEFT_STICK> - Move
+  m_text: '<sprite name="XBOX_LEFT_STICK> - Move
 
-    Move <sprite name="MOUSE">/<sprite
-    name="XBOX_RIGHT_STICK"> - Look
+    <sprite name="XBOX_A"> - Jump
 
-    <sprite name="XBOX_A">/<sprite name="KEY_SPACE">
-    - Jump
+    Hold
+    <sprite name="XBOX_B"> - Sprint
 
-    Hold <sprite name="XBOX_B">/<sprite name="KEY_SHIFT"> - Sprint
-
-    <sprite
-    name="KEY_Q>/<sprite name="XBOX_LB>/<sprite name="XBOX_LT> - Left'
+    <sprite name="XBOX_RB>/<sprite name="XBOX_RT>
+    - Shoot'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7bcf0141cb0489b4db49308980ae95d6, type: 2}
   m_sharedMaterial: {fileID: 1791673027950037224, guid: 7bcf0141cb0489b4db49308980ae95d6, type: 2}
