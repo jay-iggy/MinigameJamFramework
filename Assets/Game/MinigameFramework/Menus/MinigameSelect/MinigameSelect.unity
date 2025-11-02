@@ -2409,6 +2409,9 @@ MonoBehaviour:
   minigameDescriptionText: {fileID: 492307051}
   minigameControlsText: {fileID: 620798389}
   packIcon: {fileID: 104698187}
+  coloredHeaders:
+  - {fileID: 720444620}
+  - {fileID: 276897162}
 --- !u!1 &1687664701
 GameObject:
   m_ObjectHideFlags: 0

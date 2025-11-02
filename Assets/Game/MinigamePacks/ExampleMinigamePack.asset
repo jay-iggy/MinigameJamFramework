@@ -15,6 +15,7 @@ MonoBehaviour:
   packName: Demo Pack
   icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   description: A small pack containing demo games.
+  packColor: {r: 1, g: 0.40392157, b: 0.4, a: 1}
   minigames:
   - {fileID: 11400000, guid: 90f0e8fa43fc49e468ce8f3035ac1deb, type: 2}
   - {fileID: 11400000, guid: a0251556ef1879f4e988d660b9e26594, type: 2}
