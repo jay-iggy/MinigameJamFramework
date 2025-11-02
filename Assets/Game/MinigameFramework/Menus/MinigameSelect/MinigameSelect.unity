@@ -521,7 +521,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
+  m_spriteAsset: {fileID: 11400000, guid: fc68bd241dfd92f4ba913880c40cb354, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -775,11 +775,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Left Stick - Move
+  m_text: '<sprite name="KEY_W"><sprite name="KEY_A"><sprite name="KEY_S"><sprite
+    name="KEY_D">/<sprite name="XBOX_LEFT_STICK> - Move
 
-    Button A - Jump
+    Move <sprite name="MOUSE">/<sprite
+    name="XBOX_RIGHT_STICK"> - Look
 
-    Hold Button B - Sprint'
+    <sprite name="XBOX_A">/<sprite name="KEY_SPACE">
+    - Jump
+
+    Hold <sprite name="XBOX_B">/<sprite name="KEY_SHIFT"> - Sprint
+
+    <sprite
+    name="KEY_Q>/<sprite name="XBOX_LB>/<sprite name="XBOX_LT> - Left'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7bcf0141cb0489b4db49308980ae95d6, type: 2}
   m_sharedMaterial: {fileID: 1791673027950037224, guid: 7bcf0141cb0489b4db49308980ae95d6, type: 2}
@@ -798,7 +806,7 @@ MonoBehaviour:
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
+  m_spriteAsset: {fileID: 11400000, guid: fc68bd241dfd92f4ba913880c40cb354, type: 2}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
@@ -818,7 +826,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 53
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

@@ -20,7 +20,8 @@ MonoBehaviour:
   minimumPlayers: 1
   description: Draw Trumbus as accurately as you can. Avoid drawing a Dark Trumbus
     and being cursed by unspeakable bad luck.
-  controls: Left Stick - Draw
+  controls: <sprite name="KEY_W"><sprite name="KEY_A"><sprite name="KEY_S"><sprite
+    name="KEY_D">/<sprite name="XBOX_LEFT_STICK"> - Draw
   credits: Created by Jay Ignatowski
   attributions: 'Trumbus created by Kate Olguin.
 
