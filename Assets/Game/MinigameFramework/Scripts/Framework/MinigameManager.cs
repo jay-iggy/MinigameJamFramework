@@ -41,7 +41,7 @@ public class MinigameManager : MonoBehaviour
     public int pointsForThirdPlace = 2;
     public int pointsForFourthPlace = 1;
 
-    [Header("Minigames")]
+    [Header("Minigames")] public List<MinigamePack> allPacks = new();
     public List<MinigamePack> minigamePacks = new ();
     public List<MinigameInfo> minigames { get; private set; }
     public MinigameInfo debugMinigame;

@@ -15,7 +15,7 @@ namespace Game.MinigameFramework.Scripts.Framework.Minigames {
         [Tooltip("Credit assets and packages used")][TextArea] public string attributions;
 
         public MinigamePack GetPack() {
-            foreach (MinigamePack pack in MinigameManager.instance.minigamePacks) {
+            foreach (MinigamePack pack in MinigameManager.instance.allPacks) {
                 if(pack.minigames.Contains(this)) {
                     return pack;
                 }
