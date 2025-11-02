@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.MinigameFramework.Menus.MainMenu;
 using Game.MinigameFramework.Scripts;
 using Game.MinigameFramework.Scripts.Framework.Input;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -76,18 +78,21 @@ public class MenuScript : MonoBehaviour {
         }
     }
     
-    [SerializeField] List<PlayerSlotUI> playerSlots = new List<PlayerSlotUI>();
+    [SerializeField] List<MenuPlayerSlot> playerSlots = new();
     
     public void OnPlayerConnected(int playerIndex) {
         playerSlots[playerIndex].SetStatus(true);
+        playerSlots[playerIndex].BindToPlayer(playerIndex);
         CheckUnlockButton();
     }
     public void OnPlayerDisconnected(int playerIndex) {
         playerSlots[playerIndex].SetStatus(false);
+        playerSlots[playerIndex].UnBindFromPlayer();
         CheckUnlockButton();
     }
 
     private void OnAllPlayersConnected() {
         PlayerManager.SetSelectedGameObject(startButton.gameObject);
     }
+
 }
