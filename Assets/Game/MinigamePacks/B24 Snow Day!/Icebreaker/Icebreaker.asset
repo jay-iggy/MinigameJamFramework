@@ -22,8 +22,9 @@ MonoBehaviour:
 
     Be
     the last player to survive.'
-  controls: 'Left Stick - Move
+  controls: '<sprite name="XBOX_LEFT_STICK> - Move
 
-    A - Use Hammer'
+    <sprite name="XBOX_A"> -
+    Use Hammer'
   credits: 
   attributions: 

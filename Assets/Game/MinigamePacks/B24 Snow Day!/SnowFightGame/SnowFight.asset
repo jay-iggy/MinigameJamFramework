@@ -22,11 +22,12 @@ MonoBehaviour:
 
     Be the last player to
     survive.'
-  controls: 'Left Stick - Move
+  controls: '<sprite name="XBOX_LEFT_STICK"> - Move
 
-    Right Stick - Rotate
+    <sprite name="XBOX_RIGHT_STICK>
+    - Rotate
 
-    RT or RB - Throw Snowballs
+    <sprite name="XBOX_RT> or <sprite name="XBOX_RB> - Throw Snowballs
 
 '
   credits: 
