@@ -89,13 +89,13 @@ public class PackageSelectionScript : MonoBehaviour
     }
     
     public void OnPackHovered(MinigamePack pack) {
-        description.text = $"<size=150%><b>{pack.packName.ToUpper()}</b></size>\n\n{pack.description}";
+        description.text = $"<color=#{ColorUtility.ToHtmlStringRGB(pack.packColor)}><size=150%><b>{pack.packName.ToUpper()}</b></size></color>\n\n{pack.description}";
         DisplayMinigames(pack);
         RefreshStatusText(pack);
     }
     
     public void OnMinigameHovered(MinigameInfo minigame) {
-        description.text = $"<size=150%><b>{minigame.minigameName.ToUpper()}</b></size>\n\n{minigame.description}\n\n{minigame.credits}";
+        description.text = $"<color=#{ColorUtility.ToHtmlStringRGB(minigame.GetPack().packColor)}><size=150%><b>{minigame.minigameName.ToUpper()}</b></size></color>\n\n{minigame.description}\n\n{minigame.credits}";
         enableStatusText.text = "";
     }
     

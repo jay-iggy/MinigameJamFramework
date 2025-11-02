@@ -10,19 +10,16 @@ public class MinigameUI : MonoBehaviour {
     public TextMeshProUGUI minigameDescriptionText;
     public TextMeshProUGUI minigameControlsText;
     public Image packIcon;
+    public TextMeshProUGUI[] coloredHeaders = new TextMeshProUGUI[2];
     
     public void SetMinigame(MinigameInfo minigame) {
         minigameNameText.text = minigame.minigameName;
         minigameDescriptionText.text = minigame.description;
         minigameControlsText.text = minigame.controls;
-        packIcon.sprite = GetPackIcon(minigame);
-    }
-    private Sprite GetPackIcon(MinigameInfo minigame) {
-        foreach (MinigamePack pack in MinigameManager.instance.minigamePacks) {
-            if(pack.minigames.Contains(minigame)) {
-                return pack.icon;
-            }
+        MinigamePack pack = minigame.GetPack();
+        packIcon.sprite = pack.icon;
+        foreach (TextMeshProUGUI header in coloredHeaders) {
+            header.color = pack.packColor;
         }
-        return null;
     }
 }
