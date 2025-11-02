@@ -25,15 +25,15 @@ MonoBehaviour:
     character before anyone else finds theirs, bonus points for finding someone else.'
   controls: '--Search Phase--
 
-    Left Stick - Move Pedestrain
+    <sprite name="XBOX_LEFT_STICK"> - Move Pedestrain
 
+    --Select
+    Phase--
 
-    --Select Phase--
+    <sprite name="XBOX_LEFT_STICK"> - Move Mouse
 
-    Left
-    Stick - Move Mouse
-
-    A Button - Select'
+    <sprite name="XBOX_A">
+    - Select'
   credits: 'James Prendergast - artist, composer, designer, & primary programmer
 
     Benjamin

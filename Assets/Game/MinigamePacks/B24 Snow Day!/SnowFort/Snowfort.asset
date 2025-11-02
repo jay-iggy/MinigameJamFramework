@@ -22,14 +22,14 @@ MonoBehaviour:
     start with an invincible cannon, snow blocks, and a window (which blocks opponent
     fire but not yours). Build the fort, then use your cannons to get 3 hits on your
     opponent's core. Cannons can be reloaded with snow blocks.
-  controls: 'Left Stick: Move Cursor
+  controls: '<sprite name="XBOX_LEFT_STICK>: Move Cursor
 
-    South Button: Place object or use cannon
+    <sprite name="XBOX_A>:
+    Place object or use cannon
 
-    West
-    Button: (Hold) End phase early
+    <sprite name="XBOX_X>: (Hold) End phase early
 
-    North & East Buttons: Scroll between objects
-    and cannons'
+    <sprite
+    name="XBOX_Y> & <sprite name="XBOX_B>: Scroll between objects and cannons'
   credits: 
   attributions: 
