@@ -19,7 +19,6 @@ public class PackageSelectionScript : MonoBehaviour
 
     public GameObject hoverableIcon;
     public SceneField mainMenuScene;
-    public List<MinigamePack> allPacks = new List<MinigamePack>();
     
     private Color _deselectedColor = new Color(.5f, .5f, .5f, 1.0f);
     
@@ -47,7 +46,7 @@ public class PackageSelectionScript : MonoBehaviour
     private void DisplayPacks() {
         // display all packs
         float next = 0f;
-        foreach (MinigamePack pack in allPacks) {
+        foreach (MinigamePack pack in MinigameManager.instance.allPacks) {
             HoverIcon hi = Instantiate(hoverableIcon, packageIcons).GetComponent<HoverIcon>();
             hi.SetData(this, pack);
 
@@ -64,7 +63,7 @@ public class PackageSelectionScript : MonoBehaviour
     private void RefreshPackColors() {
         for (int i = 0; i < packageIcons.childCount; i++) {
             Image img = packageIcons.GetChild(i).GetComponent<Image>();
-            img.color = MinigameManager.instance.PackIsOn(allPacks[i]) ? Color.white : _deselectedColor;
+            img.color = MinigameManager.instance.PackIsOn(MinigameManager.instance.allPacks[i]) ? Color.white : _deselectedColor;
         }
     }
     
