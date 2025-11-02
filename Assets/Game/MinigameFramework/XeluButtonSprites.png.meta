@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bc988b2786d05674f89315302b7ff82e
+guid: 4a819ecd9cf1f324b9b6895e13d9c4bf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5382dc3a1ad25f34fac0f7dd2de656ca
-      internalID: -1922115679
+      spriteID: 123e6c7719ea5fd449e41da5de7f6358
+      internalID: -690254379
       vertices: []
       indices: 
       edges: []
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37822a14e0d117d47811db857fd450cb
-      internalID: -1428029331
+      spriteID: bf2fca68af6a2234ea2151d1bc7fca8b
+      internalID: -953763032
       vertices: []
       indices: 
       edges: []
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7533d0f3b794f49498c07c2168498b0c
-      internalID: 1199515395
+      spriteID: 6e3e7b99e9491d741acb68b18f4599c2
+      internalID: 2019919333
       vertices: []
       indices: 
       edges: []
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fc6138337b205a41b00f2224f9df798
-      internalID: 672402090
+      spriteID: e839a02694b5b10439333f9fc4d2e46f
+      internalID: -1694233940
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: XBOX_LEFT_STICK
+      name: XBOX_LB
       rect:
         serializedVersion: 2
         x: 400
@@ -195,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7219a882285ad9149a29d6705d199509
-      internalID: -436644663
+      spriteID: 0806bc3a43e759f42bdc58c1ca3a8a73
+      internalID: -1749196494
       vertices: []
       indices: 
       edges: []
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 320d357993e82af4ca37378bd225e182
-      internalID: -353623185
+      spriteID: b450b429bd91ccc4fb1b5a276a890803
+      internalID: 988558297
       vertices: []
       indices: 
       edges: []
@@ -237,8 +237,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c51440cae82aaa42b0d9425dabca84b
-      internalID: 1811460244
+      spriteID: 925d9b29aa442f14abd62699d3d02461
+      internalID: 755873992
       vertices: []
       indices: 
       edges: []
@@ -258,8 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ed60a25e97ea584a8009f30b31e382e
-      internalID: 440556346
+      spriteID: 01b8572647fe5c74a8122f10ffa21c30
+      internalID: -1417635399
       vertices: []
       indices: 
       edges: []
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9dfdee9d9f93154daf037c04f3c8a7b
-      internalID: 904937617
+      spriteID: dde649c5a5fe6984da3c55119f026a63
+      internalID: 1651563355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: XBOX_RB
+      name: XBOX_LT
       rect:
         serializedVersion: 2
         x: 400
@@ -300,8 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b23e3689935a1a843b03d35506d4e8d1
-      internalID: 320357545
+      spriteID: f2a6fe9ba63417f40b0976c0235b5872
+      internalID: 807838643
       vertices: []
       indices: 
       edges: []
@@ -321,8 +321,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4580daf829a2af64caca1a5dde43f8bb
-      internalID: -496394457
+      spriteID: 0b9f8512ce562f848b0d9747803df452
+      internalID: -1466276660
       vertices: []
       indices: 
       edges: []
@@ -342,8 +342,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e7c4c2f9e67e694785d2f487f92d4b8
-      internalID: -695259833
+      spriteID: 23a6e8e7addf3994094452e5ef5e193f
+      internalID: -609376898
       vertices: []
       indices: 
       edges: []
@@ -363,8 +363,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 736b832bdc8f40147a591606b6cbd294
-      internalID: -1737888322
+      spriteID: d307962730adeb7468baa40733d47e90
+      internalID: -934802825
       vertices: []
       indices: 
       edges: []
@@ -384,14 +384,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ebf7c0452d26194db686ec5f6fad5c6
-      internalID: -1658413703
+      spriteID: 0e2eb14b336a2b0469aa7ae0a4f37d7e
+      internalID: 1782592359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: XBOX_RT
+      name: XBOX_RB
       rect:
         serializedVersion: 2
         x: 400
@@ -405,14 +405,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2309a89e21c00f64a91e564ed72b0f4c
-      internalID: -1985053753
+      spriteID: 90881ce9160b60f4480f6a3a55e69bb4
+      internalID: -461803435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: XBOX_A
+      name: XBOX_LEFT_STICK
       rect:
         serializedVersion: 2
         x: 0
@@ -426,14 +426,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43466887508adfc409e77332b089576a
-      internalID: -457927278
+      spriteID: d702f3ba7ad24c5479131f593d0ce27c
+      internalID: 437750638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: XBOX_B
+      name: XBOX_RIGHT_STICK
       rect:
         serializedVersion: 2
         x: 100
@@ -447,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 074d39a9703cb2d4ea79dbfc88a3a04c
-      internalID: 2046008361
+      spriteID: bd8ab2e0fa4922443a9de24c247dc033
+      internalID: 1389534325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: XBOX_LB
+      name: XBOX_A
       rect:
         serializedVersion: 2
         x: 200
@@ -468,14 +468,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e719408da1450bd47a8851f12e0ad263
-      internalID: 1080854669
+      spriteID: b1b9ea16693c1174b9b99c0bd49c960f
+      internalID: -2017073765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: XBOX_LT
+      name: XBOX_B
       rect:
         serializedVersion: 2
         x: 300
@@ -489,14 +489,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 124fb0471ed2f9842a19b386a76e9be4
-      internalID: -47261028
+      spriteID: f8370108a6137f84ba16613034234b45
+      internalID: -285169947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: XBOX_RIGHT_STICK
+      name: XBOX_RT
       rect:
         serializedVersion: 2
         x: 400
@@ -510,8 +510,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22684641be648f34883015bce0ec8443
-      internalID: -1906072417
+      spriteID: de11dc460db9c3947ae9f8be3c4ad665
+      internalID: -1433350407
       vertices: []
       indices: 
       edges: []
@@ -531,8 +531,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 191dd9e25db80304fa8f2eb35b90cc6c
-      internalID: 1071544110
+      spriteID: 2c3e649341a511343a1c1cca0e50f8e8
+      internalID: -904552783
       vertices: []
       indices: 
       edges: []
@@ -552,8 +552,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a705875d5d4b7c6498fb92f224f50a76
-      internalID: 1978754888
+      spriteID: d62f48b2889182640bc2029a04522c22
+      internalID: -1466378663
       vertices: []
       indices: 
       edges: []
@@ -561,7 +561,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 79c8d7798d45ab046ae7a9819dba0c6e
+    spriteID: c8a08d18545cff44d81d57c2d2733f8c
     internalID: 0
     vertices: []
     indices: 
@@ -569,28 +569,28 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      KEY_A: -1428029331
-      KEY_D: 672402090
-      KEY_E: 904937617
-      KEY_ESC: -496394457
-      KEY_Q: 440556346
-      KEY_S: 1199515395
-      KEY_SHIFT: 1811460244
-      KEY_SPACE: -353623185
-      KEY_W: -1922115679
-      MOUSE: -695259833
-      MOUSE_LEFT: -1737888322
-      MOUSE_RIGHT: -1658413703
-      XBOX_A: -457927278
-      XBOX_B: 2046008361
-      XBOX_LB: 1080854669
-      XBOX_LEFT_STICK: -436644663
-      XBOX_LT: -47261028
-      XBOX_RB: 320357545
-      XBOX_RIGHT_STICK: -1906072417
-      XBOX_RT: -1985053753
-      XBOX_X: 1071544110
-      XBOX_Y: 1978754888
+      KEY_A: -953763032
+      KEY_D: -1694233940
+      KEY_E: 1651563355
+      KEY_ESC: -1466276660
+      KEY_Q: -1417635399
+      KEY_S: 2019919333
+      KEY_SHIFT: 755873992
+      KEY_SPACE: 988558297
+      KEY_W: -690254379
+      MOUSE: -609376898
+      MOUSE_LEFT: -934802825
+      MOUSE_RIGHT: 1782592359
+      XBOX_A: -2017073765
+      XBOX_B: -285169947
+      XBOX_LB: -1749196494
+      XBOX_LEFT_STICK: 437750638
+      XBOX_LT: 807838643
+      XBOX_RB: -461803435
+      XBOX_RIGHT_STICK: 1389534325
+      XBOX_RT: -1433350407
+      XBOX_X: -904552783
+      XBOX_Y: -1466378663
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
