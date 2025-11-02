@@ -13,5 +13,14 @@ namespace Game.MinigameFramework.Scripts.Framework.Minigames {
         [Header("Credits")]
         [Tooltip("Credit authors")][TextArea] public string credits;
         [Tooltip("Credit assets and packages used")][TextArea] public string attributions;
+
+        public MinigamePack GetPack() {
+            foreach (MinigamePack pack in MinigameManager.instance.minigamePacks) {
+                if(pack.minigames.Contains(this)) {
+                    return pack;
+                }
+            }
+            return null;
+        }
     }
 }

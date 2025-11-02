@@ -16,18 +16,10 @@ public class MinigameUI : MonoBehaviour {
         minigameNameText.text = minigame.minigameName;
         minigameDescriptionText.text = minigame.description;
         minigameControlsText.text = minigame.controls;
-        MinigamePack pack = GetPack(minigame);
+        MinigamePack pack = minigame.GetPack();
         packIcon.sprite = pack.icon;
         foreach (TextMeshProUGUI header in coloredHeaders) {
             header.color = pack.packColor;
         }
-    }
-    private MinigamePack GetPack(MinigameInfo minigame) {
-        foreach (MinigamePack pack in MinigameManager.instance.minigamePacks) {
-            if(pack.minigames.Contains(minigame)) {
-                return pack;
-            }
-        }
-        return null;
     }
 }
