@@ -95,7 +95,7 @@ public class PackageSelectionScript : MonoBehaviour
     }
     
     public void OnMinigameHovered(MinigameInfo minigame) {
-        description.text = $"<size=150%><b>{minigame.minigameName.ToUpper()}</b></size>\n\n{minigame.description}\n\n{minigame.credits}";
+        description.text = $"<color=#{ColorUtility.ToHtmlStringRGB(minigame.GetPack().packColor)}><size=150%><b>{minigame.minigameName.ToUpper()}</b></size></color>\n\n{minigame.description}\n\n{minigame.credits}";
         enableStatusText.text = "";
     }
     
