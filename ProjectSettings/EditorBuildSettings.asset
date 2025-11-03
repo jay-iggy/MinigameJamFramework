@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Examples/TrumbusTrace/TrumbusTrace.unity
     guid: 48e7c089fc4ce514ebf73f8d894f8e18
+  - enabled: 1
+    path: Assets/Game/MinigameFramework/Menus/Credits/Credits.unity
+    guid: 2afa41847b8987c4782d5818e9de448b
   m_configObjects: {}
