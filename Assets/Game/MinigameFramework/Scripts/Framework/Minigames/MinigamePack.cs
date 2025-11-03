@@ -9,6 +9,7 @@ namespace Game.MinigameFramework.Scripts.Framework.Minigames {
         public string packName;
         [Tooltip("Displayed next to minigame names")] public Sprite icon;
         public Color packColor =  Color.white;
+        public string createdFor;
         [TextArea] public string description;
         public List<MinigameInfo> minigames;
     }
