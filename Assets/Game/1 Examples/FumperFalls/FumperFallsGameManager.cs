@@ -11,14 +11,15 @@ namespace Examples.FumperFalls {
         public float duration = 30;
         public float timer = 0;
 
-        private List<Player> alivePlayers = new();
+        private MinigameManager.Ranking _ranking = new();
 
-        MinigameManager.Ranking ranking = new();
+        private List<Player> _alivePlayers = new();
+        private int _deaths = 0;
 
 
         private void Start() {
-            alivePlayers.AddRange(PlayerManager.players);
-
+            _alivePlayers = PlayerManager.players;
+            
             StartCoroutine(GameTimer());
 
             //if not starting in editor (or if all players are bound ahead of time)
@@ -36,13 +37,14 @@ namespace Examples.FumperFalls {
 
         private void KillPlayer(Pawn pawn) {
             print($"Player Index: {pawn.playerIndex}");
-            if (pawn.playerIndex < 0) return;
+            
+            if(pawn.playerIndex >= 0) {
+                _ranking.SetRank(pawn.playerIndex, 4 - _deaths);
+                _alivePlayers.Remove(PlayerManager.players[pawn.playerIndex]);
+            }
+            _deaths++;
 
-            Player player = PlayerManager.players[pawn.playerIndex];
-            alivePlayers.Remove(player);
-            ranking.AddFromEnd(player.playerIndex); // add player to lowest available rank
-
-            if (alivePlayers.Count <= 1) {
+            if (_deaths == 3) {
                 StopMinigame();
             }
         }
@@ -63,13 +65,13 @@ namespace Examples.FumperFalls {
         }
 
         IEnumerator EndMinigame() {
-            // "FINISH" ui
-            foreach (Player player in alivePlayers) {
-                ranking.SetRank(player.playerIndex, 1);
+            foreach (Player player in _alivePlayers) {
+                _ranking.SetRank(player.playerIndex, 1);
             }
-
+            
+            // "FINISH" ui
             yield return new WaitForSeconds(2);
-            MinigameManager.instance.EndMinigame(ranking);
+            MinigameManager.instance.EndMinigame(_ranking);
         }
 
 
