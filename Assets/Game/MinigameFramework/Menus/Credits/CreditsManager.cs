@@ -22,14 +22,10 @@ public class CreditsManager : MonoBehaviour {
     private void CreatePackUI(MinigamePack pack) {
         CreditUI packCredit = Instantiate(packPrefab, parent);
         packCredit.transform.SetSiblingIndex(parent.childCount - 2);
-        packCredit.SetText(pack.packName, pack.packColor, pack.createdFor);
+        packCredit.SetText(pack.packName, pack.packColor, null);
         foreach (MinigameInfo minigame in pack.minigames) {
             CreateMinigameUI(minigame, pack.packColor, packCredit.childParent);
         }
-
-        // Fix issue where children don't adjust to parent's position
-        // Band-aid fix, you can see a jarring visual bug frame where its wrong
-        LayoutRebuilder.ForceRebuildLayoutImmediate(packCredit.childParent.GetComponent<RectTransform>());
     }
 
     private void CreateMinigameUI(MinigameInfo minigame, Color color, Transform parentTransform) {
