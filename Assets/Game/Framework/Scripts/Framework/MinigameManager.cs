@@ -196,7 +196,7 @@ public class MinigameManager : MonoBehaviour
         }
         public void SetRank(int[] playerIndexList) {
             if(playerIndexList.Length > 4) {
-                throw new ArgumentException("Ranking::SetRank: parameter playerIndexList length cannot be greater than 4");
+                throw new ArgumentException("Ranking::SetRank: parameter 'playerIndexList' length cannot be greater than 4");
             }
             for(int i = 0; i < 4; i++) {
                 if (i >= playerIndexList.Length) break;
