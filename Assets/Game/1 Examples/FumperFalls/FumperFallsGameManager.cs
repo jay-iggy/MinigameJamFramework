@@ -10,7 +10,7 @@ using UnityEngine.InputSystem;
 namespace Examples.FumperFalls {
     public class FumperFallsGameManager : MonoBehaviour {
         // TIME VARIABLES
-        public float duration = 30;
+        public float duration = 20;
         [HideInInspector] public float timer = 0;
 
         // SCORING VARIABLES
