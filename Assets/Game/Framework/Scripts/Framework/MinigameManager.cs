@@ -194,19 +194,16 @@ public class MinigameManager : MonoBehaviour
         public void SetRank(int playerIndex, int rank) {
             _playerRanks[playerIndex] = rank;
         }
-        public void SetRank(int[] playerIndices) {
-            if(playerIndices.Length > 4) {
-                throw new ArgumentException("playerIndices length cannot be greater than 4");
+        public void SetRank(int[] playerIndexList) {
+            if(playerIndexList.Length > 4) {
+                throw new ArgumentException("Ranking::SetRank: parameter playerIndexList length cannot be greater than 4");
             }
             for(int i = 0; i < 4; i++) {
-                if(i >= playerIndices.Length) {
-                    break;
-                }
-                if(playerIndices[i] < 0) continue; // skip invalid player indices
-                this[playerIndices[i]] = i+1;
+                if (i >= playerIndexList.Length) break;
+                if(playerIndexList[i] < 0) continue; // skip invalid player indices
+                _playerRanks[playerIndexList[i]] = i+1;
             }
         }
-
     }
 
     public void GoToMainMenuScene() {
