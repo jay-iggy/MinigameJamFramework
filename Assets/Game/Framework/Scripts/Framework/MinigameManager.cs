@@ -148,12 +148,8 @@ public class MinigameManager : MonoBehaviour
     /// For example, "ranking[3] = 1" sets Player 4 to first place.
     /// </summary>
     public class Ranking {
-        private List<int> _playerRanks;
+        private List<int> _playerRanks = new(4) { 0, 0, 0, 0 };
 
-        public Ranking() {
-            _playerRanks = new List<int>(4) { 0, 0, 0, 0 };
-        }
-        
         public int this[int index] {
             get => _playerRanks[index];
             set => _playerRanks[index] = value;
