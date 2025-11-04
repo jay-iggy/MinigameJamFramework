@@ -46,11 +46,6 @@ public class MinigameManager : MonoBehaviour
     public List<MinigameInfo> minigames { get; private set; }
     public MinigameInfo debugMinigame;
 
-    /*public void LoadRandomMinigame() {
-        int randomIndex = UnityEngine.Random.Range(0, minigames.Count);
-        LoadMinigame(minigames[randomIndex]);
-    }*/
-
     // Sets expectedPlayers in PlayerManager
     // Called on start and when minigamePacks is updated
     public void DetermineFewestPlayers() {
@@ -116,7 +111,7 @@ public class MinigameManager : MonoBehaviour
     
     
     public void EndMinigame(Ranking ranking) {
-        AwardPoints(ranking.playerRanks);
+        AwardPoints(ranking.ToList());
         PlayerManager.SetMenuActionMap();
         SceneManager.LoadScene(resultsScene.SceneName);
     }
@@ -147,69 +142,69 @@ public class MinigameManager : MonoBehaviour
         }
     }
     
+    /// <summary>
+    /// Collection representing the placement of each player in a minigame.
+    /// Index corresponds to player index with range [0-3]. Value corresponds to that player's rank with range [1-4] .
+    /// For example, "ranking[3] = 1" sets Player 4 to first place.
+    /// </summary>
     public class Ranking {
-        public List<int> playerRanks = new(4); // index in list is playerIndex, value is rank
+        private List<int> _playerRanks = new(4) { 0, 0, 0, 0 };
 
-        public Ranking() {
-            playerRanks.Add(0);
-            playerRanks.Add(0);
-            playerRanks.Add(0);
-            playerRanks.Add(0);
+        public int this[int index] {
+            get => _playerRanks[index];
+            set => _playerRanks[index] = value;
+        }
+
+        public List<int> ToList() {
+            return _playerRanks;
         }
         
         public void AddFromEnd(int playerIndex) {
-            playerRanks[playerIndex] = GetNextLowestRank();
+            this[playerIndex] = GetNextLowestRank();
         }
         public void AddFromStart(int playerIndex) {
-            playerRanks[playerIndex] = GetNextHighestRank();
+            this[playerIndex] = GetNextHighestRank();
         }
         
         public int GetNextHighestRank() {
             int nextHighestRank = 1;
             
-            if(playerRanks.Contains(1)) {
+            if(_playerRanks.Contains(1)) {
                 nextHighestRank = 2;
-            } else if(playerRanks.Contains(2)) {
+            } else if(_playerRanks.Contains(2)) {
                 nextHighestRank = 3;
-            } else if(playerRanks.Contains(3)) {
+            } else if(_playerRanks.Contains(3)) {
                 nextHighestRank = 4;
             }
             
             return nextHighestRank;
         }
         public int GetNextLowestRank() {
-            // if theres a 4, return 3
-            // if theres a 3, return 2
-            // if theres a 2, return 1
             int nextLowestRank = 4;
-            
-            if (playerRanks.Contains(4)) {
+            if (_playerRanks.Contains(4)) {
                 nextLowestRank = 3;
-            } else if (playerRanks.Contains(3)) {
+            } else if (_playerRanks.Contains(3)) {
                 nextLowestRank = 2;
-            } else if (playerRanks.Contains(2)) {
+            } else if (_playerRanks.Contains(2)) {
                 nextLowestRank = 1;
             }
             return nextLowestRank;
         }
+
         public void SetRank(int playerIndex, int rank) {
-            playerRanks[playerIndex] = rank;
+            _playerRanks[playerIndex] = rank;
         }
-        public void SetRank(int[] playerIndices) {
-            if(playerIndices.Length > 4) {
-                throw new ArgumentException("playerIndices length cannot be greater than 4");
+        public void SetRank(int[] playerIndexList) {
+            if(playerIndexList.Length > 4) {
+                throw new ArgumentException("Ranking::SetRank: parameter 'playerIndexList' length cannot be greater than 4");
             }
             for(int i = 0; i < 4; i++) {
-                if(i >= playerIndices.Length) {
-                    break;
-                }
-                if(playerIndices[i] < 0) continue; // skip invalid player indices
-                playerRanks[playerIndices[i]] = i+1;
+                if (i >= playerIndexList.Length) break;
+                if(playerIndexList[i] < 0) continue; // skip invalid player indices
+                _playerRanks[playerIndexList[i]] = i+1;
             }
         }
     }
-    
-    
 
     public void GoToMainMenuScene() {
         SceneManager.LoadScene(mainMenuScene.SceneName);
