@@ -17,8 +17,8 @@ namespace Examples.FumperFalls {
         [SerializeField] private AnimationCurve snowSizeCurve;
         [SerializeField] private AnimationCurve snowMassCurve;
         [SerializeField] private AnimationCurve snowSpeedCurve;
-        private float distanceTraveled = 0;
-        private float snowTotal=0;
+        private float _distanceTraveled = 0;
+        private float _snowTotal=0;
 
         // Disable Unity's default gravity when this component is added
         private void Reset() {
@@ -31,7 +31,7 @@ namespace Examples.FumperFalls {
         // Handle input
         protected override void OnActionPressed(InputAction.CallbackContext context) {
             // Move
-            if (context.action.name == "Move") _moveInput = context.ReadValue<Vector2>();
+            if (context.action.name == PawnAction.Move) _moveInput = context.ReadValue<Vector2>();
         }
         
         private void Update() {
@@ -47,22 +47,22 @@ namespace Examples.FumperFalls {
             private void UpdateSnowAccumulation() {
                 float dot = Vector3.Dot(_rigidbody.velocity, _moveInput);
                 if(dot > 0) { // if the player's velocity in the same direction of their move input
-                    distanceTraveled += Vector3.Dot(_rigidbody.velocity, _moveInput) * Time.deltaTime;
-                    if(distanceTraveled > 0.1f) {
-                        IncreaseSnow(distanceTraveled * distanceToSnow);
-                        distanceTraveled = 0;
+                    _distanceTraveled += Vector3.Dot(_rigidbody.velocity, _moveInput) * Time.deltaTime;
+                    if(_distanceTraveled > 0.1f) {
+                        IncreaseSnow(_distanceTraveled * distanceToSnow);
+                        _distanceTraveled = 0;
                     }
                 }
             }
             private void IncreaseSnow(float snow) {
-                SetSnowTotal(snowTotal + snow);
+                SetSnowTotal(_snowTotal + snow);
             }
             private void SetSnowTotal(float snow) {
-                snowTotal = snow;
-                float scale = snowSizeCurve.Evaluate(snowTotal);
+                _snowTotal = snow;
+                float scale = snowSizeCurve.Evaluate(_snowTotal);
                 transform.localScale = new Vector3(scale, scale, scale);
-                _rigidbody.mass = snowMassCurve.Evaluate(snowTotal);
-                speed = snowSpeedCurve.Evaluate(snowTotal);
+                _rigidbody.mass = snowMassCurve.Evaluate(_snowTotal);
+                speed = snowSpeedCurve.Evaluate(_snowTotal);
             }
         #endregion
     }

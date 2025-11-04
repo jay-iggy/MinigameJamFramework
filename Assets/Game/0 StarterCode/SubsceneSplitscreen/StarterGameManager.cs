@@ -33,7 +33,7 @@ namespace Starter.SubsceneSplitscreen {
             playerIndices.Sort((a, b) => scores[b].CompareTo(scores[a]));
             // Determine rankings (ties not handled in this example)
             MinigameManager.Ranking ranking = new();
-            ranking.SetRank(playerIndices.ToArray());
+            ranking.SetRanksFromPlayerIndexList(playerIndices.ToArray());
             // End minigame
             MinigameManager.instance.EndMinigame(ranking);
         }
