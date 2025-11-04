@@ -275,7 +275,7 @@ namespace SnowDay.BundledUp {
 
             CrowdPlayerPawn[] playersInRankOrder = new CrowdPlayerPawn[players.Count];
             foreach (CrowdPlayerPawn player in players) {
-                playersInRankOrder[players.Count - ranking.playerRanks[player.playerPawnIndex]] = player;
+                playersInRankOrder[players.Count - ranking[player.playerPawnIndex]] = player;
             }
 
             foreach (CrowdPlayerPawn player in playersInRankOrder) {
@@ -284,7 +284,7 @@ namespace SnowDay.BundledUp {
                     player.GetPointerPosition(),
                     Quaternion.identity
                 ).GetComponent<ValidationBehavior>();
-                vb.UseRank(ranking.playerRanks[player.playerPawnIndex], player.GetColor());
+                vb.UseRank(ranking[player.playerPawnIndex], player.GetColor());
                 AudioManager.inst.PlayHighlight();
 
                 yield return new WaitForSeconds(rankDuration / players.Count);
