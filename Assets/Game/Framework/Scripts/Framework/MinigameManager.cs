@@ -111,7 +111,7 @@ public class MinigameManager : MonoBehaviour
     
     
     public void EndMinigame(Ranking ranking) {
-        AwardPoints(ranking);
+        AwardPoints(ranking.ToList());
         PlayerManager.SetMenuActionMap();
         SceneManager.LoadScene(resultsScene.SceneName);
     }
@@ -142,17 +142,21 @@ public class MinigameManager : MonoBehaviour
         }
     }
     
-    public class Ranking : List<int> {
+    public class Ranking {
+        private List<int> _playerRanks;
+
         public Ranking() {
-            Capacity = 4;
-            Add(0);
-            Add(0);
-            Add(0);
-            Add(0);
+            _playerRanks = new List<int>(4) { 0, 0, 0, 0 };
         }
-        // Disable other initializers
-        private Ranking(System.Collections.Generic.IEnumerable<int> collection) {}
-        private Ranking(int capacity) {}
+        
+        public int this[int index] {
+            get => _playerRanks[index];
+            set => _playerRanks[index] = value;
+        }
+
+        public List<int> ToList() {
+            return _playerRanks;
+        }
         
         public void AddFromEnd(int playerIndex) {
             this[playerIndex] = GetNextLowestRank();
@@ -164,11 +168,11 @@ public class MinigameManager : MonoBehaviour
         public int GetNextHighestRank() {
             int nextHighestRank = 1;
             
-            if(Contains(1)) {
+            if(_playerRanks.Contains(1)) {
                 nextHighestRank = 2;
-            } else if(Contains(2)) {
+            } else if(_playerRanks.Contains(2)) {
                 nextHighestRank = 3;
-            } else if(Contains(3)) {
+            } else if(_playerRanks.Contains(3)) {
                 nextHighestRank = 4;
             }
             
@@ -176,11 +180,11 @@ public class MinigameManager : MonoBehaviour
         }
         public int GetNextLowestRank() {
             int nextLowestRank = 4;
-            if (Contains(4)) {
+            if (_playerRanks.Contains(4)) {
                 nextLowestRank = 3;
-            } else if (Contains(3)) {
+            } else if (_playerRanks.Contains(3)) {
                 nextLowestRank = 2;
-            } else if (Contains(2)) {
+            } else if (_playerRanks.Contains(2)) {
                 nextLowestRank = 1;
             }
             return nextLowestRank;
