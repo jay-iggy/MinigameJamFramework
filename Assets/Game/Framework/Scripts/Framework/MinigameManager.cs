@@ -142,6 +142,11 @@ public class MinigameManager : MonoBehaviour
         }
     }
     
+    /// <summary>
+    /// Collection representing the placement of each player in a minigame.
+    /// Index corresponds to player index with range [0-3]. Value corresponds to that player's rank with range [1-4] .
+    /// For example, "ranking[3] = 1" sets Player 4 to first place.
+    /// </summary>
     public class Ranking {
         private List<int> _playerRanks;
 

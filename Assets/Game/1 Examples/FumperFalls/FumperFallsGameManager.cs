@@ -40,7 +40,7 @@ namespace Examples.FumperFalls {
         private void KillPlayer(Pawn pawn) {
             print($"Player {pawn.playerIndex} has been eliminated.");
             
-            if(pawn.playerIndex >= 0) {
+            if(pawn.playerIndex >= 0) { // if pawn is bound to a player
                 _ranking[pawn.playerIndex] = 4 - _deaths;
             }
             _deaths++; // also count deaths for pawns not bound to a player
