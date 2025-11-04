@@ -90,7 +90,7 @@ namespace Examples.TrumbusTrace {
             playerIndexList.Sort((a, b) => scores[b].CompareTo(scores[a])); 
             // Determine rankings (ties not handled in this example)
             MinigameManager.Ranking ranking = new();
-            ranking.SetRank(playerIndexList.ToArray());
+            ranking.SetRanksFromPlayerIndexList(playerIndexList.ToArray());
             // Wait to end minigame so players can see their scores
             yield return new WaitForSeconds(6f);
             MinigameManager.instance.EndMinigame(ranking);
