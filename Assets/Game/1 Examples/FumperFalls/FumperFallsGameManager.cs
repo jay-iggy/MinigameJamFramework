@@ -43,7 +43,7 @@ namespace Examples.FumperFalls {
             if(pawn.playerIndex >= 0) {
                 _ranking[pawn.playerIndex] = 4 - _deaths;
             }
-            _deaths++; // count deaths for pawns with invalid player indexes
+            _deaths++; // also count deaths for pawns not bound to a player
 
             if (_deaths == 3) {
                 StartCoroutine(EndMinigame());
