@@ -5,27 +5,30 @@ using Game.MinigameFramework.Scripts.Framework;
 using Game.MinigameFramework.Scripts.Framework.Input;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Examples.FumperFalls {
     public class FumperFallsGameManager : MonoBehaviour {
+        // TIME VARIABLES
         public float duration = 30;
-        public float timer = 0;
+        [HideInInspector] public float timer = 0;
 
+        // SCORING VARIABLES
         private MinigameManager.Ranking _ranking = new();
-
-        private List<Player> _alivePlayers = new();
         private int _deaths = 0;
 
-
         private void Start() {
-            _alivePlayers = PlayerManager.players;
-            
             StartCoroutine(GameTimer());
-
-            //if not starting in editor (or if all players are bound ahead of time)
-            // stop time + player input
-            // 3 2 1 countdown
-            // start time + player input
+        }
+        IEnumerator GameTimer() {
+            // TODO: Disable player input
+            // TODO: 3 2 1 countdown
+            // TODO: Enable player input
+            while (timer < duration) {
+                timer += Time.deltaTime;
+                yield return null;
+            }
+            StartCoroutine(EndMinigame());
         }
 
         private void OnTriggerEnter(Collider other) {
@@ -34,46 +37,30 @@ namespace Examples.FumperFalls {
                 KillPlayer(pawn);
             }
         }
-
         private void KillPlayer(Pawn pawn) {
-            print($"Player Index: {pawn.playerIndex}");
+            print($"Player {pawn.playerIndex} has been eliminated.");
             
             if(pawn.playerIndex >= 0) {
-                _ranking.SetRank(pawn.playerIndex, 4 - _deaths);
-                _alivePlayers.Remove(PlayerManager.players[pawn.playerIndex]);
+                _ranking[pawn.playerIndex] = 4 - _deaths;
             }
-            _deaths++;
+            _deaths++; // count deaths for pawns with invalid player indexes
 
             if (_deaths == 3) {
-                StopMinigame();
+                StartCoroutine(EndMinigame());
             }
         }
-
-        IEnumerator GameTimer() {
-            while (timer < duration) {
-                timer += Time.deltaTime;
-                yield return null;
-            }
-
-            StopMinigame();
-        }
-
-
-
-        private void StopMinigame() {
-            StartCoroutine(EndMinigame());
-        }
-
+        
         IEnumerator EndMinigame() {
-            foreach (Player player in _alivePlayers) {
-                _ranking.SetRank(player.playerIndex, 1);
+            // Set all alive players to first place
+            for (int i = 0; i < PlayerManager.GetNumPlayers(); i++) {
+                if (_ranking[i] == 0) { // if player's rank is 0, they are alive
+                    _ranking[i] = 1;
+                }
             }
             
-            // "FINISH" ui
+            // TODO: "FINISH" ui
             yield return new WaitForSeconds(2);
             MinigameManager.instance.EndMinigame(_ranking);
         }
-
-
     }
 }
