@@ -159,13 +159,6 @@ public class MinigameManager : MonoBehaviour
             return _playerRanks;
         }
         
-        public void AddFromEnd(int playerIndex) {
-            this[playerIndex] = GetNextLowestRank();
-        }
-        public void AddFromStart(int playerIndex) {
-            this[playerIndex] = GetNextHighestRank();
-        }
-        
         public int GetNextHighestRank() {
             int nextHighestRank = 1;
             
@@ -190,18 +183,28 @@ public class MinigameManager : MonoBehaviour
             }
             return nextLowestRank;
         }
-
+        
         public void SetRank(int playerIndex, int rank) {
             _playerRanks[playerIndex] = rank;
         }
-        public void SetRank(int[] playerIndexList) {
+        public void SetRanksFromList(int[] ranks) {
+            for (int i = 0; i < ranks.Length; i++) {
+                SetRank(i, ranks[i]);
+            }
+        }
+        public void SetRanksFromPlayerIndexList(int[] playerIndexList) {
             if(playerIndexList.Length > 4) {
                 throw new ArgumentException("Ranking::SetRank: parameter 'playerIndexList' length cannot be greater than 4");
             }
             for(int i = 0; i < 4; i++) {
                 if (i >= playerIndexList.Length) break;
                 if(playerIndexList[i] < 0) continue; // skip invalid player indices
-                _playerRanks[playerIndexList[i]] = i+1;
+                SetRank(playerIndexList[i], i + 1);
+            }
+        }
+        public void SetAllPlayersToRank(int rank) {
+            for(int i = 0; i<4; i++) {
+                SetRank(i, rank);
             }
         }
     }

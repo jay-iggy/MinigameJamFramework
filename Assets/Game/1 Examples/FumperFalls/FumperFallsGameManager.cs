@@ -18,6 +18,7 @@ namespace Examples.FumperFalls {
         private int _deaths = 0;
 
         private void Start() {
+            _ranking.SetAllPlayersToRank(1); // set all players to first place
             StartCoroutine(GameTimer());
         }
         IEnumerator GameTimer() {
@@ -51,13 +52,6 @@ namespace Examples.FumperFalls {
         }
         
         IEnumerator EndMinigame() {
-            // Set all alive players to first place
-            for (int i = 0; i < PlayerManager.GetNumPlayers(); i++) { // for each player we know is bound
-                if (_ranking[i] == 0) { // if player's rank is 0, they are alive
-                    _ranking[i] = 1;
-                }
-            }
-            
             // TODO: "FINISH" ui
             yield return new WaitForSeconds(2);
             MinigameManager.instance.EndMinigame(_ranking);
