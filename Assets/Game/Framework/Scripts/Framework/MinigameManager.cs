@@ -194,6 +194,10 @@ public class MinigameManager : MonoBehaviour
             }
             return nextLowestRank;
         }
+
+        public void SetRank(int playerIndex, int rank) {
+            _playerRanks[playerIndex] = rank;
+        }
         public void SetRank(int[] playerIndices) {
             if(playerIndices.Length > 4) {
                 throw new ArgumentException("playerIndices length cannot be greater than 4");
