@@ -52,7 +52,7 @@ namespace Examples.FumperFalls {
         
         IEnumerator EndMinigame() {
             // Set all alive players to first place
-            for (int i = 0; i < PlayerManager.GetNumPlayers(); i++) {
+            for (int i = 0; i < PlayerManager.GetNumPlayers(); i++) { // for each player we know is bound
                 if (_ranking[i] == 0) { // if player's rank is 0, they are alive
                     _ranking[i] = 1;
                 }
