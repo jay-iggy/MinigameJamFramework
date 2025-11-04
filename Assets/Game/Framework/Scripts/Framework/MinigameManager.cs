@@ -159,13 +159,6 @@ public class MinigameManager : MonoBehaviour
             return _playerRanks;
         }
         
-        public void AddFromEnd(int playerIndex) {
-            this[playerIndex] = GetNextLowestRank();
-        }
-        public void AddFromStart(int playerIndex) {
-            this[playerIndex] = GetNextHighestRank();
-        }
-        
         public int GetNextHighestRank() {
             int nextHighestRank = 1;
             
