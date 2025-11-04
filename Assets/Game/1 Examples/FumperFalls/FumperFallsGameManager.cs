@@ -10,7 +10,7 @@ using UnityEngine.InputSystem;
 namespace Examples.FumperFalls {
     public class FumperFallsGameManager : MonoBehaviour {
         // TIME VARIABLES
-        public float duration = 30;
+        public float duration = 20;
         [HideInInspector] public float timer = 0;
 
         // SCORING VARIABLES
@@ -46,7 +46,7 @@ namespace Examples.FumperFalls {
             }
             _deaths++; // also count deaths for pawns not bound to a player
 
-            if (_deaths == 3) {
+            if (_deaths >= 3) {
                 StartCoroutine(EndMinigame());
             }
         }
