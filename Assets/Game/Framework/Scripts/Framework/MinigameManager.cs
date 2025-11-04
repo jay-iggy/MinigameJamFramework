@@ -46,11 +46,6 @@ public class MinigameManager : MonoBehaviour
     public List<MinigameInfo> minigames { get; private set; }
     public MinigameInfo debugMinigame;
 
-    /*public void LoadRandomMinigame() {
-        int randomIndex = UnityEngine.Random.Range(0, minigames.Count);
-        LoadMinigame(minigames[randomIndex]);
-    }*/
-
     // Sets expectedPlayers in PlayerManager
     // Called on start and when minigamePacks is updated
     public void DetermineFewestPlayers() {
@@ -116,7 +111,7 @@ public class MinigameManager : MonoBehaviour
     
     
     public void EndMinigame(Ranking ranking) {
-        AwardPoints(ranking.playerRanks);
+        AwardPoints(ranking);
         PlayerManager.SetMenuActionMap();
         SceneManager.LoadScene(resultsScene.SceneName);
     }
@@ -147,53 +142,48 @@ public class MinigameManager : MonoBehaviour
         }
     }
     
-    public class Ranking {
-        public List<int> playerRanks = new(4); // index in list is playerIndex, value is rank
-
+    public class Ranking : List<int> {
         public Ranking() {
-            playerRanks.Add(0);
-            playerRanks.Add(0);
-            playerRanks.Add(0);
-            playerRanks.Add(0);
+            Capacity = 4;
+            Add(0);
+            Add(0);
+            Add(0);
+            Add(0);
         }
+        // Disable other initializers
+        private Ranking(System.Collections.Generic.IEnumerable<int> collection) {}
+        private Ranking(int capacity) {}
         
         public void AddFromEnd(int playerIndex) {
-            playerRanks[playerIndex] = GetNextLowestRank();
+            this[playerIndex] = GetNextLowestRank();
         }
         public void AddFromStart(int playerIndex) {
-            playerRanks[playerIndex] = GetNextHighestRank();
+            this[playerIndex] = GetNextHighestRank();
         }
         
         public int GetNextHighestRank() {
             int nextHighestRank = 1;
             
-            if(playerRanks.Contains(1)) {
+            if(Contains(1)) {
                 nextHighestRank = 2;
-            } else if(playerRanks.Contains(2)) {
+            } else if(Contains(2)) {
                 nextHighestRank = 3;
-            } else if(playerRanks.Contains(3)) {
+            } else if(Contains(3)) {
                 nextHighestRank = 4;
             }
             
             return nextHighestRank;
         }
         public int GetNextLowestRank() {
-            // if theres a 4, return 3
-            // if theres a 3, return 2
-            // if theres a 2, return 1
             int nextLowestRank = 4;
-            
-            if (playerRanks.Contains(4)) {
+            if (Contains(4)) {
                 nextLowestRank = 3;
-            } else if (playerRanks.Contains(3)) {
+            } else if (Contains(3)) {
                 nextLowestRank = 2;
-            } else if (playerRanks.Contains(2)) {
+            } else if (Contains(2)) {
                 nextLowestRank = 1;
             }
             return nextLowestRank;
-        }
-        public void SetRank(int playerIndex, int rank) {
-            playerRanks[playerIndex] = rank;
         }
         public void SetRank(int[] playerIndices) {
             if(playerIndices.Length > 4) {
@@ -204,12 +194,11 @@ public class MinigameManager : MonoBehaviour
                     break;
                 }
                 if(playerIndices[i] < 0) continue; // skip invalid player indices
-                playerRanks[playerIndices[i]] = i+1;
+                this[playerIndices[i]] = i+1;
             }
         }
+
     }
-    
-    
 
     public void GoToMainMenuScene() {
         SceneManager.LoadScene(mainMenuScene.SceneName);
