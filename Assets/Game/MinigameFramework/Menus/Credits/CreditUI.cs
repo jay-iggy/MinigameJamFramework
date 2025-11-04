@@ -14,7 +14,7 @@ public class CreditUI : MonoBehaviour {
         if (!string.IsNullOrEmpty(bodyText)) {
             body.text = bodyText;
         }
-        else {
+        else if(body!=null){
             body.gameObject.SetActive(false);
         }
     }
