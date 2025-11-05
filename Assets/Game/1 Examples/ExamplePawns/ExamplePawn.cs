@@ -1,6 +1,5 @@
 using Game.MinigameFramework.Scripts.Framework.Input;
 using Game.MinigameFramework.Scripts.Tags;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
