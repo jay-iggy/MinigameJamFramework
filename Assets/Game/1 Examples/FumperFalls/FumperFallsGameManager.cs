@@ -2,26 +2,41 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.MinigameFramework.Scripts.Framework.Input;
+using TMPro;
 using UnityEngine;
 
 namespace Examples.FumperFalls {
     public class FumperFallsGameManager : MonoBehaviour {
         // TIME VARIABLES
+        [Header("Time")]
         public float duration = 20;
         [HideInInspector] public float timer = 0;
-
         // SCORING VARIABLES
         private MinigameManager.Ranking _ranking = new();
         private int _deaths = 0;
+        // CAMERA ANIMATIONS VARIABLES
+        [Header("Camera")]
+        [SerializeField] Animator cameraAnimator;
+        [SerializeField] private AnimationClip startAnimation;
+        [SerializeField] AnimationClip endAnimation;
+        // UI VARIABLES
+        [Header("UI")]
+        [SerializeField] private GameObject readyText;
+        
 
         private void Start() {
             _ranking.SetAllPlayersToRank(1); // set all players to first place
             StartCoroutine(GameTimer());
         }
         IEnumerator GameTimer() {
-            // TODO: Disable player input
-            // TODO: 3 2 1 countdown
-            // TODO: Enable player input
+            // Start Animation
+            FumperFallsPawn.isPawnInputEnabled = false;
+            cameraAnimator.Play(startAnimation.name);
+            readyText.SetActive(true);
+            yield return new WaitForSeconds(startAnimation.length);
+            readyText.SetActive(false);
+            FumperFallsPawn.isPawnInputEnabled = true;
+            // Start Timer
             while (timer < duration) {
                 timer += Time.deltaTime;
                 yield return null;
@@ -49,7 +64,10 @@ namespace Examples.FumperFalls {
         }
         
         IEnumerator EndMinigame() {
-            // TODO: "FINISH" ui
+            // Animation
+            cameraAnimator.Play(endAnimation.name);
+            yield return new WaitForSeconds(endAnimation.length);
+            // End
             yield return new WaitForSeconds(2);
             MinigameManager.instance.EndMinigame(_ranking);
         }
