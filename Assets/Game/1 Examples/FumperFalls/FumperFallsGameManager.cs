@@ -22,7 +22,6 @@ namespace Examples.FumperFalls {
         // UI VARIABLES
         [Header("UI")]
         [SerializeField] private GameObject readyText;
-        [SerializeField] private GameObject startText;
         
 
         private void Start() {
@@ -36,9 +35,6 @@ namespace Examples.FumperFalls {
             readyText.SetActive(true);
             yield return new WaitForSeconds(startAnimation.length);
             readyText.SetActive(false);
-            startText.SetActive(true);
-            yield return new WaitForSeconds(1f);
-            startText.SetActive(false);
             FumperFallsPawn.isPawnInputEnabled = true;
             // Start Timer
             while (timer < duration) {
