@@ -10,7 +10,6 @@ namespace Examples.FumperFalls {
         [Header("Movement")]
         [SerializeField] private float speed = 8f;
         [SerializeField] private float gravity = -50f;
-        private float snowSpeed = 1;
         private Vector2 _moveInput = Vector2.zero;
         private Rigidbody _rigidbody;
         [Header("Snow Accumulation")]
@@ -39,7 +38,7 @@ namespace Examples.FumperFalls {
             // Gravity
             _rigidbody.velocity += gravity * Time.deltaTime * Vector3.up;
             // Movement
-            _rigidbody.angularVelocity += new Vector3(_moveInput.y * snowSpeed * speed * Time.deltaTime, 0, -_moveInput.x * snowSpeed * speed * Time.deltaTime);
+            _rigidbody.angularVelocity += new Vector3(_moveInput.y * speed * Time.deltaTime, 0, -_moveInput.x * speed * Time.deltaTime);
             
             UpdateSnowAccumulation();
         }
@@ -63,7 +62,6 @@ namespace Examples.FumperFalls {
                 float scale = snowSizeCurve.Evaluate(_snowTotal);
                 transform.localScale = new Vector3(scale, scale, scale);
                 _rigidbody.mass = snowMassCurve.Evaluate(_snowTotal);
-                snowSpeed = snowSpeedCurve.Evaluate(_snowTotal);
             }
         #endregion
     }
