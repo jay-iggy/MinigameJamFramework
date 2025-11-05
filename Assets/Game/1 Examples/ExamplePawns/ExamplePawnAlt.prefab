@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1300133687031694015}
+  - component: {fileID: 6700188215190387673}
   - component: {fileID: 7697978886760432761}
   - component: {fileID: 4833650377836621647}
   - component: {fileID: 7260288102117903010}
@@ -36,6 +37,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6700188215190387673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5904622130341351929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a536f54d49ce84886c6139425b185b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comment: Add the CustomTag script to the ground and set its value to "Ground"
 --- !u!114 &7697978886760432761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50,7 +64,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: -1
   speed: 8
-  sprintMultiplier: 1.4
   jumpForce: 20
   gravity: -50
 --- !u!54 &4833650377836621647
@@ -87,7 +100,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5904622130341351929}
-  m_Material: {fileID: 13400000, guid: bf9ccc729b7a99d47ac7007448b34c80, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
