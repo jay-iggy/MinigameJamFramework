@@ -23,7 +23,6 @@ namespace Examples.FumperFalls {
         [Header("UI")]
         [SerializeField] private GameObject readyText;
         [SerializeField] private GameObject startText;
-        [SerializeField] private GameObject finishText;
         
 
         private void Start() {
@@ -71,7 +70,6 @@ namespace Examples.FumperFalls {
         IEnumerator EndMinigame() {
             // Animation
             cameraAnimator.Play(endAnimation.name);
-            finishText.SetActive(true);
             yield return new WaitForSeconds(endAnimation.length);
             // End
             yield return new WaitForSeconds(2);
