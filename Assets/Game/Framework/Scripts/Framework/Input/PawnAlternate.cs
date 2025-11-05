@@ -7,7 +7,9 @@ namespace Game.MinigameFramework.Scripts.Framework.Input {
     /// Create a new class that inherits from this class and override the methods you need.
     /// </summary>
     public abstract class PawnAlternate : Pawn {
+        public static bool isPawnInputEnabled = true;
         protected override void OnActionPressed(InputAction.CallbackContext context) {
+            if (!isPawnInputEnabled) return;
             switch (context.action.name) {
                 case PawnAction.Move:
                     OnMovement(context);
@@ -37,6 +39,7 @@ namespace Game.MinigameFramework.Scripts.Framework.Input {
         }
 
         protected override void OnActionReleased(InputAction.CallbackContext context) {
+            if (!isPawnInputEnabled) return;
             switch (context.action.name) {
                 case PawnAction.ButtonA:
                     OnActionAReleased();

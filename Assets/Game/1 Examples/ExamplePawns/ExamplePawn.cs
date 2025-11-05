@@ -12,6 +12,8 @@ namespace Game.Examples {
 
         private bool _isGrounded;
         private Vector2 _moveInput = Vector2.zero;
+        
+        public static bool isPawnInputEnabled = true;
 
         private Rigidbody _rigidbody;
 
@@ -38,6 +40,8 @@ namespace Game.Examples {
 
         // Handle input
         protected override void OnActionPressed(InputAction.CallbackContext context) {
+            if (!isPawnInputEnabled) return;
+            
             // Move
             if (context.action.name == "Move") _moveInput = context.ReadValue<Vector2>();
 

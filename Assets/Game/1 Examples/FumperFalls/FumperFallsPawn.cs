@@ -12,6 +12,7 @@ namespace Examples.FumperFalls {
         [SerializeField] private float gravity = -50f;
         private Vector2 _moveInput = Vector2.zero;
         private Rigidbody _rigidbody;
+        public static bool isPawnInputEnabled = true;
         [Header("Snow Accumulation")]
         [SerializeField] private float distanceToSnow = 0.1f;
         [SerializeField] private AnimationCurve snowSizeCurve;
@@ -30,6 +31,8 @@ namespace Examples.FumperFalls {
         
         // Handle input
         protected override void OnActionPressed(InputAction.CallbackContext context) {
+            if (!isPawnInputEnabled) return;
+            
             // Move
             if (context.action.name == PawnAction.Move) _moveInput = context.ReadValue<Vector2>();
         }

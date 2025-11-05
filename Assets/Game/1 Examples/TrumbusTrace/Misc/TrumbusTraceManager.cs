@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.Examples;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using TMPro;
 using UnityEngine;
@@ -25,31 +26,24 @@ namespace Examples.TrumbusTrace {
         [SerializeField] TextMeshProUGUI _timerText;
         [SerializeField] Image _timerBackground;
         [SerializeField] Color _timerWarningColor;
-        private bool _hasStarted = false;
 
         [SerializeField] private float _duration = 20;
         [SerializeField] private float _warningTime = 5f;
 
         void Start() {
             StartCoroutine(StartRoutine());
-            PlayerManager.onPlayerConnected.AddListener(HandlePlayerJoined);
         }
 
         IEnumerator StartRoutine() {
             // Disable player inputs during countdown
-            foreach (PlayerInput playerInput in PlayerManager.GetConnectedPlayerInputs()) {
-                playerInput.currentActionMap.Disable();
-            }
+            ExamplePawn.isPawnInputEnabled = false;
             // Countdown
             yield return new WaitForSeconds(0.5f);
             _startText.SetActive(true);
             yield return new WaitForSeconds(1f);
             _startText.SetActive(false);
             // Enable player inputs and start timer
-            _hasStarted = true;
-            foreach (PlayerInput playerInput in PlayerManager.GetConnectedPlayerInputs()) {
-                playerInput.currentActionMap.Enable();
-            }
+            ExamplePawn.isPawnInputEnabled = true;
             StartCoroutine(TimerRoutine());
         }
 
@@ -94,14 +88,6 @@ namespace Examples.TrumbusTrace {
             // Wait to end minigame so players can see their scores
             yield return new WaitForSeconds(6f);
             MinigameManager.instance.EndMinigame(ranking);
-        }
-
-        private void HandlePlayerJoined(int playerIndex) {
-            // Disable input for newly joined players if the minigame hasn't started
-            if (!_hasStarted) {
-                PlayerInput playerInput = PlayerManager.players[playerIndex].playerInput;
-                playerInput.currentActionMap.Disable();
-            }
         }
     }
 }
