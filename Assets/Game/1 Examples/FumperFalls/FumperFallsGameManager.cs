@@ -1,11 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Game.MinigameFramework.Scripts.Framework;
 using Game.MinigameFramework.Scripts.Framework.Input;
-using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Examples.FumperFalls {
     public class FumperFallsGameManager : MonoBehaviour {

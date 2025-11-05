@@ -20,6 +20,6 @@ MonoBehaviour:
   minimumPlayers: 1
   description: Knock the other players off of the shrinking iceberg. Roll around
     to increase in size. Be the last player to survive.
-  controls: <sprite name="XBOX_LEFT_STICK"> - Move
+  controls: <sprite name="XBOX_LEFT_STICK"> - Roll
   credits: Created by Jay Ignatowski
   attributions: 
