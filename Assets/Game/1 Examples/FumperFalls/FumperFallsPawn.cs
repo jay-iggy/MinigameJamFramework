@@ -38,7 +38,7 @@ namespace Examples.FumperFalls {
             // Gravity
             _rigidbody.velocity += gravity * Time.deltaTime * Vector3.up;
             // Movement
-            _rigidbody.angularVelocity += new Vector3(_moveInput.y * speed, 0, -_moveInput.x * speed);
+            _rigidbody.angularVelocity += new Vector3(_moveInput.y * speed * Time.deltaTime, 0, -_moveInput.x * speed * Time.deltaTime);
             
             UpdateSnowAccumulation();
         }
@@ -62,7 +62,6 @@ namespace Examples.FumperFalls {
                 float scale = snowSizeCurve.Evaluate(_snowTotal);
                 transform.localScale = new Vector3(scale, scale, scale);
                 _rigidbody.mass = snowMassCurve.Evaluate(_snowTotal);
-                speed = snowSpeedCurve.Evaluate(_snowTotal);
             }
         #endregion
     }
