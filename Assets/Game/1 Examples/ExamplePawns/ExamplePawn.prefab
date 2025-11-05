@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a536f54d49ce84886c6139425b185b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comment: Add the CustomTag script to the ground and set its value to "Ground"
+  comment: Add the CustomTag script to the ground and add tag "Ground"
 --- !u!114 &2536471635323179487
 MonoBehaviour:
   m_ObjectHideFlags: 0
