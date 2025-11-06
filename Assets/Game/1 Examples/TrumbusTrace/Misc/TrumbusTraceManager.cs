@@ -65,9 +65,7 @@ namespace Examples.TrumbusTrace {
 
         IEnumerator EndRoutine() {
             // Disable player inputs
-            foreach (PlayerInput playerInput in PlayerManager.GetConnectedPlayerInputs()) {
-                playerInput.currentActionMap.Disable();
-            }
+            ExamplePawn.isPawnInputEnabled = false;
             // Show end text
             _timerBackground.gameObject.SetActive(false);
             _endText.SetActive(true);
@@ -88,6 +86,7 @@ namespace Examples.TrumbusTrace {
             // Wait to end minigame so players can see their scores
             yield return new WaitForSeconds(6f);
             MinigameManager.instance.EndMinigame(ranking);
+            ExamplePawn.isPawnInputEnabled = true;
         }
     }
 }
