@@ -78,7 +78,7 @@ public class MinigameManager : MonoBehaviour
         else {
             foreach(MinigamePack pack in minigamePacks) {
                 foreach(MinigameInfo minigame in pack.minigames) {
-                    if (!_minigameStatus[minigame]) return;
+                    if (!IsMinigameOn(minigame)) return;
                     if (minigame.minimumPlayers <= PlayerManager.GetNumPlayers()) {
                         minigames.Add(minigame);
                     }
