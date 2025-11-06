@@ -993,9 +993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c332d4b8329041a41bffb6659968daa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pawn: {fileID: 6531086567283760677}
   cam: {fileID: 549679116722195895}
-  playerIndex: -1
 --- !u!1 &3434036678056286343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,9 +1880,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a24af29ca9f04f4f8d7372d9122451f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subsceneManager: {fileID: 4640466907586981073}
   scoreText: {fileID: 869938551791676550}
   stencil: {fileID: 4517801915781781941}
+  player: {fileID: 8784441718330173126}
   playerColorRenderer: {fileID: 5501719138788299122}
   materials:
   - {fileID: 2100000, guid: bf3477a0adee794419e4ba32e4b76f2e, type: 2}
@@ -2826,7 +2824,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: -1
   speed: 2
-  sprintMultiplier: 1
   jumpForce: 0
   gravity: -50
 --- !u!114 &8614920901020622949
