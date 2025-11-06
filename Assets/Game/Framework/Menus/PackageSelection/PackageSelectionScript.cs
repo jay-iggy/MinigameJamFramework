@@ -20,10 +20,9 @@ public class PackageSelectionScript : MonoBehaviour
     public GameObject hoverableIcon;
     public SceneField mainMenuScene;
     
-    private Color _deselectedColor = new Color(.5f, .5f, .5f, 1.0f);
-    
 
     public void GoToMainMenu() {
+        MinigameManager.instance.PopulateMinigameList();
         SceneManager.LoadScene(mainMenuScene.SceneName);
     }
 
@@ -40,7 +39,7 @@ public class PackageSelectionScript : MonoBehaviour
     private void SetInitialSelection(int index = 0) {
         PlayerManager.SetSelectedGameObject(packageIcons.GetChild(0).gameObject);
         PlayerManager.onPlayerConnected.RemoveListener(SetInitialSelection);
-        RefreshStatusText(MinigameManager.instance.minigamePacks[0]);
+        RefreshStatusText(MinigameManager.instance.IsPackOn(MinigameManager.instance.allPacks[0]));
     }
 
     private void DisplayPacks() {
@@ -52,18 +51,10 @@ public class PackageSelectionScript : MonoBehaviour
 
             Image img = hi.GetComponent<Image>();
             img.sprite = pack.icon;
-            if (!MinigameManager.instance.PackIsOn(pack)) img.color = _deselectedColor;
 
             RectTransform rt = hi.GetComponent<RectTransform>();
             rt.anchoredPosition = new Vector2(next, 0);
             next += 112.5f;
-        }
-    }
-
-    private void RefreshPackColors() {
-        for (int i = 0; i < packageIcons.childCount; i++) {
-            Image img = packageIcons.GetChild(i).GetComponent<Image>();
-            img.color = MinigameManager.instance.PackIsOn(MinigameManager.instance.allPacks[i]) ? Color.white : _deselectedColor;
         }
     }
     
@@ -90,23 +81,27 @@ public class PackageSelectionScript : MonoBehaviour
     public void OnPackHovered(MinigamePack pack) {
         description.text = $"<color=#{ColorUtility.ToHtmlStringRGB(pack.packColor)}><size=150%><b>{pack.packName.ToUpper()}</b></size></color>\n\n{pack.description}";
         DisplayMinigames(pack);
-        RefreshStatusText(pack);
+        RefreshStatusText(MinigameManager.instance.IsPackOn(pack));
     }
     
     public void OnMinigameHovered(MinigameInfo minigame) {
         description.text = $"<color=#{ColorUtility.ToHtmlStringRGB(minigame.GetPack().packColor)}><size=150%><b>{minigame.minigameName.ToUpper()}</b></size></color>\n\n{minigame.description}\n\n{minigame.credits}";
         enableStatusText.text = "";
+        RefreshStatusText(MinigameManager.instance.IsMinigameOn(minigame));
     }
     
     public void TogglePack(MinigamePack pack) {
         MinigameManager.instance.TogglePack(pack);
-        RefreshPackColors(); // refresh packs to have no grey or not grey
-        RefreshStatusText(pack);
+        RefreshStatusText(MinigameManager.instance.IsPackOn(pack));
     }
 
-    private void RefreshStatusText(MinigamePack pack) {
-        bool status = MinigameManager.instance.PackIsOn(pack);
-        enableStatusText.text = status ? "Enabled" : "Disabled";
-        enableStatusText.color = status ? enabledColor : disabledColor;
+    private void RefreshStatusText(bool condition) {
+        enableStatusText.text = condition ? "Enabled" : "Disabled";
+        enableStatusText.color = condition ? enabledColor : disabledColor;
+    }
+
+    public void ToggleMinigame(MinigameInfo minigameData) {
+        MinigameManager.instance.ToggleMinigame(minigameData);
+        RefreshStatusText(MinigameManager.instance.IsMinigameOn(minigameData));
     }
 }

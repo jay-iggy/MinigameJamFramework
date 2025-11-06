@@ -24,6 +24,7 @@ public class MinigameManager : MonoBehaviour
     }
 
     private void Start() {
+        SetupMinigameStatusDictionary();
         DetermineFewestPlayers();
         PopulateMinigameList();
         PawnBindingManager.onPauseButtonPressed.AddListener(OnPauseButton);
@@ -45,6 +46,7 @@ public class MinigameManager : MonoBehaviour
     public List<MinigamePack> minigamePacks = new ();
     public List<MinigameInfo> minigames { get; private set; }
     public MinigameInfo debugMinigame;
+    private Dictionary<MinigameInfo, bool> _minigameStatus = new();
 
     // Sets expectedPlayers in PlayerManager
     // Called on start and when minigamePacks is updated
@@ -58,6 +60,7 @@ public class MinigameManager : MonoBehaviour
             // otherwise, set min to the least restrictive value
             foreach(MinigamePack pack in minigamePacks) {
                 foreach(MinigameInfo minigame in pack.minigames) {
+                    if (!IsMinigameOn(minigame)) break;
                     min = Mathf.Min(min, minigame.minimumPlayers);
                 }
             }
@@ -75,10 +78,19 @@ public class MinigameManager : MonoBehaviour
         else {
             foreach(MinigamePack pack in minigamePacks) {
                 foreach(MinigameInfo minigame in pack.minigames) {
+                    if (!_minigameStatus[minigame]) return;
                     if (minigame.minimumPlayers <= PlayerManager.GetNumPlayers()) {
                         minigames.Add(minigame);
                     }
                 }
+            }
+        }
+    }
+
+    private void SetupMinigameStatusDictionary() {
+        foreach (MinigamePack pack in allPacks) {
+            foreach (MinigameInfo minigame in pack.minigames) {
+                _minigameStatus.Add(minigame,true);
             }
         }
     }
@@ -99,15 +111,24 @@ public class MinigameManager : MonoBehaviour
         PlayerManager.SetMinigameActionMap();
     }
     
-    public bool PackIsOn(MinigamePack pack) {
+    public bool IsPackOn(MinigamePack pack) {
         return minigamePacks.Contains(pack);
     }
     
     public void TogglePack(MinigamePack pack) {
-        if (!PackIsOn(pack)) minigamePacks.Add(pack);
+        if (!IsPackOn(pack)) minigamePacks.Add(pack);
         else minigamePacks.Remove(pack);
         DetermineFewestPlayers();
     }
+
+    public void ToggleMinigame(MinigameInfo minigame) {
+        _minigameStatus[minigame] = !_minigameStatus[minigame];
+        DetermineFewestPlayers();
+    }
+
+    public bool IsMinigameOn(MinigameInfo minigame) {
+        return _minigameStatus[minigame];
+    } 
     
     
     public void EndMinigame(Ranking ranking) {
