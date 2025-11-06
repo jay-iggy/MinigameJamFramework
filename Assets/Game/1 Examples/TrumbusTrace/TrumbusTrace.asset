@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65074faa8a836848ae4203c738fad3b, type: 3}
+  m_Name: TrumbusTrace
+  m_EditorClassIdentifier: 
+  minigameName: Trumbus Trace
+  thumbnail: {fileID: 21300000, guid: 69b70952166524c429b304bad485f6b1, type: 3}
+  scene:
+    m_SceneAsset: {fileID: 102900000, guid: 48e7c089fc4ce514ebf73f8d894f8e18, type: 3}
+    m_SceneName: TrumbusTrace
+  minimumPlayers: 1
+  description: Draw Trumbus as accurately as you can. Avoid drawing a Dark Trumbus
+    and being cursed by unspeakable bad luck.
+  controls: <sprite name="XBOX_LEFT_STICK"> - Draw
+  credits: Created by Jay Ignatowski
+  attributions: 'Trumbus created by Kate Olguin.
+
+    Notebook and crayon textures
+    designed by Freepik.'
