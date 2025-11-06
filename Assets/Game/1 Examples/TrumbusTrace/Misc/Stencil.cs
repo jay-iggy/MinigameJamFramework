@@ -59,5 +59,15 @@ namespace Examples.TrumbusTrace {
 
             return Mathf.RoundToInt((score / _keyPoints.Count)*100);
         }
+
+        public Vector3 GetClosestKeyPoint(Vector3 point) {
+            Vector3 closestKeyPoint = _keyPoints[0];
+            for (int i = 1; i < _keyPoints.Count; i++) {
+                if (Vector3.Distance(point, _keyPoints[i]) < Vector3.Distance(point, closestKeyPoint)) {
+                    closestKeyPoint = _keyPoints[i];
+                }
+            }
+            return closestKeyPoint;
+        }
     }
 }

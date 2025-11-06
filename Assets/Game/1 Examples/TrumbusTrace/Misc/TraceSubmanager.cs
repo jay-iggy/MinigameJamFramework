@@ -10,6 +10,7 @@ namespace Examples.TrumbusTrace {
         public int playerIndex { get; private set; }
         [SerializeField] TextMeshProUGUI scoreText;
         [SerializeField] private Stencil stencil;
+        [SerializeField] private GameObject player;
         [SerializeField] MeshRenderer playerColorRenderer;
 
         [SerializeField] List<Material> materials = new();
@@ -22,6 +23,7 @@ namespace Examples.TrumbusTrace {
 
         private void Start() {
             playerColorRenderer.material = materials[playerIndex];
+            SetPlayerPosition();
         }
 
         public float CalculateAndDisplayScore() {
@@ -38,6 +40,12 @@ namespace Examples.TrumbusTrace {
                 n += 1;
                 yield return new WaitForSeconds(0.025f);
             }
+        }
+
+        private void SetPlayerPosition() {
+            Vector3 startPoint = stencil.GetClosestKeyPoint(player.transform.position);
+            startPoint.y = player.transform.position.y;
+            player.transform.position = startPoint;
         }
     }
 }
