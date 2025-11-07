@@ -29,14 +29,14 @@ namespace Examples.FumperFalls {
             StartCoroutine(GameTimer());
         }
         IEnumerator GameTimer() {
-            // Start Animation
+            // Intro Animation
             FumperFallsPawn.isPawnInputEnabled = false;
             cameraAnimator.Play(startAnimation.name);
             readyText.SetActive(true);
             yield return new WaitForSeconds(startAnimation.length);
             readyText.SetActive(false);
             FumperFallsPawn.isPawnInputEnabled = true;
-            // Start Timer
+            // Timer
             while (timer < duration) {
                 timer += Time.deltaTime;
                 yield return null;
