@@ -29,7 +29,7 @@ namespace Game.MinigameFramework.Menus.MainMenu {
             _playerIndex = index;
             PlayerInput playerInput = PlayerManager.players[_playerIndex].playerInput;
             playerInput.currentActionMap.actionTriggered += HandleDisconnectInput;
-            promptButtonRenderer.sprite = playerInput.currentControlScheme == "Gamepad" ? buttonSprite:keyboardSprite;
+            promptButtonRenderer.sprite = playerInput.currentControlScheme == "KeyboardMouse" ? keyboardSprite : buttonSprite;
         }
 
         public void UnBindFromPlayer() {
