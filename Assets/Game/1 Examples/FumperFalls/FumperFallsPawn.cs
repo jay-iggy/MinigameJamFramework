@@ -17,7 +17,6 @@ namespace Examples.FumperFalls {
         [SerializeField] private float distanceToSnow = 0.1f;
         [SerializeField] private AnimationCurve snowSizeCurve;
         [SerializeField] private AnimationCurve snowMassCurve;
-        [SerializeField] private AnimationCurve snowSpeedCurve;
         private float _distanceTraveled = 0;
         private float _snowTotal=0;
 
