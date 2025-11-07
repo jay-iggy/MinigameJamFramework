@@ -16,6 +16,10 @@ public class PlayerSlotUI : MonoBehaviour {
     
     [SerializeField] RectTransform rectTransform;
     private Vector2 _defaultPosition;
+
+    private Coroutine _animationCoroutine = null;
+    
+    
     private void Start() {
         _defaultPosition = rectTransform.anchoredPosition;
     }
@@ -31,6 +35,7 @@ public class PlayerSlotUI : MonoBehaviour {
     public void SetStatus(bool isConnected) {
         statusText.text = isConnected ? statusConnected : statusNotConnected;
         statusText.color = isConnected ? connectedColor : notConnectedColor;
-        StartCoroutine(MoveToPosition(isConnected ? new Vector2(_defaultPosition.x, raisedYPosition) : _defaultPosition));
+        if(_animationCoroutine!=null) StopCoroutine(_animationCoroutine);
+        _animationCoroutine = StartCoroutine(MoveToPosition(isConnected ? new Vector2(_defaultPosition.x, raisedYPosition) : _defaultPosition));
     }
 }
