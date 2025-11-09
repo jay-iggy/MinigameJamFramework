@@ -404,7 +404,7 @@
                     "name": "ButtonY",
                     "type": "Button",
                     "id": "a59840fc-6670-4d98-9b2e-2bf4b0a105c7",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -693,6 +693,17 @@
                 },
                 {
                     "name": "",
+                    "id": "244600fe-257b-4a7f-8a26-d3e5da9fd19f",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";GenericUSB",
+                    "action": "ButtonL",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "02d4b2ba-4db8-4668-8169-9eba7ef60e3a",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -728,6 +739,17 @@
                     "name": "",
                     "id": "c1cb71a5-b556-41b5-a5f8-752f1bae19a9",
                     "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";GenericUSB",
+                    "action": "ButtonR",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b5109b5b-bc3a-4ed5-9a36-96d1cad7d154",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button8",
                     "interactions": "",
                     "processors": "",
                     "groups": ";GenericUSB",
