@@ -152,7 +152,7 @@ public class MinigameManager : MonoBehaviour
 
         public int this[int index] {
             get => _playerRanks[index];
-            set => _playerRanks[index] = value;
+            set => _playerRanks[index] = Math.Clamp(value, 1, 4);
         }
 
         public List<int> ToList() {
