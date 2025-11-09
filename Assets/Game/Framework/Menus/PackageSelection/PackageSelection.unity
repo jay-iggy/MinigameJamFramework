@@ -185,7 +185,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0, g: 0, b: 0, a: 0.59607846}
     m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.49019608}
     m_PressedColor: {r: 0, g: 0, b: 0, a: 0.8}
-    m_SelectedColor: {r: 0, g: 0, b: 0, a: 0.8}
+    m_SelectedColor: {r: 0.5372549, g: 0.3019608, b: 0, a: 0.8}
     m_DisabledColor: {r: 0, g: 0, b: 0, a: 0.23137255}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1610,9 +1610,6 @@ MonoBehaviour:
   mainMenuScene:
     m_SceneAsset: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
     m_SceneName: Menu
-  allPacks:
-  - {fileID: 11400000, guid: f737c5b122d006249858b69790eb7e6c, type: 2}
-  - {fileID: 11400000, guid: 9c19129210aa330499bcfc682fd92126, type: 2}
 --- !u!1 &2062874655
 GameObject:
   m_ObjectHideFlags: 0
