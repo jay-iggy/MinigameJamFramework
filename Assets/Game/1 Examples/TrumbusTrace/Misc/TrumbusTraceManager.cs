@@ -76,7 +76,9 @@ namespace Examples.TrumbusTrace {
             foreach (TraceSubmanager subscene in subscenes) {
                 scores.Add(subscene.CalculateAndDisplayScore());
             }
-            MinigameManager.Ranking ranking = MinigameManager.Ranking.DetermineRankingFromScores(scores);
+
+            MinigameManager.Ranking ranking = new();
+            ranking.DetermineRankingFromScores(scores);
             // Wait to end minigame so players can see their scores
             yield return new WaitForSeconds(6f);
             MinigameManager.instance.EndMinigame(ranking);

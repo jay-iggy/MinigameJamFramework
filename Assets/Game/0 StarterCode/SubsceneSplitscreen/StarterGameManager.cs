@@ -26,7 +26,9 @@ namespace Starter.SubsceneSplitscreen {
             foreach (StarterSubmanager subscene in subscenes) {
                 scores.Add(subscene.GetScore());
             }
-            MinigameManager.Ranking ranking = MinigameManager.Ranking.DetermineRankingFromScores(scores);
+
+            MinigameManager.Ranking ranking = new();
+            ranking.DetermineRankingFromScores(scores);
             
             // End minigame
             MinigameManager.instance.EndMinigame(ranking);

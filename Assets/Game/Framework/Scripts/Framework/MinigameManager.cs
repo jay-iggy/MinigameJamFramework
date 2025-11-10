@@ -214,7 +214,9 @@ public class MinigameManager : MonoBehaviour
         /// </summary>
         /// <param name="scores">Index in the list corresponds to player index</param>
         /// <returns></returns>
-        public static MinigameManager.Ranking DetermineRankingFromScores(List<int> scores) {
+        public void DetermineRankingFromScores(List<int> scores) {
+            _playerRanks = new();
+            
             // Set up player index list
             List<int> playerIndexList = new();
             for(int i = 0; i < scores.Count; i++) {
@@ -223,23 +225,20 @@ public class MinigameManager : MonoBehaviour
             // Sort player index list to be ordered by player score
             playerIndexList.Sort((a, b) => scores[b].CompareTo(scores[a]));
             // Determine rankings 
-            Ranking ranking = new();
-            ranking[playerIndexList[0]] = 1;
+            SetRank(playerIndexList[0],1);
             print($"Player {playerIndexList[0]+1} ranked 1");
             for (int i = 1; i < playerIndexList.Count; i++) {
-                int prevPlayerRank = ranking[playerIndexList[i - 1]];
+                int prevPlayerRank = this[playerIndexList[i - 1]];
                 
                 // Handle ties
                 if (scores[playerIndexList[i]] == scores[playerIndexList[i - 1]]) {
-                    ranking[playerIndexList[i]] = prevPlayerRank;
-                    print($"Player {playerIndexList[i]+1} ranked {ranking[playerIndexList[i]]}");
+                    SetRank(playerIndexList[i], prevPlayerRank);
+                    print($"Player {playerIndexList[i]+1} ranked {this[playerIndexList[i]]}");
                     continue;
                 }
-                
-                ranking[playerIndexList[i]] = prevPlayerRank+1;
-                print($"Player {playerIndexList[i]+1} ranked {ranking[playerIndexList[i]]}");
+                SetRank(playerIndexList[i], prevPlayerRank+1);
+                print($"Player {playerIndexList[i]+1} ranked {this[playerIndexList[i]]}");
             }
-            return ranking;
         }
     }
 
