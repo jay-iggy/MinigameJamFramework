@@ -223,7 +223,7 @@ public class MinigameManager : MonoBehaviour
             // Sort player index list to be ordered by player score
             playerIndexList.Sort((a, b) => scores[b].CompareTo(scores[a]));
             // Determine rankings 
-            MinigameManager.Ranking ranking = new();
+            Ranking ranking = new();
             ranking[playerIndexList[0]] = 1;
             print($"Player {playerIndexList[0]+1} ranked 1");
             for (int i = 1; i < playerIndexList.Count; i++) {
