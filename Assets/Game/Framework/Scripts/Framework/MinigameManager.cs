@@ -209,7 +209,7 @@ public class MinigameManager : MonoBehaviour
         }
         
         /// <summary>
-        /// Ranks players from a list of scores.
+        /// Ranks players from a list of scores ordered by player index.
         /// If players achieve the same score they will achieve the same rank.
         /// </summary>
         /// <param name="scores">Index in the list corresponds to player index</param>
