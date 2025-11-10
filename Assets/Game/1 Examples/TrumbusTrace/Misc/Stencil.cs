@@ -49,7 +49,7 @@ namespace Examples.TrumbusTrace {
             }
         }
 
-        public float CalculateScore() {
+        public int CalculateScore() {
             float score = 0;
             foreach (KeyValuePair<Vector3, float> entry in _pointDistances) {
                 if (entry.Value < scoreDistanceThreshold) {

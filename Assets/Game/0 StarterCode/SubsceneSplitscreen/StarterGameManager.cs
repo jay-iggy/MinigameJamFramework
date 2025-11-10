@@ -22,18 +22,12 @@ namespace Starter.SubsceneSplitscreen {
         }
 
         public void EndMinigame() {
-            // Calculate player scores
             List<int> scores = new();
-            List<int> playerIndices = new();
-            for(int i = 0; i < subscenes.Count; i++) {
-                scores.Add(subscenes[i].GetScore());
-                playerIndices.Add(i);
+            foreach (StarterSubmanager subscene in subscenes) {
+                scores.Add(subscene.GetScore());
             }
-            // Sort indices by highest score
-            playerIndices.Sort((a, b) => scores[b].CompareTo(scores[a]));
-            // Determine rankings (ties not handled in this example)
-            MinigameManager.Ranking ranking = new();
-            ranking.SetRanksFromPlayerIndexList(playerIndices.ToArray());
+            MinigameManager.Ranking ranking = MinigameManager.Ranking.DetermineRankingFromScores(scores);
+            
             // End minigame
             MinigameManager.instance.EndMinigame(ranking);
         }
