@@ -26,8 +26,8 @@ namespace Examples.TrumbusTrace {
             SetPlayerPosition();
         }
 
-        public float CalculateAndDisplayScore() {
-            float score = stencil.CalculateScore();
+        public int CalculateAndDisplayScore() {
+            int score = stencil.CalculateScore();
             StartCoroutine(AnimateScoreText(score));
             return score;
         }
@@ -35,6 +35,7 @@ namespace Examples.TrumbusTrace {
         private IEnumerator AnimateScoreText(float score) {
             scoreText.color = textColors[playerIndex];
             int n = 0;
+            scoreText.text = "0%";
             while (n < score) {
                 scoreText.text = $"{n}%";
                 n += 1;
