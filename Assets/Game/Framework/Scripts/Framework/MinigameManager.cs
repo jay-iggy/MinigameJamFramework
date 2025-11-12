@@ -214,7 +214,7 @@ public class MinigameManager : MonoBehaviour
         }
         
         public void SetRank(int playerIndex, int rank) {
-            _playerRanks[playerIndex] = rank;
+            this[playerIndex] = rank;
         }
         public void SetRanksFromList(int[] ranks) {
             for (int i = 0; i < ranks.Length; i++) {
