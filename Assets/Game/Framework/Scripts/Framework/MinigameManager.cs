@@ -45,6 +45,7 @@ public class MinigameManager : MonoBehaviour
     public List<MinigamePack> minigamePacks = new ();
     public List<MinigameInfo> minigames { get; private set; }
     public MinigameInfo debugMinigame;
+    private bool _isMinigameEnded = false;
 
     // Sets expectedPlayers in PlayerManager
     // Called on start and when minigamePacks is updated
@@ -97,6 +98,7 @@ public class MinigameManager : MonoBehaviour
     public void LoadMinigame(MinigameInfo minigame) {
         SceneManager.LoadScene(minigame.scene.SceneName);
         PlayerManager.SetMinigameActionMap();
+        _isMinigameEnded = false;
     }
     
     public bool PackIsOn(MinigamePack pack) {
@@ -111,6 +113,12 @@ public class MinigameManager : MonoBehaviour
     
     
     public void EndMinigame(Ranking ranking) {
+        if (_isMinigameEnded) {
+            Debug.LogWarning("MinigameManager: EndMinigame has been called multiple times. Redundant request has been ignored.");
+            return;
+        }
+        
+        _isMinigameEnded = true;
         AwardPoints(ranking.ToList());
         PlayerManager.SetMenuActionMap();
         SceneManager.LoadScene(resultsScene.SceneName);
@@ -215,7 +223,7 @@ public class MinigameManager : MonoBehaviour
         /// <param name="scores">Index in the list corresponds to player index</param>
         /// <returns></returns>
         public void DetermineRankingFromScores(List<int> scores) {
-            _playerRanks = new();
+            _playerRanks = new(4) { 0, 0, 0, 0 };
             
             // Set up player index list
             List<int> playerIndexList = new();
