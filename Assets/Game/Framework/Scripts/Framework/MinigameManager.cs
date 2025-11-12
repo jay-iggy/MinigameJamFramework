@@ -215,7 +215,7 @@ public class MinigameManager : MonoBehaviour
         /// <param name="scores">Index in the list corresponds to player index</param>
         /// <returns></returns>
         public void DetermineRankingFromScores(List<int> scores) {
-            _playerRanks = new();
+            _playerRanks =  new(4) { 0, 0, 0, 0 };
             
             // Set up player index list
             List<int> playerIndexList = new();
