@@ -47,6 +47,7 @@ public class MinigameManager : MonoBehaviour
     public List<MinigameInfo> minigames { get; private set; }
     public MinigameInfo debugMinigame;
     private Dictionary<MinigameInfo, bool> _minigameStatus = new();
+    private bool _isMinigameEnded = false;
 
     // Sets expectedPlayers in PlayerManager
     // Called on start and when minigamePacks is updated
@@ -109,6 +110,7 @@ public class MinigameManager : MonoBehaviour
     public void LoadMinigame(MinigameInfo minigame) {
         SceneManager.LoadScene(minigame.scene.SceneName);
         PlayerManager.SetMinigameActionMap();
+        _isMinigameEnded = false;
     }
     
     public bool IsPackOn(MinigamePack pack) {
@@ -132,6 +134,12 @@ public class MinigameManager : MonoBehaviour
     
     
     public void EndMinigame(Ranking ranking) {
+        if (_isMinigameEnded) {
+            Debug.LogWarning("MinigameManager: EndMinigame has been called multiple times. Redundant request has been ignored.");
+            return;
+        }
+        
+        _isMinigameEnded = true;
         AwardPoints(ranking.ToList());
         PlayerManager.SetMenuActionMap();
         SceneManager.LoadScene(resultsScene.SceneName);
@@ -173,7 +181,7 @@ public class MinigameManager : MonoBehaviour
 
         public int this[int index] {
             get => _playerRanks[index];
-            set => _playerRanks[index] = value;
+            set => _playerRanks[index] = Math.Clamp(value, 1, 4);
         }
 
         public List<int> ToList() {
@@ -226,6 +234,39 @@ public class MinigameManager : MonoBehaviour
         public void SetAllPlayersToRank(int rank) {
             for(int i = 0; i<4; i++) {
                 SetRank(i, rank);
+            }
+        }
+        
+        /// <summary>
+        /// Ranks players from a list of scores ordered by player index.
+        /// If players achieve the same score they will achieve the same rank.
+        /// </summary>
+        /// <param name="scores">Index in the list corresponds to player index</param>
+        /// <returns></returns>
+        public void DetermineRankingFromScores(List<int> scores) {
+            _playerRanks = new(4) { 0, 0, 0, 0 };
+            
+            // Set up player index list
+            List<int> playerIndexList = new();
+            for(int i = 0; i < scores.Count; i++) {
+                playerIndexList.Add(i);
+            }
+            // Sort player index list to be ordered by player score
+            playerIndexList.Sort((a, b) => scores[b].CompareTo(scores[a]));
+            // Determine rankings 
+            SetRank(playerIndexList[0],1);
+            print($"Player {playerIndexList[0]+1} ranked 1");
+            for (int i = 1; i < playerIndexList.Count; i++) {
+                int prevPlayerRank = this[playerIndexList[i - 1]];
+                
+                // Handle ties
+                if (scores[playerIndexList[i]] == scores[playerIndexList[i - 1]]) {
+                    SetRank(playerIndexList[i], prevPlayerRank);
+                    print($"Player {playerIndexList[i]+1} ranked {this[playerIndexList[i]]}");
+                    continue;
+                }
+                SetRank(playerIndexList[i], prevPlayerRank+1);
+                print($"Player {playerIndexList[i]+1} ranked {this[playerIndexList[i]]}");
             }
         }
     }
