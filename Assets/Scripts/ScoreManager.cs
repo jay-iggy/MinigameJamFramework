@@ -12,6 +12,8 @@ namespace HotPotatoGame {
         public TextMeshProUGUI team1text;
         public TextMeshProUGUI team2text;
 
+        public ScarecrowPawn[] pawns;
+
         public void Start()
         {
             UpdateDisplay();
@@ -23,15 +25,43 @@ namespace HotPotatoGame {
             team2text.text = "Team 2 Lives: " + team2lives;
         }
 
+        public void CheckForLoss()
+        {
+            if(team1lives <= 0)
+            {
+                EndMinigame(Team.Two);
+            }else if (team2lives <= 0){
+                EndMinigame(Team.One);
+            }
+        }
+
+        public void EndMinigame(Team winner)
+        {
+            MinigameManager.Ranking _ranking = new();
+            int[] rankingList = new int[] { 0, 0, 0, 0 };
+            int index = 0;
+            foreach(ScarecrowPawn p in pawns)
+            {
+                rankingList[index] = (p.team == winner) ? _ranking.GetNextHighestRank() : _ranking.GetNextLowestRank();
+                index++;
+            }
+
+            _ranking.SetRanksFromList(rankingList);
+            // TODO: Determine player rankings
+            MinigameManager.instance.EndMinigame(_ranking);
+        }
+
         public void SubtractTeam1()
         {
             team1lives--;
+            CheckForLoss();
             UpdateDisplay();
         }
 
         public void SubtractTeam2()
         {
             team2lives--;
+            CheckForLoss();
             UpdateDisplay();
         }
     }

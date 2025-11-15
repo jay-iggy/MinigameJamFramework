@@ -766,6 +766,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
+      propertyPath: pointsForFirstPlace
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
+      propertyPath: pointsForThirdPlace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
+      propertyPath: pointsForSecondPlace
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6125866497244834600, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: m_Name
       value: MinigameManager
@@ -1710,6 +1722,11 @@ MonoBehaviour:
   team2lives: 3
   team1text: {fileID: 1802969445}
   team2text: {fileID: 637107646}
+  pawns:
+  - {fileID: 779269822}
+  - {fileID: 123889406}
+  - {fileID: 1305433698}
+  - {fileID: 1574379506}
 --- !u!1 &1530569957
 GameObject:
   m_ObjectHideFlags: 0
