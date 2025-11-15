@@ -76,7 +76,7 @@ namespace HotPotatoGame {
                 Collider[] cols = Physics.OverlapSphere(explosion.transform.position, (0.5f * explosion.transform.lossyScale.x), playerMask);
                 foreach(Collider c in cols)
                 {
-                    Debug.Log(c.name);
+                    c.gameObject.GetComponent<DieBehavior>().Die();
                 }
 
                 // reset back to heating up again
