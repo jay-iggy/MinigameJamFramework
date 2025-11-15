@@ -227,6 +227,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &391595174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6905778998077295101, guid: 0eca3a66882ceaf478fd16e8fb7a295c, type: 3}
+  m_PrefabInstance: {fileID: 719751820960869687}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &469355708
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,12 +595,26 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4537714905653664361, guid: 0eca3a66882ceaf478fd16e8fb7a295c, type: 3}
   m_PrefabInstance: {fileID: 719751820960869687}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 391595174}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746bc095b90f05346b8d2dfec9ecb211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &779269829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391595174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89607d8876050845891fd121e0b18f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwForce: 20
+  hand: {fileID: 1307034643}
 --- !u!1 &898506271
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +956,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 746bc095b90f05346b8d2dfec9ecb211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1307034643 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 955310112963861781, guid: 0eca3a66882ceaf478fd16e8fb7a295c, type: 3}
+  m_PrefabInstance: {fileID: 719751820960869687}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1530569957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,10 +1417,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9132688381801648195, guid: 0eca3a66882ceaf478fd16e8fb7a295c, type: 3}
+      propertyPath: pawn
+      value: 
+      objectReference: {fileID: 779269822}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6905778998077295101, guid: 0eca3a66882ceaf478fd16e8fb7a295c, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 779269829}
   m_SourcePrefab: {fileID: 100100000, guid: 0eca3a66882ceaf478fd16e8fb7a295c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
