@@ -13,6 +13,12 @@ namespace HotPotatoGame {
         {
             rb = GetComponent<Rigidbody>();   
         }
+
+        private void Update()
+        {
+            // turn to face direction of motion
+            transform.rotation = Quaternion.Euler(new Vector3(0, Mathf.Rad2Deg * Mathf.Atan2(_moveInput.x, _moveInput.y), 0));
+        }
         void FixedUpdate() {
             // TODO: Implement movement
             rb.AddForce(new Vector3(_moveInput.x * moveSpeed, 0f, _moveInput.y * moveSpeed));
