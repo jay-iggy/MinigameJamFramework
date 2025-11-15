@@ -6,6 +6,7 @@ public class TeamIndicatorBehavior : MonoBehaviour
 {
     public Vector3 offset;
     public Transform follow;
+    public int playerNum;
 
     // Start is called before the first frame update
     void Start()

@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 namespace HotPotatoGame { 
     public class ScarecrowPawn : Pawn {
         public Team team;
+        public int playerNum;
 
         public float moveSpeed;
         public float minSpeed;

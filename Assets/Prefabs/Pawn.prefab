@@ -299,6 +299,7 @@ MonoBehaviour:
   moveSpeed: 30
   minSpeed: 0.5
   holdingPotato: 0
+  playerNum: 1
 --- !u!54 &2432783354257092348
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -442,3 +443,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171d2827406d9af4b8bb909460186d12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respawnTime: 2
