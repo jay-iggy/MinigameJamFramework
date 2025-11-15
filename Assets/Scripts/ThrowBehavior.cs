@@ -17,7 +17,7 @@ namespace HotPotatoGame
         }
         public void Throw()
         {
-            PotatoBehavior potato = hand.GetComponentInChildren<PotatoBehavior>();
+            ThrowableBehavior potato = hand.GetComponentInChildren<ThrowableBehavior>();
             if (potato == null) return;
 
             // calculate the direction to apply the force (away from the punching player)
