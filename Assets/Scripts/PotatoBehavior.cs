@@ -9,6 +9,9 @@ public class PotatoBehavior : MonoBehaviour
     private float heatTimer = 0f;
 
     public Color hotColor; // the color the potato becomes when it is hot
+
+    public ParticleSystem fireParticles;
+
     private Color startColor;
     private Material mat;
 
@@ -43,6 +46,7 @@ public class PotatoBehavior : MonoBehaviour
             // check if potato has primed yet
             if(heatTimer <= 0)
             {
+                fireParticles.Play();
                 Debug.Log("IM HOT");
             }
         }
