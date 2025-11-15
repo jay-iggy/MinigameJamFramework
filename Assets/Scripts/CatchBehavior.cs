@@ -27,6 +27,7 @@ namespace HotPotatoGame
             {
                 ThrowableBehavior potato = collider.gameObject.GetComponent<ThrowableBehavior>();
                 if (potato.isPickedUp) return;
+                if (collider.gameObject.GetComponent<PotatoBehavior>().isOnFire) return;
                 pawn.holdingPotato = true;
                 potato.PickUp(hand);
             }
