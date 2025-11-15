@@ -25,8 +25,10 @@ namespace HotPotatoGame
 
             if (inactiveTimer <= 0 && ((potatoMask & (1 << collider.gameObject.layer)) != 0))
             {
+                PotatoBehavior potato = collider.gameObject.GetComponent<PotatoBehavior>();
+                if (potato.isPickedUp) return;
                 pawn.holdingPotato = true;
-                collider.gameObject.GetComponent<PotatoBehavior>().PickUp(hand);
+                potato.PickUp(hand);
             }
         }
 
