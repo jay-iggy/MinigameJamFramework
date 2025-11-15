@@ -25,7 +25,7 @@ namespace HotPotatoGame
 
             if (inactiveTimer <= 0 && ((potatoMask & (1 << collider.gameObject.layer)) != 0))
             {
-                PotatoBehavior potato = collider.gameObject.GetComponent<PotatoBehavior>();
+                ThrowableBehavior potato = collider.gameObject.GetComponent<ThrowableBehavior>();
                 if (potato.isPickedUp) return;
                 pawn.holdingPotato = true;
                 potato.PickUp(hand);
@@ -34,11 +34,11 @@ namespace HotPotatoGame
 
         public void Drop()
         {
-            if (hand.GetComponentInChildren<PotatoBehavior>() != null)
+            if (hand.GetComponentInChildren<ThrowableBehavior>() != null)
             {
                 pawn.holdingPotato = false;
                 inactiveTimer = postPunchCooldown;
-                hand.GetComponentInChildren<PotatoBehavior>().Drop();
+                hand.GetComponentInChildren<ThrowableBehavior>().Drop();
             }
         }
     }
