@@ -5,6 +5,7 @@ using UnityEngine;
 public class PunchBehavior : MonoBehaviour
 {
     public float punchForce;
+    public float punchLift;
     public BoxCollider scanBox;
     public LayerMask playerMask;
 
@@ -22,7 +23,8 @@ public class PunchBehavior : MonoBehaviour
         foreach(Collider col in hitColliders)
         {
             // calculate the direction to apply the force (away from the punching player)
-            Vector3 direction = rb.rotation.eulerAngles;
+            float rot = (rb.rotation.eulerAngles.y);
+            Vector3 direction = new Vector3(Mathf.Sin(Mathf.Deg2Rad * rot), punchLift, Mathf.Cos(Mathf.Deg2Rad * rot));
             // add the impulse
             col.gameObject.GetComponent<Rigidbody>().AddForce(direction * punchForce, ForceMode.Impulse);
         }
