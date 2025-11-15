@@ -6,21 +6,19 @@ namespace HotPotatoGame
 {
     public class DieBehavior : MonoBehaviour
     {
-        private Team team;
         private ScoreManager sm;
 
-        public void Awake()
+        public void Start()
         {
-            team = GetComponent<ScarecrowPawn>().team;
             sm = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         }
 
         public void Die()
         {
-            if(team == Team.One)
+            if (GetComponent<ScarecrowPawn>().team == Team.One)
             {
                 sm.SubtractTeam1();
-            }else if(team == Team.Two)
+            }else if(GetComponent<ScarecrowPawn>().team == Team.Two)
             {
                 sm.SubtractTeam2();
             }

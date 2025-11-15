@@ -4,12 +4,7 @@ using Game.MinigameFramework.Scripts.Framework.Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace HotPotatoGame {
-    public enum Team
-    {
-        One,
-        Two
-    }
+namespace HotPotatoGame { 
     public class ScarecrowPawn : Pawn {
         public Team team;
 

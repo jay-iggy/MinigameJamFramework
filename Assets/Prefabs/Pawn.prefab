@@ -295,6 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
+  team: 0
   moveSpeed: 30
   minSpeed: 0.5
   holdingPotato: 0
