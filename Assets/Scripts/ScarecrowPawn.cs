@@ -43,7 +43,8 @@ namespace HotPotatoGame {
             }
 
             if (context.action.name == PawnAction.ButtonA) {
-                // Jump
+                // Punch
+                GetComponent<PunchBehavior>().Punch();
             }
 
             if (context.action.name == PawnAction.ButtonB) {
