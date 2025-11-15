@@ -18,8 +18,11 @@ namespace HotPotatoGame {
 
         private void Update()
         {
-            // turn to face direction of motion
-            transform.rotation = Quaternion.Euler(new Vector3(0, Mathf.Rad2Deg * Mathf.Atan2(_moveInput.x, _moveInput.y), 0));
+            if (_moveInput != Vector2.zero)
+            {
+                // turn to face direction of motion
+                transform.rotation = Quaternion.Euler(new Vector3(0, Mathf.Rad2Deg * Mathf.Atan2(_moveInput.x, _moveInput.y), 0));
+            }
         }
         void FixedUpdate() {
             if (_moveInput != Vector2.zero)
