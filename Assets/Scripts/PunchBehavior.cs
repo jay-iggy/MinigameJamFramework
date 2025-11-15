@@ -27,6 +27,8 @@ public class PunchBehavior : MonoBehaviour
             Vector3 direction = new Vector3(Mathf.Sin(Mathf.Deg2Rad * rot), punchLift, Mathf.Cos(Mathf.Deg2Rad * rot));
             // add the impulse
             col.gameObject.GetComponent<Rigidbody>().AddForce(direction * punchForce, ForceMode.Impulse);
+            // make the player drop the potato
+            col.gameObject.GetComponentInChildren<CatchBehavior>().Drop(); // TODO: this reference is very brittle and could cause issues
         }
     }
 }
