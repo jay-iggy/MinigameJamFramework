@@ -17,6 +17,8 @@ namespace HotPotatoGame {
         public bool isOnFire = false;
         public ParticleSystem fireParticles;
         public GameObject explosion;
+        public ParticleSystem explosionParticle;
+        public AudioSource explosionAudio;
 
 
         private Color startColor;
@@ -71,6 +73,10 @@ namespace HotPotatoGame {
             {
                 // show and hide the explosion graphic
                 StartCoroutine("ExplosionGraphic");
+                explosionParticle.Play();
+
+                // play sound
+                explosionAudio.Play();
 
                 // hit anyone in the blast zone
                 Collider[] cols = Physics.OverlapSphere(explosion.transform.position, (0.5f * explosion.transform.lossyScale.x), playerMask);
