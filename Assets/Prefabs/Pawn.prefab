@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 4486707251065554205}
   - component: {fileID: 8731467016614345359}
   - component: {fileID: 4596683624447020768}
+  - component: {fileID: 3197818899932798274}
   m_Layer: 6
   m_Name: Pawn
   m_TagString: Untagged
@@ -294,6 +295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: -1
+  team: 0
   moveSpeed: 30
   minSpeed: 0.5
   holdingPotato: 0
@@ -428,3 +430,15 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 960
+--- !u!114 &3197818899932798274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6905778998077295101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171d2827406d9af4b8bb909460186d12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

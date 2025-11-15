@@ -4,8 +4,10 @@ using Game.MinigameFramework.Scripts.Framework.Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace HotPotatoGame {
+namespace HotPotatoGame { 
     public class ScarecrowPawn : Pawn {
+        public Team team;
+
         public float moveSpeed;
         public float minSpeed;
 
