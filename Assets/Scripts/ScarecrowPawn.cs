@@ -4,13 +4,18 @@ using Game.MinigameFramework.Scripts.Framework.Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Starter.Basic {
-    public class StarterPawn : Pawn {
+namespace HotPotatoGame {
+    public class ScarecrowPawn : Pawn {
+        public float moveSpeed;
         Vector2 _moveInput = Vector2.zero;
-        
-        void Update() {
+        Rigidbody rb;
+        private void Awake()
+        {
+            rb = GetComponent<Rigidbody>();   
+        }
+        void FixedUpdate() {
             // TODO: Implement movement
-
+            rb.AddForce(new Vector3(_moveInput.x * moveSpeed, 0f, _moveInput.y * moveSpeed));
         }
 
         protected override void OnActionPressed(InputAction.CallbackContext context) {
