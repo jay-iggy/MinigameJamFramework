@@ -9,10 +9,15 @@ namespace HotPotatoGame {
         public float heatUpTimeRandom; // random values in the range -heatUpTimeRandom, +heatUpTimeRandom are applied to heatUpTime each time the potato starts heating
         private float heatTimer = 0f;
 
+
         public Color hotColor; // the color the potato becomes when it is hot
+
+        public LayerMask playerMask;
 
         public bool isOnFire = false;
         public ParticleSystem fireParticles;
+        public GameObject explosion;
+
 
         private Color startColor;
         private Material mat;
@@ -30,8 +35,12 @@ namespace HotPotatoGame {
         }
 
         // begins the potato heat up cycle
+        // resets everything from previous cycles
         public void startHeating()
         {
+            isOnFire = false;
+            fireParticles.Stop();
+            mat.color = startColor;
             heatTimer = heatUpTime + Random.Range(-heatUpTimeRandom, heatUpTimeRandom);
         }
 
@@ -53,6 +62,37 @@ namespace HotPotatoGame {
                     isOnFire = true;
                 }
             }
+        }
+
+        // trigger the explosion
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (isOnFire)
+            {
+                // show and hide the explosion graphic
+                StartCoroutine("ExplosionGraphic");
+
+                // hit anyone in the blast zone
+                Collider[] cols = Physics.OverlapSphere(explosion.transform.position, (0.5f * explosion.transform.lossyScale.x), playerMask);
+                foreach(Collider c in cols)
+                {
+                    Debug.Log(c.name);
+                }
+
+                // reset back to heating up again
+                startHeating();
+            }
+        }
+
+        public IEnumerator ExplosionGraphic()
+        {
+            explosion.GetComponent<MeshRenderer>().enabled = true;
+            explosion.transform.SetParent(null);
+            yield return new WaitForSeconds(0.3f);
+            explosion.GetComponent<MeshRenderer>().enabled = false;
+            explosion.transform.SetParent(transform);
+            explosion.transform.localPosition = Vector3.zero;
+            yield break;
         }
     }
 }
