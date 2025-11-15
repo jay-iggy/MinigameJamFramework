@@ -7,7 +7,9 @@ using UnityEngine.InputSystem;
 namespace HotPotatoGame {
     public class ScarecrowPawn : Pawn {
         public float moveSpeed;
+        public float minSpeed;
         Vector2 _moveInput = Vector2.zero;
+
         Rigidbody rb;
         private void Awake()
         {
@@ -24,6 +26,14 @@ namespace HotPotatoGame {
             {
                 // add force in direction of input - basic movement code
                 rb.AddForce(new Vector3(_moveInput.x * moveSpeed, 0f, _moveInput.y * moveSpeed));
+            }
+            else
+            {
+                // clamp velocity from 0 to prevent mini-sliding
+                if(rb.velocity.magnitude < minSpeed)
+                {
+                    rb.velocity = Vector3.zero;
+                }
             }
         }
 
