@@ -20,8 +20,11 @@ namespace HotPotatoGame {
             transform.rotation = Quaternion.Euler(new Vector3(0, Mathf.Rad2Deg * Mathf.Atan2(_moveInput.x, _moveInput.y), 0));
         }
         void FixedUpdate() {
-            // TODO: Implement movement
-            rb.AddForce(new Vector3(_moveInput.x * moveSpeed, 0f, _moveInput.y * moveSpeed));
+            if (_moveInput != Vector2.zero)
+            {
+                // add force in direction of input - basic movement code
+                rb.AddForce(new Vector3(_moveInput.x * moveSpeed, 0f, _moveInput.y * moveSpeed));
+            }
         }
 
         protected override void OnActionPressed(InputAction.CallbackContext context) {
@@ -39,6 +42,10 @@ namespace HotPotatoGame {
         }
 
         protected override void OnActionReleased(InputAction.CallbackContext context) {
+            if (context.action.name == PawnAction.Move)
+            {
+                _moveInput = Vector2.zero;
+            }
             if (context.action.name == PawnAction.ButtonB) {
                 // Stop shooting
             }
