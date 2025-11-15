@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -14,6 +15,14 @@ namespace HotPotatoGame {
         public ScarecrowPawn[] pawns;
         public GameObject teamIndicator1;
         public GameObject teamIndicator2;
+
+
+        public static TeamManager instance;
+
+        private void Awake()
+        {
+            instance = this;
+        }
 
         public void Start()
         {
@@ -32,6 +41,8 @@ namespace HotPotatoGame {
                 pawns[i].team = t;
                 GameObject ti = Instantiate((t==Team.One) ? teamIndicator1 : teamIndicator2);
                 ti.GetComponent<TeamIndicatorBehavior>().follow = pawns[i].transform;
+                ti.transform.SetParent(this.transform);
+                ti.GetComponent<TeamIndicatorBehavior>().playerNum = pawns[i].playerNum;
             }
         }
     }
