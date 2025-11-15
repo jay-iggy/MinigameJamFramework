@@ -8,6 +8,8 @@ namespace HotPotatoGame {
     public class ScarecrowPawn : Pawn {
         public float moveSpeed;
         public float minSpeed;
+
+        public bool holdingPotato = false;
         Vector2 _moveInput = Vector2.zero;
 
         Rigidbody rb;
@@ -46,8 +48,16 @@ namespace HotPotatoGame {
             }
 
             if (context.action.name == PawnAction.ButtonA) {
-                // Punch
-                GetComponent<PunchBehavior>().Punch();
+                if (holdingPotato)
+                {
+                    // Throw
+                    GetComponent<ThrowBehavior>().Throw();
+                }
+                else
+                {
+                    // Punch
+                    GetComponent<PunchBehavior>().Punch();
+                }
             }
 
             if (context.action.name == PawnAction.ButtonB) {

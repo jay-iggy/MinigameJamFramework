@@ -180,10 +180,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da736be916c2d00488858f8e11fcd50a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pawn: {fileID: 4537714905653664361}
   hand: {fileID: 955310112963861781}
   potatoMask:
     serializedVersion: 2
     m_Bits: 32768
+  postPunchCooldown: 0.5
 --- !u!1 &4485487169108847733
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +253,7 @@ GameObject:
   - component: {fileID: 1513486693349572018}
   - component: {fileID: 8863015253200201444}
   - component: {fileID: 4486707251065554205}
+  - component: {fileID: 8731467016614345359}
   - component: {fileID: 4596683624447020768}
   m_Layer: 6
   m_Name: Pawn
@@ -293,6 +296,7 @@ MonoBehaviour:
   playerIndex: -1
   moveSpeed: 30
   minSpeed: 0.5
+  holdingPotato: 0
 --- !u!54 &2432783354257092348
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -392,6 +396,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &8731467016614345359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6905778998077295101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89607d8876050845891fd121e0b18f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwForce: 20
+  hand: {fileID: 955310112963861781}
 --- !u!114 &4596683624447020768
 MonoBehaviour:
   m_ObjectHideFlags: 0
