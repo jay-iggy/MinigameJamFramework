@@ -31,6 +31,7 @@ namespace HotPotatoGame
             rb.isKinematic = true;
             transform.SetParent(hand.transform);
             transform.localPosition = Vector3.zero;
+            GetComponent<Collider>().enabled = false;
         }
 
         // called when a player drops the potato
@@ -40,6 +41,8 @@ namespace HotPotatoGame
             isPickedUp = false;
             transform.SetParent(null);
             rb.isKinematic = false;
+            GetComponent<Collider>().enabled = true;
+            transform.localScale = Vector3.one;
         }
     }
 }
