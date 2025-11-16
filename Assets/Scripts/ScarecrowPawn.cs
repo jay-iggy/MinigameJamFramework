@@ -28,9 +28,19 @@ namespace HotPotatoGame {
 
         private void Update()
         {
-            // decrement timer for movement being inactive
-            if (inactiveTimer > 0)
+            if (rb.GetComponent<ObjectBounce>().isShot)
             {
+                rb.drag = 1.75f;
+                _moveInput = Vector2.zero;
+                return;
+            }
+            else
+            {
+                rb.drag = standardDrag;
+            }
+            
+            if (inactiveTimer > 0){
+                // decrement timer for movement being inactive
                 inactiveTimer -= Time.deltaTime;
                 if (inactiveTimer < earlyDragRestorationTime)
                 {
@@ -70,7 +80,10 @@ namespace HotPotatoGame {
         }
 
         protected override void OnActionPressed(InputAction.CallbackContext context) {
+
             if (inactiveTimer > 0) return;
+            if (rb.GetComponent<ObjectBounce>().isShot) return;
+
             if (context.action.name == PawnAction.Move) {
                 _moveInput = context.ReadValue<Vector2>();
             }
