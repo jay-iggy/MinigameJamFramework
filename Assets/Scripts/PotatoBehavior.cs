@@ -36,8 +36,8 @@ namespace HotPotatoGame {
 
         private void Awake()
         {
-            mat = gameObject.transform.Find("PotatoMesh").GetComponent<MeshRenderer>().material;
-            defaultMatScale = gameObject.transform.Find("PotatoMesh").transform.localScale;
+            mat = GetComponent<MeshRenderer>().material;
+            defaultMatScale = transform.localScale;
             startColor = mat.color;
         }
 
@@ -55,9 +55,10 @@ namespace HotPotatoGame {
             fireParticles.Stop();
             mat.color = startColor;
             heatTimer = heatUpTime + Random.Range(-heatUpTimeRandom, heatUpTimeRandom);
-            explodeTimer = 0;
+            explodeTimer = 0f;
+            phase = 0f;
             currPulsingSpeed = initPulsingSpeed;
-            gameObject.transform.Find("PotatoMesh").transform.localScale = defaultMatScale;
+            transform.localScale = defaultMatScale;
         }
 
         // Update is called once per frame
@@ -71,6 +72,7 @@ namespace HotPotatoGame {
 
                 if (explodeTimer >= explodeUpTime)
                 {
+                    GetComponent<ThrowableBehavior>().Drop();
                     blowUp();
                 }
                 else if (explodeTimer > explodeUpTime * 0.75)
@@ -88,8 +90,8 @@ namespace HotPotatoGame {
                 }
 
                 phase += currPulsingSpeed * Time.deltaTime;
-                float size = Mathf.Abs(Mathf.Sin(phase) / 2);
-                gameObject.transform.Find("PotatoMesh").transform.localScale = defaultMatScale + Vector3.one * size;
+                float size = Mathf.Abs(Mathf.Sin(phase) / 5);
+                transform.localScale = defaultMatScale + Vector3.one * size;
             }
 
 

@@ -2924,8 +2924,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6848fb1c696965040ac63b08c9460e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatUpTime: 14
+  heatUpTime: 8
   heatUpTimeRandom: 2
+  explodeUpTime: 5
+  initPulsingSpeed: 0.5
   hotColor: {r: 0.9514825, g: 0.30199972, b: 0.14233755, a: 0}
   playerMask:
     serializedVersion: 2
