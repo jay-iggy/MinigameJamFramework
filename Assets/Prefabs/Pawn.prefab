@@ -196,8 +196,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5041194265407627049}
   - component: {fileID: 6526177605624922455}
+  - component: {fileID: 4000084252176188304}
   m_Layer: 6
-  m_Name: PunchScanbox
+  m_Name: DashScanbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,8 +238,29 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.4430172, z: 0.6041126}
-  m_Center: {x: 0, y: 0.0047129393, z: -0.19794369}
+  m_Size: {x: 1.2408576, y: 1.4430172, z: 0.22267222}
+  m_Center: {x: -0.004817486, y: 0, z: -0.44121206}
+--- !u!114 &4000084252176188304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4485487169108847733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4f97c0d58b2f94b9109832127f201d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashCooldown: 0.5
+  dashTime: 0.2
+  dashForce: 20
+  knockbackForce: 10
+  knockbackLift: 0.5
+  knockbackRecoveryTime: 0.4
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 960
 --- !u!1 &6905778998077295101
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +276,6 @@ GameObject:
   - component: {fileID: 8863015253200201444}
   - component: {fileID: 4486707251065554205}
   - component: {fileID: 8731467016614345359}
-  - component: {fileID: 4596683624447020768}
   - component: {fileID: 3197818899932798274}
   m_Layer: 6
   m_Name: Pawn
@@ -300,6 +321,8 @@ MonoBehaviour:
   moveSpeed: 1500
   minSpeed: 2.5
   holdingPotato: 0
+  dashing: 0
+  inactiveTimer: 0
 --- !u!54 &2432783354257092348
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -310,7 +333,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 6.5
-  m_AngularDrag: 1
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -413,24 +436,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwForce: 20
   hand: {fileID: 955310112963861781}
---- !u!114 &4596683624447020768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6905778998077295101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd4f97c0d58b2f94b9109832127f201d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  punchForce: 20
-  punchLift: 0.4
-  scanBox: {fileID: 6526177605624922455}
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 960
 --- !u!114 &3197818899932798274
 MonoBehaviour:
   m_ObjectHideFlags: 0
