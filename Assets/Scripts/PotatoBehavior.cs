@@ -18,7 +18,6 @@ namespace HotPotatoGame {
         private float currPulsingSpeed;
         private float phase = 0f;
 
-
         public Color hotColor; // the color the potato becomes when it is hot
 
         public LayerMask playerMask;

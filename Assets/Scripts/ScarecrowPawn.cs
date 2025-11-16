@@ -23,6 +23,7 @@ namespace HotPotatoGame {
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
+            = rb.GetComponent<ObjectBounce>();
             standardDrag = rb.drag;
         }
 
@@ -70,6 +71,7 @@ namespace HotPotatoGame {
         }
 
         protected override void OnActionPressed(InputAction.CallbackContext context) {
+
             if (inactiveTimer > 0) return;
             if (context.action.name == PawnAction.Move) {
                 _moveInput = context.ReadValue<Vector2>();
