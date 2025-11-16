@@ -24,8 +24,9 @@ public class BouncePad : MonoBehaviour
     private GameObject bounceIndicatorManager;
     private GameObject firepoint;
 
-    public float bounceForce;
-    public float bounceheightImpulse;
+    public float bounceForcePotato;
+    public float bounceForceScarecrow;
+    public float bounceHeightImpulse;
 
 
     public void setUp(GameObject parent, GameObject bi, Vector3 offset)
@@ -86,8 +87,11 @@ public class BouncePad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.isTrigger) return;
+
         Rigidbody rb = other.GetComponent<Rigidbody>();
         ObjectBounce objectBounce = other.GetComponent<ObjectBounce>();
+
         if (!objectBounce.isShot)
         {
             StartCoroutine(ToFirePoint(other.transform, rb, objectBounce));
@@ -116,20 +120,20 @@ public class BouncePad : MonoBehaviour
     }
 
 
-    private Vector3 LaunchDirection()
+    private Vector3 LaunchDirection(float bhi)
     {
         Vector3 direction = Vector3.zero;
 
         switch (order)
         {
             case 0:
-                return direction = new Vector3(0, bounceheightImpulse,1f);
+                return direction = new Vector3(0, bhi, 1f);
             case 1:
-                return direction = new Vector3(1f, bounceheightImpulse, 0f);
+                return direction = new Vector3(1f, bhi, 0f);
             case 2:
-                return direction = new Vector3(0f, bounceheightImpulse, -1f);
+                return direction = new Vector3(0f, bhi, -1f);
             case 3:
-                return direction = new Vector3(-1f, bounceheightImpulse, 0f);
+                return direction = new Vector3(-1f, bhi, 0f);
             default:
                 throw new System.Exception("Value error!"); ;
         }
@@ -137,16 +141,42 @@ public class BouncePad : MonoBehaviour
 
     IEnumerator LaunchCoolDown(Transform obj, Rigidbody rb, ObjectBounce objectBounce)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         StartCoroutine(ObjBounceCooldown(objectBounce));
         rb.isKinematic = false;
         rb.velocity = Vector3.zero;
-        obj.gameObject.GetComponent<Rigidbody>().AddForce(LaunchDirection() * bounceForce, ForceMode.Impulse);
+
+        float bounceForce = 0;
+        float newBounceHeightImpulse = 0;
+
+        if (objectBounce.objectType == ObjectBounce.ObjectType.Potato)
+        {
+            obj.gameObject.GetComponent<ThrowableBehavior>().Drop();
+            bounceForce = bounceForcePotato;
+            newBounceHeightImpulse = bounceHeightImpulse;
+        } else if(objectBounce.objectType == ObjectBounce.ObjectType.Scarecrow)
+        {
+            bounceForce = bounceForceScarecrow;
+            newBounceHeightImpulse = bounceHeightImpulse / 2f;
+        }
+
+        obj.gameObject.GetComponent<Rigidbody>().AddForce(LaunchDirection(newBounceHeightImpulse) * bounceForce, ForceMode.Impulse);
     }
 
     IEnumerator ObjBounceCooldown(ObjectBounce objectBounce)
     {
-        yield return new WaitForSeconds(0.1f);
+        float waitTime;
+
+        if(objectBounce.objectType == ObjectBounce.ObjectType.Scarecrow)
+        {
+            waitTime = 0.4f;
+        }
+        else
+        {
+            waitTime = 0.05f;
+        }
+
+        yield return new WaitForSeconds(waitTime);
         objectBounce.isShot = false;
     }
 }
