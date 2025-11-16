@@ -3869,7 +3869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5024614453845185858, guid: b9222e0926abc00458643732bfa8b7a9, type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5024614453845185858, guid: b9222e0926abc00458643732bfa8b7a9, type: 3}
       propertyPath: EmissionModule.m_BurstCount
@@ -4751,7 +4751,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.6666665, y: 4.6666665, z: 4.6666665}
+  m_LocalScale: {x: 6.0000005, y: 6.0000005, z: 6.0000005}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1987005599}
@@ -7573,7 +7573,7 @@ MonoBehaviour:
   heatUpTime: 8
   heatUpTimeRandom: 2
   explodeUpTime: 5
-  explosionRadius: 3.5
+  explosionRadius: 4.5
   initPulsingSpeed: 0.5
   hotColor: {r: 0.99999994, g: 0.9268549, b: 0.88274926, a: 1}
   playerMask:
