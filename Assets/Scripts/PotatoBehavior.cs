@@ -12,6 +12,7 @@ namespace HotPotatoGame {
         public float explodeUpTime;
         private float heatTimer = 0f;
         private float explodeTimer = 0f;
+        public float explosionRadius;
 
         [SerializeField] private float initPulsingSpeed;
         private float currPulsingSpeed;
@@ -32,6 +33,9 @@ namespace HotPotatoGame {
         private Color startColor;
         private Material mat;
         private Vector3 defaultMatScale;
+
+        public GameObject recentThrower = null;
+
 
 
         private void Awake()
@@ -117,7 +121,7 @@ namespace HotPotatoGame {
         {
             if (isOnFire)
             {
-                blowUp();
+                if(collision.gameObject != recentThrower) blowUp();
             }
         }
 
@@ -134,6 +138,7 @@ namespace HotPotatoGame {
 
         private void blowUp()
         {
+            recentThrower = null;
             // show and hide the explosion graphic
             StartCoroutine("ExplosionGraphic");
             explosionParticle.Play();
@@ -142,7 +147,7 @@ namespace HotPotatoGame {
             explosionAudio.Play();
 
             // hit anyone in the blast zone
-            Collider[] cols = Physics.OverlapSphere(explosion.transform.position, (0.5f * explosion.transform.localScale.x), playerMask);
+            Collider[] cols = Physics.OverlapSphere(explosion.transform.position, (explosionRadius), playerMask);
             foreach (Collider c in cols)
             {
                 c.gameObject.GetComponent<DieBehavior>().Die();

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 955310112963861781}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: 0}
+  m_LocalPosition: {x: 1.287, y: 1.879, z: -0.054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -254,9 +254,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashCooldown: 0.5
   dashTime: 0.2
-  dashForce: 25
-  knockbackForce: 10
-  knockbackLift: 0.5
+  dashForce: 35
+  knockbackForce: 18
+  knockbackLift: 0.2
   knockbackRecoveryTime: 0.4
   playerMask:
     serializedVersion: 2
@@ -318,7 +318,7 @@ MonoBehaviour:
   playerIndex: -1
   team: 0
   playerNum: 1
-  moveSpeed: 2200
+  moveSpeed: 4000
   minSpeed: 2.5
   holdingPotato: 0
   dashing: 0

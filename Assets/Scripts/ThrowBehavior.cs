@@ -24,6 +24,7 @@ namespace HotPotatoGame
             Vector3 direction = new Vector3(Mathf.Sin(Mathf.Deg2Rad * rot), 0f, Mathf.Cos(Mathf.Deg2Rad * rot));
             // drop the potato
             GetComponentInChildren<CatchBehavior>().Drop();
+            potato.gameObject.GetComponent<PotatoBehavior>().recentThrower = this.gameObject;
             // apply force to the potato to throw it
             potato.gameObject.GetComponent<Rigidbody>().AddForce(direction * throwForce, ForceMode.Impulse);
         }
