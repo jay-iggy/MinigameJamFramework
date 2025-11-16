@@ -516,7 +516,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469355708}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 76d337bc88848dc4297e47f23c5804cb, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -621,7 +621,7 @@ Transform:
   m_GameObject: {fileID: 531320796}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -769,6 +769,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
+      propertyPath: debugMinigame
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c22bad4a43540f4193f8fb3481bd7ae, type: 2}
     - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: pointsForFirstPlace
       value: 3
@@ -1425,7 +1429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5024614453845185858, guid: b9222e0926abc00458643732bfa8b7a9, type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5024614453845185858, guid: b9222e0926abc00458643732bfa8b7a9, type: 3}
       propertyPath: EmissionModule.m_BurstCount
@@ -1994,8 +1998,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 9, y: 9, z: 9}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1987005599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2603,8 +2607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6848fb1c696965040ac63b08c9460e21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatUpTime: 10
-  heatUpTimeRandom: 1
+  heatUpTime: 14
+  heatUpTimeRandom: 2
   hotColor: {r: 0.9514825, g: 0.30199972, b: 0.14233755, a: 0}
   playerMask:
     serializedVersion: 2

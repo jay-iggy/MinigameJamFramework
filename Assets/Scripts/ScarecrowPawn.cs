@@ -28,21 +28,23 @@ namespace HotPotatoGame {
                 // turn to face direction of motion
                 transform.rotation = Quaternion.Euler(new Vector3(0, Mathf.Rad2Deg * Mathf.Atan2(_moveInput.x, _moveInput.y), 0));
             }
-        }
-        void FixedUpdate() {
+
             if (_moveInput != Vector2.zero)
             {
                 // add force in direction of input - basic movement code
-                rb.AddForce(new Vector3(_moveInput.x * moveSpeed, 0f, _moveInput.y * moveSpeed));
+                rb.AddForce(Time.deltaTime * new Vector3(_moveInput.x * moveSpeed, 0f, _moveInput.y * moveSpeed));
             }
             else
             {
                 // clamp velocity from 0 to prevent mini-sliding
-                if(rb.velocity.magnitude < minSpeed)
+                if (rb.velocity.magnitude < minSpeed)
                 {
                     rb.velocity = Vector3.zero;
                 }
             }
+        }
+        void FixedUpdate() {
+            
         }
 
         protected override void OnActionPressed(InputAction.CallbackContext context) {

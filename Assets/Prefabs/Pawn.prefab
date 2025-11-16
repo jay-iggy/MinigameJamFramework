@@ -296,10 +296,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerIndex: -1
   team: 0
-  moveSpeed: 30
+  playerNum: 1
+  moveSpeed: 1000
   minSpeed: 0.5
   holdingPotato: 0
-  playerNum: 1
 --- !u!54 &2432783354257092348
 Rigidbody:
   m_ObjectHideFlags: 0

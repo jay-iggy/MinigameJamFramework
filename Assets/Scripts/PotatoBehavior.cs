@@ -79,7 +79,7 @@ namespace HotPotatoGame {
                 explosionAudio.Play();
 
                 // hit anyone in the blast zone
-                Collider[] cols = Physics.OverlapSphere(explosion.transform.position, (0.5f * explosion.transform.lossyScale.x), playerMask);
+                Collider[] cols = Physics.OverlapSphere(explosion.transform.position, (0.5f * explosion.transform.localScale.x), playerMask);
                 foreach(Collider c in cols)
                 {
                     c.gameObject.GetComponent<DieBehavior>().Die();
