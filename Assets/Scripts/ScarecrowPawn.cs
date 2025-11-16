@@ -13,43 +13,64 @@ namespace HotPotatoGame {
         public float minSpeed;
 
         public bool holdingPotato = false;
+        public bool dashing = false;
+        public float inactiveTimer = 0;
         Vector2 _moveInput = Vector2.zero;
 
         Rigidbody rb;
+        private float standardDrag;
+        private float earlyDragRestorationTime = 0.2f;
         private void Awake()
         {
-            rb = GetComponent<Rigidbody>();   
+            rb = GetComponent<Rigidbody>();
+            standardDrag = rb.drag;
         }
 
         private void Update()
         {
-            rb.AddForce(new Vector3(0f, -1500f * Time.deltaTime, 0f));
-            if (_moveInput != Vector2.zero)
+            // decrement timer for movement being inactive
+            if (inactiveTimer > 0)
             {
-                // turn to face direction of motion
-                transform.rotation = Quaternion.Euler(new Vector3(0, Mathf.Rad2Deg * Mathf.Atan2(_moveInput.x, _moveInput.y), 0));
-            }
-
-            if (_moveInput != Vector2.zero)
-            {
-                // add force in direction of input - basic movement code
-                rb.AddForce(Time.deltaTime * new Vector3(_moveInput.x * moveSpeed, 0f, _moveInput.y * moveSpeed));
+                inactiveTimer -= Time.deltaTime;
+                if (inactiveTimer < earlyDragRestorationTime)
+                {
+                    rb.drag = standardDrag;
+                }
+                else
+                {
+                    rb.drag = 1;
+                }
+                return;
             }
             else
             {
-                // clamp velocity from 0 to prevent mini-sliding
-                if (rb.velocity.magnitude < minSpeed)
+
+                rb.AddForce(new Vector3(0f, -2500f * Time.deltaTime, 0f));
+                if (_moveInput != Vector2.zero)
                 {
-                    rb.velocity = rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
+                    // turn to face direction of motion
+                    transform.rotation = Quaternion.Euler(new Vector3(0, Mathf.Rad2Deg * Mathf.Atan2(_moveInput.x, _moveInput.y), 0));
                 }
 
+                if (_moveInput != Vector2.zero)
+                {
+                    // add force in direction of input - basic movement code
+                    rb.AddForce(Time.deltaTime * new Vector3(_moveInput.x * moveSpeed, 0f, _moveInput.y * moveSpeed));
+                }
+                else
+                {
+                    // clamp velocity from 0 to prevent mini-sliding
+                    if (rb.velocity.magnitude < minSpeed)
+                    {
+                        rb.velocity = rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
+                    }
+
+                }
             }
-        }
-        void FixedUpdate() {
-            
         }
 
         protected override void OnActionPressed(InputAction.CallbackContext context) {
+            if (inactiveTimer > 0) return;
             if (context.action.name == PawnAction.Move) {
                 _moveInput = context.ReadValue<Vector2>();
             }
@@ -62,8 +83,8 @@ namespace HotPotatoGame {
                 }
                 else
                 {
-                    // Punch
-                    GetComponent<PunchBehavior>().Punch();
+                    // Dash
+                    GetComponentInChildren<DashBehavior>().Dash(new Vector2(Mathf.Sin(Mathf.Deg2Rad * transform.rotation.eulerAngles.y), Mathf.Cos(Mathf.Deg2Rad * transform.rotation.eulerAngles.y)));
                 }
             }
 
