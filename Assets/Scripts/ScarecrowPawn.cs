@@ -23,6 +23,7 @@ namespace HotPotatoGame {
 
         private void Update()
         {
+            rb.AddForce(new Vector3(0f, -1500f * Time.deltaTime, 0f));
             if (_moveInput != Vector2.zero)
             {
                 // turn to face direction of motion
@@ -39,8 +40,9 @@ namespace HotPotatoGame {
                 // clamp velocity from 0 to prevent mini-sliding
                 if (rb.velocity.magnitude < minSpeed)
                 {
-                    rb.velocity = Vector3.zero;
+                    rb.velocity = rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
                 }
+
             }
         }
         void FixedUpdate() {

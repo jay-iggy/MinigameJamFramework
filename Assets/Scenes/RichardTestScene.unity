@@ -854,14 +854,14 @@ MonoBehaviour:
   m_text: 'Team 2 Points: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: f293d50c88c61fe42a890907ae02344e, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293769363
-  m_fontColor: {r: 0.5752464, g: 0.7199059, b: 0.9299191, a: 1}
+    rgba: 4288386029
+  m_fontColor: {r: 0.92941177, g: 0.5764706, b: 0.60840297, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2157,8 +2157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1ca5f420265bb48addd490fd641bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  team1lives: 3
-  team2lives: 3
+  team1lives: 7
+  team2lives: 7
   team1text: {fileID: 1802969445}
   team2text: {fileID: 637107646}
   pawns:
@@ -2333,14 +2333,14 @@ MonoBehaviour:
   m_text: 'Team 1 Points: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 337df16deda24f34da2218e77f61f2a7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289045500
-  m_fontColor: {r: 0.9892183, g: 0.63859236, b: 0.645271, a: 1}
+    rgba: 4294760611
+  m_fontColor: {r: 0.6392157, g: 0.84899426, b: 0.9882353, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2473,7 +2473,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987005594}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 482c8352de6cfcd4384a02df1351c058, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2573,7 +2573,7 @@ Transform:
   m_GameObject: {fileID: 1987005594}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.71, y: 1.74, z: 1.8}
+  m_LocalPosition: {x: -1.34, y: 1.74, z: 5.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

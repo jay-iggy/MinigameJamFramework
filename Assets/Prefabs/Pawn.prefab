@@ -297,8 +297,8 @@ MonoBehaviour:
   playerIndex: -1
   team: 0
   playerNum: 1
-  moveSpeed: 1000
-  minSpeed: 0.5
+  moveSpeed: 1500
+  minSpeed: 2.5
   holdingPotato: 0
 --- !u!54 &2432783354257092348
 Rigidbody:
@@ -309,7 +309,7 @@ Rigidbody:
   m_GameObject: {fileID: 6905778998077295101}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 5
+  m_Drag: 6.5
   m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
