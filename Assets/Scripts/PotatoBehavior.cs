@@ -81,20 +81,20 @@ namespace HotPotatoGame {
                 }
                 else if (explodeTimer > explodeUpTime * 0.75)
                 {
-                    currPulsingSpeed = 15f;
+                    currPulsingSpeed = 20f;
 
                 }
-                else if (explodeTimer > explodeUpTime * 0.40)
+                else if (explodeTimer > explodeUpTime * 0.45)
                 {
-                    currPulsingSpeed = 8f;
+                    currPulsingSpeed = 10f;
                 }
                 else
                 {
-                    currPulsingSpeed = 5f;
+                    currPulsingSpeed = initPulsingSpeed;
                 }
 
                 phase += currPulsingSpeed * Time.deltaTime;
-                float size = Mathf.Abs(Mathf.Sin(phase) / 5);
+                float size = Mathf.Abs(Mathf.Sin(phase) / 2);
                 transform.localScale = defaultMatScale + Vector3.one * size;
             }
 
