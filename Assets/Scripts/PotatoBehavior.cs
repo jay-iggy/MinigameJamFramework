@@ -38,7 +38,7 @@ namespace HotPotatoGame {
         {
             mat = GetComponent<MeshRenderer>().material;
             defaultMatScale = transform.localScale;
-            startColor = mat.color;
+            startColor = mat.GetColor("_EmissionColor");
         }
 
         // Start is called before the first frame update
@@ -53,7 +53,7 @@ namespace HotPotatoGame {
         {
             isOnFire = false;
             fireParticles.Stop();
-            mat.color = startColor;
+            mat.SetColor("_EmissionColor", startColor);
             heatTimer = heatUpTime + Random.Range(-heatUpTimeRandom, heatUpTimeRandom);
             explodeTimer = 0f;
             phase = 0f;
@@ -101,7 +101,7 @@ namespace HotPotatoGame {
                 heatTimer -= Time.deltaTime;
 
                 // update potato color
-                mat.color = Color.Lerp(hotColor, startColor, Mathf.Clamp((heatTimer / heatUpTime), 0, 1));
+                mat.SetColor("_EmissionColor", Color.Lerp(hotColor, startColor, Mathf.Clamp((heatTimer / heatUpTime), 0, 1)));
 
                 // check if potato has primed yet
                 if (heatTimer <= 0)
