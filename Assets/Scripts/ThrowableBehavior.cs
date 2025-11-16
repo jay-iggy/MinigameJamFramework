@@ -9,11 +9,13 @@ namespace HotPotatoGame
         public bool isPickedUp = false;
 
         private Rigidbody rb;
+        private Vector3 defaultScale;
 
         // Start is called before the first frame update
         void Start()
         {
             rb = GetComponent<Rigidbody>();
+            defaultScale = transform.localScale;
         }
 
         // Update is called once per frame
@@ -42,7 +44,7 @@ namespace HotPotatoGame
             transform.SetParent(null);
             rb.isKinematic = false;
             GetComponent<Collider>().enabled = true;
-            transform.localScale = Vector3.one;
+            transform.localScale = defaultScale;
         }
     }
 }

@@ -216,5 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299f042dcdd762a429fe4ae773db864e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 2.5, z: 0}
+  offset: {x: 0, y: 4.5, z: 0}
   follow: {fileID: 0}
+  playerNum: 0
