@@ -12,11 +12,11 @@ EditorBuildSettings:
     path: Assets/Game/Framework/Menus/PackageSelection/PackageSelection.unity
     guid: 22da71f348880464cb47774aa03a88b3
   - enabled: 1
+    path: Assets/Scenes/RichardTestScene.unity
+    guid: 0ac172cef94c5774c8b1e1e0da25faad
+  - enabled: 1
     path: Assets/Game/1 Examples/FumperFalls/FumperFalls.unity
     guid: 1c00c753017bcf6428fb0567ceee5962
-  - enabled: 1
-    path: Assets/Scenes/LucaTestScene.unity
-    guid: e7bcf5d2f28374248acd04d6aadfedcb
   - enabled: 1
     path: Assets/Game/Framework/Menus/Results/Results.unity
     guid: 3e0c1ba0862727843949a8a80a7397be

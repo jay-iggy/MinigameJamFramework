@@ -15,8 +15,8 @@ MonoBehaviour:
   minigameName: Hot Potato
   thumbnail: {fileID: 0}
   scene:
-    m_SceneAsset: {fileID: 102900000, guid: e7bcf5d2f28374248acd04d6aadfedcb, type: 3}
-    m_SceneName: LucaTestScene
+    m_SceneAsset: {fileID: 102900000, guid: 0ac172cef94c5774c8b1e1e0da25faad, type: 3}
+    m_SceneName: RichardTestScene
   minimumPlayers: 4
   description: 
   controls: 
