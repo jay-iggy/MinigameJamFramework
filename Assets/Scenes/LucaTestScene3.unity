@@ -152,7 +152,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 719944492}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &17691988
 MonoBehaviour:
@@ -171,8 +171,17 @@ MonoBehaviour:
   - {fileID: 123889406}
   - {fileID: 1305433698}
   - {fileID: 1574379506}
-  teamIndicator1: {fileID: 3536852819384530679, guid: 697dc2ec3615dd44a86b43b8ef28cbef, type: 3}
-  teamIndicator2: {fileID: 3536852819384530679, guid: 1ec14ff84de4f6b448a07f91fcb68b97, type: 3}
+  teamIndicator: {fileID: 3536852819384530679, guid: 697dc2ec3615dd44a86b43b8ef28cbef, type: 3}
+  playerMats:
+  - {fileID: 2100000, guid: d877863f2f8aa9b4fb3baa48e005bc8c, type: 2}
+  - {fileID: 2100000, guid: 608da628493764441bc3c1f4e1cfa565, type: 2}
+  - {fileID: 2100000, guid: 9906633feb64f0d42b0ba38970bee334, type: 2}
+  - {fileID: 2100000, guid: 6ad3937bcf8ba304bb8395a9d17e23fd, type: 2}
+  playerColors:
+  - {r: 0.7371967, g: 0.7557476, b: 1, a: 1}
+  - {r: 1, g: 0.65094334, b: 0.65094334, a: 1}
+  - {r: 1, g: 0.99663496, b: 0.6778976, a: 1}
+  - {r: 0.5539083, g: 1, b: 0.5752515, a: 1}
 --- !u!1 &90054274
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,8 +2374,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -250, y: -50}
-  m_SizeDelta: {x: 282.188, y: 50}
+  m_AnchoredPosition: {x: -450, y: -100}
+  m_SizeDelta: {x: 700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &637107646
 MonoBehaviour:
@@ -2391,14 +2400,14 @@ MonoBehaviour:
   m_text: 'Team 2 Points: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 608da628493764441bc3c1f4e1cfa565, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288386029
-  m_fontColor: {r: 0.92941177, g: 0.5764706, b: 0.60840297, a: 1}
+    rgba: 4279697663
+  m_fontColor: {r: 1, g: 0, b: 0.088888645, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2415,15 +2424,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2755,6 +2764,7 @@ Transform:
   - {fileID: 736634831}
   - {fileID: 1441178770}
   - {fileID: 1109867610}
+  - {fileID: 17691987}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &719944493
@@ -6733,8 +6743,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -50}
-  m_SizeDelta: {x: 282.3427, y: 50}
+  m_AnchoredPosition: {x: 450, y: -100}
+  m_SizeDelta: {x: 700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1802969445
 MonoBehaviour:
@@ -6759,14 +6769,14 @@ MonoBehaviour:
   m_text: 'Team 1 Points: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 337df16deda24f34da2218e77f61f2a7, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: d877863f2f8aa9b4fb3baa48e005bc8c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294760611
-  m_fontColor: {r: 0.6392157, g: 0.84899426, b: 0.9882353, a: 1}
+    rgba: 4294910464
+  m_fontColor: {r: 0, g: 0.1338296, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6783,15 +6793,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -8351,7 +8361,6 @@ SceneRoots:
   - {fileID: 165284805}
   - {fileID: 1987005599}
   - {fileID: 2020977029}
-  - {fileID: 17691987}
   - {fileID: 531320797}
   - {fileID: 611382269}
   - {fileID: 1088185864}
