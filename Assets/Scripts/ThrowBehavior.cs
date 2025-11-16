@@ -19,7 +19,6 @@ namespace HotPotatoGame
         {
             ThrowableBehavior potato = hand.GetComponentInChildren<ThrowableBehavior>();
             if (potato == null) return;
-
             // calculate the direction to apply the force (away from the punching player)
             float rot = (rb.rotation.eulerAngles.y);
             Vector3 direction = new Vector3(Mathf.Sin(Mathf.Deg2Rad * rot), 0f, Mathf.Cos(Mathf.Deg2Rad * rot));
