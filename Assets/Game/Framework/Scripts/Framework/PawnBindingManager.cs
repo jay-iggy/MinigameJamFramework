@@ -30,10 +30,9 @@ namespace Game.MinigameFramework.Scripts.Framework {
             
             PlayerInput playerInput = PlayerManager.players[playerIndex].playerInput;
 
-            playerInput.currentActionMap.actionTriggered += pawn.HandleActionPressed;
-            playerInput.currentActionMap.actionTriggered += pawn.HandleActionReleased;
+            playerInput.onActionTriggered += pawn.HandleInput;
             
-            playerInput.currentActionMap.actionTriggered += HandlePauseButton;
+            playerInput.onActionTriggered += HandlePauseButton;
             
             // Add to list of bound pawns so that it can later be unbound
             pawn.playerIndex = playerIndex;
@@ -55,9 +54,8 @@ namespace Game.MinigameFramework.Scripts.Framework {
             PlayerInput playerInput = PlayerManager.players[pawn.playerIndex].playerInput;
 
             if (playerInput != null) {
-                playerInput.currentActionMap.actionTriggered -= pawn.HandleActionPressed;
-                playerInput.currentActionMap.actionTriggered -= pawn.HandleActionReleased;
-                playerInput.currentActionMap.actionTriggered -= HandlePauseButton;
+                playerInput.onActionTriggered -= pawn.HandleInput;
+                playerInput.onActionTriggered -= HandlePauseButton;
             }
 
             // Remove pawn from list of bound pawns and remove its playerIndex
@@ -73,10 +71,9 @@ namespace Game.MinigameFramework.Scripts.Framework {
         #endregion
         
         private static void HandlePauseButton(InputAction.CallbackContext context) {
-            if (context.action.WasPerformedThisFrame()) {
-                if(context.action.name == "Menu") {
-                    onPauseButtonPressed.Invoke();
-                }
+            if (!context.action.WasPerformedThisFrame()) return;
+            if(context.action.name == "Menu") {
+                onPauseButtonPressed.Invoke();
             }
         }
     }
