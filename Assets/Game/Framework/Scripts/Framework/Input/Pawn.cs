@@ -22,14 +22,14 @@ namespace Game.MinigameFramework.Scripts.Framework.Input {
         /// <param name="context"></param>
         protected virtual void OnActionReleased(InputAction.CallbackContext context) { }
 
-        public void HandleActionPressed(InputAction.CallbackContext context) {
-            // If WasPerformedThisFrame or is a Value action, execute OnActionPressed
-            if (context.action.WasPerformedThisFrame() || context.action.type == InputActionType.Value) OnActionPressed(context);
-        }
-
-        public void HandleActionReleased(InputAction.CallbackContext context) {
-            // If WasReleasedThisFrame and is not a Value action, execute OnActionReleased
-            if (context.action.WasReleasedThisFrame() && context.action.type != InputActionType.Value) OnActionReleased(context);
+        public void HandleInput(InputAction.CallbackContext context) {
+            if (context.action.actionMap.name != "Minigame") return;
+            if (context.action.WasPerformedThisFrame() || context.action.type == InputActionType.Value) {
+                OnActionPressed(context);
+            }
+            else if (context.action.WasReleasedThisFrame() && context.action.type != InputActionType.Value) {
+                OnActionReleased(context);
+            }
         }
 
         private void OnDestroy() {
