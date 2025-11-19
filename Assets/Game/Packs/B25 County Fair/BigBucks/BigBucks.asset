@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65074faa8a836848ae4203c738fad3b, type: 3}
+  m_Name: BigBucks
+  m_EditorClassIdentifier: 
+  minigameName: Big Bucks
+  thumbnail: {fileID: 21300000, guid: 6952cf296dce14141a743da26631b91a, type: 3}
+  scene:
+    m_SceneAsset: {fileID: 102900000, guid: d6407f005c992d741a13e6cabbfe5844, type: 3}
+    m_SceneName: BigBucks
+  minimumPlayers: 1
+  description: 'Try to stay on the Mechanical Bull as long as possible, and be the
+    last one riding!
+
+
+    Kick up dust to throw off your opponents.'
+  controls: 'Press the displayed buttons when they are between the ropes
+
+    <sprite
+    name="XBOX_A"> | <sprite name="XBOX_B"> | <sprite name="XBOX_LT"> | <sprite name="XBOX_RT">
+
+    Kick
+    Up Dust - <sprite name="XBOX_LEFT_STICK">'
+  credits: Created by James Prendergast
+  attributions: 'Thaleah Pixel Font - Unity Asset Store
+
+    Player Screenshots -
+    PBR'

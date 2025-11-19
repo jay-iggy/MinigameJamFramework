@@ -61,6 +61,7 @@ MonoBehaviour:
   pointsForFourthPlace: 0
   allPacks:
   - {fileID: 11400000, guid: f737c5b122d006249858b69790eb7e6c, type: 2}
+  - {fileID: 11400000, guid: 3ceff92762d58cd4687adea9ad7adffb, type: 2}
   minigamePacks:
-  - {fileID: 11400000, guid: f737c5b122d006249858b69790eb7e6c, type: 2}
+  - {fileID: 11400000, guid: 3ceff92762d58cd4687adea9ad7adffb, type: 2}
   debugMinigame: {fileID: 0}

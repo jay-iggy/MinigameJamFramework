@@ -1,0 +1,79 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Drawing;
+using UnityEngine;
+
+public class ThrownPumpkin : MonoBehaviour
+{
+
+    public float speed;
+    public GameObject model;
+    public int playerNum;
+    public GameObject pumpkinRespawn;
+
+
+    //Sound Effects:
+    [SerializeField] private AudioClip sound_pumpkinHit;
+    private AudioSource _audio;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Debug.Log(playerNum);
+        GetComponent<Rigidbody>().AddForce(transform.forward * speed, ForceMode.Force);
+        _audio = GetComponent<AudioSource>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        model.transform.Rotate(0, speed * Time.deltaTime, 0);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // Check if colliding with a balloon
+        if (other.gameObject.CompareTag("Respawn"))
+        {
+            // Place 1-3 new pumpkins on the ground
+<<<<<<< HEAD
+            int numPumpkins = Random.Range(1, 3);
+=======
+            int numPumpkins = (int)Mathf.Ceil(Random.Range(2, 5) / 2);
+>>>>>>> 271d36c6ed027dd163ed9a3a8f4c2cca7620fae7
+            for (int i = 0; i < numPumpkins; i++)
+            {
+                // Places a pumpkin
+                pumpkinRespawn.transform.position = transform.position + new Vector3 (Random.Range(-3.0f, 3.0f), 0, Random.Range(-3.0f, 3.0f));
+                Instantiate(pumpkinRespawn);
+            }
+
+            _audio.PlayOneShot(sound_pumpkinHit);
+
+            StartCoroutine(DestroySelf());
+        }
+        else if (other.gameObject.CompareTag("EditorOnly") || other.gameObject.CompareTag("MainCamera"))
+        {
+            pumpkinRespawn.transform.position = transform.position;
+            Instantiate(pumpkinRespawn);
+            
+            _audio.PlayOneShot(sound_pumpkinHit);
+            
+            StartCoroutine(DestroySelf());
+        }
+
+
+    }
+
+    IEnumerator DestroySelf() {
+            
+        speed = 0;
+        this.transform.localScale = new Vector3(0,0,0);
+        this.GetComponent<Collider>().enabled = false;
+
+        yield return new WaitForSeconds(sound_pumpkinHit.length);
+
+        Destroy(this);
+        gameObject.SetActive(false);
+    }
+}
