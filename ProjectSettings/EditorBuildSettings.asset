@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Game/Packs/B25 County Fair/PumpkinPlunge/PumpkinPlunge.unity
     guid: 968ac57292cb1e94bb6977242e9f3176
   - enabled: 1
+    path: Assets/Game/Packs/B25 County Fair/CornMazeChase/CornMazeChase.unity
+    guid: 9c2d8756661e2a34bb0889248b80d719
+  - enabled: 1
     path: Assets/Game/Framework/Menus/Credits/Credits.unity
     guid: 2afa41847b8987c4782d5818e9de448b
   m_configObjects: {}
