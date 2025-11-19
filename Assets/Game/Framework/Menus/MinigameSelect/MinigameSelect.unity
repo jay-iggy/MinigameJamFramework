@@ -366,9 +366,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Name
-
-'
+  m_text: MINIGAME NAME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7bcf0141cb0489b4db49308980ae95d6, type: 2}
   m_sharedMaterial: {fileID: 1791673027950037224, guid: 7bcf0141cb0489b4db49308980ae95d6, type: 2}
@@ -398,9 +396,9 @@ MonoBehaviour:
   m_fontSize: 112.1
   m_fontSizeBase: 112.1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 77.6
+  m_fontSizeMax: 112.1
   m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
