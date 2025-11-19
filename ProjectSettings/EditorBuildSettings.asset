@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Game/Packs/B25 County Fair/CornMazeChase/CornMazeChase.unity
     guid: 9c2d8756661e2a34bb0889248b80d719
   - enabled: 1
+    path: Assets/Game/Packs/B25 County Fair/PotatoPunch/PotatoPunch.unity
+    guid: 51a91b67e50b0b44bbbc23d1ab5ab4f4
+  - enabled: 1
     path: Assets/Game/Framework/Menus/Credits/Credits.unity
     guid: 2afa41847b8987c4782d5818e9de448b
   m_configObjects: {}
