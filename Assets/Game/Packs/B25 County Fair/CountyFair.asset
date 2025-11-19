@@ -19,3 +19,6 @@ MonoBehaviour:
     jam.
   minigames:
   - {fileID: 11400000, guid: 4c37f475b3039e946aca5e9853461f46, type: 2}
+  - {fileID: 11400000, guid: 0e0346ad29eb748eb8bc0b859c7160b4, type: 2}
+  - {fileID: 11400000, guid: 4fea8b6ce54634a4a8ac14262a654986, type: 2}
+  - {fileID: 11400000, guid: 5b15acf0c54874d4588be00f64cc1d4a, type: 2}

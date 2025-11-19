@@ -27,6 +27,15 @@ EditorBuildSettings:
     path: Assets/Game/Packs/B25 County Fair/BigBucks/BigBucks.unity
     guid: d6407f005c992d741a13e6cabbfe5844
   - enabled: 1
+    path: Assets/Game/Packs/B25 County Fair/GhoulishGourds/PumpkinGhost.unity
+    guid: 06a8e04e190ce4636b44276826e060e1
+  - enabled: 1
+    path: Assets/Game/Packs/B25 County Fair/TargetPractice/Scenes/ShooterMinigame.unity
+    guid: 40fe646795b70c241b551a37f10a12a7
+  - enabled: 1
+    path: Assets/Game/Packs/B25 County Fair/PumpkinPlunge/PumpkinPlunge.unity
+    guid: 968ac57292cb1e94bb6977242e9f3176
+  - enabled: 1
     path: Assets/Game/Framework/Menus/Credits/Credits.unity
     guid: 2afa41847b8987c4782d5818e9de448b
   m_configObjects: {}

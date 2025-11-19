@@ -2602,25 +2602,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: allPacks.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: allPacks.Array.data[1]
+      propertyPath: debugMinigame
       value: 
-      objectReference: {fileID: 11400000, guid: 3ceff92762d58cd4687adea9ad7adffb, type: 2}
-    - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: minigamePacks.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: minigamePacks.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3ceff92762d58cd4687adea9ad7adffb, type: 2}
-    - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: minigamePacks.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 3ceff92762d58cd4687adea9ad7adffb, type: 2}
+      objectReference: {fileID: 11400000, guid: 5b15acf0c54874d4588be00f64cc1d4a, type: 2}
     - target: {fileID: 6125866497244834600, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: m_Name
       value: MinigameManager
