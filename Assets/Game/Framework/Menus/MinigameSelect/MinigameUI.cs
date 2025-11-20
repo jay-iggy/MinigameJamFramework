@@ -17,6 +17,7 @@ public class MinigameUI : MonoBehaviour {
         minigameDescriptionText.text = minigame.description;
         minigameControlsText.text = minigame.controls;
         MinigamePack pack = minigame.GetPack();
+        if (pack == null) return;
         packIcon.sprite = pack.icon;
         foreach (TextMeshProUGUI header in coloredHeaders) {
             header.color = pack.packColor;
