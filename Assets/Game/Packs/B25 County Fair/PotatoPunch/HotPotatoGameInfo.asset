@@ -22,9 +22,10 @@ MonoBehaviour:
     to the potato until it heats up, then throw it to create a fireball! Eliminate
     the enemy team with fire to win. Pass to your teammate and get launched by haybales
     to outmaneuver your opponent.
-  controls: 'WASD/Joystick - Move
+  controls: '<sprite name="XBOX_LEFT_STICK"> / <sprite name="KEY_A"> <sprite name="KEY_D">
+    - Move
 
-    Spacebar/A Button - Dash/Throw'
+    <sprite name="XBOX_A"> / <sprite name="KEY_SPACE"> - Dash/Throw'
   credits: 'Luca Pasquini
 
     Richard DeBlasio
