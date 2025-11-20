@@ -2239,18 +2239,6 @@ PrefabInstance:
       propertyPath: debugMinigame
       value: 
       objectReference: {fileID: 11400000, guid: 1c22bad4a43540f4193f8fb3481bd7ae, type: 2}
-    - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: pointsForFirstPlace
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: pointsForThirdPlace
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: pointsForSecondPlace
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6125866497244834600, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: m_Name
       value: MinigameManager

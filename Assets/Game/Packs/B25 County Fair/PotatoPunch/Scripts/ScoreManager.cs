@@ -44,7 +44,7 @@ namespace HotPotatoGame {
             int index = 0;
             foreach(ScarecrowPawn p in pawns)
             {
-                rankingList[index] = (p.team == winner) ? _ranking.GetNextHighestRank() : _ranking.GetNextLowestRank();
+                rankingList[index] = p.team == winner ? 1 : 4;
                 index++;
             }
 
