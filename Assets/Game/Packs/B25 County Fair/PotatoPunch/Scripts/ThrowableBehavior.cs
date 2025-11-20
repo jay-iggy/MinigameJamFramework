@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,20 +9,25 @@ namespace HotPotatoGame
     {
         public bool isPickedUp = false;
 
-        private Rigidbody rb;
+        protected Rigidbody rb;
         private Vector3 defaultScale;
+        
+        public float gravity = -10;
+
+        private void Awake() {
+            rb = GetComponent<Rigidbody>();
+        }
 
         // Start is called before the first frame update
         void Start()
         {
-            rb = GetComponent<Rigidbody>();
             defaultScale = transform.localScale;
         }
 
         // Update is called once per frame
         void Update()
         {
-
+            rb.AddForce(new Vector3 (0,gravity,0), ForceMode.Force);
         }
 
         // called when the player picks up a potato
