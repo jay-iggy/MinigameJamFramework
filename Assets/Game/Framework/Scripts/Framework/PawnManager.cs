@@ -51,7 +51,9 @@ namespace Game.Examples {
         }
 
         private void OnPlayerLeft(int playerIndex) {
-            PawnBindingManager.UnbindPlayerInputFromPawn(pawns[playerIndex]);
+            Pawn pawn = pawns[playerIndex];
+            if (pawn != null) PawnBindingManager.UnbindPlayerInputFromPawn(pawn);
+            
             PlayerManager.onPlayerConnected.AddListener(BindPawn);
         }
         
