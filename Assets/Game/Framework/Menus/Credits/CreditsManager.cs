@@ -15,8 +15,6 @@ public class CreditsManager : MonoBehaviour {
         foreach (MinigamePack pack in MinigameManager.instance.allPacks) {
             CreatePackUI(pack);
         }
-
-        Canvas.ForceUpdateCanvases();
     }
 
     private void CreatePackUI(MinigamePack pack) {
@@ -26,6 +24,10 @@ public class CreditsManager : MonoBehaviour {
         foreach (MinigameInfo minigame in pack.minigames) {
             CreateMinigameUI(minigame, pack.packColor, packCredit.childParent);
         }
+        
+        // Fix issue where children don't adjust to parent's position
+        // Band-aid fix, you can see a jarring visual bug frame where its wrong
+        LayoutRebuilder.ForceRebuildLayoutImmediate(packCredit.childParent.GetComponent<RectTransform>());
     }
 
     private void CreateMinigameUI(MinigameInfo minigame, Color color, Transform parentTransform) {
