@@ -74,7 +74,7 @@ namespace ShooterMinigame {
                     continue;
 
                 ranking[player.playerIndex] = rank;
-                if (i < 4 && m_players[i+1].score != player.score)
+                if (i < 3 && m_players[i+1].score != player.score)
                     rank++;
             }
 
