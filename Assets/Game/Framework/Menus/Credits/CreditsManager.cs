@@ -15,6 +15,8 @@ public class CreditsManager : MonoBehaviour {
         foreach (MinigamePack pack in MinigameManager.instance.allPacks) {
             CreatePackUI(pack);
         }
+        
+        Canvas.ForceUpdateCanvases();
     }
 
     private void CreatePackUI(MinigamePack pack) {
