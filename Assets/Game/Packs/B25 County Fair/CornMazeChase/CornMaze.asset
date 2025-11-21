@@ -17,7 +17,7 @@ MonoBehaviour:
   scene:
     m_SceneAsset: {fileID: 102900000, guid: 9c2d8756661e2a34bb0889248b80d719, type: 3}
     m_SceneName: CornMazeChase
-  minimumPlayers: 1
+  minimumPlayers: 4
   description: The player who begins at the bottem of the screen needs to escape
     the corn maze! All other players try to block them.
   controls: <sprite name="XBOX_LEFT_STICK"> - Move

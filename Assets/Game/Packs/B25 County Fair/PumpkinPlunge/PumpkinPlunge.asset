@@ -17,7 +17,7 @@ MonoBehaviour:
   scene:
     m_SceneAsset: {fileID: 102900000, guid: 968ac57292cb1e94bb6977242e9f3176, type: 3}
     m_SceneName: PumpkinPlunge
-  minimumPlayers: 1
+  minimumPlayers: 2
   description: Plunge your pumpkin to the bottom as fast as possible! Select the
     correct button to open the trapdoors and drop your pumpkin down. The fastest
     to reach the bottom or the furthest down wins!

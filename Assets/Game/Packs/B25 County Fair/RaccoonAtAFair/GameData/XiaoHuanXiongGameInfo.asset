@@ -17,7 +17,7 @@ MonoBehaviour:
   scene:
     m_SceneAsset: {fileID: 102900000, guid: 23d357d88b50cf140a14a6e84872fd12, type: 3}
     m_SceneName: XiaoHuanXiong
-  minimumPlayers: 1
+  minimumPlayers: 4
   description: "It is all chaos after a busy day in the county fair. All kinds of
     uneaten food lie around. Now it\u2019s raid time for the Raccoon Scavs! \nWhoever
     grabs the most shall be the King of Foragers!"

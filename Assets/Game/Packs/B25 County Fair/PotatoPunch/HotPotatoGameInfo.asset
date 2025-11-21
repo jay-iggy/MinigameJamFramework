@@ -17,7 +17,7 @@ MonoBehaviour:
   scene:
     m_SceneAsset: {fileID: 102900000, guid: 51a91b67e50b0b44bbbc23d1ab5ab4f4, type: 3}
     m_SceneName: PotatoPunch
-  minimumPlayers: 1
+  minimumPlayers: 4
   description: You are a group of scarecrows fighting over a hot potato! Hold on
     to the potato until it heats up, then throw it to create a fireball! Eliminate
     the enemy team with fire to win. Pass to your teammate and get launched by haybales

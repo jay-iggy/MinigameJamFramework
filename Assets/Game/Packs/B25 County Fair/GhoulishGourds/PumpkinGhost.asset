@@ -17,7 +17,7 @@ MonoBehaviour:
   scene:
     m_SceneAsset: {fileID: 102900000, guid: 06a8e04e190ce4636b44276826e060e1, type: 3}
     m_SceneName: PumpkinGhost
-  minimumPlayers: 1
+  minimumPlayers: 2
   description: Pick up pumpkins and throw them at the other players' balloons! The
     bigger the pumpkin, the more points you'll get!
   controls: '<sprite name="XBOX_LEFT_STICK"> - Move

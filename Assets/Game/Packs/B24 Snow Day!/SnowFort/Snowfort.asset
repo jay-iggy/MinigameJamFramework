@@ -17,7 +17,7 @@ MonoBehaviour:
   scene:
     m_SceneAsset: {fileID: 102900000, guid: fedfb322f2c90e44d88554e09d96bdbb, type: 3}
     m_SceneName: SnowFort
-  minimumPlayers: 1
+  minimumPlayers: 2
   description: Build your snow fort and destroy the opponent's core. All players
     start with an invincible cannon, snow blocks, and a window (which blocks opponent
     fire but not yours). Build the fort, then use your cannons to get 3 hits on your

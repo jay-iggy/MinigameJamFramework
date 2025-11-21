@@ -17,7 +17,7 @@ MonoBehaviour:
   scene:
     m_SceneAsset: {fileID: 102900000, guid: cdc3fe1b13e924248ae280a902e08035, type: 3}
     m_SceneName: Icebreaker
-  minimumPlayers: 1
+  minimumPlayers: 4
   description: 'Collapse the ice and knock the other players into the pond.
 
     Be

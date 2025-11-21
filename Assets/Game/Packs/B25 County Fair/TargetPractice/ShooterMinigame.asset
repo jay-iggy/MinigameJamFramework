@@ -17,7 +17,7 @@ MonoBehaviour:
   scene:
     m_SceneAsset: {fileID: 102900000, guid: 40fe646795b70c241b551a37f10a12a7, type: 3}
     m_SceneName: ShooterMinigame
-  minimumPlayers: 1
+  minimumPlayers: 2
   description: 'Throw balls at the targets as they appear. Knock down targets to
     earn points.
 

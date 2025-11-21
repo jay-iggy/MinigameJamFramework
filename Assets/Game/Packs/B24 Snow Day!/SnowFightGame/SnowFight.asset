@@ -17,7 +17,7 @@ MonoBehaviour:
   scene:
     m_SceneAsset: {fileID: 102900000, guid: d9991922a229b594886283ae79b74be2, type: 3}
     m_SceneName: SnowFight
-  minimumPlayers: 1
+  minimumPlayers: 4
   description: 'Throw snowballs to eliminate each other
 
     Be the last player to

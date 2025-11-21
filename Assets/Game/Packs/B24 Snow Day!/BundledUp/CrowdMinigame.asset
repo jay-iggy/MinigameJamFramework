@@ -17,7 +17,7 @@ MonoBehaviour:
   scene:
     m_SceneAsset: {fileID: 102900000, guid: 7e6182b6a55fee346833cab45c416a31, type: 3}
     m_SceneName: CrowdMinigame
-  minimumPlayers: 1
+  minimumPlayers: 2
   description: 'Be first to find who you are in a crowd and hide while trying to
     find others.
 
