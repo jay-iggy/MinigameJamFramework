@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65074faa8a836848ae4203c738fad3b, type: 3}
+  m_Name: CornMaze
+  m_EditorClassIdentifier: 
+  minigameName: Corn Maze Chase
+  thumbnail: {fileID: 21300000, guid: f2cfe1d62d4be7648a74ee296558a585, type: 3}
+  scene:
+    m_SceneAsset: {fileID: 102900000, guid: 9c2d8756661e2a34bb0889248b80d719, type: 3}
+    m_SceneName: CornMazeChase
+  minimumPlayers: 1
+  description: The player who begins at the bottem of the screen needs to escape
+    the corn maze! All other players try to block them.
+  controls: <sprite name="XBOX_LEFT_STICK"> - Move
+  credits: Created by Gabriel Taylor
+  attributions: 'Trumbus created by Kate Olguin.
+
+'
