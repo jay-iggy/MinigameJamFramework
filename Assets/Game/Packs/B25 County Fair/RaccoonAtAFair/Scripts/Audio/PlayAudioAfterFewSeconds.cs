@@ -18,6 +18,7 @@ namespace XiaoHuanXiong.Audio
         {
             source.volume = 0;
             yield return new WaitForSeconds(delay);
+            source.time = 60;
             source.Play();
 
             float time = 0f;
