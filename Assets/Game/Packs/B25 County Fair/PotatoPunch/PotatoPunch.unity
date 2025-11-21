@@ -2239,18 +2239,6 @@ PrefabInstance:
       propertyPath: debugMinigame
       value: 
       objectReference: {fileID: 11400000, guid: 1c22bad4a43540f4193f8fb3481bd7ae, type: 2}
-    - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: pointsForFirstPlace
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: pointsForThirdPlace
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5342337122602651996, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
-      propertyPath: pointsForSecondPlace
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6125866497244834600, guid: 39c3675d74f52e14e983452040eb9292, type: 3}
       propertyPath: m_Name
       value: MinigameManager
@@ -4469,15 +4457,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Team 1 Points: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: df3bf1b6015b4914f8ca522e4557ba60, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: df3bf1b6015b4914f8ca522e4557ba60, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bcb04dd0c0f45e04b96fe3673453e83c, type: 2}
+  m_sharedMaterial: {fileID: 8607851704280519296, guid: bcb04dd0c0f45e04b96fe3673453e83c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4494,13 +4482,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 77.09
+  m_fontSizeBase: 77.09
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4656,15 +4644,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Team 2 Points: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: df3bf1b6015b4914f8ca522e4557ba60, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: df3bf1b6015b4914f8ca522e4557ba60, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bcb04dd0c0f45e04b96fe3673453e83c, type: 2}
+  m_sharedMaterial: {fileID: 8607851704280519296, guid: bcb04dd0c0f45e04b96fe3673453e83c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4681,13 +4669,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 77.09
+  m_fontSizeBase: 77.09
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5588,15 +5576,15 @@ MonoBehaviour:
   - {fileID: 1574379506}
   teamIndicator: {fileID: 3536852819384530679, guid: 697dc2ec3615dd44a86b43b8ef28cbef, type: 3}
   playerMats:
-  - {fileID: 2100000, guid: d877863f2f8aa9b4fb3baa48e005bc8c, type: 2}
-  - {fileID: 2100000, guid: 608da628493764441bc3c1f4e1cfa565, type: 2}
-  - {fileID: 2100000, guid: 9906633feb64f0d42b0ba38970bee334, type: 2}
-  - {fileID: 2100000, guid: 6ad3937bcf8ba304bb8395a9d17e23fd, type: 2}
+  - {fileID: 1791673027950037224, guid: 7bcf0141cb0489b4db49308980ae95d6, type: 2}
+  - {fileID: 1791673027950037224, guid: 7bcf0141cb0489b4db49308980ae95d6, type: 2}
+  - {fileID: 1791673027950037224, guid: 7bcf0141cb0489b4db49308980ae95d6, type: 2}
+  - {fileID: 1791673027950037224, guid: 7bcf0141cb0489b4db49308980ae95d6, type: 2}
   playerColors:
-  - {r: 0.7371967, g: 0.7557476, b: 1, a: 1}
-  - {r: 1, g: 0.65094334, b: 0.65094334, a: 1}
-  - {r: 0.5539083, g: 1, b: 0.5752515, a: 1}
-  - {r: 1, g: 0.99663496, b: 0.6778976, a: 1}
+  - {r: 0.2999999, g: 0.72953063, b: 1, a: 1}
+  - {r: 1, g: 0.26981127, b: 0.26981127, a: 1}
+  - {r: 0.19433957, g: 1, b: 0.23388112, a: 1}
+  - {r: 1, g: 0.73113203, b: 0.066037595, a: 1}
   winnerText: {fileID: 1682810595}
 --- !u!4 &1452712751
 Transform:
@@ -6106,15 +6094,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Team 1 Wins!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: df3bf1b6015b4914f8ca522e4557ba60, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: df3bf1b6015b4914f8ca522e4557ba60, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bcb04dd0c0f45e04b96fe3673453e83c, type: 2}
+  m_sharedMaterial: {fileID: 8607851704280519296, guid: bcb04dd0c0f45e04b96fe3673453e83c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6137,7 +6125,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
