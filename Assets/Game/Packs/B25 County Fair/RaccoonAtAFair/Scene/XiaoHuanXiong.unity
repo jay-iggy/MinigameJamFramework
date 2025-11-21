@@ -171,7 +171,7 @@ MonoBehaviour:
   - {fileID: 446529433}
   - {fileID: 846634328}
   - {fileID: 735710568}
-  duration: 120
+  duration: 60
   countDownTimer: {fileID: 918235431}
   _timer: 0
 --- !u!1 &6734308
@@ -2085,7 +2085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 536630535}
-  delay: 2
+  delay: 1
 --- !u!1 &556189497
 GameObject:
   m_ObjectHideFlags: 0

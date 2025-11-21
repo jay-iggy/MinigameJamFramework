@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XiaoHuanXiong.Game;
+
 namespace XiaoHuanXiong.Audio
 {
     public class PlayAudioAfterFewSeconds : MonoBehaviour
@@ -18,6 +20,7 @@ namespace XiaoHuanXiong.Audio
         {
             source.volume = 0;
             yield return new WaitForSeconds(delay);
+            source.time = source.clip.length - GameManager.Instance.duration - 1.5f;
             source.Play();
 
             float time = 0f;
