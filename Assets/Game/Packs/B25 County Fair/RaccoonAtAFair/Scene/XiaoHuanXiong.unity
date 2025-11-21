@@ -2085,7 +2085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 536630535}
-  delay: 0.5
+  delay: 1
 --- !u!1 &556189497
 GameObject:
   m_ObjectHideFlags: 0
