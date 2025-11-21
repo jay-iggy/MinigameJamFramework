@@ -19,8 +19,8 @@ MonoBehaviour:
     m_SceneName: XiaoHuanXiong
   minimumPlayers: 1
   description: "It is all chaos after a busy day in the county fair. All kinds of
-    uneaten food lie around. Now it\u2019s raid time for the\n Raccoon Scavs! \nWhoever
-    grabs the most shall be the\n King of Foragers!"
+    uneaten food lie around. Now it\u2019s raid time for the Raccoon Scavs! \nWhoever
+    grabs the most shall be the King of Foragers!"
   controls: "<sprite name=\"XBOX_LEFT_STICK\"> / WASD - Move \n<sprite name=\"XBOX_A\">
     / <sprite name=\"KEY_SPACE\">- Attack \n<sprite name=\"XBOX_B\">/<sprite name=\"KEY_SHIFT\">
     - Interact"
