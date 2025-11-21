@@ -1700,6 +1700,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6867901364297755090, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
+      propertyPath: m_text
+      value: P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867901364297755090, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.42745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867901364297755090, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.45882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867901364297755090, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867901364297755090, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4285363711
+      objectReference: {fileID: 0}
     - target: {fileID: 7031582821565657495, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
       propertyPath: m_Name
       value: Pawn2
@@ -2640,6 +2660,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6867901364297755090, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
+      propertyPath: m_text
+      value: P4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867901364297755090, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.33725488
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867901364297755090, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.84313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867901364297755090, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867901364297755090, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4283881471
+      objectReference: {fileID: 0}
     - target: {fileID: 7031582821565657495, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
       propertyPath: m_Name
       value: Pawn4
@@ -3190,7 +3230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4604739598122992355, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.69
+      value: 3.83
       objectReference: {fileID: 0}
     - target: {fileID: 4604739598122992355, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3223,6 +3263,26 @@ PrefabInstance:
     - target: {fileID: 4604739598122992355, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867901364297755090, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
+      propertyPath: m_text
+      value: P3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867901364297755090, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.48235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867901364297755090, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867901364297755090, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.33725488
+      objectReference: {fileID: 0}
+    - target: {fileID: 6867901364297755090, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4286316374
       objectReference: {fileID: 0}
     - target: {fileID: 7031582821565657495, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
       propertyPath: m_Name
@@ -7354,50 +7414,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1321960897}
     m_Modifications:
-    - target: {fileID: -7319190708453100924, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7319190708453100924, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7319190708453100924, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7319190708453100924, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7319190708453100924, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7157149194726065234, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 22100000, guid: 336edd660148b4f4cba9762ca97801c3, type: 2}
-    - target: {fileID: 3822537640367852228, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 877766303730329897}
-    - target: {fileID: 3822537640367852228, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
-      propertyPath: _attackReleaseAudioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 740545cdfb7b06f42aa826f0e5684cd6, type: 3}
-    - target: {fileID: 3822537640367852228, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
-      propertyPath: _raccoonAnimatorOverrideControllers.Array.data[0]
-      value: 
-      objectReference: {fileID: 22100000, guid: 1760b000fe97afa428cd969896e6a403, type: 2}
-    - target: {fileID: 3822537640367852228, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
-      propertyPath: _raccoonAnimatorOverrideControllers.Array.data[1]
-      value: 
-      objectReference: {fileID: 22100000, guid: 6c4ee65735e11b743998df8e0e82e1cb, type: 2}
-    - target: {fileID: 3822537640367852228, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
-      propertyPath: _raccoonAnimatorOverrideControllers.Array.data[2]
-      value: 
-      objectReference: {fileID: 22100000, guid: 336edd660148b4f4cba9762ca97801c3, type: 2}
     - target: {fileID: 4604739598122992355, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.68
@@ -7458,11 +7474,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 673ddde10bdc9224a8b065e96fa2c9ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &877766303730329897 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: -7157149194726065234, guid: 88966af6e80d5de4f998d07475bda637, type: 3}
-  m_PrefabInstance: {fileID: 877766303730329890}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6779098572596602117
 PrefabInstance:
   m_ObjectHideFlags: 0
