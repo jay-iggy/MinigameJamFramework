@@ -17,10 +17,7 @@ namespace Game.Examples {
         private void Start() {
             PlayerManager.SetMinigameActionMap();
             BindPawns();
-            
             PlayerManager.onPlayerConnected.AddListener(BindPawn);
-            
-            
             PlayerManager.onPlayerDisconnected.AddListener(OnPlayerLeft);
         }
 
@@ -38,7 +35,6 @@ namespace Game.Examples {
                 Debug.LogWarning($"PawnManager: All pawns are already bound. Player index {playerIndex} was not bound.");
                 return;
             }
-            
             if(pawns.Count <= playerIndex) {
                 Debug.LogError($"PawnManager: Pawn missing for player index {playerIndex}");
                 return;
