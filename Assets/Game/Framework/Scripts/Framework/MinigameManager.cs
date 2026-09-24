@@ -7,6 +7,7 @@ using Game.MinigameFramework.Scripts.Framework.Minigames;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class MinigameManager : MonoBehaviour
 {
@@ -41,8 +42,9 @@ public class MinigameManager : MonoBehaviour
     public int pointsForThirdPlace = 2;
     public int pointsForFourthPlace = 1;
 
-    [Header("Minigames")] public List<MinigamePack> allPacks = new();
-    public List<MinigamePack> minigamePacks = new ();
+    [Header("Minigames")] 
+    [FormerlySerializedAs("minigamePacks")]public List<MinigamePack> activePacks = new ();
+    [HideInInspector]public List<MinigamePack> allPacks = new();
     public List<MinigameInfo> minigames { get; private set; }
     public MinigameInfo debugMinigame;
     private bool _isMinigameEnded = false;
@@ -57,7 +59,7 @@ public class MinigameManager : MonoBehaviour
             min = Mathf.Min(min, debugMinigame.minimumPlayers);
         } else {
             // otherwise, set min to the least restrictive value
-            foreach(MinigamePack pack in minigamePacks) {
+            foreach(MinigamePack pack in activePacks) {
                 foreach(MinigameInfo minigame in pack.minigames) {
                     min = Mathf.Min(min, minigame.minimumPlayers);
                 }
@@ -74,7 +76,7 @@ public class MinigameManager : MonoBehaviour
             minigames.Add(debugMinigame);
         }
         else {
-            foreach(MinigamePack pack in minigamePacks) {
+            foreach(MinigamePack pack in activePacks) {
                 foreach(MinigameInfo minigame in pack.minigames) {
                     if (minigame.minimumPlayers <= PlayerManager.GetNumPlayers()) {
                         minigames.Add(minigame);
@@ -102,12 +104,12 @@ public class MinigameManager : MonoBehaviour
     }
     
     public bool PackIsOn(MinigamePack pack) {
-        return minigamePacks.Contains(pack);
+        return activePacks.Contains(pack);
     }
     
     public void TogglePack(MinigamePack pack) {
-        if (!PackIsOn(pack)) minigamePacks.Add(pack);
-        else minigamePacks.Remove(pack);
+        if (!PackIsOn(pack)) activePacks.Add(pack);
+        else activePacks.Remove(pack);
         DetermineFewestPlayers();
     }
     
@@ -271,7 +273,7 @@ public class MinigameManager : MonoBehaviour
         if (debugMinigame != null) {
             sprites.Add(debugMinigame.thumbnail);
         } else {
-            foreach(MinigamePack pack in minigamePacks) {
+            foreach(MinigamePack pack in activePacks) {
                 sprites.Add(pack.icon);
             }
         }

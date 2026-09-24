@@ -8,28 +8,28 @@ namespace Editor {
     public static class ContextMenuItems {
 
         private const string FOLDER_PATH = "Assets/Game/Framework/";
-        private const string DEMO_PACK_PATH = "Assets/Game/Packs/DemoPack.asset";
+        private const string DEBUG_PACK_PATH = "Assets/Game/Packs/DebugPack.asset";
         private const string MINIGAME_MANAGER_PATH = "Assets/Game/Framework/MinigameManager.prefab";
 
 
         #region Add Minigame Info to Pack
-            [MenuItem("Assets/Add MinigameInfo to Pack/Demo Pack",false,4)]
+            [MenuItem("Assets/Add MinigameInfo to Pack/Debug Pack",false,4)]
             public static void PackDemo() {
-                AddToPack(DEMO_PACK_PATH);
+                AddToPack(DEBUG_PACK_PATH);
             }
-            [MenuItem("Assets/Add MinigameInfo to Pack/Demo Pack", true, 4)] 
+            [MenuItem("Assets/Add MinigameInfo to Pack/Debug Pack", true, 4)] 
             public static bool PackValidate() {
-                return ValidateAddToPack(DEMO_PACK_PATH);
+                return ValidateAddToPack(DEBUG_PACK_PATH);
             }
         #endregion
 
-        [MenuItem("Assets/Clear Pack/Demo Pack", false, 6)]
+        [MenuItem("Assets/Clear Pack/Debug Pack", false, 6)]
         public static void ClearDemoPack() {
-            ClearPack(DEMO_PACK_PATH);
+            ClearPack(DEBUG_PACK_PATH);
         }
-        [MenuItem("Assets/Clear Pack/Demo Pack", true, 6)]
+        [MenuItem("Assets/Clear Pack/Debug Pack", true, 6)]
         public static bool ValidateClearDemoPack() {
-            return ValidateClearPack(DEMO_PACK_PATH);
+            return ValidateClearPack(DEBUG_PACK_PATH);
         }
 
         #region Add Minigame Info to Pack Functions

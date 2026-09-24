@@ -40,7 +40,7 @@ public class PackageSelectionScript : MonoBehaviour
     private void SetInitialSelection(int index = 0) {
         PlayerManager.SetSelectedGameObject(packageIcons.GetChild(0).gameObject);
         PlayerManager.onPlayerConnected.RemoveListener(SetInitialSelection);
-        RefreshStatusText(MinigameManager.instance.minigamePacks[0]);
+        RefreshStatusText(MinigameManager.instance.activePacks[0]);
     }
 
     private void DisplayPacks() {
