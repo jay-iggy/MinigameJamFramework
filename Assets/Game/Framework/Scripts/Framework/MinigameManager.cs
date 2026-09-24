@@ -44,7 +44,7 @@ public class MinigameManager : MonoBehaviour
 
     [Header("Minigames")] 
     [FormerlySerializedAs("minigamePacks")]public List<MinigamePack> activePacks = new ();
-    [HideInInspector]public List<MinigamePack> allPacks = new();
+    public List<MinigamePack> allPacks = new();
     public List<MinigameInfo> minigames { get; private set; }
     public MinigameInfo debugMinigame;
     private bool _isMinigameEnded = false;
