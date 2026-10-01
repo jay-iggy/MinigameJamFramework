@@ -49,7 +49,7 @@ namespace Examples.FumperFalls {
             private void UpdateSnowAccumulation() {
                 float dot = Vector3.Dot(_rigidbody.velocity, _moveInput);
                 if(dot > 0) { // if the player's velocity in the same direction of their move input
-                    _distanceTraveled += Vector3.Dot(_rigidbody.velocity, _moveInput) * Time.deltaTime;
+                    _distanceTraveled += dot * Time.deltaTime;
                     if(_distanceTraveled > 0.1f) {
                         IncreaseSnow(_distanceTraveled * distanceToSnow);
                         _distanceTraveled = 0;
