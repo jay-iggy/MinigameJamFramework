@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.MinigameFramework.Scripts.Framework.Input;
+using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using TMPro;
 using UnityEngine;
 
@@ -54,11 +55,11 @@ namespace Examples.FumperFalls {
             print($"Player {pawn.playerIndex} has been eliminated.");
             
             if(pawn.playerIndex >= 0) { // if pawn is bound to a player
-                _ranking[pawn.playerIndex] = 4 - _deaths;
+                _ranking[pawn.playerIndex] = PlayerManager.GetNumPlayers() - _deaths;
             }
             _deaths++; // also count deaths for pawns not bound to a player
 
-            if (_deaths == 3) {
+            if (_deaths >= PlayerManager.GetNumPlayers()-1) {
                 StartCoroutine(EndMinigame());
             }
         }
@@ -70,6 +71,7 @@ namespace Examples.FumperFalls {
             // End
             yield return new WaitForSeconds(2);
             MinigameManager.instance.EndMinigame(_ranking);
+            StopAllCoroutines(); // prevent EndMinigame from being called multiple times
         }
     }
 }
