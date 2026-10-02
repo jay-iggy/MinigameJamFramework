@@ -47,11 +47,11 @@ public class HoverIcon : Selectable, IPointerClickHandler, ISubmitHandler, ICanc
         pss = pssSet;
         targetGraphic.color = packHighlightColor;
     }
-    public void SetData(PackageSelectionScript pssSet, MinigameInfo md) {
+    public void SetData(PackageSelectionScript pssSet, MinigameInfo md, Color highlightColor) {
         minigameData = md;
         packData = null;
         pss = pssSet;
-        targetGraphic.color = minigameHighlightColor;
+        targetGraphic.color = highlightColor;
     }
 
     public void OnCancel(BaseEventData eventData) {
