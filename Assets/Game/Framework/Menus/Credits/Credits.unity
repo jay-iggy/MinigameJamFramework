@@ -1194,9 +1194,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'CREATED BY JAY IGNATOWSKI
+  m_text: 'JAY IGNATOWSKI (2024)
 
-    ADDITIONAL WORK BY JAMES PRENDERGAST'
+    JAMES PRENDERGAST (2025-2026)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7bcf0141cb0489b4db49308980ae95d6, type: 2}
   m_sharedMaterial: {fileID: 1791673027950037224, guid: 7bcf0141cb0489b4db49308980ae95d6, type: 2}
