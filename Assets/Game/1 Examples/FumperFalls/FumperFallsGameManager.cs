@@ -55,11 +55,11 @@ namespace Examples.FumperFalls {
             print($"Player {pawn.playerIndex} has been eliminated.");
             
             if(pawn.playerIndex >= 0) { // if pawn is bound to a player
-                _ranking[pawn.playerIndex] = PlayerManager.GetNumPlayers() - _deaths;
+                _ranking[pawn.playerIndex] = 4 - _deaths;
             }
             _deaths++; // also count deaths for pawns not bound to a player
 
-            if (_deaths >= PlayerManager.GetNumPlayers()-1) {
+            if (_deaths >= 3) {
                 StartCoroutine(EndMinigame());
             }
         }
