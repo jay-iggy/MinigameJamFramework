@@ -33,6 +33,7 @@ public class ButtonJuice : MonoBehaviour, ISubmitHandler, IPointerEnterHandler, 
     
     public void OnSelect(BaseEventData eventData) {
         if (!_button.interactable) return;
+        if(_isHovered) return;
         StartCoroutine(EvaluateCurve(hoverPosCurve, hoverScaleCurve, hoverDuration));
         _isHovered = true;
     }
