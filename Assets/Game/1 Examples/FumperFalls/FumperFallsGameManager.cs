@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.MinigameFramework.Scripts.Framework.Input;
+using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using TMPro;
 using UnityEngine;
 
@@ -58,7 +59,7 @@ namespace Examples.FumperFalls {
             }
             _deaths++; // also count deaths for pawns not bound to a player
 
-            if (_deaths == 3) {
+            if (_deaths >= 3) {
                 StartCoroutine(EndMinigame());
             }
         }
@@ -70,6 +71,7 @@ namespace Examples.FumperFalls {
             // End
             yield return new WaitForSeconds(2);
             MinigameManager.instance.EndMinigame(_ranking);
+            StopAllCoroutines(); // prevent EndMinigame from being called multiple times
         }
     }
 }
