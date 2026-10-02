@@ -21,19 +21,27 @@ namespace Game.MinigameFramework.Menus.MainMenu {
         private int _playerIndex = -1;
         private Coroutine _timerCoroutine;
 
+        private PlayerInput _playerInput;
+
         private void Awake() {
             radialImage.gameObject.SetActive(false);
         }
 
         public void BindToPlayer(int index) {
             _playerIndex = index;
-            PlayerInput playerInput = PlayerManager.players[_playerIndex].playerInput;
-            playerInput.currentActionMap.actionTriggered += HandleDisconnectInput;
-            promptButtonRenderer.sprite = playerInput.currentControlScheme == "KeyboardMouse" ? keyboardSprite : buttonSprite;
+            _playerInput = PlayerManager.players[_playerIndex].playerInput;
+            _playerInput.onActionTriggered += HandleDisconnectInput;
+            promptButtonRenderer.sprite = _playerInput.currentControlScheme == "KeyboardMouse" ? keyboardSprite : buttonSprite;
         }
 
         public void UnBindFromPlayer() {
             _playerIndex = -1;
+            if(_playerInput!=null) {
+                _playerInput.onActionTriggered -= HandleDisconnectInput;
+            }
+        }
+        private void OnDestroy() {
+            UnBindFromPlayer();
         }
 
         private void HandleDisconnectInput(InputAction.CallbackContext context) {

@@ -1,6 +1,4 @@
 using Game.MinigameFramework.Scripts.Framework.Input;
-using Game.MinigameFramework.Scripts.Tags;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -49,7 +47,7 @@ namespace Examples.FumperFalls {
             private void UpdateSnowAccumulation() {
                 float dot = Vector3.Dot(_rigidbody.velocity, _moveInput);
                 if(dot > 0) { // if the player's velocity in the same direction of their move input
-                    _distanceTraveled += Vector3.Dot(_rigidbody.velocity, _moveInput) * Time.deltaTime;
+                    _distanceTraveled += dot * Time.deltaTime;
                     if(_distanceTraveled > 0.1f) {
                         IncreaseSnow(_distanceTraveled * distanceToSnow);
                         _distanceTraveled = 0;
@@ -61,8 +59,7 @@ namespace Examples.FumperFalls {
             }
             private void SetSnowTotal(float snow) {
                 _snowTotal = snow;
-                float scale = snowSizeCurve.Evaluate(_snowTotal);
-                transform.localScale = new Vector3(scale, scale, scale);
+                transform.localScale = Vector3.one * snowSizeCurve.Evaluate(_snowTotal);
                 _rigidbody.mass = snowMassCurve.Evaluate(_snowTotal);
             }
         #endregion

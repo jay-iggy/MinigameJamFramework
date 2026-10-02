@@ -148,7 +148,7 @@ MonoBehaviour:
   m_LeftClickAction: {fileID: -6885930375551333559, guid: a6508bcd5c5aaab4f92e8322c9b5cf42, type: 3}
   m_MiddleClickAction: {fileID: 0}
   m_RightClickAction: {fileID: 0}
-  m_ScrollWheelAction: {fileID: 0}
+  m_ScrollWheelAction: {fileID: -9094738862864148276, guid: a6508bcd5c5aaab4f92e8322c9b5cf42, type: 3}
   m_TrackedDevicePositionAction: {fileID: 0}
   m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
