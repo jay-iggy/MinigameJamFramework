@@ -2,6 +2,11 @@ using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace Game.MinigameFramework.Scripts.Framework.Minigames {
     [CreateAssetMenu(fileName = "MinigamePack")]
@@ -11,5 +16,17 @@ namespace Game.MinigameFramework.Scripts.Framework.Minigames {
         public Color packColor =  Color.white;
         [TextArea] public string description;
         public List<MinigameInfo> minigames;
+
+        #if UNITY_EDITOR
+        // AUTOMATICALLY ADD PACK TO MINIGAMEMANAGER LISTS
+        void Awake() {
+            MinigameManager manager = AssetDatabase.LoadAssetAtPath<MinigameManager>("Assets/Game/Framework/MinigameManager.prefab");
+            if(manager==null || manager.allPacks.Contains(this)) {
+                return;
+            }
+            Debug.Log($"Created Minigame Pack '{name}': Adding to MinigameManager::allPacks automatically.");
+            manager.allPacks.Add(this);
+        }
+        #endif
     }
 }
