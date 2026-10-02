@@ -1,6 +1,4 @@
 using Game.MinigameFramework.Scripts.Framework.Input;
-using Game.MinigameFramework.Scripts.Tags;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -61,8 +59,7 @@ namespace Examples.FumperFalls {
             }
             private void SetSnowTotal(float snow) {
                 _snowTotal = snow;
-                float scale = snowSizeCurve.Evaluate(_snowTotal);
-                transform.localScale = new Vector3(scale, scale, scale);
+                transform.localScale = Vector3.one * snowSizeCurve.Evaluate(_snowTotal);
                 _rigidbody.mass = snowMassCurve.Evaluate(_snowTotal);
             }
         #endregion
