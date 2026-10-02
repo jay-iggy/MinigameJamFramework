@@ -77,7 +77,7 @@ public class PackageSelectionScript : MonoBehaviour
         float next = 0f;
         foreach (MinigameInfo game in pack.minigames) {
             HoverIcon hi = Instantiate(hoverableIcon, minigameIcons).GetComponent<HoverIcon>();
-            hi.SetData(this, game);
+            hi.SetData(this, game, pack.packColor);
 
             Image img = hi.GetComponent<Image>();
             img.sprite = game.thumbnail;
