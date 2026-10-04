@@ -822,6 +822,10 @@ PrefabInstance:
       propertyPath: m_enableAutoSizing
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1346941146464000821, guid: 04a3142a161d1f34b8f2e308ac86740f, type: 3}
+      propertyPath: m_ActiveFontFeatures.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7548721935138409715, guid: 04a3142a161d1f34b8f2e308ac86740f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -982,6 +986,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1346941146464000821, guid: 04a3142a161d1f34b8f2e308ac86740f, type: 3}
       propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346941146464000821, guid: 04a3142a161d1f34b8f2e308ac86740f, type: 3}
+      propertyPath: m_ActiveFontFeatures.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7548721935138409715, guid: 04a3142a161d1f34b8f2e308ac86740f, type: 3}
@@ -1427,6 +1435,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 868494693}
     m_Modifications:
+    - target: {fileID: 2357420811053936521, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
+      objectReference: {fileID: 0}
     - target: {fileID: 2778332056508008582, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
       propertyPath: m_Name
       value: Player Slot (P4)
@@ -1450,6 +1462,10 @@ PrefabInstance:
     - target: {fileID: 3062931529926269026, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278245631
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062931529926269026, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
       objectReference: {fileID: 0}
     - target: {fileID: 4669646004826311611, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
       propertyPath: m_Pivot.x
@@ -1637,6 +1653,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 868494693}
     m_Modifications:
+    - target: {fileID: 2357420811053936521, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
+      objectReference: {fileID: 0}
     - target: {fileID: 2778332056508008582, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
       propertyPath: m_Name
       value: Player Slot (P3)
@@ -1660,6 +1680,10 @@ PrefabInstance:
     - target: {fileID: 3062931529926269026, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4284743504
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062931529926269026, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
       objectReference: {fileID: 0}
     - target: {fileID: 4669646004826311611, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
       propertyPath: m_Pivot.x
@@ -1802,6 +1826,7 @@ MonoBehaviour:
   packSelectScene:
     m_SceneAsset: {fileID: 102900000, guid: 22da71f348880464cb47774aa03a88b3, type: 3}
     m_SceneName: PackageSelection
+  promptWindowPrefab: {fileID: 5362150360697364400, guid: ef47d51bf7e58ae41a395302ad4e261a, type: 3}
   playerSlots:
   - {fileID: 4232343933487896055}
   - {fileID: 2072822331}
@@ -1918,6 +1943,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 868494693}
     m_Modifications:
+    - target: {fileID: 2357420811053936521, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
+      objectReference: {fileID: 0}
     - target: {fileID: 2778332056508008582, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
       propertyPath: m_Name
       value: Player Slot (P2)
@@ -1941,6 +1970,10 @@ PrefabInstance:
     - target: {fileID: 3062931529926269026, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4286393599
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062931529926269026, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
       objectReference: {fileID: 0}
     - target: {fileID: 4669646004826311611, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
       propertyPath: m_Pivot.x
@@ -2077,7 +2110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 644676874350913418, guid: 04a3142a161d1f34b8f2e308ac86740f, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NextMinigame
+      value: CreatePromptWindow
       objectReference: {fileID: 0}
     - target: {fileID: 644676874350913418, guid: 04a3142a161d1f34b8f2e308ac86740f, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -2097,6 +2130,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1346941146464000821, guid: 04a3142a161d1f34b8f2e308ac86740f, type: 3}
       propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1346941146464000821, guid: 04a3142a161d1f34b8f2e308ac86740f, type: 3}
+      propertyPath: m_ActiveFontFeatures.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7548721935138409715, guid: 04a3142a161d1f34b8f2e308ac86740f, type: 3}
@@ -2249,9 +2286,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 868494693}
     m_Modifications:
+    - target: {fileID: 2357420811053936521, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
+      objectReference: {fileID: 0}
     - target: {fileID: 2778332056508008582, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
       propertyPath: m_Name
       value: Player Slot (P1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3062931529926269026, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
       objectReference: {fileID: 0}
     - target: {fileID: 4212157066684433424, guid: a7b8f5f91aa8eb44f96742dc16187329, type: 3}
       propertyPath: m_IsActive

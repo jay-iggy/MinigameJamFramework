@@ -9,6 +9,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
+using Game.MinigameFramework.Menus.PromptWindow;
 
 public class MenuScript : MonoBehaviour {
     [SerializeField] Button startButton;
@@ -16,6 +18,9 @@ public class MenuScript : MonoBehaviour {
     [SerializeField] RectTransform packageIcons;
     public GameObject packageIconPrefab;
     public SceneField packSelectScene;
+
+    [SerializeField] PromptWindow promptWindowPrefab;
+    private PromptWindow _promptWindow;
 
     // Enforce Player Count replaced by context from MinigamePacks listed under MinigameManager
     // [SerializeField] bool enforcePlayerCount = true;
@@ -52,18 +57,15 @@ public class MenuScript : MonoBehaviour {
             OnAllPlayersConnected();
         }
 
-        // display selected icons
-        float next = 0f;
-        float gap = 12.5f;
-        foreach (Sprite spr in MinigameManager.instance.GetPackageSprites()) {
-            RectTransform icon = Instantiate(packageIconPrefab, packageIcons).GetComponent<RectTransform>();
+        UpdateActivePackIcons();
+    }
 
-            Image img = icon.GetComponent<Image>();
-            img.sprite = spr;
-
-            icon.anchoredPosition = new Vector2(icon.anchoredPosition.x, next);
-            next += icon.rect.height + gap;
-        }
+    public void CreatePromptWindow() {
+        if(_promptWindow!=null)return;
+        _promptWindow = Instantiate(promptWindowPrefab);
+        _promptWindow.SetText("START GAME?");
+        _promptWindow.onConfirm.AddListener(NextMinigame);
+        _promptWindow.onCancel.AddListener(OnAllPlayersConnected);
     }
 
 
@@ -89,10 +91,27 @@ public class MenuScript : MonoBehaviour {
         playerSlots[playerIndex].SetStatus(false);
         playerSlots[playerIndex].UnBindFromPlayer();
         CheckUnlockButton();
+        if (_promptWindow != null) {
+            Destroy(_promptWindow.gameObject);
+            PlayerManager.SetSelectedGameObject(startButton.gameObject);
+        }
     }
 
     private void OnAllPlayersConnected() {
         PlayerManager.SetSelectedGameObject(startButton.gameObject);
     }
 
+    private void UpdateActivePackIcons() {
+        float next = 0f;
+        float gap = 12.5f;
+        foreach (Sprite spr in MinigameManager.instance.GetPackageSprites()) {
+            RectTransform icon = Instantiate(packageIconPrefab, packageIcons).GetComponent<RectTransform>();
+
+            Image img = icon.GetComponent<Image>();
+            img.sprite = spr;
+
+            icon.anchoredPosition = new Vector2(icon.anchoredPosition.x, next);
+            next += icon.rect.height + gap;
+        }
+    }
 }
