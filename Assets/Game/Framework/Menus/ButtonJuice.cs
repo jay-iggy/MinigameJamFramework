@@ -32,7 +32,7 @@ public class ButtonJuice : MonoBehaviour, ISubmitHandler, IPointerEnterHandler, 
 
     
     public void OnSelect(BaseEventData eventData) {
-        if (!_button.interactable) return;
+        if (_button == null || !_button.interactable) return;
         if(_isHovered) return;
         StartCoroutine(EvaluateCurve(hoverPosCurve, hoverScaleCurve, hoverDuration));
         _isHovered = true;
@@ -74,7 +74,7 @@ public class ButtonJuice : MonoBehaviour, ISubmitHandler, IPointerEnterHandler, 
             scale.y = scaleCurve.Evaluate(t / dur);
             graphic.localScale = scale;
 
-            t += Time.deltaTime * deltaScale;
+            t += Time.unscaledDeltaTime * deltaScale;
             yield return null;
             condition = deltaScale>0? t < dur : t >= 0;
         }
@@ -93,7 +93,7 @@ public class ButtonJuice : MonoBehaviour, ISubmitHandler, IPointerEnterHandler, 
             Vector2 pos = graphic.anchoredPosition;
             pos.y = selectPosCurve.Evaluate(t / selectDuration);
             graphic.anchoredPosition = pos;
-            t += Time.deltaTime;
+            t += Time.unscaledDeltaTime;
             yield return null;
         }
         onClick.Invoke();
