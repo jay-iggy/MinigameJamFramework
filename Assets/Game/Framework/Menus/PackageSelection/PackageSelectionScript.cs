@@ -16,6 +16,10 @@ public class PackageSelectionScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI enableStatusText;
     [SerializeField] private Color enabledColor;
     [SerializeField] private Color disabledColor;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip selectSfx;
+    [SerializeField] private AudioClip defaultEnableSfx;
+    [SerializeField] private AudioClip disableSfx;
 
     public GameObject hoverableIcon;
     public SceneField mainMenuScene;
@@ -26,7 +30,9 @@ public class PackageSelectionScript : MonoBehaviour
     public void GoToMainMenu() {
         SceneManager.LoadScene(mainMenuScene.SceneName);
     }
-
+    void Awake() {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void Start() {
         DisplayPacks();
         
@@ -77,7 +83,7 @@ public class PackageSelectionScript : MonoBehaviour
         float next = 0f;
         foreach (MinigameInfo game in pack.minigames) {
             HoverIcon hi = Instantiate(hoverableIcon, minigameIcons).GetComponent<HoverIcon>();
-            hi.SetData(this, game, pack.packColor);
+            hi.SetData(this, game);
 
             Image img = hi.GetComponent<Image>();
             img.sprite = game.thumbnail;
@@ -92,17 +98,23 @@ public class PackageSelectionScript : MonoBehaviour
         description.text = $"<color=#{ColorUtility.ToHtmlStringRGB(pack.packColor)}><size=150%><b>{pack.packName.ToUpper()}</b></size></color>\n\n{pack.description}";
         DisplayMinigames(pack);
         RefreshStatusText(pack);
+        audioSource.PlayOneShot(selectSfx);
     }
     
     public void OnMinigameHovered(MinigameInfo minigame) {
         description.text = $"<color=#{ColorUtility.ToHtmlStringRGB(minigame.GetPack().packColor)}><size=150%><b>{minigame.minigameName.ToUpper()}</b></size></color>\n\n{minigame.description}\n\n{minigame.credits}";
         enableStatusText.text = "";
+        audioSource.PlayOneShot(selectSfx);
     }
     
     public void TogglePack(MinigamePack pack) {
         MinigameManager.instance.TogglePack(pack);
         RefreshPackColors(); // refresh packs to have no grey or not grey
         RefreshStatusText(pack);
+        if(MinigameManager.instance.PackIsOn(pack)) {
+            
+        }
+        audioSource.PlayOneShot(MinigameManager.instance.PackIsOn(pack) ? (pack.packSound!=null?pack.packSound:defaultEnableSfx) : disableSfx);
     }
 
     private void RefreshStatusText(MinigamePack pack) {

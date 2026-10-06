@@ -21,6 +21,11 @@ public class ButtonJuice : MonoBehaviour, ISubmitHandler, IPointerEnterHandler, 
     [Header("Select")]
     public AnimationCurve selectPosCurve;
     public float selectDuration = 0.6f;
+
+    [Header("SFX")]
+    private AudioSource _audioSource;
+    [SerializeField] AudioClip selectSfx;
+    [SerializeField] AudioClip submitSfx;
     
 
     private Button _button;
@@ -28,6 +33,7 @@ public class ButtonJuice : MonoBehaviour, ISubmitHandler, IPointerEnterHandler, 
 
     void Awake() {
         _button = GetComponent<Button>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     
@@ -36,6 +42,7 @@ public class ButtonJuice : MonoBehaviour, ISubmitHandler, IPointerEnterHandler, 
         if(_isHovered) return;
         StartCoroutine(EvaluateCurve(hoverPosCurve, hoverScaleCurve, hoverDuration));
         _isHovered = true;
+        _audioSource.PlayOneShot(selectSfx);
     }
     public void OnDeselect(BaseEventData eventData) {
         if (!_isHovered) return;
@@ -82,9 +89,11 @@ public class ButtonJuice : MonoBehaviour, ISubmitHandler, IPointerEnterHandler, 
 
     public void OnSubmit(BaseEventData eventData) {
         StartCoroutine(SubmitAnimation());
+        _audioSource.PlayOneShot(submitSfx);
     }
     public void OnSubmit() {
         StartCoroutine(SubmitAnimation());
+        _audioSource.PlayOneShot(submitSfx);
     }
 
     private IEnumerator SubmitAnimation() {
