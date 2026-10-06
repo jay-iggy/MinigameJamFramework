@@ -22,7 +22,8 @@ MonoBehaviour:
     and being cursed by unspeakable bad luck.
   controls: <sprite name="XBOX_LEFT_STICK"> - Draw
   credits: Created by Jay Ignatowski
-  attributions: 'Trumbus created by Kate Olguin.
-
-    Notebook and crayon textures
-    designed by Freepik.'
+  attributions: "Trumbus created by Kate Olguin.\nNotebook and crayon textures designed
+    by Freepik\nThis game uses these sounds from freesound:\n\"Scribble2\" by BinauralCow
+    licensed under CC BY 4.0\n\"ticktock_block\" by \r\nplingativator licensed under
+    CC BY 4.0\n\"Referee whistle blow, gymnasium\" by SpliceSound licensed under
+    CC0 1.0"
