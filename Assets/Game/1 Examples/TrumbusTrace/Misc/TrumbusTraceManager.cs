@@ -5,11 +5,15 @@ using Game.Examples;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace Examples.TrumbusTrace {
     public class TrumbusTraceManager : MonoBehaviour {
+        private static WaitForSeconds _waitForSeconds1 = new WaitForSeconds(1f);
+        private static WaitForSeconds _waitForSeconds0_5 = new WaitForSeconds(0.5f);
+
         public static TrumbusTraceManager instance;
         private void Awake() {
             if (instance == null) {
@@ -18,6 +22,7 @@ namespace Examples.TrumbusTrace {
             else {
                 Destroy(gameObject);
             }
+            audioSource = GetComponent<AudioSource>();
         }
 
         [HideInInspector]public List<TraceSubmanager> subscenes = new();
@@ -29,6 +34,11 @@ namespace Examples.TrumbusTrace {
 
         [SerializeField] private float _duration = 20;
         [SerializeField] private float _warningTime = 5f;
+        private AudioSource audioSource;
+        [SerializeField] AudioClip tick;
+        [SerializeField] AudioClip tock;
+        [SerializeField] AudioClip finishWhistle;
+        private bool isTick = true;
 
         void Start() {
             StartCoroutine(StartRoutine());
@@ -38,9 +48,10 @@ namespace Examples.TrumbusTrace {
             // Disable player inputs during countdown
             ExamplePawn.isPawnInputEnabled = false;
             // Countdown
-            yield return new WaitForSeconds(0.5f);
+            yield return _waitForSeconds0_5;
             _startText.SetActive(true);
-            yield return new WaitForSeconds(1f);
+            audioSource.PlayOneShot(finishWhistle);
+            yield return _waitForSeconds1;
             _startText.SetActive(false);
             // Enable player inputs and start timer
             ExamplePawn.isPawnInputEnabled = true;
@@ -52,15 +63,32 @@ namespace Examples.TrumbusTrace {
             while (timeLeft > 0) {
                 // Update timer text
                 _timerText.text = Mathf.CeilToInt(timeLeft).ToString();
-                yield return new WaitForSeconds(1f);
-                timeLeft -= 1f;
+                
                 // Change timer background color right before time runs out
-                if (timeLeft <= _warningTime && _timerBackground.color != _timerWarningColor) {
-                    _timerBackground.color = _timerWarningColor;
+                if (timeLeft <= _warningTime) {
+                    if(_timerBackground.color != _timerWarningColor) _timerBackground.color = _timerWarningColor;
+
+                    TickTock();
+                    yield return _waitForSeconds0_5;
+                    TickTock();
+                    yield return _waitForSeconds0_5;
                 }
+                else {
+                    TickTock();
+                    yield return _waitForSeconds1;
+                }
+
+                timeLeft -= 1f;
+                
             }
             _timerText.text = "0";
             StartCoroutine(EndRoutine());
+        }
+
+        private void TickTock() {
+            //Play sound
+            audioSource.PlayOneShot(isTick ? tick : tock);
+            isTick = !isTick;
         }
 
         IEnumerator EndRoutine() {
@@ -69,6 +97,7 @@ namespace Examples.TrumbusTrace {
             // Show end text
             _timerBackground.gameObject.SetActive(false);
             _endText.SetActive(true);
+            audioSource.PlayOneShot(finishWhistle);
             yield return new WaitForSeconds(1.5f);
             _endText.SetActive(false);
             // Calculate player scores

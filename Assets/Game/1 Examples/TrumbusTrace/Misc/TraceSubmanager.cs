@@ -7,6 +7,8 @@ using UnityEngine;
 
 namespace Examples.TrumbusTrace {
     public class TraceSubmanager : MonoBehaviour {
+        private static WaitForSeconds _waitForSeconds0_025 = new WaitForSeconds(0.025f);
+
         public int playerIndex { get; private set; }
         [SerializeField] TextMeshProUGUI scoreText;
         [SerializeField] private Stencil stencil;
@@ -15,6 +17,7 @@ namespace Examples.TrumbusTrace {
 
         [SerializeField] List<Material> materials = new();
         [SerializeField] private Color[] textColors;
+        [SerializeField] private AudioSource countSfx;
 
         private void Awake() {
             playerIndex = TrumbusTraceManager.instance.subscenes.Count;
@@ -36,11 +39,13 @@ namespace Examples.TrumbusTrace {
             scoreText.color = textColors[playerIndex];
             int n = 0;
             scoreText.text = "0%";
+            countSfx.gameObject.SetActive(true);
             while (n < score) {
                 scoreText.text = $"{n}%";
                 n += 1;
-                yield return new WaitForSeconds(0.025f);
+                yield return _waitForSeconds0_025;
             }
+            countSfx.loop = false;
         }
 
         private void SetPlayerPosition() {
