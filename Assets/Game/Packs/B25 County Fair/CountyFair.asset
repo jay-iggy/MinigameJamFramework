@@ -15,6 +15,7 @@ MonoBehaviour:
   packName: County Fair
   icon: {fileID: 21300000, guid: 3bdef0ce1148033489464bac98847d19, type: 3}
   packColor: {r: 1, g: 0.5971356, b: 0.2320754, a: 1}
+  packSound: {fileID: 8300000, guid: 0f71039cb6d55c643bb8c5b10f303d86, type: 3}
   description: The pack that made it a tradition. Created for the 2025 B-Term Minigame
     jam.
   minigames:
