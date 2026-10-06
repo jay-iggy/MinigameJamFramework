@@ -16,7 +16,7 @@ public class MenuScript : MonoBehaviour {
     [SerializeField] Button startButton;
     [SerializeField] private Button packSelectButton;
     [SerializeField] RectTransform packageIcons;
-    public GameObject packageIconPrefab;
+    public Image packageIconPrefab;
     public SceneField packSelectScene;
 
     [SerializeField] PromptWindow promptWindowPrefab;
@@ -102,16 +102,9 @@ public class MenuScript : MonoBehaviour {
     }
 
     private void UpdateActivePackIcons() {
-        float next = 0f;
-        float gap = 12.5f;
         foreach (Sprite spr in MinigameManager.instance.GetPackageSprites()) {
-            RectTransform icon = Instantiate(packageIconPrefab, packageIcons).GetComponent<RectTransform>();
-
-            Image img = icon.GetComponent<Image>();
-            img.sprite = spr;
-
-            icon.anchoredPosition = new Vector2(icon.anchoredPosition.x, next);
-            next += icon.rect.height + gap;
+            Image icon = Instantiate(packageIconPrefab, packageIcons);
+            icon.sprite = spr;
         }
     }
 }
