@@ -30,6 +30,9 @@ public class ButtonJuice : MonoBehaviour, ISubmitHandler, IPointerEnterHandler, 
 
     private Button _button;
     private bool _isHovered = false;
+    // Cooldown prevents duplicate presses due to multiple players
+    private float _pressCooldown = 0.1f;
+    private float _nextPressTime = 0;
 
     void Awake() {
         _button = GetComponent<Button>();
@@ -88,10 +91,14 @@ public class ButtonJuice : MonoBehaviour, ISubmitHandler, IPointerEnterHandler, 
     }
 
     public void OnSubmit(BaseEventData eventData) {
-        StartCoroutine(SubmitAnimation());
-        _audioSource.PlayOneShot(submitSfx);
+        Submit();
     }
     public void OnSubmit() {
+        Submit();
+    }
+    private void Submit() {
+        if(Time.unscaledTime<_nextPressTime) return;
+        _nextPressTime = Time.unscaledTime + _pressCooldown;
         StartCoroutine(SubmitAnimation());
         _audioSource.PlayOneShot(submitSfx);
     }
