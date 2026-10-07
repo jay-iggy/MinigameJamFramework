@@ -1217,7 +1217,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <color=#9B4252>WPI IGDA</color> Party
+  m_text: <color=#CF672E>WPI IGDA</color> Party
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8949acd89b9d7ab4a8f66342c7ae6cd2, type: 2}
   m_sharedMaterial: {fileID: 6255300684175758089, guid: 8949acd89b9d7ab4a8f66342c7ae6cd2, type: 2}
@@ -1226,8 +1226,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289613381
-  m_fontColor: {r: 0.27058825, g: 0.30588236, b: 0.68235296, a: 1}
+    rgba: 4289611128
+  m_fontColor: {r: 0.47045264, g: 0.27058825, b: 0.68235296, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1353,7 +1353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <color=#DC6963>WPI IGDA</color> Party
+  m_text: <color=#DC8C63>WPI IGDA</color> Party
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8949acd89b9d7ab4a8f66342c7ae6cd2, type: 2}
   m_sharedMaterial: {fileID: 6255300684175758089, guid: 8949acd89b9d7ab4a8f66342c7ae6cd2, type: 2}
@@ -1362,8 +1362,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294481784
-  m_fontColor: {r: 0.47058827, g: 0.5921569, b: 0.9725491, a: 1}
+    rgba: 4294473911
+  m_fontColor: {r: 0.71871555, g: 0.47058824, b: 0.972549, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
