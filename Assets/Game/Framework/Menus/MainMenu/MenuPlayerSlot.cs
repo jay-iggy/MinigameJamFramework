@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -23,9 +24,11 @@ namespace Game.MinigameFramework.Menus.MainMenu {
 
         private PlayerInput _playerInput;
 
-        private void Awake() {
+        protected override void Awake() {
+            base.Awake();
             radialImage.gameObject.SetActive(false);
         }
+        
 
         public void BindToPlayer(int index) {
             _playerIndex = index;

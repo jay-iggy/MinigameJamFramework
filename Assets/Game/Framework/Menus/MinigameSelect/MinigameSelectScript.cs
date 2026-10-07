@@ -16,6 +16,8 @@ public class MinigameSelectScript : MonoBehaviour {
     [SerializeField] float descriptionDelay = 2f;
     [SerializeField]float loadSceneDelay = 1f;
     [SerializeField] MinigameUI minigameUI;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip slotsSfx;
     
     public UnityEvent onMinigameSelected;
     
@@ -36,6 +38,7 @@ public class MinigameSelectScript : MonoBehaviour {
             minigameNameText.color = selectedColor;
         }
         else {
+            audioSource.PlayOneShot(slotsSfx);
             for(int i = 0; i<iterations; i++) {
                 minigameIndex = UnityEngine.Random.Range(0, minigames.Count);
                 minigameNameText.text = minigames[minigameIndex].minigameName;
@@ -49,6 +52,14 @@ public class MinigameSelectScript : MonoBehaviour {
     }
 
     IEnumerator AfterSlotsEnd() {
+        AudioClip audioClip = null;
+        if (minigame.GetPack() != null) {  
+            audioClip = minigame.GetPack().packSound;
+        }
+        if(audioClip==null) {
+            audioClip = Resources.Load<AudioClip>("DefaultSlotWinSound");
+        }
+        audioSource.PlayOneShot(audioClip);
         yield return new WaitForSeconds(descriptionDelay);
         onMinigameSelected.Invoke();
         minigameUI.SetMinigame(minigame);

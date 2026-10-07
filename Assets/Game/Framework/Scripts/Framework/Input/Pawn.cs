@@ -24,10 +24,10 @@ namespace Game.MinigameFramework.Scripts.Framework.Input {
 
         public void HandleInput(InputAction.CallbackContext context) {
             if (context.action.actionMap.name != "Minigame") return;
-            if (context.action.WasPerformedThisFrame() || context.action.type == InputActionType.Value) {
+            if (context.performed || context.action.type == InputActionType.Value) {
                 OnActionPressed(context);
             }
-            else if (context.action.WasReleasedThisFrame() && context.action.type != InputActionType.Value) {
+            else if (context.canceled && context.action.type != InputActionType.Value) {
                 OnActionReleased(context);
             }
         }

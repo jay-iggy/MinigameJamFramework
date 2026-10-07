@@ -16,6 +16,13 @@ namespace Examples.TrumbusTrace {
 
         public Color[] lineColor = { };
 
+        public AudioSource scribbleSfx;
+        private Rigidbody rb;
+
+        void Awake() {
+            rb = GetComponent<Rigidbody>();
+        }
+
         void Start() {
             lineRenderer.SetPosition(0, new Vector3(transform.position.x, drillHeight, transform.position.z));
             Color color = lineColor[subsceneManager.playerIndex];
@@ -25,10 +32,21 @@ namespace Examples.TrumbusTrace {
         }
 
         void Update() {
+            // UPDATE DRAWING
             if (Vector3.Distance(_lastPosition, transform.position) >= distancePerSegment) {
                 AddNewPoint(new Vector2(transform.position.x, transform.position.z));
                 _lastPosition = transform.position;
             }
+            // SFX
+            if(scribbleSfx.isPlaying) {    
+                if(rb.velocity.magnitude <= 0) {
+                    scribbleSfx.Stop();
+                }
+            }
+            else if (rb.velocity.magnitude > 0) {
+                scribbleSfx.Play();
+            }
+            
         }
 
         void AddNewPoint(Vector2 newPoint) {

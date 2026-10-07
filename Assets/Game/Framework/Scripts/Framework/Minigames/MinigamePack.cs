@@ -14,10 +14,11 @@ namespace Game.MinigameFramework.Scripts.Framework.Minigames {
         public string packName;
         [Tooltip("Displayed next to minigame names")] public Sprite icon;
         public Color packColor =  Color.white;
+        public AudioClip packSound;
         [TextArea] public string description;
         public List<MinigameInfo> minigames;
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         // AUTOMATICALLY ADD PACK TO MINIGAMEMANAGER LISTS
         void Awake() {
             MinigameManager manager = AssetDatabase.LoadAssetAtPath<MinigameManager>("Assets/Game/Framework/MinigameManager.prefab");
