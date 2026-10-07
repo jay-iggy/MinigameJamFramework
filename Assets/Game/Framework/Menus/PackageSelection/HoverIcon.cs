@@ -18,6 +18,8 @@ public class HoverIcon : Selectable, IPointerClickHandler, ISubmitHandler, ICanc
     private MinigameInfo minigameData;
     [SerializeField] Color packHighlightColor = new Color(0,0,0,0.25f);
     [SerializeField] Color minigameHighlightColor = new Color(1f,1f,0,0.5f);
+    private float pressCooldown = 0.1f; // cooldown prevents from being toggled twice from the same input
+    private float nextPressTime = 0;
 
     // UI Events
     public override void OnSelect(BaseEventData eventData) {
@@ -37,21 +39,22 @@ public class HoverIcon : Selectable, IPointerClickHandler, ISubmitHandler, ICanc
         if (minigameData != null) pss.OnMinigameHovered(minigameData);
     }
     private void OnIconPressed() {
+        if(Time.time < nextPressTime) return;
         if (packData != null) pss.TogglePack(packData);
-        // could be extended to toggling specific minigames, but would require some MinigameManager reworks
+        nextPressTime = Time.time + pressCooldown;
     }
     
     public void SetData(PackageSelectionScript pssSet, MinigamePack pd) {
         packData = pd;
         minigameData = null;
         pss = pssSet;
-        targetGraphic.color = packHighlightColor;
+        targetGraphic.color = pd.packColor;
     }
-    public void SetData(PackageSelectionScript pssSet, MinigameInfo md, Color highlightColor) {
+    public void SetData(PackageSelectionScript pssSet, MinigameInfo md) {
         minigameData = md;
         packData = null;
         pss = pssSet;
-        targetGraphic.color = highlightColor;
+        targetGraphic.color = md.GetPack().packColor;
     }
 
     public void OnCancel(BaseEventData eventData) {

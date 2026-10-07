@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Game.MinigameFramework.Scripts.Framework.Input;
-using Game.MinigameFramework.Scripts.Framework.Minigames;
 using Game.MinigameFramework.Scripts.Framework.PlayerInfo;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
@@ -71,8 +71,8 @@ namespace Game.MinigameFramework.Scripts.Framework {
         #endregion
         
         private static void HandlePauseButton(InputAction.CallbackContext context) {
-            if (!context.action.WasPerformedThisFrame()) return;
-            if(context.action.name == "Menu") {
+            if (!context.performed) return;
+            if (context.action.name == "Menu") {
                 onPauseButtonPressed.Invoke();
             }
         }

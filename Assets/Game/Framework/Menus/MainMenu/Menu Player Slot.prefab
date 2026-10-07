@@ -291,6 +291,8 @@ MonoBehaviour:
   raisedYPosition: -27.09
   animationSpeed: 10
   rectTransform: {fileID: 8612540404599003799}
+  confirmSfx: {fileID: 8300000, guid: 5a50adeb6fd9a174ab16efc0390fdaaf, type: 3}
+  cancelSfx: {fileID: 8300000, guid: 4ee6ac2b272669d44854fa7b7817072f, type: 3}
   heldDuration: 1
   radialImage: {fileID: 6075053042824851944}
   promptButtonRenderer: {fileID: 8323144807806228455}

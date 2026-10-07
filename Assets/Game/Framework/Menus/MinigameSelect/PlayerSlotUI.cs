@@ -18,9 +18,18 @@ public class PlayerSlotUI : MonoBehaviour {
     private Vector2 _defaultPosition;
 
     private Coroutine _animationCoroutine = null;
-    
-    
-    private void Start() {
+
+    [Header("SFX")]
+    [SerializeField] AudioClip confirmSfx;
+    [SerializeField] AudioClip cancelSfx;
+    protected AudioSource _audioSource;
+
+
+    protected virtual void Awake() {
+        _audioSource = GetComponent<AudioSource>();
+    }
+
+    protected virtual void Start() {
         _defaultPosition = rectTransform.anchoredPosition;
     }
     
@@ -35,6 +44,7 @@ public class PlayerSlotUI : MonoBehaviour {
     public void SetStatus(bool isConnected) {
         statusText.text = isConnected ? statusConnected : statusNotConnected;
         statusText.color = isConnected ? connectedColor : notConnectedColor;
+        _audioSource?.PlayOneShot(isConnected?confirmSfx:cancelSfx);
         if(_animationCoroutine!=null) StopCoroutine(_animationCoroutine);
         _animationCoroutine = StartCoroutine(MoveToPosition(isConnected ? new Vector2(_defaultPosition.x, raisedYPosition) : _defaultPosition));
     }

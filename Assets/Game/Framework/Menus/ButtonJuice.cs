@@ -21,21 +21,31 @@ public class ButtonJuice : MonoBehaviour, ISubmitHandler, IPointerEnterHandler, 
     [Header("Select")]
     public AnimationCurve selectPosCurve;
     public float selectDuration = 0.6f;
+
+    [Header("SFX")]
+    private AudioSource _audioSource;
+    [SerializeField] AudioClip selectSfx;
+    [SerializeField] AudioClip submitSfx;
     
 
     private Button _button;
     private bool _isHovered = false;
+    // Cooldown prevents duplicate presses due to multiple players
+    private float _pressCooldown = 0.1f;
+    private float _nextPressTime = 0;
 
     void Awake() {
         _button = GetComponent<Button>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     
     public void OnSelect(BaseEventData eventData) {
-        if (!_button.interactable) return;
+        if (_button == null || !_button.interactable) return;
         if(_isHovered) return;
         StartCoroutine(EvaluateCurve(hoverPosCurve, hoverScaleCurve, hoverDuration));
         _isHovered = true;
+        _audioSource.PlayOneShot(selectSfx);
     }
     public void OnDeselect(BaseEventData eventData) {
         if (!_isHovered) return;
@@ -74,17 +84,23 @@ public class ButtonJuice : MonoBehaviour, ISubmitHandler, IPointerEnterHandler, 
             scale.y = scaleCurve.Evaluate(t / dur);
             graphic.localScale = scale;
 
-            t += Time.deltaTime * deltaScale;
+            t += Time.unscaledDeltaTime * deltaScale;
             yield return null;
             condition = deltaScale>0? t < dur : t >= 0;
         }
     }
 
     public void OnSubmit(BaseEventData eventData) {
-        StartCoroutine(SubmitAnimation());
+        Submit();
     }
     public void OnSubmit() {
+        Submit();
+    }
+    private void Submit() {
+        if(Time.unscaledTime<_nextPressTime) return;
+        _nextPressTime = Time.unscaledTime + _pressCooldown;
         StartCoroutine(SubmitAnimation());
+        _audioSource.PlayOneShot(submitSfx);
     }
 
     private IEnumerator SubmitAnimation() {
@@ -93,7 +109,7 @@ public class ButtonJuice : MonoBehaviour, ISubmitHandler, IPointerEnterHandler, 
             Vector2 pos = graphic.anchoredPosition;
             pos.y = selectPosCurve.Evaluate(t / selectDuration);
             graphic.anchoredPosition = pos;
-            t += Time.deltaTime;
+            t += Time.unscaledDeltaTime;
             yield return null;
         }
         onClick.Invoke();
