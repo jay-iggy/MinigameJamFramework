@@ -62,7 +62,7 @@ namespace SnowDay.SnowFight {
 
         private void Move() {
             Vector3 movement = new Vector3(moveInputValue.x, 0, moveInputValue.y);
-            rb.velocity = movement * moveSpeed;
+            rb.linearVelocity = movement * moveSpeed;
         }
 
         private void LaunchSnowball() {

@@ -36,7 +36,7 @@ namespace SnowDay.Snowfort
 
         void FixedUpdate()
         {
-            body.velocity = new Vector2(body.velocity.x, body.velocity.y + gravity * Time.fixedDeltaTime);
+            body.linearVelocity = new Vector2(body.linearVelocity.x, body.linearVelocity.y + gravity * Time.fixedDeltaTime);
         }
 
         void Start()
