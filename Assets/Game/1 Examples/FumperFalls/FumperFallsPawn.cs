@@ -36,7 +36,7 @@ namespace Examples.FumperFalls {
         
         private void Update() {
             // Gravity
-            _rigidbody.velocity += gravity * Time.deltaTime * Vector3.up;
+            _rigidbody.linearVelocity += gravity * Time.deltaTime * Vector3.up;
             // Movement
             _rigidbody.angularVelocity += new Vector3(_moveInput.y * speed * Time.deltaTime, 0, -_moveInput.x * speed * Time.deltaTime);
             
@@ -45,7 +45,7 @@ namespace Examples.FumperFalls {
 
         #region Snow Accumulation
             private void UpdateSnowAccumulation() {
-                float dot = Vector3.Dot(_rigidbody.velocity, _moveInput);
+                float dot = Vector3.Dot(_rigidbody.linearVelocity, _moveInput);
                 if(dot > 0) { // if the player's velocity in the same direction of their move input
                     _distanceTraveled += dot * Time.deltaTime;
                     if(_distanceTraveled > 0.1f) {
