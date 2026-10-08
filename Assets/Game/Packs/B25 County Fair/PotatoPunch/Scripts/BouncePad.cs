@@ -144,7 +144,7 @@ public class BouncePad : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         StartCoroutine(ObjBounceCooldown(objectBounce));
         rb.isKinematic = false;
-        rb.velocity = Vector3.zero;
+        rb.linearVelocity = Vector3.zero;
 
         float bounceForce = 0;
         float newBounceHeightImpulse = 0;

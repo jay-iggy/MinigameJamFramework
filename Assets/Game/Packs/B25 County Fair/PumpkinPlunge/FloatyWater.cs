@@ -37,13 +37,13 @@ namespace Starter.PumpkinPlunge {
                 Vector3 lift = -Physics.gravity * displacementMult * buoyantForce;
                 playerBody.AddForce(lift, ForceMode.Acceleration);
 
-                playerBody.drag = waterDrag;
-                playerBody.angularDrag = waterAngularDrag;
+                playerBody.linearDamping = waterDrag;
+                playerBody.angularDamping = waterAngularDrag;
             }
-            else if (playerBody.drag != 0f || playerBody.angularDrag != 0f)
+            else if (playerBody.linearDamping != 0f || playerBody.angularDamping != 0f)
             {
-                playerBody.drag = 0f;
-                playerBody.angularDrag = 0f;
+                playerBody.linearDamping = 0f;
+                playerBody.angularDamping = 0f;
             }
         }
     }

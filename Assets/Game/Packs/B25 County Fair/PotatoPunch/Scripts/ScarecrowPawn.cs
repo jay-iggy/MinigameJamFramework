@@ -23,20 +23,20 @@ namespace HotPotatoGame {
         private void Awake()
         {
             rb = GetComponent<Rigidbody>();
-            standardDrag = rb.drag;
+            standardDrag = rb.linearDamping;
         }
 
         private void Update()
         {
             if (rb.GetComponent<ObjectBounce>().isShot)
             {
-                rb.drag = 1.75f;
+                rb.linearDamping = 1.75f;
                 _moveInput = Vector2.zero;
                 return;
             }
             else
             {
-                rb.drag = standardDrag;
+                rb.linearDamping = standardDrag;
             }
             
             if (inactiveTimer > 0){
@@ -44,11 +44,11 @@ namespace HotPotatoGame {
                 inactiveTimer -= Time.deltaTime;
                 if (inactiveTimer < earlyDragRestorationTime)
                 {
-                    rb.drag = standardDrag;
+                    rb.linearDamping = standardDrag;
                 }
                 else
                 {
-                    rb.drag = 1;
+                    rb.linearDamping = 1;
                 }
                 return;
             }
@@ -70,9 +70,9 @@ namespace HotPotatoGame {
                 else
                 {
                     // clamp velocity from 0 to prevent mini-sliding
-                    if (rb.velocity.magnitude < minSpeed)
+                    if (rb.linearVelocity.magnitude < minSpeed)
                     {
-                        rb.velocity = rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
+                        rb.linearVelocity = rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
                     }
 
                 }

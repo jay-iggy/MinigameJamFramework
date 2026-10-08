@@ -29,7 +29,7 @@ namespace HotPotatoGame{
         private void Awake()
         {
             rb = transform.parent.GetComponent<Rigidbody>();
-            olddrag = rb.drag;
+            olddrag = rb.linearDamping;
             pawn = transform.parent.GetComponent<ScarecrowPawn>();
         }
         public void Dash(Vector2 dir)
@@ -45,7 +45,7 @@ namespace HotPotatoGame{
         public void StopDash()
         {
             dashTimer = 0;
-            rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
+            rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
             pawn.inactiveTimer = 0;
             GetComponent<BoxCollider>().enabled = false;
             cooldownTimer = dashCooldown;
@@ -60,7 +60,7 @@ namespace HotPotatoGame{
 
             if (dashTimer > 0)
             {
-                rb.velocity = dashDir * dashForce;
+                rb.linearVelocity = dashDir * dashForce;
                 dashTimer -= Time.deltaTime;
                 if(dashTimer <= 0)
                 {
@@ -80,7 +80,7 @@ namespace HotPotatoGame{
                 obj.GetComponent<ScarecrowPawn>().inactiveTimer = knockbackRecoveryTime;
 
                 // remove the player's momentum
-                obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                obj.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 
                 // calculate the direction to apply the force (away from the punching player)
                 float rot = (rb.rotation.eulerAngles.y);

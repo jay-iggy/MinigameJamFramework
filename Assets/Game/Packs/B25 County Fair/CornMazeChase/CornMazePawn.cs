@@ -16,7 +16,7 @@ namespace CornMaze {
         }
         void Update() {
             
-            _rigidbody.velocity = new Vector2(_moveInput.x * speed, _moveInput.y * speed);
+            _rigidbody.linearVelocity = new Vector2(_moveInput.x * speed, _moveInput.y * speed);
         }
 
         protected override void OnActionPressed(InputAction.CallbackContext context) {
@@ -27,13 +27,13 @@ namespace CornMaze {
 
             if (context.action.name == PawnAction.ButtonA) {
                 // Jump
-                _rigidbody.velocity = new Vector2(_moveInput.x * speed, _moveInput.y * speed);
+                _rigidbody.linearVelocity = new Vector2(_moveInput.x * speed, _moveInput.y * speed);
                 //speed++;
             }
 
             if (context.action.name == PawnAction.ButtonB) {
                 // Shoot
-                _rigidbody.velocity = new Vector2(_moveInput.x * speed * 2, _moveInput.y * speed *2);
+                _rigidbody.linearVelocity = new Vector2(_moveInput.x * speed * 2, _moveInput.y * speed *2);
                 //this.transform.localScale += new Vector3(1, 1, 1);
 
             }
