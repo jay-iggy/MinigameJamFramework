@@ -28,15 +28,15 @@ namespace Game.Examples {
 
         // Handle movement and physics
         private void Update() { // Gravity
-            _rigidbody.velocity += gravity * Time.deltaTime * Vector3.up;
+            _rigidbody.linearVelocity += gravity * Time.deltaTime * Vector3.up;
             
             if (!isPawnInputEnabled) {
-                _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
+                _rigidbody.linearVelocity = new Vector3(0, _rigidbody.linearVelocity.y, 0);
                 return;
             }
             
             // Movement
-            _rigidbody.velocity = new Vector3(_moveInput.x * speed, _rigidbody.velocity.y, _moveInput.y * speed);
+            _rigidbody.linearVelocity = new Vector3(_moveInput.x * speed, _rigidbody.linearVelocity.y, _moveInput.y * speed);
         }
 
         // Handle grounded state
@@ -55,7 +55,7 @@ namespace Game.Examples {
             if (context.action.name == "ButtonA") {
                 if (!_isGrounded) return;
 
-                _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, jumpForce, _rigidbody.velocity.z);
+                _rigidbody.linearVelocity = new Vector3(_rigidbody.linearVelocity.x, jumpForce, _rigidbody.linearVelocity.z);
                 _isGrounded = false;
             }
         }

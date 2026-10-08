@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: a6508bcd5c5aaab4f92e8322c9b5cf42, type: 3}
   m_NotificationBehavior: 3
-  m_UIInputModule: {fileID: 0}
+  m_UIInputModule: {fileID: 4368929001810059634}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -62,11 +62,11 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: afb18466-ea7a-464b-a288-e0206a3de9d0
-    m_ActionName: Board/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+    m_ActionName: 'Board/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: b012fc52-1d4f-4b3d-b038-6c1f72ae0d11
-    m_ActionName: Board/Accept[/Keyboard/space]
+    m_ActionName: 'Board/Accept[/Keyboard/space]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: c597e18d-36b0-473a-870c-dbce63b8dd1b
@@ -74,7 +74,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 939308b8-c128-48d0-9b4f-3715c5124ead
-    m_ActionName: Minigame/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+    m_ActionName: 'Minigame/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 9f9db0fc-4256-4e31-9e25-b3369e3fcf22
@@ -102,7 +102,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 1ca6c75d-42e9-41d8-9d9f-cb1efc1384e7
-    m_ActionName: Minigame/Look[/XInputControllerWindows1/rightStick,/XInputControllerWindows2/rightStick,/XInputControllerWindows/rightStick,/Mouse/delta]
+    m_ActionName: 'Minigame/Look[/XInputControllerWindows1/rightStick,/XInputControllerWindows2/rightStick,/XInputControllerWindows/rightStick,/Mouse/delta]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Minigame

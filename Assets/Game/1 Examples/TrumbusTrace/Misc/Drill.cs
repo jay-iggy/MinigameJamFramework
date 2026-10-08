@@ -39,11 +39,11 @@ namespace Examples.TrumbusTrace {
             }
             // SFX
             if(scribbleSfx.isPlaying) {    
-                if(rb.velocity.magnitude <= 0) {
+                if(rb.linearVelocity.magnitude <= 0) {
                     scribbleSfx.Stop();
                 }
             }
-            else if (rb.velocity.magnitude > 0) {
+            else if (rb.linearVelocity.magnitude > 0) {
                 scribbleSfx.Play();
             }
             
