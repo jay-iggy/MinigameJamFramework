@@ -38,17 +38,17 @@ namespace SnowDay.Icebreaker {
 
         private void Update() {
             if (!canMove) {
-                _rigidbody.velocity = Vector3.zero;
+                _rigidbody.linearVelocity = Vector3.zero;
                 _rigidbody.angularVelocity = Vector3.zero;
                 return;
             }
 
-            _rigidbody.velocity = (gravity * Time.deltaTime * Vector3.up) +
-                                  (_rigidbody.velocity + new Vector3(_moveInput.x * speed * (stunned ? 0.3f : 1), 0,
+            _rigidbody.linearVelocity = (gravity * Time.deltaTime * Vector3.up) +
+                                  (_rigidbody.linearVelocity + new Vector3(_moveInput.x * speed * (stunned ? 0.3f : 1), 0,
                                       _moveInput.y * speed * (stunned ? 0.3f : 1))) *
                                   Mathf.Pow(friction, Time.deltaTime + 1);
-            if (_rigidbody.velocity.magnitude < 0.7) {
-                _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
+            if (_rigidbody.linearVelocity.magnitude < 0.7) {
+                _rigidbody.linearVelocity = new Vector3(0, _rigidbody.linearVelocity.y, 0);
             }
 
             transform.eulerAngles = new Vector3(0, Mathf.LerpAngle(transform.eulerAngles.y, rotation, 0.1f), 0);

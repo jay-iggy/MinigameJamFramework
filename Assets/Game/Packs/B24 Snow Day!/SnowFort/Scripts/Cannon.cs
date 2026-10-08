@@ -52,7 +52,7 @@ namespace SnowDay.Snowfort
             ammoCount--;
             GameObject shot = Instantiate(ammo, launchPoint.position, launchPoint.rotation);
             float rad = (launchPoint.eulerAngles.z + 90) * 2 * Mathf.PI / 360;
-            shot.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)) * launchVelocity;
+            shot.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)) * launchVelocity;
             
             TeamIgnore t = shot.GetComponent<TeamIgnore>();
             if (t != null)
