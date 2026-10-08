@@ -564,7 +564,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: COUNTY FAIR Party
+  m_text: WPI IGDA Party
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 10712b944d517f141ae457ff6dc30f82, type: 2}
   m_sharedMaterial: {fileID: 7573646293274143404, guid: 10712b944d517f141ae457ff6dc30f82, type: 2}
@@ -1217,7 +1217,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <color=#CF672E>COUNTY FAIR</color> Party
+  m_text: <color=#CF672E>WPI IGDA</color> Party
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8949acd89b9d7ab4a8f66342c7ae6cd2, type: 2}
   m_sharedMaterial: {fileID: 6255300684175758089, guid: 8949acd89b9d7ab4a8f66342c7ae6cd2, type: 2}
@@ -1353,7 +1353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <color=#DC8C63>COUNTY FAIR</color> Party
+  m_text: <color=#DC8C63>WPI IGDA</color> Party
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8949acd89b9d7ab4a8f66342c7ae6cd2, type: 2}
   m_sharedMaterial: {fileID: 6255300684175758089, guid: 8949acd89b9d7ab4a8f66342c7ae6cd2, type: 2}
