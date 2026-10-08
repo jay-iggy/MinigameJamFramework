@@ -119,7 +119,7 @@ namespace XiaoHuanXiong.Game
             _throwDirection = direction.normalized;
             _startPosition = _rb.position;
 
-            _rb.velocity = _throwDirection * _throwForce;
+            _rb.linearVelocity = _throwDirection * _throwForce;
             _rb.angularVelocity = _angularVelocity;
 
             _playerIndex = playerIndex;
@@ -130,7 +130,7 @@ namespace XiaoHuanXiong.Game
         private void _StopFlying()
         {
             _isFlying = false;
-            _rb.velocity = Vector2.zero;
+            _rb.linearVelocity = Vector2.zero;
             _rb.angularVelocity = 0f;
             _rb.freezeRotation = true;
             _collider.isTrigger = true;

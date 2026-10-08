@@ -247,7 +247,7 @@ namespace XiaoHuanXiong.Player
 
             Score -= damage;
 
-            // TODO: Éú³ÉµôÂäÎï
+            // TODO: ï¿½ï¿½ï¿½Éµï¿½ï¿½ï¿½ï¿½ï¿½
             var spawnPos = new Vector3(transform.position.x + UnityEngine.Random.Range(-_onHitItemSpawnRadius.x, _onHitItemSpawnRadius.x),
                      transform.position.y + UnityEngine.Random.Range(-_onHitItemSpawnRadius.y, _onHitItemSpawnRadius.y), 0);
             for (int i = 0; i < damage; i++)
@@ -301,7 +301,7 @@ namespace XiaoHuanXiong.Player
 
         private void _ResetPlayerMoveState()
         {
-            _rb.velocity = Vector2.zero;
+            _rb.linearVelocity = Vector2.zero;
             _isMoving = false;
         }
 
@@ -348,7 +348,7 @@ namespace XiaoHuanXiong.Player
             {
                 _isAttacking = false;
 
-                // ÈÓ³öÍ¶ÖÀÎï
+                // ï¿½Ó³ï¿½Í¶ï¿½ï¿½ï¿½ï¿½
                 
                 _currentAttackItem?.InitThrowingItem(_attackDirection == Vector2.zero ? new Vector2(_faceDirection, 0) : _attackDirection, playerIndex);
 
@@ -387,17 +387,17 @@ namespace XiaoHuanXiong.Player
 
                     if (_isMoving == false)
                     {
-                        _rb.velocity = Vector2.zero;
+                        _rb.linearVelocity = Vector2.zero;
                     }
                     else
                     {
-                        _rb.velocity = _moveInput * _speed;
+                        _rb.linearVelocity = _moveInput * _speed;
                     }
                 }
             }
             else
             {
-                _rb.velocity = Vector2.zero;
+                _rb.linearVelocity = Vector2.zero;
             }
 
         }

@@ -104,7 +104,7 @@ namespace PumpkinGhost {
         
         private void Update() {
             if (!isPawnInputEnabled) {
-                _rigidbody.velocity = Vector3.zero;
+                _rigidbody.linearVelocity = Vector3.zero;
                 _rigidbody.angularVelocity = Vector3.zero;
                 return;
             }
@@ -113,10 +113,10 @@ namespace PumpkinGhost {
             if (pumpkinSize > 0) {
                 modifiedSpeed *= 1 / pumpkinSize;
             }
-            _rigidbody.velocity = (gravity * Time.deltaTime * Vector3.up) + (((float) Math.Pow(friction, Time.deltaTime + 1)) * (_rigidbody.velocity + new Vector3(_moveInput.x * modifiedSpeed, 0, _moveInput.y * modifiedSpeed)));
+            _rigidbody.linearVelocity = (gravity * Time.deltaTime * Vector3.up) + (((float) Math.Pow(friction, Time.deltaTime + 1)) * (_rigidbody.linearVelocity + new Vector3(_moveInput.x * modifiedSpeed, 0, _moveInput.y * modifiedSpeed)));
             
-            if (_rigidbody.velocity.magnitude < 0.7) {
-                _rigidbody.velocity = new Vector3(0, _rigidbody.velocity.y, 0);
+            if (_rigidbody.linearVelocity.magnitude < 0.7) {
+                _rigidbody.linearVelocity = new Vector3(0, _rigidbody.linearVelocity.y, 0);
             }
 
             transform.eulerAngles = new Vector3(0, Mathf.LerpAngle(transform.eulerAngles.y, rotation, 0.1f), 0);

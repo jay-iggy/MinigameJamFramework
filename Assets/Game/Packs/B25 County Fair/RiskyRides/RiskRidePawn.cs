@@ -87,15 +87,15 @@ public class RiskRidePawn : Pawn
 
         InertialReferenceFrame frame = GetInertialReferenceFrame();
 
-        Vector2 relativeVelocity = body.velocity - frame.globalVelocity;
+        Vector2 relativeVelocity = body.linearVelocity - frame.globalVelocity;
 
         if (relativeObjectLast == frame.referenceObject && frame.isGrounded)
         {
             // We want to "stick" to the object we are on, not get dragged along by it
-            body.velocity -= relativeVelocity - relativeVelocityLast;
+            body.linearVelocity -= relativeVelocity - relativeVelocityLast;
         }
 
-        relativeVelocity = body.velocity - frame.globalVelocity;
+        relativeVelocity = body.linearVelocity - frame.globalVelocity;
 
         if (frame.isGrounded && !jumpedLastTick)
         {
@@ -115,25 +115,25 @@ public class RiskRidePawn : Pawn
                 if (Mathf.Abs(relativeVelocity.x) > maxSpeed && ((movementInput.x >= 0 && relativeVelocity.x >= 0) || (movementInput.x <= 0 && relativeVelocity.x <= 0)))
                     maxAcceleration = 0;
 
-                body.velocity += new Vector2((Mathf.Abs(desiredAcceleration) <= Mathf.Abs(maxAcceleration)) ? desiredAcceleration : maxAcceleration, ((body.velocity.y < 0) ? -gravityDown : -gravityUp) * Time.fixedDeltaTime);
+                body.linearVelocity += new Vector2((Mathf.Abs(desiredAcceleration) <= Mathf.Abs(maxAcceleration)) ? desiredAcceleration : maxAcceleration, ((body.linearVelocity.y < 0) ? -gravityDown : -gravityUp) * Time.fixedDeltaTime);
             }
             else
             {
                 float desiredAcceleration = ((relativeVelocity.x > 0) ? -1 : 1) * deacceleration * Time.fixedDeltaTime;
                 float maxAcceleration = -relativeVelocity.x; ;
 
-                body.velocity += new Vector2((Mathf.Abs(desiredAcceleration) <= Mathf.Abs(maxAcceleration)) ? desiredAcceleration : maxAcceleration, ((body.velocity.y < 0) ? -gravityDown : -gravityUp) * Time.fixedDeltaTime);
+                body.linearVelocity += new Vector2((Mathf.Abs(desiredAcceleration) <= Mathf.Abs(maxAcceleration)) ? desiredAcceleration : maxAcceleration, ((body.linearVelocity.y < 0) ? -gravityDown : -gravityUp) * Time.fixedDeltaTime);
             }
 
             if (jumpFlag > 0)
             {
                 Vector2 jumpNormal = new Vector2(groundedNormal.x, (groundedNormal.y > -0.1f) ? groundedNormal.y + 1f : groundedNormal.y).normalized;
                 if (relativeVelocity.y < 0)
-                    body.velocity -= new Vector2(0, relativeVelocity.y);
-                body.velocity += jumpStrength * jumpNormal;
+                    body.linearVelocity -= new Vector2(0, relativeVelocity.y);
+                body.linearVelocity += jumpStrength * jumpNormal;
                 groundedFlag = 0;
                 jumpFlag = 0;
-                relativeVelocityLast = body.velocity;
+                relativeVelocityLast = body.linearVelocity;
                 relativeObjectLast = null;
                 skipFrameCorrections = true;
                 jumpedLastTick = true;
@@ -146,7 +146,7 @@ public class RiskRidePawn : Pawn
             if (Mathf.Abs(relativeVelocity.x) > maxSpeed && ((movementInput.x >= 0 && relativeVelocity.x >= 0) || (movementInput.x <= 0 && relativeVelocity.x <= 0)))
                 maxAcceleration = 0;
 
-            body.velocity += new Vector2((Mathf.Abs(desiredAcceleration) <= Mathf.Abs(maxAcceleration)) ? desiredAcceleration : maxAcceleration, ((body.velocity.y < 0) ? -gravityDown : -gravityUp) * Time.fixedDeltaTime);
+            body.linearVelocity += new Vector2((Mathf.Abs(desiredAcceleration) <= Mathf.Abs(maxAcceleration)) ? desiredAcceleration : maxAcceleration, ((body.linearVelocity.y < 0) ? -gravityDown : -gravityUp) * Time.fixedDeltaTime);
 
             if (jumpFlag > 0)
                 jumpFlag--;
@@ -174,7 +174,7 @@ public class RiskRidePawn : Pawn
 
         if (!skipFrameCorrections)
         {
-            Vector2 totalRelativeVelocity = body.velocity - frame.globalVelocity;
+            Vector2 totalRelativeVelocity = body.linearVelocity - frame.globalVelocity;
             if (frame.referenceObject == null)
             {
                 relativeVelocityLast = totalRelativeVelocity;
@@ -198,9 +198,9 @@ public class RiskRidePawn : Pawn
 
     public void Push(Vector2 pushVelocity)
     {
-        body.velocity += pushVelocity;
+        body.linearVelocity += pushVelocity;
         groundedFlag = 0;
-        relativeVelocityLast = body.velocity;
+        relativeVelocityLast = body.linearVelocity;
         relativeObjectLast = null;
         jumpedLastTick = true;
         skipFrameCorrections = true;
@@ -277,7 +277,7 @@ public class RiskRidePawn : Pawn
                     best = i;
             }
 
-            return new InertialReferenceFrame(contacts[best].rigidbody.velocity, contacts[best].normal, contacts[best].rigidbody.gameObject);
+            return new InertialReferenceFrame(contacts[best].rigidbody.linearVelocity, contacts[best].normal, contacts[best].rigidbody.gameObject);
         }
     }
 

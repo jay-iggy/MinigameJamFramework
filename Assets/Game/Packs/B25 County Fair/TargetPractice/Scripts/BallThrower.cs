@@ -26,7 +26,7 @@ namespace ShooterMinigame {
             Rigidbody rb = newBall.GetComponent<Rigidbody>();
             Ray throwRay = m_camera.ScreenPointToRay(owner.Position);
 
-            rb.velocity = throwRay.direction * m_throwSpeed;
+            rb.linearVelocity = throwRay.direction * m_throwSpeed;
             newBall.transform.position = throwRay.origin + throwRay.direction * m_throwOffset;
 
             Ball ball = newBall.GetComponent<Ball>();

@@ -29,7 +29,7 @@ public class CircularMover : MonoBehaviour
         float xOffset = radius * Mathf.Cos(radians);
         float yOffset = radius * Mathf.Sin(radians);
         Vector2 target = new Vector2(center.x + xOffset, center.y + yOffset);
-        body.velocity = (target - (Vector2) transform.position) / Time.fixedDeltaTime;
+        body.linearVelocity = (target - (Vector2) transform.position) / Time.fixedDeltaTime;
     }
 
     private void OnValidate()
