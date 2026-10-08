@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -389,6 +389,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -471,6 +472,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -842,15 +844,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a536f54d49ce84886c6139425b185b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comment: 'This script sets up four individual splitscreen subscenes, one for each
-    player.
+  comment: 'This script sets up four individual splitscreen subscenes, one for each player.
 
-    To change the shape of the cameras, you can edit the width/height
-    and position of the elements in Camera Rect.
+    To change the shape of the cameras, you can edit the width/height and position of the elements in Camera Rect.
 
-    To change the number of subscenes
-    or the number of players per subscene, you can create a custom variation of this
-    script. Do not edit this script itself.'
+    To change the number of subscenes or the number of players per subscene, you can create a custom variation of this script. Do not edit this script itself.'
 --- !u!1 &1752718746 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8764341697841427267, guid: a1ba59e2136fabc42aa131726cd96a7a, type: 3}
@@ -868,9 +866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a536f54d49ce84886c6139425b185b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comment: "This GameObject is in this scene for debugging to allow for players to\r\n   
-    join when the game is directly started from this screen. This will be deleted\r\n   
-    at runtime during an actual build.\r\n\r\n    The Menu scene has the actual PlayerJoinManager."
+  comment: "This GameObject is in this scene for debugging to allow for players to\r\n    join when the game is directly started from this screen. This will be deleted\r\n    at runtime during an actual build.\r\n\r\n    The Menu scene has the actual PlayerJoinManager."
 --- !u!1 &1778310717
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,6 +908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2008133796}
   - component: {fileID: 2008133795}
+  - component: {fileID: 2008133797}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -927,14 +924,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008133793}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 13
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
+  m_CookieSize2D: {x: 10, y: 10}
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
@@ -978,8 +975,12 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
-  m_ShadowRadius: 0
+  m_ForceVisible: 0
+  m_ShapeRadius: 0
   m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!4 &2008133796
 Transform:
   m_ObjectHideFlags: 0
@@ -995,6 +996,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &2008133797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008133793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a536f54d49ce84886c6139425b185b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeveloperComment
+  comment: 'To improve the visuals of shadows, open the Lighting menu through ''Window/Rendering/Lighting'' and Generate Lighting.
+
+    Make sure to regenerate lighting if you rename the scene because the path to the lighting settings is harcoded.'
 --- !u!1001 &2028605713
 PrefabInstance:
   m_ObjectHideFlags: 0

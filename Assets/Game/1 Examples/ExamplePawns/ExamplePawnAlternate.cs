@@ -28,9 +28,9 @@ namespace Game.Examples {
         // Handle movement and physics
         private void Update() {
             // Gravity
-            _rigidbody.velocity += gravity * Time.deltaTime * Vector3.up;
+            _rigidbody.linearVelocity += gravity * Time.deltaTime * Vector3.up;
             // Movement
-            _rigidbody.velocity = new Vector3(_moveInput.x * speed, _rigidbody.velocity.y, _moveInput.y * speed);
+            _rigidbody.linearVelocity = new Vector3(_moveInput.x * speed, _rigidbody.linearVelocity.y, _moveInput.y * speed);
         }
 
         // Handle grounded state
@@ -47,7 +47,7 @@ namespace Game.Examples {
                 // Jump
                 if (!_isGrounded) return;
 
-                _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, jumpForce, _rigidbody.velocity.z);
+                _rigidbody.linearVelocity = new Vector3(_rigidbody.linearVelocity.x, jumpForce, _rigidbody.linearVelocity.z);
                 _isGrounded = false;
             }
         #endregion
